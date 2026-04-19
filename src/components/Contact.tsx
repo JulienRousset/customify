@@ -141,8 +141,8 @@ export default function Contact() {
             </div>
             <nav aria-label="Footer" className="flex flex-wrap gap-6 text-[13.5px] text-fg2">
               <a href="#services" className="hover:text-fg transition-colors">{c.footerNav.services}</a>
-              <a href="#product" className="hover:text-fg transition-colors">{c.footerNav.demo}</a>
-              <a href="#work" className="hover:text-fg transition-colors">{c.footerNav.work}</a>
+              <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.demo}</a>
+              <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.work}</a>
               <a href="#contact" className="hover:text-fg transition-colors">{c.footerNav.contact}</a>
             </nav>
           </div>

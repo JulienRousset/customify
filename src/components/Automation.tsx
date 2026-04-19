@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import { Check, MessageCircle } from 'lucide-react'
+import { Bot, Check, MessageCircle, Zap } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const features = [
-  { title: 'One dashboard.', desc: 'Revenue, bookings, reach, reviews. One screen that reads itself.' },
-  { title: 'WhatsApp, automated.', desc: 'Replies, reminders, confirmations running 24/7 in your voice.' },
-  { title: 'Every tool, connected.', desc: 'Meta, Stripe, Notion, Shopify, Google. One clean pipeline.' },
-  { title: 'Built in two weeks.', desc: 'From first call to live system. Then we keep iterating with you.' }
+  { icon: MessageCircle, title: 'Replies, sent for you', desc: 'WhatsApp, Instagram DMs, email. Answered in your voice, day and night.' },
+  { icon: Zap, title: 'Workflows that fire themselves', desc: 'New booking, new lead, new payment. Every event triggers the right action.' },
+  { icon: Bot, title: 'AI tuned to your brand', desc: 'Trained on your menu, services, FAQs. It sounds like you, not like a chatbot.' },
+  { icon: Check, title: 'You stay in the loop', desc: 'Daily handover. What got handled, what needs a human, what to ship next.' }
 ]
 
 const messages = [
@@ -16,54 +16,57 @@ const messages = [
   { who: 'us', msg: 'Booked. See you at 20:00.' }
 ]
 
-export default function HeroMock() {
+export default function Automation() {
   return (
-    <section id="product" className="relative py-24 md:py-32">
+    <section id="automation" className="relative py-24 md:py-32">
       <div className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl mb-14 md:mb-20"
+          className="max-w-3xl ml-auto text-right mb-14 md:mb-20"
         >
-          <motion.p variants={staggerItem} className="eyebrow">The product</motion.p>
+          <motion.p variants={staggerItem} className="eyebrow">The automation</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            One system. <span className="text-sub">Everything connected.</span>
+            Let AI <span className="text-sub">do the busywork.</span>
           </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
-            A single source of truth for every conversation, booking, and campaign. Numbers
-            updating as your business runs.
+          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl ml-auto text-pretty">
+            The conversations, the reminders, the follow-ups. Running 24/7 in your voice while
+            you focus on the parts only you can do.
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
           <motion.ul
-            variants={staggerParent(0.12, 0.1)}
+            variants={staggerParent(0.1, 0.15)}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="lg:col-span-4 order-2 lg:order-1 space-y-7"
+            className="lg:col-span-5 order-2 lg:order-1 space-y-7"
           >
-            {features.map((f) => (
-              <motion.li
-                key={f.title}
-                variants={staggerItem}
-                className="flex items-start gap-4 group"
-              >
-                <motion.span
-                  whileHover={{ scale: 1.15, rotate: -8 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-                  className="mt-1 w-5 h-5 rounded-full bg-fg text-bg flex items-center justify-center shrink-0"
+            {features.map((f) => {
+              const Icon = f.icon
+              return (
+                <motion.li
+                  key={f.title}
+                  variants={staggerItem}
+                  className="flex items-start gap-4"
                 >
-                  <Check size={12} strokeWidth={2.5} />
-                </motion.span>
-                <div>
-                  <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
-                  <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{f.desc}</p>
-                </div>
-              </motion.li>
-            ))}
+                  <motion.span
+                    whileHover={{ scale: 1.08, rotate: -4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 16 }}
+                    className="mt-0.5 w-9 h-9 rounded-xl bg-surface border border-hair flex items-center justify-center shrink-0"
+                  >
+                    <Icon size={16} strokeWidth={1.7} className="text-fg" />
+                  </motion.span>
+                  <div>
+                    <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
+                    <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{f.desc}</p>
+                  </div>
+                </motion.li>
+              )
+            })}
           </motion.ul>
 
           <motion.div
@@ -71,12 +74,12 @@ export default function HeroMock() {
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={viewportOnce}
             transition={{ duration: 0.9, ease: easeApple, delay: 0.1 }}
-            className="lg:col-span-8 order-1 lg:order-2"
+            className="lg:col-span-7 order-1 lg:order-2"
           >
-            <ProductMock />
+            <ChatMock />
             <div className="mt-8 text-center flex justify-center">
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
               >
                 Book my own dashboard
@@ -90,7 +93,7 @@ export default function HeroMock() {
   )
 }
 
-function ProductMock() {
+function ChatMock() {
   return (
     <div className="relative rounded-[24px] border border-hair bg-surface2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)]">
       <div className="flex items-center justify-between px-5 py-3 border-b border-hair">
@@ -109,7 +112,7 @@ function ProductMock() {
       </div>
 
       <motion.div
-        className="p-5 md:p-7 space-y-3 bg-bg/50"
+        className="p-5 md:p-7 space-y-3 bg-bg/50 min-h-[280px]"
         variants={staggerParent(0.35, 0.3)}
         initial="hidden"
         whileInView="visible"
@@ -130,11 +133,10 @@ function ProductMock() {
             className={`flex ${m.who === 'us' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-[80%] px-4 py-2.5 rounded-[18px] text-[14px] leading-snug ${
-                m.who === 'us'
+              className={`max-w-[80%] px-4 py-2.5 rounded-[18px] text-[14px] leading-snug ${m.who === 'us'
                   ? 'bg-[#2E7D5C] text-white rounded-br-md'
                   : 'bg-surface text-fg border border-hair rounded-bl-md'
-              }`}
+                }`}
             >
               {m.msg}
             </div>
