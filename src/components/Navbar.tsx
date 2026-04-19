@@ -1,67 +1,75 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../lang'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const { lang, setLang, t } = useLang()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12)
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const links = [
-    { label: t.nav.work, href: '#work' },
     { label: t.nav.services, href: '#services' },
-    { label: t.nav.tool, href: '#tool' },
-    { label: t.nav.numbers, href: '#numbers' },
-    { label: t.nav.demo, href: '#demo' },
+    { label: t.nav.demo, href: '#product' },
+    { label: t.nav.work, href: '#work' },
     { label: t.nav.contact, href: '#contact' }
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pt-3 md:pt-4 px-3 md:px-4">
-      <div
-        className={`mx-auto max-w-6xl px-3 md:px-5 flex items-center justify-between gap-3 rounded-full transition-all duration-500 ease-out
-        ${scrolled ? 'bg-bg/80 backdrop-blur-xl border border-hair shadow-soft py-2' : 'bg-bg/45 backdrop-blur-md border border-transparent py-2.5'}`}
-      >
-        <a href="#home" className="flex items-center gap-2 font-display font-semibold text-[17px] tracking-display pl-1 md:pl-2 shrink-0">
+    <nav
+      aria-label="Primary"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-bg/80 backdrop-blur-xl border-b border-hair' : 'bg-transparent'
+      }`}
+    >
+      <div className="container-xl flex items-center justify-between h-14 md:h-16">
+        <a href="#home" className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
           Customify
         </a>
 
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-1.5 text-[13.5px] text-fg2 hover:text-fg transition-colors rounded-full"
+              className="text-[13px] font-medium text-fg2 hover:text-fg transition-colors"
             >
               {l.label}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <div className="flex items-center rounded-full bg-surface p-0.5 text-[12px] font-medium">
+        <div className="flex items-center gap-2">
+          <div role="group" aria-label="Language" className="hidden sm:flex items-center text-[12px] font-medium text-sub">
             <button
               type="button"
               onClick={() => setLang('en')}
-              className={`px-2 md:px-2.5 py-1 rounded-full transition ${lang === 'en' ? 'bg-bg text-fg shadow-soft' : 'text-sub hover:text-fg'}`}
               aria-pressed={lang === 'en'}
+              className={`px-1.5 py-1 rounded transition-colors ${lang === 'en' ? 'text-fg' : 'hover:text-fg'}`}
             >
               EN
             </button>
+            <span className="opacity-30">·</span>
             <button
               type="button"
               onClick={() => setLang('fr')}
-              className={`px-2 md:px-2.5 py-1 rounded-full transition ${lang === 'fr' ? 'bg-bg text-fg shadow-soft' : 'text-sub hover:text-fg'}`}
               aria-pressed={lang === 'fr'}
+              className={`px-1.5 py-1 rounded transition-colors ${lang === 'fr' ? 'text-fg' : 'hover:text-fg'}`}
             >
               FR
             </button>
           </div>
-          <a href="#contact" className="btn-dark text-[13px] md:text-[13.5px] px-4 md:px-5 py-2 !rounded-full whitespace-nowrap">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[13px] font-medium px-4 py-1.5 hover:opacity-90 transition-opacity"
+          >
             {t.nav.cta}
           </a>
         </div>

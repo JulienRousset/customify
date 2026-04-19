@@ -12,27 +12,24 @@ export const translations = {
       cta: 'Get started'
     },
     hero: {
-      eyebrow: 'Studio Customify. All across Bali.',
-      h1a: 'AI that runs',
-      h1b: 'your business for you.',
-      sub: 'We plug smart tools into your business so the boring work happens on its own. Dashboards, Instagram, WhatsApp, ads. Built for you, not copy-pasted.',
-      ctaPrimary: 'Try the live demo',
-      ctaSecondary: 'See what we build',
-      bullets: [
-        'A plan made just for your business',
-        'Custom hookups with the tools you already use',
-        '24/7 support after launch, forever'
-      ],
-      mockTitle: 'customify.app / my-cocotte',
-      mockCta: 'Try this live',
+      h1a: 'Your marketing,',
+      h1b: 'handled from start to finish',
+      sub: 'Websites, social, ads, CRM, funnels. We design, build and run the stack that grows your brand. Every setup is custom — built on one simple base we know works.',
+      ctaPrimary: 'See a live example',
+      ctaSecondary: 'What we build',
+      mockTitle: 'Dashboard exemple built for a restaurant in Bali',
+      mockCta: 'An example we built',
+      mockHeadingA: 'We build your own software to make your life',
+      mockHeadingB: 'easier',
+      mockSub: 'Your spreadsheet, turned into a dashboard. A custom dashboard that tracks all the data you need.',
       sidebar: {
         items: ['Overview', 'Revenue', 'Bookings', 'Instagram', 'WhatsApp', 'Ads', 'Team'],
         active: 0,
         plan: 'Plan',
-        planValue: 'Studio, monthly'
+        planValue: 'Custom build'
       },
       sectionTitle: 'Overview',
-      sectionSub: 'Every section, one place · live',
+      sectionSub: 'Built for My Cocotte · every section, one place',
       kpis: [
         { k: '€48,210', v: 'Revenue, 30d', d: '+12.4%' },
         { k: '1,284', v: 'Bookings', d: '+9.1%' },
@@ -58,56 +55,72 @@ export const translations = {
         'Terrace please.',
         'Booked. See you at 20:00.'
       ],
-      logosCaption: 'Studios, restaurants and creators already building with us'
+      logosTitle: {
+        prefix: 'Studios, restaurants and ',
+        accent: 'creators',
+        suffix: ' already building with us'
+      }
     },
     services: {
-      eyebrow: 'What we do',
-      h2a: 'Six things we set up.',
-      h2b: 'One system that runs on its own.',
-      sub: 'No monthly retainers. We build it, you own it, we stay to help.',
+      eyebrow: 'What we build',
+      h2a: 'Everything your brand needs,',
+      h2b: 'in one simple place',
+      sub: 'Mix and match. Every setup is custom-tuned to your business — but nothing is built from scratch. Same reliable base, shaped to what you actually need.',
       items: [
         {
-          title: 'Live dashboards',
-          desc: 'All your numbers in one clear screen. No more hunting through spreadsheets at 2 a.m.',
+          title: 'CRM & live dashboards',
+          desc: 'Revenue, bookings, social reach — one screen that reads itself. No more hunting through spreadsheets.',
           metric: '10×',
-          metricLabel: 'Faster to read'
+          metricLabel: 'Faster to read',
+          tag: 'Restaurant',
+          tagColor: '#ff9f0a'
         },
         {
-          title: 'Instagram on autopilot',
-          desc: 'Content ideas, captions and a full calendar, written in your voice. You approve, we publish.',
+          title: 'Websites or Mobile App',
+          desc: 'We build your website or mobile app, or take over what you already have. Wired to your tools, designed for one job: turn visits into clients.',
+          metric: '+32%',
+          metricLabel: 'Conversion lift',
+          tag: 'Entrepreneur',
+          tagColor: '#0071e3'
+        },
+        {
+          title: 'Social, handled',
+          desc: 'Content calendar, writing, visuals, publishing. Instagram, TikTok, wherever your audience is. Written in your voice.',
           metric: '+38%',
-          metricLabel: 'More reach'
+          metricLabel: 'More reach',
+          tag: 'Influencer',
+          tagColor: '#ff375f'
         },
         {
-          title: 'WhatsApp assistant',
-          desc: 'Answers your clients, books appointments, speaks their language. On the app they already use.',
-          metric: '24/7',
-          metricLabel: 'Always awake'
+          title: 'Marketing strategy',
+          desc: 'Digital and physical. A clear 90-day plan: what to run, where to spend, what to measure, when to pivot.',
+          metric: '90d',
+          metricLabel: 'Full roadmap',
+          tag: 'Spa',
+          tagColor: '#af52de'
         },
         {
-          title: 'Connect your tools',
-          desc: 'Sheets, Notion, Stripe, your till. We link them so the boring copy-paste goes away.',
-          metric: '14h',
-          metricLabel: 'Saved per week'
-        },
-        {
-          title: 'Your own AI assistant',
-          desc: 'Trained on your prices, rules and tone. Writes quotes, schedules calls, replies like you.',
-          metric: '1',
-          metricLabel: 'Made for you'
-        },
-        {
-          title: 'Ads that actually work',
-          desc: 'Google and Meta ads, tested every week. We keep what works and drop what doesn’t.',
+          title: 'Ads, managed for you',
+          desc: 'Meta, Google, TikTok. Creative, testing and weekly optimisation by our team. We keep what works, cut what doesn’t.',
           metric: '+2.7×',
-          metricLabel: 'More sales per $'
+          metricLabel: 'Return on spend',
+          tag: 'Restaurant',
+          tagColor: '#ff9f0a'
+        },
+        {
+          title: 'Sales funnels that sell',
+          desc: 'From first click to booked client. Designed, wired, tested. A pipeline you can actually point to.',
+          metric: '×3',
+          metricLabel: 'Qualified leads',
+          tag: 'Entrepreneur',
+          tagColor: '#0071e3'
         }
       ]
     },
     featured: {
       eyebrow: 'One of our tools',
-      h2a: 'Send one message to',
-      h2b: 'all your clients at once.',
+      h2a: 'We build automation for your business',
+      h2b: 'Let AI work for you',
       sub: 'Our WhatsApp Broadcast sends the same message to your full client list in seconds. Add a first-name tag and it still reads like a personal note.',
       bullets: [
         'Scan a QR code, you’re in. No app to install.',
@@ -135,7 +148,7 @@ export const translations = {
     stats: {
       eyebrow: 'The numbers',
       h2a: 'Proof, not',
-      h2b: 'promises.',
+      h2b: 'promises',
       sub: 'Every number below comes from a real client paying us right now. No fake case studies. Want to see the live dashboard? Just ask.',
       items: [
         { k: '14', suffix: ' days', label: 'From first call to your system running' },
@@ -190,8 +203,8 @@ export const translations = {
     },
     clients: {
       eyebrow: 'Some of our work',
-      h2a: 'Real brands.',
-      h2b: 'Real results.',
+      h2a: 'Real brands,',
+      h2b: 'Real results',
       sub: 'A short list of the setups live right now. Full list on request.',
       items: [
         {
@@ -250,10 +263,18 @@ export const translations = {
         }
       ]
     },
+    integrations: {
+      eyebrow: 'Integrations',
+      h2a: 'Supercharge your',
+      h2b: 'workflow',
+      sub: 'Every tool you already use, wired together. Ads, CRM, site, messaging, payments — one clean pipeline that actually talks to itself.',
+      ctaPrimary: 'Wire up my stack',
+      ctaSecondary: 'What we build'
+    },
     contact: {
       eyebrow: 'Get in touch',
-      h2a: 'Let’s build',
-      h2b: 'your engine.',
+      h2a: 'Let’s reimagine',
+      h2b: 'and grow your business',
       sub: 'Tell us about your business. We reply within 24 hours with a plan made for you, plus a free look at one thing we can automate this week.',
       emailLabel: 'Email, best for briefs',
       waLabel: 'WhatsApp, quick questions',
@@ -300,27 +321,24 @@ export const translations = {
       cta: 'Commencer'
     },
     hero: {
-      eyebrow: 'Studio Customify. Partout à Bali.',
-      h1a: 'L’IA qui fait tourner',
-      h1b: 'votre business à votre place.',
-      sub: 'On branche des outils intelligents sur votre activité pour que le travail pénible se fasse tout seul. Tableaux de bord, Instagram, WhatsApp, pubs. Sur mesure, pas copié-collé.',
-      ctaPrimary: 'Essayer la démo',
-      ctaSecondary: 'Voir ce qu’on fait',
-      bullets: [
-        'Un plan pensé pour votre entreprise',
-        'Des liaisons sur mesure avec vos outils actuels',
-        'Support 24/7 après le lancement, pour toujours'
-      ],
-      mockTitle: 'customify.app / my-cocotte',
-      mockCta: 'Essayer en direct',
+      h1a: 'Votre marketing,',
+      h1b: 'pris en charge de A à Z',
+      sub: 'Sites, réseaux sociaux, pubs, CRM, tunnels. On conçoit, branche et fait tourner la machine qui fait grandir votre marque. Chaque installation est sur mesure, sur une base solide qu’on sait efficace.',
+      ctaPrimary: 'Voir un exemple en direct',
+      ctaSecondary: 'Ce qu’on fait',
+      mockTitle: 'Exemple de dashboard conçu pour un restaurant à Bali',
+      mockCta: 'Un exemple qu’on a fait',
+      mockHeadingA: 'On construit votre propre logiciel pour vous',
+      mockHeadingB: 'simplifier la vie',
+      mockSub: 'Votre tableur, transformé en tableau de bord. Un dashboard sur mesure qui suit toutes les données dont vous avez besoin.',
       sidebar: {
         items: ['Accueil', 'Chiffre d’affaires', 'Réservations', 'Instagram', 'WhatsApp', 'Pubs', 'Équipe'],
         active: 0,
         plan: 'Formule',
-        planValue: 'Studio, mensuel'
+        planValue: 'Sur mesure'
       },
       sectionTitle: 'Accueil',
-      sectionSub: 'Toutes les sections, un seul écran · en direct',
+      sectionSub: 'Fait pour My Cocotte · toutes les sections au même endroit',
       kpis: [
         { k: '48 210 €', v: 'CA, 30 j', d: '+12,4 %' },
         { k: '1 284', v: 'Réservations', d: '+9,1 %' },
@@ -346,56 +364,72 @@ export const translations = {
         'En terrasse svp.',
         'C’est réservé. À 20h00.'
       ],
-      logosCaption: 'Studios, restaurants et créateurs qui construisent avec nous'
+      logosTitle: {
+        prefix: 'Studios, restaurants et ',
+        accent: 'créateurs',
+        suffix: ' qui construisent avec nous'
+      }
     },
     services: {
-      eyebrow: 'Ce qu’on fait',
-      h2a: 'Six choses qu’on met en place.',
-      h2b: 'Un système qui tourne tout seul.',
-      sub: 'Pas d’abonnement sans fin. On construit, c’est à vous, on reste pour aider.',
+      eyebrow: 'Ce qu’on construit',
+      h2a: 'Tout ce qu’il faut à votre marque,',
+      h2b: 'au même endroit',
+      sub: 'Composez à la carte. Chaque installation est sur mesure — mais rien n’est inventé de zéro. Même base solide, forme adaptée à vos besoins réels.',
       items: [
         {
-          title: 'Tableaux de bord en direct',
-          desc: 'Tous vos chiffres sur un seul écran clair. Fini la chasse aux tableurs à 2h du matin.',
+          title: 'CRM & tableaux de bord',
+          desc: 'Chiffre d’affaires, réservations, portée sociale — un seul écran qui se lit tout seul. Fini la chasse aux tableurs.',
           metric: '10×',
-          metricLabel: 'Plus vite à lire'
+          metricLabel: 'Plus vite à lire',
+          tag: 'Restaurant',
+          tagColor: '#ff9f0a'
         },
         {
-          title: 'Instagram en pilote auto',
-          desc: 'Idées, légendes et planning, écrits avec votre voix. Vous validez, on publie.',
+          title: 'Site web ou application mobile',
+          desc: 'On conçoit votre site web ou votre app mobile, ou on reprend l’existant. Branché à vos outils, pensé pour transformer les visites en clients.',
+          metric: '+32 %',
+          metricLabel: 'Taux de conversion',
+          tag: 'Entrepreneur',
+          tagColor: '#0071e3'
+        },
+        {
+          title: 'Réseaux sociaux, clé en main',
+          desc: 'Planning, écriture, visuels, publication. Instagram, TikTok, là où sont vos clients. Écrit dans votre voix.',
           metric: '+38 %',
-          metricLabel: 'Plus de portée'
+          metricLabel: 'Plus de portée',
+          tag: 'Influenceur',
+          tagColor: '#ff375f'
         },
         {
-          title: 'Assistant WhatsApp',
-          desc: 'Répond à vos clients, prend des rendez-vous, parle leur langue. Sur l’appli qu’ils utilisent déjà.',
-          metric: '24/7',
-          metricLabel: 'Jamais fermé'
+          title: 'Stratégie marketing',
+          desc: 'Digital et physique. Un plan clair sur 90 jours : quoi lancer, où dépenser, quoi mesurer, quand ajuster.',
+          metric: '90 j',
+          metricLabel: 'Feuille de route',
+          tag: 'Spa',
+          tagColor: '#af52de'
         },
         {
-          title: 'On relie vos outils',
-          desc: 'Sheets, Notion, Stripe, votre caisse. On les branche ensemble pour supprimer les copier-coller.',
-          metric: '14 h',
-          metricLabel: 'Gagnées par semaine'
-        },
-        {
-          title: 'Votre propre assistant IA',
-          desc: 'Il apprend vos prix, vos règles, votre ton. Écrit les devis, cale les appels, répond comme vous.',
-          metric: '1',
-          metricLabel: 'Fait pour vous'
-        },
-        {
-          title: 'Des pubs qui marchent',
-          desc: 'Google et Meta, testées chaque semaine. On garde ce qui marche, on coupe le reste.',
+          title: 'Pubs, gérées pour vous',
+          desc: 'Meta, Google, TikTok. Créa, tests et optimisation chaque semaine par notre équipe. On garde ce qui marche, on coupe le reste.',
           metric: '+2,7×',
-          metricLabel: 'De ventes par €'
+          metricLabel: 'Retour par €',
+          tag: 'Restaurant',
+          tagColor: '#ff9f0a'
+        },
+        {
+          title: 'Tunnels qui vendent',
+          desc: 'Du premier clic au client réservé. Conçu, branché, testé. Un vrai pipeline, pas une promesse.',
+          metric: '×3',
+          metricLabel: 'Leads qualifiés',
+          tag: 'Entrepreneur',
+          tagColor: '#0071e3'
         }
       ]
     },
     featured: {
       eyebrow: 'Un de nos outils',
-      h2a: 'Envoyez un message à',
-      h2b: 'tous vos clients d’un coup.',
+      h2a: 'On construit des automatisations pour votre business',
+      h2b: 'Laissez l’IA travailler pour vous',
       sub: 'Notre WhatsApp Broadcast envoie le même message à toute votre liste en quelques secondes. Ajoutez une balise prénom, ça reste un message perso.',
       bullets: [
         'Un QR code à scanner, c’est branché. Rien à installer.',
@@ -423,7 +457,7 @@ export const translations = {
     stats: {
       eyebrow: 'Les chiffres',
       h2a: 'Des preuves,',
-      h2b: 'pas des promesses.',
+      h2b: 'pas des promesses',
       sub: 'Chaque chiffre vient d’un vrai client qui nous paie en ce moment. Pas d’études de cas inventées. Vous voulez voir le tableau de bord en direct ? Demandez.',
       items: [
         { k: '14', suffix: ' jours', label: 'Du premier appel à votre système en route' },
@@ -478,8 +512,8 @@ export const translations = {
     },
     clients: {
       eyebrow: 'Quelques projets',
-      h2a: 'Des marques réelles.',
-      h2b: 'Des résultats réels.',
+      h2a: 'Des marques réelles,',
+      h2b: 'Des résultats réels',
       sub: 'Une courte liste des systèmes en route. Liste complète sur demande.',
       items: [
         {
@@ -538,10 +572,18 @@ export const translations = {
         }
       ]
     },
+    integrations: {
+      eyebrow: 'Intégrations',
+      h2a: 'Boostez votre',
+      h2b: 'workflow',
+      sub: 'Chaque outil que vous utilisez déjà, branché ensemble. Pubs, CRM, site, messagerie, paiements — un seul pipeline qui se parle vraiment.',
+      ctaPrimary: 'Brancher mon stack',
+      ctaSecondary: 'Ce qu’on fait'
+    },
     contact: {
       eyebrow: 'Parlons-en',
-      h2a: 'Construisons',
-      h2b: 'votre moteur.',
+      h2a: 'Réinventons',
+      h2b: 'et faisons grandir votre activité',
       sub: 'Racontez-nous votre activité. On répond sous 24 h avec un plan sur mesure et un audit gratuit d’un processus qu’on peut automatiser cette semaine.',
       emailLabel: 'Email, idéal pour les briefs',
       waLabel: 'WhatsApp, pour une question rapide',

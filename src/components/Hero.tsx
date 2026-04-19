@@ -1,261 +1,156 @@
-import { Fragment } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, TrendingUp, Check, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { useLang } from '../lang'
-
-const logos = ['My Cocotte', 'TYT', 'Rody Spa', 'Maison Vert', 'Studio Lune', 'Kaya', 'Noya Co.']
-const channels = [
-  { n: 'Instagram', p: 42, c: '#0071e3' },
-  { n: 'Walk-in', p: 28, c: '#34c759' },
-  { n: 'Uber Eats', p: 18, c: '#ff9f0a' },
-  { n: 'Referral', p: 12, c: '#af52de' }
-]
 
 export default function Hero() {
   const { t } = useLang()
   const h = t.hero
 
   return (
-    <section id="home" className="relative pt-28 md:pt-44 pb-20 md:pb-32 overflow-hidden">
-      <div className="container-xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
+    <section id="home" className="relative pt-32 md:pt-40 pb-20 md:pb-28">
+      <div className="container-xl">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
           className="eyebrow"
         >
-          {h.eyebrow}
-        </motion.div>
+          Studio Customify — Bali · Paris
+        </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-          className="font-display text-mega tracking-tightest"
+          transition={{ duration: 0.8, delay: 0.05, ease: [0.2, 0.8, 0.2, 1] }}
+          className="display-1 text-balance max-w-5xl"
         >
-          {h.h1a}<br />
-          {h.h1b}
+          Custom AI, <span className="text-sub">made for your brand.</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
-          className="mt-6 mx-auto max-w-2xl body-lg"
+          className="mt-6 body-lg max-w-2xl text-pretty"
         >
           {h.sub}
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+          className="mt-9 flex flex-wrap items-center gap-4"
         >
-          <a href="#demo" className="btn-primary">
-            {h.ctaPrimary} <ArrowRight size={16} />
+          <a
+            href="#product"
+            className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-medium hover:opacity-90 transition-opacity"
+          >
+            {h.ctaPrimary}
+            <ArrowUpRight size={15} />
           </a>
-          <a href="#services" className="btn-ghost">
-            {h.ctaSecondary} <span aria-hidden className="text-sub">›</span>
+          <a
+            href="#services"
+            className="inline-flex items-center gap-1 text-accent text-[14.5px] font-medium hover:opacity-80 transition-opacity"
+          >
+            {h.ctaSecondary}
+            <span aria-hidden>→</span>
           </a>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-sub"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
+          className="mt-16 md:mt-24"
         >
-          {h.bullets.map((b, i) => (
-            <Fragment key={b}>
-              {i > 0 && <span className="w-px h-3 bg-hair hidden md:block" />}
-              <span className="inline-flex items-center gap-1.5">
-                <Check size={13} className="text-accent" /> {b}
-              </span>
-            </Fragment>
-          ))}
+          <HeroVisual />
         </motion.div>
       </div>
+    </section>
+  )
+}
 
-      {/* Product visual, wider, richer */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.45, ease: [0.2, 0.8, 0.2, 1] }}
-        className="relative mt-20 md:mt-28 container-xxl"
-      >
-        <a
-          href="#demo"
-          className="group relative block cursor-pointer"
-          aria-label={h.mockCta}
-        >
-          <div className="absolute -inset-16 bg-accent/10 blur-3xl rounded-full opacity-60 transition-opacity duration-500 group-hover:opacity-90" aria-hidden />
-          <div className="relative bg-bg rounded-xl3 border border-hair shadow-float overflow-hidden transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.22),0_14px_28px_-8px_rgba(0,0,0,0.1)]">
-            <div className="flex items-center gap-1.5 px-5 py-3 border-b border-hair bg-surface2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-              <div className="mx-auto text-[12px] text-sub font-mono">{h.mockTitle}</div>
+function HeroVisual() {
+  return (
+    <div className="relative w-full rounded-[28px] border border-hair bg-surface2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)]">
+      <div className="flex items-center gap-1.5 px-5 py-3 border-b border-hair bg-surface/50">
+        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
+        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
+        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
+        <span className="ml-3 text-[11px] text-sub font-medium tracking-tight">my-cocotte.customify.studio</span>
+      </div>
+
+      <div className="grid grid-cols-12 min-h-[480px]">
+        <aside className="hidden md:flex md:col-span-2 flex-col gap-1 p-5 border-r border-hair bg-surface/40">
+          <div className="text-[11px] font-semibold text-sub uppercase tracking-wider mb-3 px-2">Workspace</div>
+          {['Overview', 'Bookings', 'Campaigns', 'Messages', 'Contacts', 'Settings'].map((item, i) => (
+            <div
+              key={item}
+              className={`flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-[13px] ${
+                i === 0 ? 'bg-fg/5 text-fg font-medium' : 'text-fg2'
+              }`}
+            >
+              <span className={`w-1 h-1 rounded-full ${i === 0 ? 'bg-accent' : 'bg-sub/40'}`} />
+              {item}
             </div>
+          ))}
+        </aside>
 
-            {/* Click hint */}
-            <div className="pointer-events-none absolute top-10 md:top-14 right-3 md:right-6 z-10 inline-flex items-center gap-1.5 bg-fg text-white text-[11.5px] font-medium rounded-full px-3 py-1.5 shadow-soft opacity-0 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-              {h.mockCta} <ArrowUpRight size={12} strokeWidth={2.5} />
+        <div className="col-span-12 md:col-span-10 p-6 md:p-10">
+          <div className="flex items-start justify-between mb-6">
+            <div>
+              <div className="text-[11px] font-medium text-sub uppercase tracking-wider">Overview</div>
+              <div className="display-3 mt-1">Today</div>
             </div>
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-fg2 px-2.5 py-1 rounded-full bg-surface border border-hair">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D5C] animate-pulse" />
+              Live
+            </span>
+          </div>
 
-            <div className="grid grid-cols-12 gap-3 md:gap-4 p-3 md:p-7">
-              {/* Sidebar — hidden on mobile to save horizontal room */}
-              <aside className="hidden md:block md:col-span-3 space-y-1.5">
-                {h.sidebar.items.map((l, i) => {
-                  const active = i === h.sidebar.active
-                  return (
-                    <div
-                      key={l}
-                      className={
-                        active
-                          ? 'flex items-center gap-2 px-3 py-2 rounded-lg bg-fg text-white'
-                          : 'flex items-center gap-2 px-3 py-2 rounded-lg text-fg2'
-                      }
-                    >
-                      <span className={`w-5 h-5 rounded-md ${active ? 'bg-white/15' : 'bg-surface'}`} />
-                      <span className={`text-[13px] ${active ? 'font-medium' : ''}`}>{l}</span>
-                    </div>
-                  )
-                })}
-                <div className="mt-4 card p-3">
-                  <div className="text-[11px] text-sub">{h.sidebar.plan}</div>
-                  <div className="font-medium text-[13px] mt-0.5">{h.sidebar.planValue}</div>
-                  <div className="mt-2 h-1 bg-surface rounded-full overflow-hidden">
-                    <div className="h-full w-2/3 bg-accent rounded-full" />
-                  </div>
-                </div>
-              </aside>
-
-              {/* Main */}
-              <div className="col-span-12 md:col-span-9 space-y-3 md:space-y-4">
-                <div className="flex items-baseline justify-between">
-                  <div>
-                    <h3 className="font-display text-[18px] md:text-[24px] font-semibold tracking-tight leading-none">{h.sectionTitle}</h3>
-                    <div className="mt-1 text-[11px] text-sub">{h.sectionSub}</div>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-[11px] text-accent font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> live
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3">
-                  {h.kpis.map((s) => (
-                    <div key={s.v} className="card p-3 md:p-4">
-                      <div className="text-[11px] text-sub tracking-wide leading-tight">{s.v}</div>
-                      <div className="mt-1.5 font-display text-[18px] md:text-[22px] font-semibold tracking-tight tabular-nums">{s.k}</div>
-                      <div className="mt-1 inline-flex items-center gap-1 text-[11px] text-[#1C9B4B] font-mono">
-                        <TrendingUp size={11} strokeWidth={2.5} /> {s.d}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <div className="card p-4 md:col-span-2 h-40 md:h-52 relative overflow-hidden">
-                    <div className="flex items-baseline justify-between">
-                      <div className="text-[11px] text-sub tracking-wide">{h.chartTitle}</div>
-                      <div className="text-[11px] text-sub font-mono">{h.chartNote}</div>
-                    </div>
-                    <svg viewBox="0 0 400 130" className="absolute inset-x-4 bottom-3 w-[calc(100%-2rem)] h-36" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="heroArea" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#0071e3" stopOpacity="0.28" />
-                          <stop offset="100%" stopColor="#0071e3" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M0,95 C35,88 55,65 85,58 C118,50 145,78 180,70 C215,62 240,32 275,28 C305,24 340,50 400,12 L400,130 L0,130 Z"
-                        fill="url(#heroArea)"
-                      />
-                      <path
-                        d="M0,95 C35,88 55,65 85,58 C118,50 145,78 180,70 C215,62 240,32 275,28 C305,24 340,50 400,12"
-                        fill="none" stroke="#0071e3" strokeWidth="2.2" strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-
-                  <div className="card p-4 h-40 md:h-52">
-                    <div className="text-[11px] text-sub tracking-wide">{h.channels}</div>
-                    <div className="mt-3 md:mt-4 space-y-2.5 md:space-y-3">
-                      {channels.map((r) => (
-                        <div key={r.n}>
-                          <div className="flex justify-between text-[12px] mb-1.5">
-                            <span className="text-fg2">{r.n}</span>
-                            <span className="text-sub font-mono tabular-nums">{r.p}%</span>
-                          </div>
-                          <div className="h-1.5 bg-surface rounded-full overflow-hidden">
-                            <div className="h-full rounded-full" style={{ width: r.p + '%', background: r.c }} />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <div className="card p-4 md:col-span-2">
-                    <div className="flex items-baseline justify-between mb-3">
-                      <div className="text-[11px] text-sub tracking-wide">{h.recent}</div>
-                      <div className="text-[11px] text-accent font-medium">{h.live}</div>
-                    </div>
-                    <ul className="text-[13px] divide-y divide-hair">
-                      {h.bookings.map((r, i) => (
-                        <li key={i} className="flex items-center justify-between gap-3 py-2.5">
-                          <span className="text-fg truncate">{r.n}</span>
-                          <span className="flex items-center gap-2 md:gap-3 text-sub text-[11px] md:text-[12px] font-mono shrink-0">
-                            <span className="hidden sm:inline">{r.s}</span><span>{r.t}</span>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="card p-0 overflow-hidden flex flex-col">
-                    <div className="px-4 py-3 border-b border-hair bg-surface2 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-[#25D366] text-white text-[10px] font-semibold flex items-center justify-center">W</span>
-                      <div className="text-[12px]">
-                        <div className="font-medium leading-tight">{h.whatsappAgent}</div>
-                        <div className="text-sub text-[10px]">{h.replying}</div>
-                      </div>
-                    </div>
-                    <div className="flex-1 p-3 space-y-2 text-[12px] bg-surface2">
-                      <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-bg border border-hair px-3 py-2">
-                        {h.chat[0]}
-                      </div>
-                      <div className="max-w-[85%] ml-auto rounded-2xl rounded-br-md bg-[#DCF8C6] px-3 py-2">
-                        {h.chat[1]}
-                      </div>
-                      <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-bg border border-hair px-3 py-2">
-                        {h.chat[2]}
-                      </div>
-                      <div className="max-w-[85%] ml-auto rounded-2xl rounded-br-md bg-[#DCF8C6] px-3 py-2">
-                        {h.chat[3]}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            {[
+              { k: '€48,210', l: 'Revenue' },
+              { k: '1,284', l: 'Bookings' },
+              { k: '38.6K', l: 'Reach' },
+              { k: '4.8', l: 'Rating' }
+            ].map((x) => (
+              <div key={x.l} className="rounded-2xl border border-hair bg-bg/60 p-4">
+                <div className="font-semibold text-[20px] md:text-[22px] tracking-tight tabular-nums">{x.k}</div>
+                <div className="mt-1 text-[11.5px] text-sub font-medium">{x.l}</div>
               </div>
-            </div>
-          </div>
-        </a>
-
-        {/* Logo strip */}
-        <div className="mt-14 md:mt-20">
-          <div className="text-center text-[12px] text-sub tracking-wide mb-6">
-            {h.logosCaption}
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 opacity-60">
-            {logos.map((n) => (
-              <span key={n} className="font-display text-[17px] font-medium tracking-tight">{n}</span>
             ))}
           </div>
+
+          <div className="rounded-2xl border border-hair bg-bg/60 p-4 md:p-5">
+            <div className="flex items-center justify-between mb-4">
+              <div className="text-[12px] font-medium text-fg">Weekly revenue</div>
+              <div className="text-[11px] text-sub">Last 12 weeks</div>
+            </div>
+            <svg viewBox="0 0 400 80" className="w-full h-16 text-accent">
+              <defs>
+                <linearGradient id="hero-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.22" />
+                  <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0 60 L35 52 L70 55 L105 42 L140 46 L175 30 L210 36 L245 24 L280 28 L315 18 L350 22 L400 10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M0 60 L35 52 L70 55 L105 42 L140 46 L175 30 L210 36 L245 24 L280 28 L315 18 L350 22 L400 10 L400 80 L0 80 Z"
+                fill="url(#hero-grad)"
+              />
+            </svg>
+          </div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </div>
   )
 }

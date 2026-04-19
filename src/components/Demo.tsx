@@ -157,7 +157,7 @@ export default function Demo() {
                     onClick={() => setActiveSheet(i)}
                     className={`px-4 py-1.5 rounded-full text-[13px] border transition ${
                       i === activeSheet
-                        ? 'bg-fg text-white border-fg'
+                        ? 'bg-fg text-bg border-fg'
                         : 'bg-bg text-fg2 border-hair hover:border-fg/40'
                     }`}
                   >
