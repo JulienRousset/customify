@@ -10,11 +10,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://customy.agency/#work</loc>
+    <loc>https://customy.agency/#software</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://customy.agency/#integrations</loc>
+    <loc>https://customy.agency/#automation</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://customy.agency/#testimonials</loc>
     <priority>0.7</priority>
   </url>
   <url>

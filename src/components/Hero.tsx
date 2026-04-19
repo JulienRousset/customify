@@ -34,7 +34,7 @@ export default function Hero() {
 
             <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center gap-4">
               <motion.a
-                href="#product"
+                href="#software"
                 variants={buttonHover}
                 initial="rest"
                 whileHover="hover"

@@ -1,8 +1,10 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Marquee from './components/Marquee'
 import Services from './components/Services'
-import HeroMock from './components/HeroMock'
-import Clients from './components/Clients'
+import Software from './components/Software'
+import Automation from './components/Automation'
+import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import { BackgroundGlow } from '@/components/ui/background-glow'
 
@@ -14,9 +16,11 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <Marquee />
           <Services />
-          <HeroMock />
-          <Clients />
+          <Software />
+          <Automation />
+          <Testimonials />
           <Contact />
         </main>
       </div>
