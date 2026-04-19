@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, Check, MessageCircle, Zap, Instagram, Send, MessageSquare } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
@@ -92,7 +93,6 @@ function ChatMock() {
       id: 'whatsapp',
       platform: 'WhatsApp assistant',
       icon: MessageCircle,
-      wrapperClasses: 'top-0 left-0 md:-rotate-2 z-10',
       bg: 'bg-[#111B21]',
       headerBg: 'bg-[#202C33]',
       headerText: 'text-[#E9EDEF]',
@@ -109,7 +109,6 @@ function ChatMock() {
       id: 'telegram',
       platform: 'Telegram assistant',
       icon: Send,
-      wrapperClasses: 'top-[40px] right-0 md:top-[8%] md:right-[-5%] md:rotate-3 z-20',
       bg: 'bg-[#E6EBEF]',
       headerBg: 'bg-[#0088cc]',
       headerText: 'text-white',
@@ -125,7 +124,6 @@ function ChatMock() {
       id: 'messenger',
       platform: 'Messenger assistant',
       icon: MessageSquare,
-      wrapperClasses: 'top-[160px] left-[5%] md:bottom-[12%] md:top-auto md:left-[-4%] md:-rotate-3 z-30',
       bg: 'bg-white',
       headerBg: 'bg-white border-b border-gray-100',
       headerText: 'text-black',
@@ -141,7 +139,6 @@ function ChatMock() {
       id: 'instagram',
       platform: 'Instagram assistant',
       icon: Instagram,
-      wrapperClasses: 'top-[260px] right-[5%] md:bottom-0 md:top-auto md:right-0 md:rotate-2 z-40',
       bg: 'bg-white',
       headerBg: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F56040]',
       headerText: 'text-white',
@@ -156,26 +153,50 @@ function ChatMock() {
     }
   ]
 
+  // Initialize stack with whatsapp at the front (end of array)
+  const [stack, setStack] = useState(chats.map(c => c.id).reverse())
+
+  const bringToFront = (id: string) => {
+    setStack(prev => {
+      const filtered = prev.filter(x => x !== id)
+      return [...filtered, id]
+    })
+  }
+
   return (
-    <div className="relative w-full h-[520px] md:h-[650px] mt-10 md:mt-0 perspective-[1200px]">
+    <div className="relative w-full h-[550px] md:h-[600px] mt-10 md:mt-0 perspective-[1200px]">
       <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
       
-      {chats.map((chat, idx) => {
+      {chats.map((chat) => {
         const Icon = chat.icon
+        const stackIndex = stack.indexOf(chat.id)
+        // Reverse index: 0 is front, 3 is back
+        const reverseIndex = stack.length - 1 - stackIndex
+        
+        // Calculate offsets and styles based on position in stack
+        const yOffset = reverseIndex * 30
+        const xOffset = reverseIndex * 30
+        const scale = 1 - (reverseIndex * 0.05)
+        const zIndex = stackIndex * 10
+        // Add a slight tilt to the cards behind to make them look like a messy deck
+        const rotate = reverseIndex === 0 ? 0 : (reverseIndex % 2 === 0 ? -1 : 2) * reverseIndex
+
         return (
           <motion.div
             key={chat.id}
-            initial={{ opacity: 0, scale: 0.9, y: 30, rotateX: 10 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
-            viewport={viewportOnce}
-            transition={{ duration: 0.8, delay: idx * 0.15, ease: easeApple }}
-            className={`absolute ${chat.wrapperClasses}`}
+            onClick={() => bringToFront(chat.id)}
+            initial={false}
+            animate={{ 
+              x: xOffset, 
+              y: yOffset, 
+              scale: scale, 
+              rotate: rotate,
+              zIndex: zIndex 
+            }}
+            transition={{ type: 'spring', stiffness: 260, damping: 25 }}
+            className="absolute top-[40px] md:top-[60px] left-[20px] md:left-[80px] cursor-pointer origin-top-left"
           >
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4 + idx * 0.5, repeat: Infinity, ease: 'easeInOut' }}
-              className={`w-[240px] md:w-[270px] rounded-[20px] md:rounded-[24px] shadow-float overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2`}
-            >
+            <div className="w-[240px] md:w-[270px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
               <div className={`flex items-center gap-2.5 px-4 py-3 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
                 <Icon size={15} strokeWidth={2.5} />
                 <span className="text-[12.5px] font-semibold tracking-tight">{chat.platform}</span>
@@ -184,12 +205,8 @@ function ChatMock() {
 
               <div className={`flex-1 p-4 space-y-3 ${chat.bg} min-h-[200px] md:min-h-[220px] text-[13px] leading-snug`}>
                 {chat.messages.map((m, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={viewportOnce}
-                    transition={{ duration: 0.4, delay: 0.6 + (idx * 0.1) + (i * 0.15) }}
                     className={`flex ${m.who === 'us' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
@@ -201,24 +218,20 @@ function ChatMock() {
                     >
                       {m.msg}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
                 
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={viewportOnce}
-                  transition={{ delay: 1.5 + idx * 0.2 }}
-                  className="flex justify-start mt-2"
-                >
-                  <div className={`px-3.5 py-2.5 rounded-[16px] rounded-bl-[4px] flex items-center gap-1.5 ${chat.themBubble} opacity-70`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '300ms' }} />
+                {reverseIndex === 0 && (
+                  <div className="flex justify-start mt-2">
+                    <div className={`px-3.5 py-2.5 rounded-[16px] rounded-bl-[4px] flex items-center gap-1.5 ${chat.themBubble} opacity-70`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '300ms' }} />
+                    </div>
                   </div>
-                </motion.div>
+                )}
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )
       })}
