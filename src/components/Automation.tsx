@@ -183,7 +183,7 @@ function ChatMock() {
         
         // Calculate offsets to push background cards UP and RIGHT so headers are visible
         const yOffset = reverseIndex * (isDesktop ? -75 : -60)
-        const xOffset = reverseIndex * (isDesktop ? 45 : 15)
+        const xOffset = reverseIndex * (isDesktop ? 40 : 15)
         const scale = 1 - (reverseIndex * 0.04)
         const zIndex = stackIndex * 10
         // Add a slight tilt to the cards behind
@@ -202,9 +202,10 @@ function ChatMock() {
               zIndex: zIndex 
             }}
             transition={{ type: 'spring', stiffness: 260, damping: 25 }}
-            className="absolute top-[180px] md:top-[300px] left-[10px] md:left-[40px] cursor-pointer origin-top-left"
+            className="absolute top-[180px] md:top-[300px] left-0 cursor-pointer origin-top-left"
+            style={{ width: isDesktop ? 'calc(100% - 120px)' : 'calc(100% - 45px)' }}
           >
-            <div className="w-[300px] md:w-[480px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
+            <div className="w-full rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
               <div className={`flex items-center gap-3 px-5 py-4 md:py-5 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
                 <Icon size={18} strokeWidth={2.5} className="md:w-5 md:h-5" />
                 <span className="text-[14px] md:text-[16px] font-semibold tracking-tight">{chat.platform}</span>
