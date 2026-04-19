@@ -59,7 +59,13 @@ export const translations = {
         prefix: 'Studios, restaurants and ',
         accent: 'creators',
         suffix: ' already building with us'
-      }
+      },
+      notifications: [
+        { title: 'WhatsApp Push', desc: 'Direct notifications with >90% open rate.', icon: 'whatsapp' },
+        { title: 'More Clients', desc: 'Automated funnels that drive bookings.', icon: 'trending' },
+        { title: 'Custom Ad Funnels', desc: 'Personalized flows for higher conversion.', icon: 'funnel' },
+        { title: 'Optimized Ads', desc: 'Meta & TikTok campaigns scaled by AI.', icon: 'ads' }
+      ]
     },
     services: {
       eyebrow: 'What we build',
@@ -368,7 +374,13 @@ export const translations = {
         prefix: 'Studios, restaurants et ',
         accent: 'créateurs',
         suffix: ' qui construisent avec nous'
-      }
+      },
+      notifications: [
+        { title: 'Push WhatsApp', desc: 'Notifications directes, >90% d\'ouverture.', icon: 'whatsapp' },
+        { title: 'Plus de clients', desc: 'Des tunnels qui génèrent des réservations.', icon: 'trending' },
+        { title: 'Tunnels sur-mesure', desc: 'Des parcours personnalisés pour vos pubs.', icon: 'funnel' },
+        { title: 'Pubs optimisées', desc: 'Campagnes Facebook & TikTok gérées par IA.', icon: 'ads' }
+      ]
     },
     services: {
       eyebrow: 'Ce qu’on construit',
