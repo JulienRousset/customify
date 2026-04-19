@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Bot, Check, MessageCircle, Zap } from 'lucide-react'
+import { Bot, Check, MessageCircle, Zap, Instagram, Send, MessageSquare } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const features = [
@@ -7,13 +7,6 @@ const features = [
   { icon: Zap, title: 'Workflows that fire themselves', desc: 'New booking, new lead, new payment. Every event triggers the right action.' },
   { icon: Bot, title: 'AI tuned to your brand', desc: 'Trained on your menu, services, FAQs. It sounds like you, not like a chatbot.' },
   { icon: Check, title: 'You stay in the loop', desc: 'Daily handover. What got handled, what needs a human, what to ship next.' }
-]
-
-const messages = [
-  { who: 'them', msg: 'Hi, table for 4 tomorrow 8pm?' },
-  { who: 'us', msg: 'Yes. Inside or terrace?' },
-  { who: 'them', msg: 'Terrace please.' },
-  { who: 'us', msg: 'Booked. See you at 20:00.' }
 ]
 
 export default function Automation() {
@@ -94,78 +87,141 @@ export default function Automation() {
 }
 
 function ChatMock() {
+  const chats = [
+    {
+      id: 'whatsapp',
+      platform: 'WhatsApp assistant',
+      icon: MessageCircle,
+      wrapperClasses: 'top-0 left-0 md:-rotate-2 z-10',
+      bg: 'bg-[#111B21]',
+      headerBg: 'bg-[#202C33]',
+      headerText: 'text-[#E9EDEF]',
+      themBubble: 'bg-[#202C33] text-[#E9EDEF]',
+      usBubble: 'bg-[#005C4B] text-[#E9EDEF]',
+      messages: [
+        { who: 'them', msg: 'Hi, table for 4 tomorrow 8pm?' },
+        { who: 'us', msg: 'Yes. Inside or terrace?' },
+        { who: 'them', msg: 'Terrace please.' },
+        { who: 'us', msg: 'Booked. See you at 20:00.' }
+      ]
+    },
+    {
+      id: 'telegram',
+      platform: 'Telegram assistant',
+      icon: Send,
+      wrapperClasses: 'top-[40px] right-0 md:top-[8%] md:right-[-5%] md:rotate-3 z-20',
+      bg: 'bg-[#E6EBEF]',
+      headerBg: 'bg-[#0088cc]',
+      headerText: 'text-white',
+      themBubble: 'bg-white text-gray-800 shadow-sm',
+      usBubble: 'bg-[#EEFFDE] text-gray-800 shadow-sm',
+      messages: [
+        { who: 'them', msg: 'Send me pricing' },
+        { who: 'us', msg: 'Here’s our latest pricing 👇' },
+        { who: 'us', msg: '📄 Pricing_2026.pdf' }
+      ]
+    },
+    {
+      id: 'messenger',
+      platform: 'Messenger assistant',
+      icon: MessageSquare,
+      wrapperClasses: 'top-[160px] left-[5%] md:bottom-[12%] md:top-auto md:left-[-4%] md:-rotate-3 z-30',
+      bg: 'bg-white',
+      headerBg: 'bg-white border-b border-gray-100',
+      headerText: 'text-black',
+      themBubble: 'bg-[#E4E6EB] text-black',
+      usBubble: 'bg-[#0084FF] text-white',
+      messages: [
+        { who: 'them', msg: 'Do you offer support?' },
+        { who: 'us', msg: '24/7 support included 💬' },
+        { who: 'us', msg: 'Want to speak to a human?' }
+      ]
+    },
+    {
+      id: 'instagram',
+      platform: 'Instagram assistant',
+      icon: Instagram,
+      wrapperClasses: 'top-[260px] right-[5%] md:bottom-0 md:top-auto md:right-0 md:rotate-2 z-40',
+      bg: 'bg-white',
+      headerBg: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F56040]',
+      headerText: 'text-white',
+      themBubble: 'bg-gray-100 text-black border border-gray-100',
+      usBubble: 'bg-gradient-to-r from-[#833AB4] to-[#FD1D1D] text-white shadow-sm',
+      messages: [
+        { who: 'them', msg: 'Hey, is this still available?' },
+        { who: 'us', msg: 'Yes! Want me to reserve it?' },
+        { who: 'them', msg: 'Yes please' },
+        { who: 'us', msg: 'Done ✅' }
+      ]
+    }
+  ]
+
   return (
-    <div className="relative rounded-[24px] border border-hair bg-surface2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)]">
-      <div className="flex items-center justify-between px-5 py-3 border-b border-hair">
-        <div className="flex items-center gap-2">
-          <MessageCircle size={14} className="text-[#2E7D5C]" />
-          <span className="text-[12.5px] font-medium">WhatsApp assistant</span>
-        </div>
-        <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-sub">
-          <motion.span
-            className="w-1.5 h-1.5 rounded-full bg-[#2E7D5C]"
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          Replying
-        </span>
-      </div>
-
-      <motion.div
-        className="p-5 md:p-7 space-y-3 bg-bg/50 min-h-[280px]"
-        variants={staggerParent(0.35, 0.3)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        {messages.map((m, i) => (
+    <div className="relative w-full h-[520px] md:h-[650px] mt-10 md:mt-0 perspective-[1200px]">
+      <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
+      
+      {chats.map((chat, idx) => {
+        const Icon = chat.icon
+        return (
           <motion.div
-            key={i}
-            variants={{
-              hidden: { opacity: 0, y: 8, scale: 0.96 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: { duration: 0.4, ease: easeApple }
-              }
-            }}
-            className={`flex ${m.who === 'us' ? 'justify-end' : 'justify-start'}`}
+            key={chat.id}
+            initial={{ opacity: 0, scale: 0.9, y: 30, rotateX: 10 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+            viewport={viewportOnce}
+            transition={{ duration: 0.8, delay: idx * 0.15, ease: easeApple }}
+            className={`absolute ${chat.wrapperClasses}`}
           >
-            <div
-              className={`max-w-[80%] px-4 py-2.5 rounded-[18px] text-[14px] leading-snug ${m.who === 'us'
-                  ? 'bg-[#2E7D5C] text-white rounded-br-md'
-                  : 'bg-surface text-fg border border-hair rounded-bl-md'
-                }`}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4 + idx * 0.5, repeat: Infinity, ease: 'easeInOut' }}
+              className={`w-[240px] md:w-[270px] rounded-[20px] md:rounded-[24px] shadow-float overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2`}
             >
-              {m.msg}
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+              <div className={`flex items-center gap-2.5 px-4 py-3 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
+                <Icon size={15} strokeWidth={2.5} />
+                <span className="text-[12.5px] font-semibold tracking-tight">{chat.platform}</span>
+                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              </div>
 
-      <motion.div
-        variants={staggerParent(0.08, 1.5)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-        className="grid grid-cols-3 border-t border-hair divide-x divide-hair"
-      >
-        {[
-          { k: '2.1s', l: 'Avg reply' },
-          { k: '94%', l: 'Auto-handled' },
-          { k: '24/7', l: 'Always on' }
-        ].map((x) => (
-          <motion.div
-            key={x.l}
-            variants={staggerItem}
-            className="p-4 text-center"
-          >
-            <div className="font-semibold text-[18px] tracking-tight">{x.k}</div>
-            <div className="text-[11px] text-sub font-medium mt-0.5">{x.l}</div>
+              <div className={`flex-1 p-4 space-y-3 ${chat.bg} min-h-[200px] md:min-h-[220px] text-[13px] leading-snug`}>
+                {chat.messages.map((m, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={viewportOnce}
+                    transition={{ duration: 0.4, delay: 0.6 + (idx * 0.1) + (i * 0.15) }}
+                    className={`flex ${m.who === 'us' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[88%] px-3.5 py-2.5 rounded-[16px] ${
+                        m.who === 'us' 
+                          ? `${chat.usBubble} rounded-br-[4px]` 
+                          : `${chat.themBubble} rounded-bl-[4px]`
+                      }`}
+                    >
+                      {m.msg}
+                    </div>
+                  </motion.div>
+                ))}
+                
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={viewportOnce}
+                  transition={{ delay: 1.5 + idx * 0.2 }}
+                  className="flex justify-start mt-2"
+                >
+                  <div className={`px-3.5 py-2.5 rounded-[16px] rounded-bl-[4px] flex items-center gap-1.5 ${chat.themBubble} opacity-70`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </motion.div>
-        ))}
-      </motion.div>
+        )
+      })}
     </div>
   )
 }
