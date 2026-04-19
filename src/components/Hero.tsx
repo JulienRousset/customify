@@ -39,7 +39,7 @@ export default function Hero() {
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
-                className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-medium"
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium"
               >
                 {h.ctaPrimary}
                 <ArrowUpRight size={15} />

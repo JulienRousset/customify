@@ -13,9 +13,9 @@ const ThemeContext = createContext<ThemeContextValue | null>(null)
 const readStoredTheme = (): Theme => {
   try {
     const stored = localStorage.getItem('theme')
-    if (stored === 'light') return 'light'
+    if (stored === 'dark') return 'dark'
   } catch { /* ignore */ }
-  return 'dark'
+  return 'light'
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

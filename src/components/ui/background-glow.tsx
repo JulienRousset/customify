@@ -11,10 +11,10 @@ export function BackgroundGlow({ className }: { className?: string }) {
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            radial-gradient(ellipse 80% 70% at 50% 15%, rgba(96, 165, 250, 0.55), transparent 62%),
-            radial-gradient(ellipse 60% 55% at 12% 58%, rgba(186, 230, 253, 0.55), transparent 68%),
-            radial-gradient(ellipse 65% 60% at 88% 78%, rgba(147, 197, 253, 0.55), transparent 68%),
-            radial-gradient(ellipse 70% 45% at 50% 105%, rgba(165, 180, 252, 0.4), transparent 70%)
+            radial-gradient(ellipse 80% 70% at 50% 15%, rgba(255, 159, 10, 0.25), transparent 62%),
+            radial-gradient(ellipse 60% 55% at 12% 58%, rgba(255, 55, 95, 0.2), transparent 68%),
+            radial-gradient(ellipse 65% 60% at 88% 78%, rgba(175, 82, 222, 0.2), transparent 68%),
+            radial-gradient(ellipse 70% 45% at 50% 105%, rgba(0, 113, 227, 0.15), transparent 70%)
           `,
         }}
       />

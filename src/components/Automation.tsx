@@ -80,7 +80,7 @@ export default function Automation() {
             <div className="mt-8 text-center flex justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
               >
                 Book my own dashboard
                 <MessageCircle size={15} />

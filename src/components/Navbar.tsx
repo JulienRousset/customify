@@ -74,7 +74,7 @@ export default function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[13px] font-medium px-4 py-1.5 hover:opacity-90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 ease-out"
+            className="hidden sm:inline-flex items-center rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_4px_14px_-4px_rgba(255,55,95,0.4)] text-[13px] font-medium px-4 py-1.5 hover:opacity-90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 ease-out"
           >
             {t.nav.cta}
           </a>

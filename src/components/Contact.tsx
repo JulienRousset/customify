@@ -112,7 +112,7 @@ export default function Contact() {
                     <span className="text-[12px] text-sub">{c.form.replyNote}</span>
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_4px_14px_-4px_rgba(255,55,95,0.4)] px-6 py-3 text-[14px] font-medium hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
                     >
                       {c.form.send} <ArrowRight size={14} />
                     </button>
