@@ -34,9 +34,17 @@ export default function HeroNotifications() {
   const { t } = useLang()
   const notifications = t.hero.notifications
 
+  // Specific absolute positions to surround the 3D logo
+  const positions = [
+    'top-[5%] left-[-10%]',        // Top left
+    'top-[25%] right-[-10%]',      // Middle right
+    'bottom-[25%] left-[-5%]',     // Bottom left
+    'bottom-[0%] right-[5%]'       // Bottom right
+  ]
+
   return (
     <motion.div 
-      className="relative w-full max-w-md mx-auto lg:ml-auto"
+      className="absolute inset-0 w-full h-full pointer-events-none"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -44,34 +52,29 @@ export default function HeroNotifications() {
       {/* Ambient glow behind the notifications */}
       <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/10 to-[#ff9f0a]/10 blur-[60px] rounded-full pointer-events-none" />
       
-      <div className="relative space-y-4">
-        {notifications.map((notif, i) => {
-          // Stagger left/right slightly for a dynamic, floating look
-          const offsetClass = i % 2 === 0 ? 'mr-6 md:mr-12' : 'ml-6 md:ml-12'
-          
-          return (
-            <motion.div
-              key={i}
-              variants={item}
-              className={`
-                flex items-start gap-4 p-4 rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-2xl 
-                border border-black/5 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)]
-                ${offsetClass}
-              `}
-              whileHover={{ scale: 1.02, y: -2 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            >
-              <div className="flex-shrink-0 w-11 h-11 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center border border-black/5 dark:border-white/5 shadow-sm">
-                {icons[notif.icon]}
-              </div>
-              <div className="pt-0.5">
-                <h4 className="text-[14px] font-semibold text-fg tracking-tight">{notif.title}</h4>
-                <p className="text-[13px] text-sub leading-snug mt-0.5">{notif.desc}</p>
-              </div>
-            </motion.div>
-          )
-        })}
-      </div>
+      {notifications.map((notif, i) => {
+        return (
+          <motion.div
+            key={i}
+            variants={item}
+            className={`
+              absolute w-[260px] md:w-[280px] flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-2xl 
+              border border-black/5 dark:border-white/10 shadow-[0_15px_35px_rgb(0,0,0,0.1)] pointer-events-auto
+              ${positions[i]}
+            `}
+            whileHover={{ scale: 1.03, y: -2 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center border border-black/5 dark:border-white/5 shadow-sm">
+              {icons[notif.icon]}
+            </div>
+            <div className="pt-0.5">
+              <h4 className="text-[13px] md:text-[14px] font-semibold text-fg tracking-tight">{notif.title}</h4>
+              <p className="text-[12px] md:text-[13px] text-sub leading-snug mt-0.5">{notif.desc}</p>
+            </div>
+          </motion.div>
+        )
+      })}
     </motion.div>
   )
 }

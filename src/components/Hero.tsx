@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
 
             {/* Notifications overlay */}
-            <div className="relative w-full max-w-[500px] z-10 mt-10 lg:mt-0">
+            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none mt-10 lg:mt-0">
               <HeroNotifications />
             </div>
           </motion.div>
