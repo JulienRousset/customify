@@ -164,7 +164,7 @@ function ChatMock() {
   }
 
   return (
-    <div className="relative w-full h-[550px] md:h-[600px] mt-10 md:mt-0 perspective-[1200px]">
+    <div className="relative w-full h-[600px] md:h-[800px] mt-10 md:mt-0 perspective-[1200px]">
       <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
       
       {chats.map((chat) => {
@@ -173,13 +173,13 @@ function ChatMock() {
         // Reverse index: 0 is front, 3 is back
         const reverseIndex = stack.length - 1 - stackIndex
         
-        // Calculate offsets and styles based on position in stack
-        const yOffset = reverseIndex * 30
-        const xOffset = reverseIndex * 30
+        // Calculate offsets to push background cards UP and RIGHT so headers are visible
+        const yOffset = reverseIndex * -60
+        const xOffset = reverseIndex * 20
         const scale = 1 - (reverseIndex * 0.05)
         const zIndex = stackIndex * 10
-        // Add a slight tilt to the cards behind to make them look like a messy deck
-        const rotate = reverseIndex === 0 ? 0 : (reverseIndex % 2 === 0 ? -1 : 2) * reverseIndex
+        // Add a slight tilt to the cards behind
+        const rotate = reverseIndex === 0 ? 0 : (reverseIndex % 2 === 0 ? -1.5 : 1.5) * reverseIndex
 
         return (
           <motion.div
@@ -194,16 +194,16 @@ function ChatMock() {
               zIndex: zIndex 
             }}
             transition={{ type: 'spring', stiffness: 260, damping: 25 }}
-            className="absolute top-[40px] md:top-[60px] left-[20px] md:left-[80px] cursor-pointer origin-top-left"
+            className="absolute top-[180px] md:top-[280px] left-[10px] md:left-[40px] cursor-pointer origin-top-left"
           >
-            <div className="w-[240px] md:w-[270px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
-              <div className={`flex items-center gap-2.5 px-4 py-3 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
-                <Icon size={15} strokeWidth={2.5} />
-                <span className="text-[12.5px] font-semibold tracking-tight">{chat.platform}</span>
-                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <div className="w-[300px] md:w-[380px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
+              <div className={`flex items-center gap-3 px-5 py-4 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
+                <Icon size={18} strokeWidth={2.5} />
+                <span className="text-[14px] md:text-[15px] font-semibold tracking-tight">{chat.platform}</span>
+                <div className="ml-auto w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               </div>
 
-              <div className={`flex-1 p-4 space-y-3 ${chat.bg} min-h-[200px] md:min-h-[220px] text-[13px] leading-snug`}>
+              <div className={`flex-1 p-5 space-y-4 ${chat.bg} min-h-[260px] md:min-h-[300px] text-[14px] md:text-[15px] leading-snug`}>
                 {chat.messages.map((m, i) => (
                   <div
                     key={i}
