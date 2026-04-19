@@ -74,6 +74,15 @@ export default function HeroMock() {
             className="lg:col-span-8 order-1 lg:order-2"
           >
             <ProductMock />
+            <div className="mt-8 text-center flex justify-center">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
+              >
+                Book my own dashboard
+                <MessageCircle size={15} />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

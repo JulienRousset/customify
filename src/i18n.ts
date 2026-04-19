@@ -14,11 +14,11 @@ export const translations = {
     hero: {
       h1a: 'Your marketing,',
       h1b: 'handled from start to finish',
-      sub: 'Websites, social, ads, CRM, funnels. We design, build and run the stack that grows your brand. Every setup is custom, on top of one base we know works.',
-      ctaPrimary: 'See a live example',
-      ctaSecondary: 'What we build',
+      sub: 'We build for influencers, restaurants, and anyone with a brand who wants to grow it or optimize logistics to save time and money. Websites, social, ads, CRM, funnels. Every setup is custom.',
+      ctaPrimary: 'Step in',
+      ctaSecondary: 'Grow your brand',
       mockTitle: 'Dashboard exemple built for a restaurant in Bali',
-      mockCta: 'An example we built',
+      mockCta: 'Book my own dashboard',
       mockHeadingA: 'We build your own software to make your life',
       mockHeadingB: 'easier',
       mockSub: 'Your spreadsheet, turned into a dashboard. A custom dashboard that tracks all the data you need.',
@@ -84,10 +84,10 @@ export const translations = {
           tagColor: '#0071e3'
         },
         {
-          title: 'Social, handled',
-          desc: 'Content calendar, writing, visuals, publishing. Instagram, TikTok, wherever your audience is. Written in your voice.',
+          title: 'Social & Automation, handled',
+          desc: 'We build automation for any platform: WhatsApp, Telegram, Instagram, TikTok, Facebook, YouTube. Content calendar, writing, and automated replies.',
           metric: '+38%',
-          metricLabel: 'More reach',
+          metricLabel: 'More reach & saved time',
           tag: 'Influencer',
           tagColor: '#ff375f'
         },
@@ -323,11 +323,11 @@ export const translations = {
     hero: {
       h1a: 'Votre marketing,',
       h1b: 'pris en charge de A à Z',
-      sub: 'Sites, réseaux sociaux, pubs, CRM, tunnels. On conçoit, branche et fait tourner la machine qui fait grandir votre marque. Chaque installation est sur mesure, posée sur une base qu’on sait efficace.',
-      ctaPrimary: 'Voir un exemple en direct',
-      ctaSecondary: 'Ce qu’on fait',
+      sub: 'Pensé pour les influenceurs, les restaurants, et tous ceux qui ont une marque et veulent soit la faire grossir, soit revoir leur logistique pour gagner un maximum de temps et d\'argent. Sites, réseaux, CRM, tunnels. Sur mesure.',
+      ctaPrimary: 'Step in',
+      ctaSecondary: 'Grow your brand',
       mockTitle: 'Exemple de dashboard conçu pour un restaurant à Bali',
-      mockCta: 'Un exemple qu’on a fait',
+      mockCta: 'Book my own dashboard',
       mockHeadingA: 'On construit votre propre logiciel pour vous',
       mockHeadingB: 'simplifier la vie',
       mockSub: 'Votre tableur, transformé en tableau de bord. Un dashboard sur mesure qui suit toutes les données dont vous avez besoin.',
@@ -393,10 +393,10 @@ export const translations = {
           tagColor: '#0071e3'
         },
         {
-          title: 'Réseaux sociaux, clé en main',
-          desc: 'Planning, écriture, visuels, publication. Instagram, TikTok, là où sont vos clients. Écrit dans votre voix.',
+          title: 'Réseaux & Automatisations',
+          desc: 'On construit de l\'automatisation pour n\'importe quelle plateforme : WhatsApp, Telegram, Instagram, TikTok, Facebook, YouTube. Planning, contenu et réponses 24/7.',
           metric: '+38 %',
-          metricLabel: 'Plus de portée',
+          metricLabel: 'Portée & temps gagné',
           tag: 'Influenceur',
           tagColor: '#ff375f'
         },
