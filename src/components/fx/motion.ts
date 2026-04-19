@@ -48,4 +48,4 @@ export const buttonHover = {
   tap: { scale: 0.97, transition: { duration: 0.1 } }
 }
 
-export const viewportOnce = { once: true, margin: '-80px' }
+export const viewportOnce = { once: true, amount: 0.05 }

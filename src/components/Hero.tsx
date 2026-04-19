@@ -89,7 +89,7 @@ function HeroVisual() {
         <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
         <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
         <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
-        <span className="ml-3 text-[11px] text-sub font-medium tracking-tight">my-cocotte.customify.studio</span>
+        <span className="ml-3 text-[11px] text-sub font-medium tracking-tight">my-cocotte.customy.agency</span>
       </div>
 
       <div className="grid grid-cols-12 min-h-[480px]">
