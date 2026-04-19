@@ -100,22 +100,22 @@
   }
 
   .display-1 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
+    font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+    font-weight: 400;
     font-size: clamp(2.75rem, 7vw, 5.5rem);
     line-height: 1.05;
     letter-spacing: -0.035em;
   }
   .display-2 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
+    font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+    font-weight: 400;
     font-size: clamp(2rem, 4.5vw, 3.5rem);
     line-height: 1.08;
     letter-spacing: -0.03em;
   }
   .display-3 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
+    font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+    font-weight: 400;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     line-height: 1.15;
     letter-spacing: -0.022em;

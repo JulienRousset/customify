@@ -67,7 +67,7 @@ export default function Services() {
                     <Icon size={22} strokeWidth={2} className={style.color} />
                   </motion.div>
                   <div className="text-right">
-                    <div className="font-semibold text-[22px] tracking-tight tabular-nums">{item.metric}</div>
+                    <div className="font-semibold text-[22px] tracking-tight">{item.metric}</div>
                     <div className="text-[11px] text-sub font-medium mt-0.5">{item.metricLabel}</div>
                   </div>
                 </div>

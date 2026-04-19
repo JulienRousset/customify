@@ -80,11 +80,9 @@ export default function Software() {
 function DashboardMock() {
   return (
     <div className="relative rounded-[24px] border border-hair bg-surface2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)]">
-      <div className="flex items-center gap-1.5 px-5 py-3 border-b border-hair bg-surface/50">
-        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
-        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
-        <span className="w-2.5 h-2.5 rounded-full bg-fg/10" />
-        <span className="ml-3 text-[11px] text-sub font-medium tracking-tight">my-cocotte.customy.agency</span>
+      <div className="flex items-center gap-2 px-5 py-3 border-b border-hair bg-surface/50">
+        <LayoutDashboard size={14} className="text-sub" />
+        <span className="text-[11.5px] text-fg font-medium tracking-tight">my-cocotte.customy.agency</span>
       </div>
 
       <div className="p-6 md:p-8">
@@ -122,7 +120,7 @@ function DashboardMock() {
               transition={{ duration: 0.3, ease: easeApple }}
               className="rounded-2xl border border-hair bg-bg/60 p-4"
             >
-              <div className="font-semibold text-[20px] tracking-tight tabular-nums">{x.k}</div>
+              <div className="font-semibold text-[20px] tracking-tight">{x.k}</div>
               <div className="mt-1 text-[11.5px] text-sub font-medium">{x.l}</div>
               <div className="mt-2 text-[10.5px] text-fg2">{x.d}</div>
             </motion.div>
@@ -171,7 +169,7 @@ function DashboardMock() {
             <div className="text-[11px] font-medium text-sub uppercase tracking-wider mb-2">Top source</div>
             <div className="flex items-center justify-between">
               <span className="text-[14px] font-medium">Instagram</span>
-              <span className="text-[12px] text-fg2 tabular-nums">38%</span>
+              <span className="text-[12px] text-fg2">38%</span>
             </div>
           </div>
           <div className="rounded-2xl border border-hair bg-bg/60 p-4">

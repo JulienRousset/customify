@@ -56,7 +56,7 @@ export default function Testimonials() {
                   <div className="text-[12px] text-sub mt-0.5">{item.kind}</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-semibold text-[22px] tracking-tight tabular-nums">{item.result}</div>
+                  <div className="font-semibold text-[22px] tracking-tight">{item.result}</div>
                   <div className="text-[10.5px] text-sub font-medium mt-0.5">{item.metric}</div>
                 </div>
               </figcaption>

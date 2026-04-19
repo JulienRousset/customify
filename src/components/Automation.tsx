@@ -161,7 +161,7 @@ function ChatMock() {
             variants={staggerItem}
             className="p-4 text-center"
           >
-            <div className="font-semibold text-[18px] tracking-tight tabular-nums">{x.k}</div>
+            <div className="font-semibold text-[18px] tracking-tight">{x.k}</div>
             <div className="text-[11px] text-sub font-medium mt-0.5">{x.l}</div>
           </motion.div>
         ))}
