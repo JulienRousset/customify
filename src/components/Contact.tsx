@@ -13,7 +13,7 @@ export default function Contact() {
     e.preventDefault()
     const body = encodeURIComponent(c.mailBody(form.name, form.business, form.message, form.email))
     const subject = encodeURIComponent(c.mailSubject(form.business || form.name))
-    window.location.href = `mailto:hello@customify.studio?subject=${subject}&body=${body}`
+    window.location.href = `mailto:hello@customy.agency?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -32,9 +32,9 @@ export default function Contact() {
               <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
 
               <div className="mt-9 space-y-1 text-[14.5px]">
-                <a href="mailto:hello@customify.studio" className="block py-3 border-b border-hair hover:text-accent transition-colors">
+                <a href="mailto:hello@customy.agency" className="block py-3 border-b border-hair hover:text-accent transition-colors">
                   <span className="text-sub text-[12px] block mb-0.5">{c.emailLabel}</span>
-                  hello@customify.studio
+                  hello@customy.agency
                 </a>
                 <a href="https://wa.me/" className="block py-3 border-b border-hair hover:text-accent transition-colors">
                   <span className="text-sub text-[12px] block mb-0.5">{c.waLabel}</span>
@@ -148,7 +148,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerLocation} · {c.footerRemote}</div>
-            <div>hello@customify.studio</div>
+            <div>hello@customy.agency</div>
           </div>
         </div>
       </footer>
