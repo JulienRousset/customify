@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, Check, MessageCircle, Zap, Instagram, Send, MessageSquare } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
@@ -155,6 +155,14 @@ function ChatMock() {
 
   // Initialize stack with whatsapp at the front (end of array)
   const [stack, setStack] = useState(chats.map(c => c.id).reverse())
+  const [isDesktop, setIsDesktop] = useState(true)
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768)
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const bringToFront = (id: string) => {
     setStack(prev => {
@@ -164,7 +172,7 @@ function ChatMock() {
   }
 
   return (
-    <div className="relative w-full h-[600px] md:h-[800px] mt-10 md:mt-0 perspective-[1200px]">
+    <div className="relative w-full h-[600px] md:h-[880px] mt-10 md:mt-0 perspective-[1200px]">
       <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
       
       {chats.map((chat) => {
@@ -174,9 +182,9 @@ function ChatMock() {
         const reverseIndex = stack.length - 1 - stackIndex
         
         // Calculate offsets to push background cards UP and RIGHT so headers are visible
-        const yOffset = reverseIndex * -60
-        const xOffset = reverseIndex * 20
-        const scale = 1 - (reverseIndex * 0.05)
+        const yOffset = reverseIndex * (isDesktop ? -75 : -60)
+        const xOffset = reverseIndex * (isDesktop ? 45 : 15)
+        const scale = 1 - (reverseIndex * 0.04)
         const zIndex = stackIndex * 10
         // Add a slight tilt to the cards behind
         const rotate = reverseIndex === 0 ? 0 : (reverseIndex % 2 === 0 ? -1.5 : 1.5) * reverseIndex
@@ -194,16 +202,16 @@ function ChatMock() {
               zIndex: zIndex 
             }}
             transition={{ type: 'spring', stiffness: 260, damping: 25 }}
-            className="absolute top-[180px] md:top-[280px] left-[10px] md:left-[40px] cursor-pointer origin-top-left"
+            className="absolute top-[180px] md:top-[300px] left-[10px] md:left-[40px] cursor-pointer origin-top-left"
           >
-            <div className="w-[300px] md:w-[380px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
-              <div className={`flex items-center gap-3 px-5 py-4 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
-                <Icon size={18} strokeWidth={2.5} />
-                <span className="text-[14px] md:text-[15px] font-semibold tracking-tight">{chat.platform}</span>
+            <div className="w-[300px] md:w-[480px] rounded-[20px] md:rounded-[24px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-hair flex flex-col bg-opacity-100 backdrop-blur-xl bg-surface2 transition-shadow hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.2)]">
+              <div className={`flex items-center gap-3 px-5 py-4 md:py-5 border-b border-hair/5 ${chat.headerBg} ${chat.headerText}`}>
+                <Icon size={18} strokeWidth={2.5} className="md:w-5 md:h-5" />
+                <span className="text-[14px] md:text-[16px] font-semibold tracking-tight">{chat.platform}</span>
                 <div className="ml-auto w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               </div>
 
-              <div className={`flex-1 p-5 space-y-4 ${chat.bg} min-h-[260px] md:min-h-[300px] text-[14px] md:text-[15px] leading-snug`}>
+              <div className={`flex-1 p-5 md:p-7 space-y-4 md:space-y-5 ${chat.bg} min-h-[260px] md:min-h-[380px] text-[14px] md:text-[16px] leading-snug`}>
                 {chat.messages.map((m, i) => (
                   <div
                     key={i}
