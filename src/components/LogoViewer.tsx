@@ -46,7 +46,7 @@ export default function LogoViewer({
   return (
     <model-viewer
       src={src}
-      alt="Customify 3D logo"
+      alt="Customy 3D logo"
       auto-rotate=""
       auto-rotate-delay="0"
       rotation-per-second={autoRotateSpeed}

@@ -35,7 +35,7 @@ export default function Navbar() {
             aria-hidden
             className="h-6 w-6 md:h-7 md:w-7 object-contain dark:invert"
           />
-          Customify
+          Customy
         </a>
 
         <div className="hidden md:flex items-center gap-7">

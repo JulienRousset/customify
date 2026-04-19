@@ -135,7 +135,7 @@ export default function Contact() {
                   aria-hidden
                   className="h-9 w-9 md:h-10 md:w-10 object-contain dark:invert"
                 />
-                Customify
+                Customy
               </div>
               <div className="mt-2 text-[13px] text-sub">Build · ship · operate</div>
             </div>
@@ -147,7 +147,7 @@ export default function Contact() {
             </nav>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
-            <div>© {new Date().getFullYear()} Customify Studio · {c.footerLocation} · {c.footerRemote}</div>
+            <div>© {new Date().getFullYear()} Customy Studio · {c.footerLocation} · {c.footerRemote}</div>
             <div>hello@customify.studio</div>
           </div>
         </div>

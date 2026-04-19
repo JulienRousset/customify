@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
             <motion.p variants={staggerItem} className="eyebrow">
-              Studio Customify · Bali and Paris
+              Studio Customy · Bali and Paris
             </motion.p>
 
             <motion.h1 variants={staggerItem} className="display-1 text-balance max-w-5xl">

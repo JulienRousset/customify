@@ -161,7 +161,7 @@ export const translations = {
       eyebrow: 'Try it now',
       h2a: 'Your spreadsheet,',
       h2b: 'turned into a dashboard.',
-      sub: 'Drop any .xlsx or .csv. We build a live dashboard right in your browser. Think of it as a taste of the Revenue section of your Customify platform, built from your own data.',
+      sub: 'Drop any .xlsx or .csv. We build a live dashboard right in your browser. Think of it as a taste of the Revenue section of your Customy platform, built from your own data.',
       dropTitle: 'Drop your spreadsheet here.',
       dropSub: 'Works with .xlsx, .xls, .csv, .ods. Everything runs in your browser.',
       choose: 'Choose file',
@@ -297,7 +297,7 @@ export const translations = {
       sentBody: 'We opened an email in your mail app. Hit send and we reply within 24 hours.',
       mailSubject: (name: string) => `New project from ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
-        `Hi Customify,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
+        `Hi Customy,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
       footerLocation: 'All of Bali island',
       footerRemote: 'Remote worldwide',
       footerNav: {
@@ -470,7 +470,7 @@ export const translations = {
       eyebrow: 'À essayer',
       h2a: 'Votre tableur,',
       h2b: 'transformé en dashboard.',
-      sub: 'Déposez un .xlsx ou .csv. On construit un tableau de bord dans votre navigateur. C’est un aperçu de la section Chiffre d’affaires de votre plateforme Customify, à partir de vos propres données.',
+      sub: 'Déposez un .xlsx ou .csv. On construit un tableau de bord dans votre navigateur. C’est un aperçu de la section Chiffre d’affaires de votre plateforme Customy, à partir de vos propres données.',
       dropTitle: 'Déposez votre fichier ici.',
       dropSub: 'Accepte .xlsx, .xls, .csv, .ods. Tout se passe dans votre navigateur.',
       choose: 'Choisir un fichier',
@@ -606,7 +606,7 @@ export const translations = {
       sentBody: 'On a ouvert un email dans votre boîte. Cliquez envoyer, on répond sous 24 h.',
       mailSubject: (name: string) => `Nouveau projet de ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
-        `Bonjour Customify,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,
+        `Bonjour Customy,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,
       footerLocation: 'Toute l’île de Bali',
       footerRemote: 'À distance, partout',
       footerNav: {
