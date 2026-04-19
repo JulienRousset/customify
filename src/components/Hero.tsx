@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { useLang } from '../lang'
 import { buttonHover, easeApple, staggerItem, staggerParent } from './fx/motion'
 import HeroNotifications from './HeroNotifications'
+import LogoViewer from './LogoViewer'
 
 const heroContainer = staggerParent(0.09, 0.1)
 
@@ -58,9 +59,17 @@ export default function Hero() {
 
           <motion.div
             variants={staggerItem}
-            className="hidden lg:flex justify-center lg:justify-end w-full pl-10"
+            className="hidden lg:flex relative justify-center lg:justify-end w-full pl-10 min-h-[460px] items-center"
           >
-            <div className="w-full max-w-[500px]">
+            {/* Logo Viewer in background */}
+            <div className="absolute inset-0 flex items-center justify-center -translate-x-12 opacity-80 pointer-events-none">
+              <div className="w-[380px] h-[380px] xl:w-[460px] xl:h-[460px] 2xl:w-[540px] 2xl:h-[540px]">
+                <LogoViewer />
+              </div>
+            </div>
+
+            {/* Notifications overlay */}
+            <div className="relative w-full max-w-[500px] z-10 mt-10 lg:mt-0">
               <HeroNotifications />
             </div>
           </motion.div>
