@@ -10,6 +10,8 @@
     --color-fg: 29 29 31;
     --color-fg2: 66 66 69;
     --color-sub: 110 110 115;
+    --color-accent: 25 25 112;
+    --color-accent-dark: 15 15 85;
     --color-hair: rgba(0, 0, 0, 0.08);
     --color-hair2: rgba(0, 0, 0, 0.14);
     --scrollbar-thumb: rgba(0, 0, 0, 0.14);
@@ -21,8 +23,10 @@
     --color-surface: 22 22 24;
     --color-surface2: 29 29 31;
     --color-fg: 245 245 247;
-    --color-fg2: 210 210 215;
-    --color-sub: 134 134 139;
+    --color-fg2: 220 220 225;
+    --color-sub: 160 160 168;
+    --color-accent: 255 255 255;
+    --color-accent-dark: 235 235 240;
     --color-hair: rgba(255, 255, 255, 0.1);
     --color-hair2: rgba(255, 255, 255, 0.18);
     --scrollbar-thumb: rgba(255, 255, 255, 0.16);
@@ -44,16 +48,15 @@
     transition: background-color 0.5s ease, color 0.5s ease;
   }
 
-  ::selection { background: rgba(25, 25, 112, 0.18); color: rgb(var(--color-fg)); }
+  ::selection { background: rgb(var(--color-accent) / 0.22); color: rgb(var(--color-fg)); }
 
   h1, h2, h3, h4 { @apply font-display; letter-spacing: -0.03em; font-weight: 600; }
 
   :focus-visible {
-    outline: 2px solid rgb(25 25 112);
+    outline: 2px solid rgb(var(--color-accent));
     outline-offset: 3px;
     border-radius: 4px;
   }
-  .dark :focus-visible { outline-color: rgb(245 245 247); }
 
   .skip-link {
     position: fixed;
@@ -93,7 +96,7 @@
   .btn-link-arrow { transition: transform 0.3s ease; }
 
   .eyebrow {
-    @apply inline-block text-[13px] font-medium text-accent mb-3;
+    @apply inline-block text-[13px] font-semibold text-fg mb-3;
   }
 
   .display-1 {

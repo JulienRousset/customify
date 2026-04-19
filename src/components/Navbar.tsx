@@ -29,7 +29,12 @@ export default function Navbar() {
     >
       <div className="container-xl flex items-center justify-between h-14 md:h-16">
         <a href="#home" className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
+          <img
+            src="/customy_logo_tr.png"
+            alt=""
+            aria-hidden
+            className="h-6 w-6 md:h-7 md:w-7 object-contain dark:invert"
+          />
           Customify
         </a>
 
@@ -38,9 +43,10 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[13px] font-medium text-fg2 hover:text-fg transition-colors"
+              className="relative text-[13px] font-medium text-fg2 hover:text-fg transition-colors group"
             >
               {l.label}
+              <span className="absolute left-0 -bottom-1 h-px w-full bg-fg origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
             </a>
           ))}
         </div>
@@ -68,7 +74,7 @@ export default function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[13px] font-medium px-4 py-1.5 hover:opacity-90 transition-opacity"
+            className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[13px] font-medium px-4 py-1.5 hover:opacity-90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 ease-out"
           >
             {t.nav.cta}
           </a>

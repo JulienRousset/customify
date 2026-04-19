@@ -128,8 +128,13 @@ export default function Contact() {
         <div className="container-xl py-14">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-hair">
             <div>
-              <div className="font-display font-semibold text-[28px] md:text-[32px] tracking-tight flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+              <div className="font-display font-semibold text-[28px] md:text-[32px] tracking-tight flex items-center gap-3">
+                <img
+                  src="/customy_logo_tr.png"
+                  alt=""
+                  aria-hidden
+                  className="h-9 w-9 md:h-10 md:w-10 object-contain dark:invert"
+                />
                 Customify
               </div>
               <div className="mt-2 text-[13px] text-sub">Build · ship · operate</div>
@@ -142,7 +147,7 @@ export default function Contact() {
             </nav>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
-            <div>© {new Date().getFullYear()} Customify Studio — {c.footerLocation} · {c.footerRemote}</div>
+            <div>© {new Date().getFullYear()} Customify Studio · {c.footerLocation} · {c.footerRemote}</div>
             <div>hello@customify.studio</div>
           </div>
         </div>

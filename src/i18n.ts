@@ -14,7 +14,7 @@ export const translations = {
     hero: {
       h1a: 'Your marketing,',
       h1b: 'handled from start to finish',
-      sub: 'Websites, social, ads, CRM, funnels. We design, build and run the stack that grows your brand. Every setup is custom — built on one simple base we know works.',
+      sub: 'Websites, social, ads, CRM, funnels. We design, build and run the stack that grows your brand. Every setup is custom, on top of one base we know works.',
       ctaPrimary: 'See a live example',
       ctaSecondary: 'What we build',
       mockTitle: 'Dashboard exemple built for a restaurant in Bali',
@@ -65,11 +65,11 @@ export const translations = {
       eyebrow: 'What we build',
       h2a: 'Everything your brand needs,',
       h2b: 'in one simple place',
-      sub: 'Mix and match. Every setup is custom-tuned to your business — but nothing is built from scratch. Same reliable base, shaped to what you actually need.',
+      sub: 'Mix and match. Every setup is tuned to your business, but nothing is built from scratch. Same reliable base, shaped to what you actually need.',
       items: [
         {
           title: 'CRM & live dashboards',
-          desc: 'Revenue, bookings, social reach — one screen that reads itself. No more hunting through spreadsheets.',
+          desc: 'Revenue, bookings, social reach. One screen that reads itself. No more hunting through spreadsheets.',
           metric: '10×',
           metricLabel: 'Faster to read',
           tag: 'Restaurant',
@@ -267,7 +267,7 @@ export const translations = {
       eyebrow: 'Integrations',
       h2a: 'Supercharge your',
       h2b: 'workflow',
-      sub: 'Every tool you already use, wired together. Ads, CRM, site, messaging, payments — one clean pipeline that actually talks to itself.',
+      sub: 'Every tool you already use, wired together. Ads, CRM, site, messaging, payments. One clean pipeline that actually talks to itself.',
       ctaPrimary: 'Wire up my stack',
       ctaSecondary: 'What we build'
     },
@@ -323,7 +323,7 @@ export const translations = {
     hero: {
       h1a: 'Votre marketing,',
       h1b: 'pris en charge de A à Z',
-      sub: 'Sites, réseaux sociaux, pubs, CRM, tunnels. On conçoit, branche et fait tourner la machine qui fait grandir votre marque. Chaque installation est sur mesure, sur une base solide qu’on sait efficace.',
+      sub: 'Sites, réseaux sociaux, pubs, CRM, tunnels. On conçoit, branche et fait tourner la machine qui fait grandir votre marque. Chaque installation est sur mesure, posée sur une base qu’on sait efficace.',
       ctaPrimary: 'Voir un exemple en direct',
       ctaSecondary: 'Ce qu’on fait',
       mockTitle: 'Exemple de dashboard conçu pour un restaurant à Bali',
@@ -374,11 +374,11 @@ export const translations = {
       eyebrow: 'Ce qu’on construit',
       h2a: 'Tout ce qu’il faut à votre marque,',
       h2b: 'au même endroit',
-      sub: 'Composez à la carte. Chaque installation est sur mesure — mais rien n’est inventé de zéro. Même base solide, forme adaptée à vos besoins réels.',
+      sub: 'Composez à la carte. Chaque installation est sur mesure, mais rien n’est inventé de zéro. Même base solide, forme adaptée à vos besoins réels.',
       items: [
         {
           title: 'CRM & tableaux de bord',
-          desc: 'Chiffre d’affaires, réservations, portée sociale — un seul écran qui se lit tout seul. Fini la chasse aux tableurs.',
+          desc: 'Chiffre d’affaires, réservations, portée sociale. Un seul écran qui se lit tout seul. Fini la chasse aux tableurs.',
           metric: '10×',
           metricLabel: 'Plus vite à lire',
           tag: 'Restaurant',
@@ -576,7 +576,7 @@ export const translations = {
       eyebrow: 'Intégrations',
       h2a: 'Boostez votre',
       h2b: 'workflow',
-      sub: 'Chaque outil que vous utilisez déjà, branché ensemble. Pubs, CRM, site, messagerie, paiements — un seul pipeline qui se parle vraiment.',
+      sub: 'Chaque outil que vous utilisez déjà, branché ensemble. Pubs, CRM, site, messagerie, paiements. Un seul pipeline qui se parle vraiment.',
       ctaPrimary: 'Brancher mon stack',
       ctaSecondary: 'Ce qu’on fait'
     },
