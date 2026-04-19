@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
-import { LayoutDashboard, Globe, Megaphone, Sparkles, LineChart, Workflow } from 'lucide-react'
+import { LayoutDashboard, Globe, Megaphone, Sparkles, GitMerge, MessageCircle } from 'lucide-react'
 import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const visualStyles = [
-  { icon: LayoutDashboard, bg: 'bg-[#ff9f0a]/15', color: 'text-[#ff9f0a]', hex: '#ff9f0a' },
-  { icon: Globe, bg: 'bg-[#0071e3]/15', color: 'text-[#0071e3]', hex: '#0071e3' },
-  { icon: Megaphone, bg: 'bg-[#ff375f]/15', color: 'text-[#ff375f]', hex: '#ff375f' },
-  { icon: Sparkles, bg: 'bg-[#af52de]/15', color: 'text-[#af52de]', hex: '#af52de' },
-  { icon: LineChart, bg: 'bg-[#34c759]/15', color: 'text-[#34c759]', hex: '#34c759' },
-  { icon: Workflow, bg: 'bg-[#ffcc00]/15', color: 'text-[#ffcc00]', hex: '#ffcc00' },
+  { icon: LayoutDashboard, gradient: 'from-[#ff9f0a] to-[#ff375f]', color: 'text-[#ff9f0a]', glow: 'bg-[#ff9f0a]' },
+  { icon: Globe, gradient: 'from-[#0071e3] to-[#40a0ff]', color: 'text-[#0071e3]', glow: 'bg-[#0071e3]' },
+  { icon: MessageCircle, gradient: 'from-[#ff375f] to-[#af52de]', color: 'text-[#ff375f]', glow: 'bg-[#ff375f]' },
+  { icon: Sparkles, gradient: 'from-[#af52de] to-[#0071e3]', color: 'text-[#af52de]', glow: 'bg-[#af52de]' },
+  { icon: Megaphone, gradient: 'from-[#34c759] to-[#34e89e]', color: 'text-[#34c759]', glow: 'bg-[#34c759]' },
+  { icon: GitMerge, gradient: 'from-[#ffcc00] to-[#ff9f0a]', color: 'text-[#ffcc00]', glow: 'bg-[#ffcc00]' },
 ]
 
 export default function Services() {
@@ -40,42 +40,62 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-hair rounded-[28px] overflow-hidden border border-hair"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {s.items.map((item, i) => {
             const style = visualStyles[i % visualStyles.length]
             const Icon = style.icon
+            
+            // Bento grid spanning logic
+            let spanClass = 'lg:col-span-1'
+            if (i === 0) spanClass = 'md:col-span-2 lg:col-span-2' // CRM takes 2 cols
+            else if (i === 5) spanClass = 'md:col-span-2 lg:col-span-3' // Last item takes full row
+            else if (i === 3 || i === 4) spanClass = 'lg:col-span-1' // Regular
+
             return (
               <motion.article
                 key={item.title}
                 variants={staggerItem}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.35, ease: easeApple }}
-                className="group relative bg-bg p-8 md:p-10 min-h-[280px] flex flex-col overflow-hidden"
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ duration: 0.4, ease: easeApple }}
+                className={`
+                  group relative bg-surface2/60 backdrop-blur-xl rounded-[32px] p-8 md:p-10 
+                  border border-hair/80 flex flex-col overflow-hidden shadow-sm 
+                  hover:shadow-2xl transition-all duration-500
+                  ${spanClass}
+                `}
               >
-                <motion.span
-                  aria-hidden
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ backgroundImage: `radial-gradient(circle at top right, ${style.hex}15, transparent)` }}
-                />
-                <div className="relative flex items-start justify-between mb-8">
+                {/* Abstract Ambient Glow */}
+                <div className={`absolute -top-32 -right-32 w-96 h-96 opacity-10 group-hover:opacity-30 transition-opacity duration-700 blur-[100px] pointer-events-none rounded-full ${style.glow}`} />
+                
+                {/* Giant Background Icon */}
+                <div className="absolute -right-8 -bottom-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none rotate-[-15deg] group-hover:rotate-0 group-hover:scale-110 transform-gpu">
+                  <Icon size={280} className={style.color} />
+                </div>
+
+                <div className="relative flex flex-col md:flex-row md:items-start justify-between gap-6 mb-12">
                   <motion.div
-                    whileHover={{ rotate: -6, scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${style.bg}`}
+                    whileHover={{ rotate: -10, scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${style.gradient} shadow-lg`}
                   >
-                    <Icon size={22} strokeWidth={2} className={style.color} />
+                    <Icon size={30} strokeWidth={2.5} className="text-white" />
                   </motion.div>
-                  <div className="text-right">
-                    <div className="font-semibold text-[22px] tracking-tight">{item.metric}</div>
-                    <div className="text-[11px] text-sub font-medium mt-0.5">{item.metricLabel}</div>
+                  
+                  <div className="text-left md:text-right bg-white/50 dark:bg-black/20 backdrop-blur-md px-4 py-2 rounded-xl border border-hair">
+                    <div className="font-bold text-[24px] tracking-tight text-fg">{item.metric}</div>
+                    <div className="text-[12px] text-sub font-medium mt-0.5 uppercase tracking-wide">{item.metricLabel}</div>
                   </div>
                 </div>
 
-                <h3 className="relative font-display font-semibold text-[20px] md:text-[22px] tracking-tight mb-2.5">
-                  {item.title}
-                </h3>
-                <p className="relative text-[14.5px] text-fg2 leading-[1.55] text-pretty">{item.desc}</p>
+                <div className="relative mt-auto">
+                  <h3 className="font-display font-semibold text-[24px] md:text-[28px] tracking-tight mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-[16px] text-fg2 leading-relaxed text-pretty max-w-xl">
+                    {item.desc}
+                  </p>
+                </div>
               </motion.article>
             )
           })}
