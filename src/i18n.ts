@@ -235,13 +235,22 @@ export const translations = {
           stack: ['AI assistant', 'Content calendar', 'Analytics']
         },
         {
-          name: 'Rody Spa',
-          kind: 'Wellness, Seminyak',
+          name: 'Inka Spa Bali',
+          kind: 'Wellness, Canggu',
           result: '24/7',
           metric: 'Lead capture',
           quote: 'My phone rings less. My calendar fills more.',
           desc: 'WhatsApp assistant that qualifies leads, answers in three languages, confirms bookings.',
           stack: ['WhatsApp', 'Calendar', 'CRM']
+        },
+        {
+          name: 'Temple Spa Bali',
+          kind: 'Spa, Seminyak',
+          result: '+38%',
+          metric: 'Returning guests',
+          quote: 'The follow-up happens without me. Guests come back.',
+          desc: 'Automated post-visit flow. Thank-you notes, review asks, memberships, rebooking prompts.',
+          stack: ['Automation', 'Email', 'Reviews']
         },
         {
           name: 'Maison Vert',
@@ -553,13 +562,22 @@ export const translations = {
           stack: ['Assistant IA', 'Planning', 'Analytics']
         },
         {
-          name: 'Rody Spa',
-          kind: 'Bien-être, Seminyak',
+          name: 'Inka Spa Bali',
+          kind: 'Bien-être, Canggu',
           result: '24/7',
           metric: 'Prise de contacts',
           quote: 'Mon téléphone sonne moins. Mon agenda se remplit plus.',
           desc: 'Assistant WhatsApp qui qualifie les pistes, répond en trois langues, confirme les RDV.',
           stack: ['WhatsApp', 'Agenda', 'CRM']
+        },
+        {
+          name: 'Temple Spa Bali',
+          kind: 'Spa, Seminyak',
+          result: '+38 %',
+          metric: 'Clients qui reviennent',
+          quote: 'Le suivi se fait tout seul. Les clients reviennent.',
+          desc: 'Parcours post-visite automatisé. Remerciements, demandes d’avis, abonnements, relances.',
+          stack: ['Automatisation', 'Email', 'Avis']
         },
         {
           name: 'Maison Vert',

@@ -3,23 +3,25 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Check, Instagram, Facebook } from 'lucide-react'
 import { useLang } from '../lang'
 
+const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+
 const poweredBy = [
-  { name: 'Instagram', slug: 'instagram' },
-  { name: 'TikTok', slug: 'tiktok' },
-  { name: 'YouTube', slug: 'youtube' },
-  { name: 'Facebook', slug: 'facebook' },
-  { name: 'Meta Ads', slug: 'meta' },
-  { name: 'Telegram', slug: 'telegram' },
-  { name: 'Discord', slug: 'discord' },
-  { name: 'Claude', slug: 'anthropic' },
-  { name: 'Gemini', slug: 'googlegemini' },
-  { name: 'Notion', slug: 'notion' },
-  { name: 'Figma', slug: 'figma' },
-  { name: 'Photoshop', slug: 'adobephotoshop' },
-  { name: 'After Effects', slug: 'adobeaftereffects' },
-  { name: 'Metricool', slug: 'metricool' },
-  { name: 'Beacons', slug: 'beacons' },
-  { name: 'Skool', slug: 'skool' }
+  { name: 'Instagram', src: favicon('instagram.com') },
+  { name: 'TikTok', src: favicon('tiktok.com') },
+  { name: 'YouTube', src: favicon('youtube.com') },
+  { name: 'Facebook', src: favicon('facebook.com') },
+  { name: 'Meta Ads', src: favicon('business.facebook.com') },
+  { name: 'Telegram', src: favicon('telegram.org') },
+  { name: 'Discord', src: favicon('discord.com') },
+  { name: 'Claude', src: favicon('claude.ai') },
+  { name: 'Gemini', src: favicon('gemini.google.com') },
+  { name: 'Notion', src: favicon('notion.so') },
+  { name: 'Figma', src: favicon('figma.com') },
+  { name: 'Photoshop', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/240px-Adobe_Photoshop_CC_icon.svg.png' },
+  { name: 'After Effects', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Adobe_After_Effects_CC_icon.svg/240px-Adobe_After_Effects_CC_icon.svg.png' },
+  { name: 'Metricool', src: favicon('metricool.com') },
+  { name: 'Beacons', src: favicon('beacons.ai') },
+  { name: 'Skool', src: favicon('skool.com') }
 ]
 
 export default function Contact() {
@@ -52,19 +54,38 @@ export default function Contact() {
 
               <div className="mt-10">
                 <div className="eyebrow text-sub">Powered by</div>
-                <div className="mt-4 grid grid-cols-4 gap-2.5">
-                  {poweredBy.map((b) => (
-                    <div
-                      key={b.slug}
-                      className="flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-xl bg-surface2/60 border border-hair hover:border-fg/20 hover:-translate-y-0.5 transition-all"
-                    >
-                      <img
-                        src={`https://cdn.simpleicons.org/${b.slug}`}
-                        alt={b.name}
-                        className="w-6 h-6 object-contain"
-                        loading="lazy"
-                      />
-                      <span className="text-[10.5px] text-sub font-medium text-center leading-tight">{b.name}</span>
+                <div
+                  className="mt-4 space-y-2.5 overflow-hidden"
+                  style={{
+                    maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)'
+                  }}
+                >
+                  {[
+                    { items: poweredBy.slice(0, 8), dir: 'left' as const, duration: 32 },
+                    { items: poweredBy.slice(8), dir: 'right' as const, duration: 36 }
+                  ].map((row, idx) => (
+                    <div key={idx} className="relative flex overflow-hidden">
+                      <motion.div
+                        className="flex gap-2.5 shrink-0 pr-2.5"
+                        animate={{ x: row.dir === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
+                        transition={{ duration: row.duration, repeat: Infinity, ease: 'linear' }}
+                      >
+                        {[...row.items, ...row.items, ...row.items, ...row.items].map((b, i) => (
+                          <div
+                            key={`${b.name}-${i}`}
+                            className="flex items-center gap-2 py-2.5 px-3.5 rounded-xl bg-surface2/60 border border-hair shrink-0"
+                          >
+                            <img
+                              src={b.src}
+                              alt={b.name}
+                              className="w-5 h-5 object-contain"
+                              loading="lazy"
+                            />
+                            <span className="text-[11.5px] text-sub font-medium whitespace-nowrap">{b.name}</span>
+                          </div>
+                        ))}
+                      </motion.div>
                     </div>
                   ))}
                 </div>
