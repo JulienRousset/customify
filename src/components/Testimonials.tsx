@@ -16,13 +16,13 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl mb-14 md:mb-20"
+          className="max-w-3xl ml-auto text-right mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
             {c.h2a} <span className="text-sub">{c.h2b}</span>
           </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl ml-auto text-pretty">
             {c.sub}
           </motion.p>
         </motion.div>
