@@ -15,7 +15,7 @@ export default function Automation() {
     <section id="automation" className="relative py-24 md:py-32">
       <div className="container-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-start">
-          <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-10">
+          <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-10 lg:pt-24">
             <motion.div
               variants={staggerParent(0.08, 0)}
               initial="hidden"

@@ -14,64 +14,65 @@ export default function Software() {
   return (
     <section id="software" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <motion.div
-          variants={staggerParent(0.08, 0)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="max-w-3xl mb-14 md:mb-20"
-        >
-          <motion.p variants={staggerItem} className="eyebrow">The software</motion.p>
-          <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            Tools, <span className="text-sub">made for the way you work.</span>
-          </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
-            Custom dashboards, internal tools, client portals. The boring software your business
-            needs to stop running on duct tape.
-          </motion.p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={viewportOnce}
             transition={{ duration: 0.9, ease: easeApple }}
-            className="lg:col-span-7 order-1"
+            className="lg:col-span-7 order-2 lg:order-1"
           >
             <DashboardMock />
           </motion.div>
 
-          <motion.ul
-            variants={staggerParent(0.1, 0.15)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            className="lg:col-span-5 order-2 space-y-7"
-          >
-            {points.map((p) => {
-              const Icon = p.icon
-              return (
-                <motion.li
-                  key={p.title}
-                  variants={staggerItem}
-                  className="flex items-start gap-4"
-                >
-                  <motion.span
-                    whileHover={{ scale: 1.08, rotate: -4 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-                    className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
+          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-10">
+            <motion.div
+              variants={staggerParent(0.08, 0)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
+              <motion.p variants={staggerItem} className="eyebrow">The software</motion.p>
+              <motion.h2 variants={staggerItem} className="display-2 text-balance">
+                Tools, <span className="text-sub">made for the way you work.</span>
+              </motion.h2>
+              <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+                Custom dashboards, internal tools, client portals. The boring software your business
+                needs to stop running on duct tape.
+              </motion.p>
+            </motion.div>
+
+            <motion.ul
+              variants={staggerParent(0.1, 0.15)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+              className="space-y-7"
+            >
+              {points.map((p) => {
+                const Icon = p.icon
+                return (
+                  <motion.li
+                    key={p.title}
+                    variants={staggerItem}
+                    className="flex items-start gap-4"
                   >
-                    <Icon size={18} strokeWidth={1.7} className={p.color} />
-                  </motion.span>
-                  <div>
-                    <div className="font-display font-semibold text-[18px] tracking-tight">{p.title}</div>
-                    <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{p.desc}</p>
-                  </div>
-                </motion.li>
-              )
-            })}
-          </motion.ul>
+                    <motion.span
+                      whileHover={{ scale: 1.08, rotate: -4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 16 }}
+                      className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
+                    >
+                      <Icon size={18} strokeWidth={1.7} className={p.color} />
+                    </motion.span>
+                    <div>
+                      <div className="font-display font-semibold text-[18px] tracking-tight">{p.title}</div>
+                      <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{p.desc}</p>
+                    </div>
+                  </motion.li>
+                )
+              })}
+            </motion.ul>
+          </div>
         </div>
       </div>
     </section>

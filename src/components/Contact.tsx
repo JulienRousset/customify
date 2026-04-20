@@ -23,8 +23,8 @@ export default function Contact() {
     <>
       <section id="contact" className="relative py-24 md:py-32">
         <div className="container-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16">
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
+            <div className="lg:col-span-5 lg:-mt-8">
               <p className="eyebrow">Start a project</p>
               <h2 className="display-2 text-balance">
                 {c.h2a} <span className="text-sub">{c.h2b}</span>

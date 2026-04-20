@@ -36,13 +36,13 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl ml-auto text-right mb-14 md:mb-20"
+          className="max-w-3xl mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">What we build</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
             {s.h2a} <span className="text-sub">{s.h2b}</span>
           </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl ml-auto text-pretty">
+          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
             {s.sub}
           </motion.p>
         </motion.div>
