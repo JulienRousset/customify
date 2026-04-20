@@ -1,68 +1,120 @@
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import { Quote, ArrowLeft, ArrowRight } from 'lucide-react'
 import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 export default function Testimonials() {
   const { t } = useLang()
   const c = t.clients
-  const items = c.items.slice(0, 4)
+  const items = c.items
+
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)
+
+  const scrollByPage = (dir: 'left' | 'right') => {
+    const el = scrollRef.current
+    if (!el) return
+    const step = el.clientWidth * 0.9
+    el.scrollBy({ left: dir === 'left' ? -step : step, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const onScroll = () => {
+      const max = el.scrollWidth - el.clientWidth
+      setProgress(max > 0 ? el.scrollLeft / max : 0)
+    }
+    onScroll()
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => el.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <section id="testimonials" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <motion.div
-          variants={staggerParent(0.08, 0)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="max-w-3xl ml-auto text-right mb-14 md:mb-20"
-        >
-          <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
-          <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            {c.h2a} <span className="text-sub">{c.h2b}</span>
-          </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl ml-auto text-pretty">
-            {c.sub}
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          variants={staggerParent(0.1, 0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6"
-        >
-          {items.map((item, i) => (
-            <motion.figure
-              key={item.name}
-              variants={staggerItem}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.35, ease: easeApple }}
-              className={`card p-7 md:p-9 flex flex-col hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] ${
-                i % 3 === 0 ? 'md:translate-y-2' : ''
-              }`}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
+          <div className="flex items-center gap-2 order-2 md:order-1">
+            <button
+              type="button"
+              aria-label="Previous"
+              onClick={() => scrollByPage('left')}
+              className="w-11 h-11 rounded-full border border-hair bg-surface2/60 flex items-center justify-center text-fg2 hover:text-fg hover:border-fg/30 hover:bg-surface2 transition-all active:scale-95"
             >
-              <Quote size={20} className="text-accent/40 mb-5" strokeWidth={1.6} />
+              <ArrowLeft size={16} strokeWidth={1.8} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next"
+              onClick={() => scrollByPage('right')}
+              className="w-11 h-11 rounded-full border border-hair bg-surface2/60 flex items-center justify-center text-fg2 hover:text-fg hover:border-fg/30 hover:bg-surface2 transition-all active:scale-95"
+            >
+              <ArrowRight size={16} strokeWidth={1.8} />
+            </button>
+          </div>
 
-              <blockquote className="text-[17px] md:text-[19px] leading-[1.5] text-fg text-pretty font-display">
-                “{item.quote}”
-              </blockquote>
+          <motion.div
+            variants={staggerParent(0.08, 0)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="max-w-3xl md:ml-auto md:text-right order-1 md:order-2"
+          >
+            <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
+            <motion.h2 variants={staggerItem} className="display-2 text-balance">
+              {c.h2a} <span className="text-sub">{c.h2b}</span>
+            </motion.h2>
+            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl md:ml-auto text-pretty">
+              {c.sub}
+            </motion.p>
+          </motion.div>
+        </div>
 
-              <figcaption className="mt-7 pt-6 border-t border-hair flex items-end justify-between gap-4">
-                <div>
-                  <div className="font-display font-semibold text-[15px] tracking-tight">{item.name}</div>
-                  <div className="text-[12px] text-sub mt-0.5">{item.kind}</div>
-                </div>
-                <div className="text-right">
-                  <div className="font-semibold text-[22px] tracking-tight">{item.result}</div>
-                  <div className="text-[10.5px] text-sub font-medium mt-0.5">{item.metric}</div>
-                </div>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </motion.div>
+        <div className="relative -mx-6 md:-mx-8 fade-x">
+          <div
+            ref={scrollRef}
+            className="flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-px-6 md:scroll-px-8 px-6 md:px-8 pb-4 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] [-ms-overflow-style:none]"
+          >
+            {items.map((item) => (
+              <motion.figure
+                key={item.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: easeApple }}
+                whileHover={{ y: -4 }}
+                className="card p-7 md:p-9 flex flex-col snap-start shrink-0 w-[85vw] sm:w-[60vw] md:w-[calc(50%-0.75rem)] lg:w-[calc(40%-0.75rem)] hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)]"
+              >
+                <Quote size={20} className="text-accent/40 mb-5" strokeWidth={1.6} />
+
+                <blockquote className="text-[17px] md:text-[19px] leading-[1.5] text-fg text-pretty font-display">
+                  “{item.quote}”
+                </blockquote>
+
+                <figcaption className="mt-auto pt-7 border-t border-hair flex items-end justify-between gap-4">
+                  <div>
+                    <div className="font-display font-semibold text-[15px] tracking-tight">{item.name}</div>
+                    <div className="text-[12px] text-sub mt-0.5">{item.kind}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-semibold text-[22px] tracking-tight">{item.result}</div>
+                    <div className="text-[10.5px] text-sub font-medium mt-0.5">{item.metric}</div>
+                  </div>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <div className="relative h-[2px] w-40 bg-hair rounded-full overflow-hidden">
+            <div
+              className="absolute inset-y-0 left-0 bg-fg rounded-full transition-[width] duration-150 ease-out"
+              style={{ width: `${Math.max(12, progress * 100)}%` }}
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
