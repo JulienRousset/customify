@@ -20,7 +20,7 @@ export default function Software() {
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={viewportOnce}
             transition={{ duration: 0.9, ease: easeApple }}
-            className="lg:col-span-7 order-2 lg:order-1"
+            className="lg:col-span-7 order-2 lg:order-1 lg:mt-12"
           >
             <DashboardMock />
           </motion.div>

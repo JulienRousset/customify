@@ -1,12 +1,21 @@
 import { motion } from 'framer-motion'
-import { useLang } from '../lang'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
-export default function Marquee() {
-  const { t } = useLang()
-  const items = t.clients.items
+type Partner = { name: string; kind: string; logo?: string }
 
+const partners: Partner[] = [
+  { name: 'My Cocotte', kind: 'Restaurant', logo: '/partners/MYCOCOTTE.png' },
+  { name: 'Inka Spa Bali', kind: 'Wellness', logo: '/partners/INKA.png' },
+  { name: 'Skyrol', kind: 'Brand', logo: '/partners/SKYROL.png' },
+  { name: 'Temple Spa Bali', kind: 'Spa', logo: '/partners/TEMPLE.png' },
+  { name: 'Natura Organics', kind: 'Organic brand', logo: '/partners/NATURA.png' },
+  { name: "In'Sens Sourcing", kind: 'Sourcing', logo: '/partners/INSENS.png' },
+  { name: 'TYT', kind: 'Personal brand', logo: '/partners/TYT.png' },
+  { name: "Lil' Bites", kind: 'Food brand', logo: '/partners/LILBITES.png' }
+]
+
+export default function Marquee() {
   return (
     <section
       aria-label="Partners and clients"
@@ -28,17 +37,26 @@ export default function Marquee() {
       </motion.div>
 
       <div className="relative fade-x">
-        <InfiniteSlider gap={64} duration={36} className="py-2">
-          {items.map((item) => (
+        <InfiniteSlider gap={72} duration={42} className="py-2">
+          {partners.map((p) => (
             <div
-              key={`mq-${item.name}`}
+              key={`mq-${p.name}`}
               className="flex items-center gap-3 px-2 whitespace-nowrap"
             >
+              {p.logo && (
+                <img
+                  src={p.logo}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="h-9 md:h-11 w-auto object-contain brightness-0 opacity-75 dark:invert dark:opacity-85 shrink-0"
+                />
+              )}
               <span className="font-display font-semibold text-[20px] md:text-[26px] tracking-tight text-fg/85">
-                {item.name}
+                {p.name}
               </span>
               <span className="text-[10.5px] font-medium uppercase tracking-wider text-sub">
-                {item.kind.split(',')[0]}
+                {p.kind}
               </span>
             </div>
           ))}

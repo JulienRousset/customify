@@ -253,31 +253,40 @@ export const translations = {
           stack: ['Automation', 'Email', 'Reviews']
         },
         {
-          name: 'Maison Vert',
+          name: 'Skyrol',
+          kind: 'Brand, remote',
+          result: '+48%',
+          metric: 'Conversion lift',
+          quote: 'We stopped losing leads in the gaps between tools.',
+          desc: 'End-to-end funnel wiring. Tracking, nurture, checkout, reporting. Every step visible.',
+          stack: ['Analytics', 'Email', 'Checkout']
+        },
+        {
+          name: 'Natura Organics',
+          kind: 'Organic brand, Bali',
+          result: '3×',
+          metric: 'Reorder rate',
+          quote: 'Our best customers come back on their own now.',
+          desc: 'Subscriptions, post-purchase flows, review loops. The retention machine, wired up.',
+          stack: ['Subscriptions', 'Email', 'Reviews']
+        },
+        {
+          name: "In'Sens Sourcing",
+          kind: 'Sourcing, Paris',
+          result: '12h',
+          metric: 'Saved weekly',
+          quote: 'The inbox no longer runs our day.',
+          desc: 'Supplier triage, RFQ automation, deadline tracking. Inbox to pipeline in one click.',
+          stack: ['Pipeline', 'Email', 'Docs']
+        },
+        {
+          name: "Lil' Bites",
           kind: 'Food brand, launch 2026',
           result: '0→1',
           metric: 'From zero to live',
-          quote: 'No system on day one. A running business by day thirty.',
-          desc: 'From scratch. Site, CRM, stock tracking, ads, packaging copy. Live in four weeks.',
-          stack: ['Site', 'CRM', 'Ads', 'Stock']
-        },
-        {
-          name: 'Studio Lune',
-          kind: 'Design studio, Paris',
-          result: '€38K',
-          metric: 'New revenue, Q1',
-          quote: 'We stopped treating admin as a job. It’s a system now.',
-          desc: 'Invoices, onboarding, quotes, file delivery. All automatic from start to finish.',
-          stack: ['Quotes', 'Billing', 'Delivery']
-        },
-        {
-          name: 'Kaya',
-          kind: 'Wellness app, remote',
-          result: '+2.7×',
-          metric: 'Ad return',
-          quote: 'We had the traffic. Now we have the funnel.',
-          desc: 'Paid ads pipeline. Creative testing, tracking, weekly tweaks.',
-          stack: ['Meta Ads', 'Analytics', 'Creative']
+          quote: 'We showed up with an idea. We left with a running business.',
+          desc: 'Brand, packaging, site, ads, order flow. Ready to ship on day one.',
+          stack: ['Brand', 'Shopify', 'Ads']
         }
       ]
     },
@@ -318,11 +327,12 @@ export const translations = {
         `Hi Customy,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
       footerLocation: 'All of Bali island',
       footerRemote: 'Remote worldwide',
+      footerTagline: 'Improve your business with one click',
       footerNav: {
-        work: 'Work',
         services: 'Services',
-        numbers: 'Numbers',
-        demo: 'Demo',
+        software: 'Software',
+        automation: 'Automation',
+        clients: 'Clients',
         contact: 'Contact'
       }
     }
@@ -580,31 +590,40 @@ export const translations = {
           stack: ['Automatisation', 'Email', 'Avis']
         },
         {
-          name: 'Maison Vert',
+          name: 'Skyrol',
+          kind: 'Marque, à distance',
+          result: '+48 %',
+          metric: 'Conversions',
+          quote: 'On ne perd plus de pistes dans les trous entre les outils.',
+          desc: 'Tunnel complet câblé. Tracking, nurturing, checkout, reporting. Chaque étape visible.',
+          stack: ['Analytics', 'Email', 'Checkout']
+        },
+        {
+          name: 'Natura Organics',
+          kind: 'Marque bio, Bali',
+          result: '3×',
+          metric: 'Taux de rachat',
+          quote: 'Nos meilleurs clients reviennent tout seuls.',
+          desc: 'Abonnements, parcours post-achat, boucles d’avis. La machine à fidéliser, câblée.',
+          stack: ['Abonnements', 'Email', 'Avis']
+        },
+        {
+          name: "In'Sens Sourcing",
+          kind: 'Sourcing, Paris',
+          result: '12h',
+          metric: 'Économisées / semaine',
+          quote: 'La boîte mail ne dirige plus la journée.',
+          desc: 'Tri fournisseurs, RFQ automatisés, suivi des deadlines. Mail vers pipeline en un clic.',
+          stack: ['Pipeline', 'Email', 'Docs']
+        },
+        {
+          name: "Lil' Bites",
           kind: 'Marque food, lancement 2026',
           result: '0→1',
           metric: 'De zéro à lancée',
-          quote: 'Zéro système au jour 1. Une entreprise qui tourne au jour 30.',
-          desc: 'Tout de zéro. Site, CRM, stocks, pubs, packaging. Live en quatre semaines.',
-          stack: ['Site', 'CRM', 'Pubs', 'Stock']
-        },
-        {
-          name: 'Studio Lune',
-          kind: 'Studio design, Paris',
-          result: '38 K €',
-          metric: 'Nouveau CA, T1',
-          quote: 'L’admin n’est plus un boulot. C’est un système.',
-          desc: 'Devis, onboarding, factures, livraisons. Tout automatisé de bout en bout.',
-          stack: ['Devis', 'Facturation', 'Livraison']
-        },
-        {
-          name: 'Kaya',
-          kind: 'App bien-être, à distance',
-          result: '+2,7×',
-          metric: 'Retour sur pubs',
-          quote: 'On avait le trafic. On a maintenant le tunnel.',
-          desc: 'Chaîne de pubs payantes. Tests créa, suivi, ajustements hebdo.',
-          stack: ['Meta Ads', 'Analytics', 'Créa']
+          quote: 'On est arrivés avec une idée. On est repartis avec une boîte qui tourne.',
+          desc: 'Marque, packaging, site, pubs, prise de commande. Prêt à expédier au jour 1.',
+          stack: ['Marque', 'Shopify', 'Pubs']
         }
       ]
     },
@@ -645,11 +664,12 @@ export const translations = {
         `Bonjour Customy,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,
       footerLocation: 'Toute l’île de Bali',
       footerRemote: 'À distance, partout',
+      footerTagline: 'Améliorez votre business en un clic',
       footerNav: {
-        work: 'Projets',
         services: 'Services',
-        numbers: 'Chiffres',
-        demo: 'Démo',
+        software: 'Software',
+        automation: 'Automatisation',
+        clients: 'Clients',
         contact: 'Contact'
       }
     }

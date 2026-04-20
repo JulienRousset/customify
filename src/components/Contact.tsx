@@ -17,8 +17,8 @@ const poweredBy = [
   { name: 'Gemini', src: favicon('gemini.google.com') },
   { name: 'Notion', src: favicon('notion.so') },
   { name: 'Figma', src: favicon('figma.com') },
-  { name: 'Photoshop', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/240px-Adobe_Photoshop_CC_icon.svg.png' },
-  { name: 'After Effects', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Adobe_After_Effects_CC_icon.svg/240px-Adobe_After_Effects_CC_icon.svg.png' },
+  { name: 'Photoshop', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg' },
+  { name: 'After Effects', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-plain.svg' },
   { name: 'Metricool', src: favicon('metricool.com') },
   { name: 'Beacons', src: favicon('beacons.ai') },
   { name: 'Skool', src: favicon('skool.com') }
@@ -182,13 +182,14 @@ export default function Contact() {
                 />
                 Customy
               </div>
-              <div className="mt-2 text-[13px] text-sub">Build · ship · operate</div>
+              <div className="mt-2 text-[13px] text-sub">{c.footerTagline}</div>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
               <nav aria-label="Footer" className="flex flex-wrap gap-6 text-[13.5px] text-fg2">
                 <a href="#services" className="hover:text-fg transition-colors">{c.footerNav.services}</a>
-                <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.demo}</a>
-                <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.work}</a>
+                <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.software}</a>
+                <a href="#automation" className="hover:text-fg transition-colors">{c.footerNav.automation}</a>
+                <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.clients}</a>
                 <a href="#contact" className="hover:text-fg transition-colors">{c.footerNav.contact}</a>
               </nav>
               <div className="flex items-center gap-2">
