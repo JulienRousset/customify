@@ -30,6 +30,13 @@ const icons: Record<string, React.ReactNode> = {
   ads: <Megaphone size={22} className="text-[#ff375f]" />
 }
 
+// Maps each notification index to the matching Services item index
+// 0 WhatsApp Push     -> 2 Social & Automation
+// 1 More Clients      -> 3 Marketing strategy
+// 2 Custom Ad Funnels -> 5 Sales funnels
+// 3 Optimized Ads     -> 4 Ads, managed
+const targetService = [2, 3, 5, 4]
+
 export default function HeroNotifications() {
   const { t } = useLang()
   const notifications = t.hero.notifications
@@ -53,13 +60,19 @@ export default function HeroNotifications() {
       <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/10 to-[#ff9f0a]/10 blur-[60px] rounded-full pointer-events-none" />
       
       {notifications.map((notif, i) => {
+        const target = targetService[i] ?? 0
+        const onClick = () => {
+          window.dispatchEvent(new CustomEvent('highlight-service', { detail: target }))
+        }
         return (
-          <motion.div
+          <motion.a
             key={i}
+            href={`#service-${target}`}
+            onClick={onClick}
             variants={item}
             className={`
-              absolute w-[260px] md:w-[280px] flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-2xl 
-              border border-black/5 dark:border-white/10 shadow-[0_15px_35px_rgb(0,0,0,0.1)] pointer-events-auto
+              absolute w-[260px] md:w-[280px] flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-2xl
+              border border-black/5 dark:border-white/10 shadow-[0_15px_35px_rgb(0,0,0,0.1)] pointer-events-auto cursor-pointer
               ${positions[i]}
             `}
             whileHover={{ scale: 1.03, y: -2 }}
@@ -72,7 +85,7 @@ export default function HeroNotifications() {
               <h4 className="text-[13px] md:text-[14px] font-semibold text-fg tracking-tight">{notif.title}</h4>
               <p className="text-[12px] md:text-[13px] text-sub leading-snug mt-0.5">{notif.desc}</p>
             </div>
-          </motion.div>
+          </motion.a>
         )
       })}
     </motion.div>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { LayoutDashboard, Globe, Megaphone, Sparkles, LineChart, Workflow } from 'lucide-react'
 import { useLang } from '../lang'
@@ -15,6 +16,17 @@ const visualStyles = [
 export default function Services() {
   const { t } = useLang()
   const s = t.services
+  const [highlighted, setHighlighted] = useState<number | null>(null)
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const idx = (e as CustomEvent<number>).detail
+      setHighlighted(idx)
+      window.setTimeout(() => setHighlighted(null), 2000)
+    }
+    window.addEventListener('highlight-service', handler as EventListener)
+    return () => window.removeEventListener('highlight-service', handler as EventListener)
+  }, [])
 
   return (
     <section id="services" className="relative py-24 md:py-32">
@@ -45,13 +57,19 @@ export default function Services() {
           {s.items.map((item, i) => {
             const style = visualStyles[i % visualStyles.length]
             const Icon = style.icon
+            const isHot = highlighted === i
             return (
               <motion.article
                 key={item.title}
+                id={`service-${i}`}
                 variants={staggerItem}
                 whileHover={{ y: -2, scale: 1.01 }}
                 transition={{ duration: 0.3, ease: easeApple }}
-                className="group relative bg-surface/50 hover:bg-surface2/80 backdrop-blur-md p-6 lg:p-7 rounded-[20px] border border-hair shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all flex flex-col"
+                className={`group relative backdrop-blur-md p-6 lg:p-7 rounded-[20px] border shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col scroll-mt-28 ${
+                  isHot
+                    ? 'bg-surface2/90 border-accent shadow-[0_0_0_2px_rgb(var(--color-accent)),0_20px_60px_-20px_rgba(0,0,0,0.25)] -translate-y-1'
+                    : 'bg-surface/50 hover:bg-surface2/80 border-hair'
+                }`}
               >
                 <div className="flex flex-col mb-4">
                   <motion.div
