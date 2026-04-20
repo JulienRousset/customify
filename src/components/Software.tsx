@@ -4,10 +4,10 @@ import { ArrowUpRight, BarChart3, Calendar, Database, LayoutDashboard } from 'lu
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const points = [
-  { icon: LayoutDashboard, title: 'One screen for everything', desc: 'Revenue, bookings, reach, reviews. The numbers you actually look at, in one place.' },
-  { icon: Database, title: 'Your data, finally yours', desc: 'No more spreadsheets emailed at midnight. Sync from the tools you already use.' },
-  { icon: Calendar, title: 'Built around your workflow', desc: 'Tables, calendars, kanbans, forms. Whatever your team needs to move faster.' },
-  { icon: BarChart3, title: 'Reports that write themselves', desc: 'Daily and weekly summaries land in your inbox. The story, not the numbers.' }
+  { icon: LayoutDashboard, color: 'text-[#ff9f0a]', title: 'One screen for everything', desc: 'Revenue, bookings, reach, reviews. The numbers you actually look at, in one place.' },
+  { icon: Database, color: 'text-[#0071e3]', title: 'Your data, finally yours', desc: 'No more spreadsheets emailed at midnight. Sync from the tools you already use.' },
+  { icon: Calendar, color: 'text-[#af52de]', title: 'Built around your workflow', desc: 'Tables, calendars, kanbans, forms. Whatever your team needs to move faster.' },
+  { icon: BarChart3, color: 'text-[#34c759]', title: 'Reports that write themselves', desc: 'Daily and weekly summaries land in your inbox. The story, not the numbers.' }
 ]
 
 export default function Software() {
@@ -60,9 +60,9 @@ export default function Software() {
                   <motion.span
                     whileHover={{ scale: 1.08, rotate: -4 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-                    className="mt-0.5 w-9 h-9 rounded-xl bg-surface border border-hair flex items-center justify-center shrink-0"
+                    className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
                   >
-                    <Icon size={16} strokeWidth={1.7} className="text-fg" />
+                    <Icon size={18} strokeWidth={1.7} className={p.color} />
                   </motion.span>
                   <div>
                     <div className="font-display font-semibold text-[18px] tracking-tight">{p.title}</div>

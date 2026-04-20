@@ -2,32 +2,11 @@ import { motion } from 'framer-motion'
 import { MessageCircle, TrendingUp, GitMerge, Megaphone } from 'lucide-react'
 import { useLang } from '../lang'
 
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2
-    }
-  }
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: 'spring', stiffness: 200, damping: 20 }
-  }
-}
-
 const icons: Record<string, React.ReactNode> = {
-  whatsapp: <MessageCircle size={22} className="text-[#25D366]" />,
-  trending: <TrendingUp size={22} className="text-[#0071e3]" />,
-  funnel: <GitMerge size={22} className="text-[#af52de]" />,
-  ads: <Megaphone size={22} className="text-[#ff375f]" />
+  whatsapp: <MessageCircle size={18} strokeWidth={1.7} className="text-[#34c759]" />,
+  trending: <TrendingUp size={18} strokeWidth={1.7} className="text-[#0071e3]" />,
+  funnel: <GitMerge size={18} strokeWidth={1.7} className="text-[#af52de]" />,
+  ads: <Megaphone size={18} strokeWidth={1.7} className="text-[#ff375f]" />
 }
 
 // Maps each notification index to the matching Services item index
@@ -41,26 +20,30 @@ export default function HeroNotifications() {
   const { t } = useLang()
   const notifications = t.hero.notifications
 
-  // Specific absolute positions to surround the 3D logo
+  // Four true corners, pulled out so they don't overlap the 3D logo
   const positions = [
-    'top-[5%] left-[-10%]',        // Top left
-    'top-[25%] right-[-10%]',      // Middle right
-    'bottom-[25%] left-[-5%]',     // Bottom left
-    'bottom-[0%] right-[5%]'       // Bottom right
+    'top-[2%] left-[-12%]',      // Top left
+    'top-[2%] right-[-8%]',      // Top right
+    'bottom-[2%] left-[-8%]',    // Bottom left
+    'bottom-[2%] right-[-8%]'    // Bottom right
+  ]
+
+  // Slightly different float paths so they don't drift in sync
+  const floats = [
+    { y: [0, -10, 0], x: [0, 4, 0], duration: 7 },
+    { y: [0, 8, 0], x: [0, -5, 0], duration: 8.5 },
+    { y: [0, -8, 0], x: [0, -4, 0], duration: 9 },
+    { y: [0, 10, 0], x: [0, 5, 0], duration: 7.5 }
   ]
 
   return (
-    <motion.div 
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
+    <div className="absolute inset-0 w-full h-full pointer-events-none">
       {/* Ambient glow behind the notifications */}
       <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/10 to-[#ff9f0a]/10 blur-[60px] rounded-full pointer-events-none" />
-      
+
       {notifications.map((notif, i) => {
         const target = targetService[i] ?? 0
+        const float = floats[i]
         const onClick = () => {
           window.dispatchEvent(new CustomEvent('highlight-service', { detail: target }))
         }
@@ -69,16 +52,27 @@ export default function HeroNotifications() {
             key={i}
             href={`#service-${target}`}
             onClick={onClick}
-            variants={item}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: float.y,
+              x: float.x
+            }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.2 + i * 0.15, ease: 'easeOut' },
+              scale: { duration: 0.6, delay: 0.2 + i * 0.15, type: 'spring', stiffness: 200, damping: 20 },
+              y: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 },
+              x: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 }
+            }}
+            whileHover={{ scale: 1.04 }}
             className={`
               absolute w-[260px] md:w-[280px] flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-2xl
               border border-black/5 dark:border-white/10 shadow-[0_15px_35px_rgb(0,0,0,0.1)] pointer-events-auto cursor-pointer
               ${positions[i]}
             `}
-            whileHover={{ scale: 1.03, y: -2 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center border border-black/5 dark:border-white/5 shadow-sm">
+            <div className="flex-shrink-0 w-11 h-11 rounded-full bg-surface2 flex items-center justify-center border border-hair shadow-sm">
               {icons[notif.icon]}
             </div>
             <div className="pt-0.5">
@@ -88,6 +82,6 @@ export default function HeroNotifications() {
           </motion.a>
         )
       })}
-    </motion.div>
+    </div>
   )
 }

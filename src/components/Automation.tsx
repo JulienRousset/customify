@@ -4,10 +4,10 @@ import { Bot, Check, MessageCircle, Zap, Instagram, Send, MessageSquare } from '
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const features = [
-  { icon: MessageCircle, title: 'Replies, sent for you', desc: 'WhatsApp, Instagram DMs, email. Answered in your voice, day and night.' },
-  { icon: Zap, title: 'Workflows that fire themselves', desc: 'New booking, new lead, new payment. Every event triggers the right action.' },
-  { icon: Bot, title: 'AI tuned to your brand', desc: 'Trained on your menu, services, FAQs. It sounds like you, not like a chatbot.' },
-  { icon: Check, title: 'You stay in the loop', desc: 'Daily handover. What got handled, what needs a human, what to ship next.' }
+  { icon: MessageCircle, color: 'text-[#34c759]', title: 'Replies, sent for you', desc: 'WhatsApp, Instagram DMs, email. Answered in your voice, day and night.' },
+  { icon: Zap, color: 'text-[#ffcc00]', title: 'Workflows that fire themselves', desc: 'New booking, new lead, new payment. Every event triggers the right action.' },
+  { icon: Bot, color: 'text-[#af52de]', title: 'AI tuned to your brand', desc: 'Trained on your menu, services, FAQs. It sounds like you, not like a chatbot.' },
+  { icon: Check, color: 'text-[#ff375f]', title: 'You stay in the loop', desc: 'Daily handover. What got handled, what needs a human, what to ship next.' }
 ]
 
 export default function Automation() {
@@ -50,9 +50,9 @@ export default function Automation() {
                   <motion.span
                     whileHover={{ scale: 1.08, rotate: -4 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-                    className="mt-0.5 w-9 h-9 rounded-xl bg-surface border border-hair flex items-center justify-center shrink-0"
+                    className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
                   >
-                    <Icon size={16} strokeWidth={1.7} className="text-fg" />
+                    <Icon size={18} strokeWidth={1.7} className={f.color} />
                   </motion.span>
                   <div>
                     <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
@@ -94,8 +94,8 @@ function ChatMock() {
       platform: 'WhatsApp assistant',
       icon: MessageCircle,
       bg: 'bg-[#111B21]',
-      headerBg: 'bg-[#202C33]',
-      headerText: 'text-[#E9EDEF]',
+      headerBg: 'bg-[#128C7E]',
+      headerText: 'text-white',
       themBubble: 'bg-[#202C33] text-[#E9EDEF]',
       usBubble: 'bg-[#005C4B] text-[#E9EDEF]',
       messages: [
@@ -109,11 +109,11 @@ function ChatMock() {
       id: 'telegram',
       platform: 'Telegram assistant',
       icon: Send,
-      bg: 'bg-[#E6EBEF]',
+      bg: 'bg-[#E6EBEF] dark:bg-[#17212B]',
       headerBg: 'bg-[#0088cc]',
       headerText: 'text-white',
-      themBubble: 'bg-white text-gray-800 shadow-sm',
-      usBubble: 'bg-[#EEFFDE] text-gray-800 shadow-sm',
+      themBubble: 'bg-white text-gray-800 shadow-sm dark:bg-[#212D3B] dark:text-[#E9EDEF] dark:shadow-none',
+      usBubble: 'bg-[#EEFFDE] text-gray-800 shadow-sm dark:bg-[#2B5278] dark:text-white dark:shadow-none',
       messages: [
         { who: 'them', msg: 'Send me pricing' },
         { who: 'us', msg: 'Here’s our latest pricing 👇' },
@@ -124,10 +124,10 @@ function ChatMock() {
       id: 'messenger',
       platform: 'Messenger assistant',
       icon: MessageSquare,
-      bg: 'bg-white',
-      headerBg: 'bg-white border-b border-gray-100',
-      headerText: 'text-black',
-      themBubble: 'bg-[#E4E6EB] text-black',
+      bg: 'bg-white dark:bg-[#0B0B0F]',
+      headerBg: 'bg-[#F0F2F5] border-b border-gray-100 dark:bg-[#3A3B3C] dark:border-white/5',
+      headerText: 'text-black dark:text-white',
+      themBubble: 'bg-[#E4E6EB] text-black dark:bg-[#1F1F24] dark:text-[#E9EDEF]',
       usBubble: 'bg-[#0084FF] text-white',
       messages: [
         { who: 'them', msg: 'Do you offer support?' },
@@ -139,10 +139,10 @@ function ChatMock() {
       id: 'instagram',
       platform: 'Instagram assistant',
       icon: Instagram,
-      bg: 'bg-white',
+      bg: 'bg-white dark:bg-[#0B0B0F]',
       headerBg: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F56040]',
       headerText: 'text-white',
-      themBubble: 'bg-gray-100 text-black border border-gray-100',
+      themBubble: 'bg-gray-100 text-black border border-gray-100 dark:bg-[#1F1F24] dark:text-[#E9EDEF] dark:border-white/5',
       usBubble: 'bg-gradient-to-r from-[#833AB4] to-[#FD1D1D] text-white shadow-sm',
       messages: [
         { who: 'them', msg: 'Hey, is this still available?' },

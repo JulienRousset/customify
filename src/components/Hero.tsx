@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { useLang } from '../lang'
-import { buttonHover, easeApple, staggerItem, staggerParent } from './fx/motion'
+import { buttonHover, staggerItem, staggerParent } from './fx/motion'
 import HeroNotifications from './HeroNotifications'
 import LogoViewer from './LogoViewer'
 
@@ -44,15 +44,6 @@ export default function Hero() {
               >
                 {h.ctaPrimary}
                 <ArrowUpRight size={15} />
-              </motion.a>
-              <motion.a
-                href="#contact"
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.3, ease: easeApple }}
-                className="inline-flex items-center gap-1 text-fg text-[14.5px] font-medium"
-              >
-                {h.ctaSecondary}
-                <span aria-hidden>→</span>
               </motion.a>
             </motion.div>
           </div>

@@ -5,12 +5,12 @@ import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const visualStyles = [
-  { icon: LayoutDashboard, bg: 'bg-[#ff9f0a]/10', color: 'text-[#ff9f0a]' },
-  { icon: Globe, bg: 'bg-[#0071e3]/10', color: 'text-[#0071e3]' },
-  { icon: Megaphone, bg: 'bg-[#ff375f]/10', color: 'text-[#ff375f]' },
-  { icon: Sparkles, bg: 'bg-[#af52de]/10', color: 'text-[#af52de]' },
-  { icon: LineChart, bg: 'bg-[#34c759]/10', color: 'text-[#34c759]' },
-  { icon: Workflow, bg: 'bg-[#ffcc00]/10', color: 'text-[#ffcc00]' },
+  { icon: LayoutDashboard, color: 'text-[#ff9f0a]' },
+  { icon: Globe, color: 'text-[#0071e3]' },
+  { icon: Megaphone, color: 'text-[#ff375f]' },
+  { icon: Sparkles, color: 'text-[#af52de]' },
+  { icon: LineChart, color: 'text-[#34c759]' },
+  { icon: Workflow, color: 'text-[#ffcc00]' },
 ]
 
 export default function Services() {
@@ -75,9 +75,9 @@ export default function Services() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-                    className={`w-12 h-12 rounded-[14px] flex items-center justify-center mb-5 ${style.bg}`}
+                    className="w-11 h-11 rounded-full border border-hair bg-surface2 flex items-center justify-center mb-5"
                   >
-                    <Icon size={22} strokeWidth={2} className={style.color} />
+                    <Icon size={18} strokeWidth={1.7} className={style.color} />
                   </motion.div>
                   
                   <h3 className="font-display font-semibold text-[18px] md:text-[20px] tracking-tight text-fg mb-2">
