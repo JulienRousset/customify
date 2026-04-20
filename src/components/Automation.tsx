@@ -14,54 +14,70 @@ export default function Automation() {
   return (
     <section id="automation" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <motion.div
-          variants={staggerParent(0.08, 0)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="max-w-3xl ml-auto text-right mb-14 md:mb-20"
-        >
-          <motion.p variants={staggerItem} className="eyebrow">The automation</motion.p>
-          <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            Let AI <span className="text-sub">do the busywork.</span>
-          </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl ml-auto text-pretty">
-            The conversations, the reminders, the follow-ups. Running 24/7 in your voice while
-            you focus on the parts only you can do.
-          </motion.p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-start">
+          <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-10">
+            <motion.div
+              variants={staggerParent(0.08, 0)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
+              <motion.p variants={staggerItem} className="eyebrow">The automation</motion.p>
+              <motion.h2 variants={staggerItem} className="display-2 text-balance">
+                Let AI <span className="text-sub">do the busywork.</span>
+              </motion.h2>
+              <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+                The conversations, the reminders, the follow-ups. Running 24/7 in your voice while
+                you focus on the parts only you can do.
+              </motion.p>
+            </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
-          <motion.ul
-            variants={staggerParent(0.1, 0.15)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            className="lg:col-span-5 order-2 lg:order-1 space-y-7"
-          >
-            {features.map((f) => {
-              const Icon = f.icon
-              return (
-                <motion.li
-                  key={f.title}
-                  variants={staggerItem}
-                  className="flex items-start gap-4"
-                >
-                  <motion.span
-                    whileHover={{ scale: 1.08, rotate: -4 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-                    className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
+            <motion.ul
+              variants={staggerParent(0.1, 0.15)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+              className="space-y-7"
+            >
+              {features.map((f) => {
+                const Icon = f.icon
+                return (
+                  <motion.li
+                    key={f.title}
+                    variants={staggerItem}
+                    className="flex items-start gap-4"
                   >
-                    <Icon size={18} strokeWidth={1.7} className={f.color} />
-                  </motion.span>
-                  <div>
-                    <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
-                    <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{f.desc}</p>
-                  </div>
-                </motion.li>
-              )
-            })}
-          </motion.ul>
+                    <motion.span
+                      whileHover={{ scale: 1.08, rotate: -4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 16 }}
+                      className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
+                    >
+                      <Icon size={18} strokeWidth={1.7} className={f.color} />
+                    </motion.span>
+                    <div>
+                      <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
+                      <p className="mt-1 text-[14.5px] text-fg2 leading-[1.55] text-pretty">{f.desc}</p>
+                    </div>
+                  </motion.li>
+                )
+              })}
+            </motion.ul>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.5, ease: easeApple, delay: 0.2 }}
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
+              >
+                Book my own dashboard
+                <MessageCircle size={15} />
+              </a>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
@@ -71,15 +87,6 @@ export default function Automation() {
             className="lg:col-span-7 order-1 lg:order-2"
           >
             <ChatMock />
-            <div className="mt-8 text-center flex justify-center">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
-              >
-                Book my own dashboard
-                <MessageCircle size={15} />
-              </a>
-            </div>
           </motion.div>
         </div>
       </div>
