@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Instagram, Facebook } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
 
@@ -15,8 +16,9 @@ export default function Navbar() {
 
   const links = [
     { label: t.nav.services, href: '#services' },
-    { label: t.nav.demo, href: '#software' },
-    { label: t.nav.work, href: '#testimonials' },
+    { label: t.nav.software, href: '#software' },
+    { label: t.nav.automation, href: '#automation' },
+    { label: t.nav.clients, href: '#testimonials' },
     { label: t.nav.contact, href: '#contact' }
   ]
 
@@ -28,15 +30,37 @@ export default function Navbar() {
       }`}
     >
       <div className="container-xl flex items-center justify-between h-14 md:h-16">
-        <a href="#home" className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
-          <img
-            src="/customy_logo_tr.png"
-            alt=""
-            aria-hidden
-            className="h-6 w-6 md:h-7 md:w-7 object-contain dark:invert"
-          />
-          Customy
-        </a>
+        <div className="flex items-center gap-3 md:gap-4">
+          <a href="#home" className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
+            <img
+              src="/customy_logo_tr.png"
+              alt=""
+              aria-hidden
+              className="h-6 w-6 md:h-7 md:w-7 object-contain dark:invert"
+            />
+            Customy
+          </a>
+          <div className="flex items-center gap-1.5 pl-2 md:pl-3 border-l border-hair">
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors"
+            >
+              <Instagram size={14} strokeWidth={1.8} />
+            </a>
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors"
+            >
+              <Facebook size={14} strokeWidth={1.8} />
+            </a>
+          </div>
+        </div>
 
         <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (

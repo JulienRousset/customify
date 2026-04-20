@@ -1,7 +1,23 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Bot, Check, MessageCircle, Zap, Instagram, Send, MessageSquare } from 'lucide-react'
+import { Bot, Check, MessageCircle, Zap, Instagram, Send } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
+
+function MessengerLogo({ size = 18, className = '' }: { size?: number; className?: string; strokeWidth?: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="currentColor"
+      className={className}
+      aria-hidden
+    >
+      <path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.559 6.963z" />
+    </svg>
+  )
+}
 
 const features = [
   { icon: MessageCircle, color: 'text-[#34c759]', title: 'Replies, sent for you', desc: 'WhatsApp, Instagram DMs, email. Answered in your voice, day and night.' },
@@ -24,7 +40,7 @@ export default function Automation() {
             >
               <motion.p variants={staggerItem} className="eyebrow">The automation</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                Let AI <span className="text-sub">do the busywork.</span>
+                Let AI <span className="text-sub">do the busywork</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
                 The conversations, the reminders, the follow-ups. Running 24/7 in your voice while
@@ -71,10 +87,9 @@ export default function Automation() {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_12px_28px_-8px_rgba(255,55,95,0.5)] px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight transition-transform hover:scale-105 active:scale-95"
               >
                 Book my own dashboard
-                <MessageCircle size={15} />
               </a>
             </motion.div>
           </div>
@@ -130,7 +145,7 @@ function ChatMock() {
     {
       id: 'messenger',
       platform: 'Messenger assistant',
-      icon: MessageSquare,
+      icon: MessengerLogo,
       bg: 'bg-white dark:bg-[#0B0B0F]',
       headerBg: 'bg-[#F0F2F5] border-b border-gray-100 dark:bg-[#3A3B3C] dark:border-white/5',
       headerText: 'text-black dark:text-white',

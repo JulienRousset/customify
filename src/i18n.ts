@@ -5,6 +5,9 @@ export const translations = {
     nav: {
       work: 'Work',
       services: 'Services',
+      software: 'Software',
+      automation: 'Automation',
+      clients: 'Clients',
       numbers: 'Numbers',
       demo: 'Demo',
       tool: 'Tools',
@@ -166,7 +169,7 @@ export const translations = {
     demo: {
       eyebrow: 'Try it now',
       h2a: 'Your spreadsheet,',
-      h2b: 'turned into a dashboard.',
+      h2b: 'turned into a dashboard',
       sub: 'Drop any .xlsx or .csv. We build a live dashboard right in your browser. Think of it as a taste of the Revenue section of your Customy platform, built from your own data.',
       dropTitle: 'Drop your spreadsheet here.',
       dropSub: 'Works with .xlsx, .xls, .csv, .ods. Everything runs in your browser.',
@@ -320,6 +323,9 @@ export const translations = {
     nav: {
       work: 'Projets',
       services: 'Services',
+      software: 'Software',
+      automation: 'Automation',
+      clients: 'Clients',
       numbers: 'Chiffres',
       demo: 'Démo',
       tool: 'Outils',
@@ -481,7 +487,7 @@ export const translations = {
     demo: {
       eyebrow: 'À essayer',
       h2a: 'Votre tableur,',
-      h2b: 'transformé en dashboard.',
+      h2b: 'transformé en dashboard',
       sub: 'Déposez un .xlsx ou .csv. On construit un tableau de bord dans votre navigateur. C’est un aperçu de la section Chiffre d’affaires de votre plateforme Customy, à partir de vos propres données.',
       dropTitle: 'Déposez votre fichier ici.',
       dropSub: 'Accepte .xlsx, .xls, .csv, .ods. Tout se passe dans votre navigateur.',

@@ -14,7 +14,7 @@ export default function Software() {
   return (
     <section id="software" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -34,7 +34,7 @@ export default function Software() {
             >
               <motion.p variants={staggerItem} className="eyebrow">The software</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                Tools, <span className="text-sub">made for the way you work.</span>
+                Tools, <span className="text-sub">made for the way you work</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
                 Custom dashboards, internal tools, client portals. The boring software your business

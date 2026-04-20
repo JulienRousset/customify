@@ -1,7 +1,26 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Instagram, Facebook } from 'lucide-react'
 import { useLang } from '../lang'
+
+const poweredBy = [
+  { name: 'Instagram', slug: 'instagram' },
+  { name: 'TikTok', slug: 'tiktok' },
+  { name: 'YouTube', slug: 'youtube' },
+  { name: 'Facebook', slug: 'facebook' },
+  { name: 'Meta Ads', slug: 'meta' },
+  { name: 'Telegram', slug: 'telegram' },
+  { name: 'Discord', slug: 'discord' },
+  { name: 'Claude', slug: 'anthropic' },
+  { name: 'Gemini', slug: 'googlegemini' },
+  { name: 'Notion', slug: 'notion' },
+  { name: 'Figma', slug: 'figma' },
+  { name: 'Photoshop', slug: 'adobephotoshop' },
+  { name: 'After Effects', slug: 'adobeaftereffects' },
+  { name: 'Metricool', slug: 'metricool' },
+  { name: 'Beacons', slug: 'beacons' },
+  { name: 'Skool', slug: 'skool' }
+]
 
 export default function Contact() {
   const { t } = useLang()
@@ -31,18 +50,23 @@ export default function Contact() {
               </h2>
               <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
 
-              <div className="mt-9 space-y-1 text-[14.5px]">
-                <a href="mailto:hello@customy.agency" className="block py-3 border-b border-hair hover:text-accent transition-colors">
-                  <span className="text-sub text-[12px] block mb-0.5">{c.emailLabel}</span>
-                  hello@customy.agency
-                </a>
-                <a href="https://wa.me/" className="block py-3 border-b border-hair hover:text-accent transition-colors">
-                  <span className="text-sub text-[12px] block mb-0.5">{c.waLabel}</span>
-                  {c.waAction}
-                </a>
-                <div className="py-3">
-                  <span className="text-sub text-[12px] block mb-0.5">{c.availability}</span>
-                  {c.availabilityBody}
+              <div className="mt-10">
+                <div className="eyebrow text-sub">Powered by</div>
+                <div className="mt-4 grid grid-cols-4 gap-2.5">
+                  {poweredBy.map((b) => (
+                    <div
+                      key={b.slug}
+                      className="flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-xl bg-surface2/60 border border-hair hover:border-fg/20 hover:-translate-y-0.5 transition-all"
+                    >
+                      <img
+                        src={`https://cdn.simpleicons.org/${b.slug}`}
+                        alt={b.name}
+                        className="w-6 h-6 object-contain"
+                        loading="lazy"
+                      />
+                      <span className="text-[10.5px] text-sub font-medium text-center leading-tight">{b.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -139,12 +163,34 @@ export default function Contact() {
               </div>
               <div className="mt-2 text-[13px] text-sub">Build · ship · operate</div>
             </div>
-            <nav aria-label="Footer" className="flex flex-wrap gap-6 text-[13.5px] text-fg2">
-              <a href="#services" className="hover:text-fg transition-colors">{c.footerNav.services}</a>
-              <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.demo}</a>
-              <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.work}</a>
-              <a href="#contact" className="hover:text-fg transition-colors">{c.footerNav.contact}</a>
-            </nav>
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              <nav aria-label="Footer" className="flex flex-wrap gap-6 text-[13.5px] text-fg2">
+                <a href="#services" className="hover:text-fg transition-colors">{c.footerNav.services}</a>
+                <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.demo}</a>
+                <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.work}</a>
+                <a href="#contact" className="hover:text-fg transition-colors">{c.footerNav.contact}</a>
+              </nav>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                >
+                  <Instagram size={16} strokeWidth={1.8} />
+                </a>
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                >
+                  <Facebook size={16} strokeWidth={1.8} />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerLocation} · {c.footerRemote}</div>

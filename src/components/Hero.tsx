@@ -22,11 +22,11 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
             <motion.p variants={staggerItem} className="eyebrow">
-              Studio Customy · Bali and Paris
+              Marketing Agency powered by AI Software
             </motion.p>
 
             <motion.h1 variants={staggerItem} className="display-1 text-balance max-w-5xl">
-              Custom AI, <span className="text-sub">made for your brand.</span>
+              Custom AI, <span className="text-sub">made for your brand</span>
             </motion.h1>
 
             <motion.p variants={staggerItem} className="mt-6 body-lg max-w-2xl text-pretty">
@@ -40,10 +40,10 @@ export default function Hero() {
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
-                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.4)] px-6 py-3 text-[14.5px] font-medium"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_12px_28px_-8px_rgba(255,55,95,0.5)] px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight"
               >
                 {h.ctaPrimary}
-                <ArrowUpRight size={15} />
+                <ArrowUpRight size={20} />
               </motion.a>
             </motion.div>
           </div>
