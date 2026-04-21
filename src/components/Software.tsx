@@ -98,7 +98,8 @@ function DashboardMock() {
       metrics: [
         { k: '€12,840', l: 'Revenue', d: '+18% vs last' },
         { k: '342', l: 'Bookings', d: '+24 this week' },
-        { k: '4.9', l: 'Rating', d: '127 reviews' }
+        { k: '4.9', l: 'Rating', d: '127 reviews' },
+        { k: '€38', l: 'Avg Spend', d: '+€4 vs last' }
       ],
       chartLabel: 'Bookings, last 30 days', chartColor: 'text-accent',
       sourceLabel: 'Instagram', sourceVal: '38%',
@@ -109,7 +110,8 @@ function DashboardMock() {
       metrics: [
         { k: '45.2K', l: 'Followers', d: '+1.2K this week' },
         { k: '8.4%', l: 'Engagement', d: '+2.1% vs last' },
-        { k: '124K', l: 'Impressions', d: '+14% vs last' }
+        { k: '124K', l: 'Impressions', d: '+14% vs last' },
+        { k: '2.1K', l: 'Shares', d: '+312 vs last' }
       ],
       chartLabel: 'Engagement, last 30 days', chartColor: 'text-[#af52de]',
       sourceLabel: 'TikTok', sourceVal: '52%',
@@ -120,7 +122,8 @@ function DashboardMock() {
       metrics: [
         { k: '4.2%', l: 'CTR', d: '+0.8% vs last' },
         { k: '€1.24', l: 'CPC', d: '-€0.12 vs last' },
-        { k: '3.8x', l: 'ROAS', d: '+0.4x vs last' }
+        { k: '3.8x', l: 'ROAS', d: '+0.4x vs last' },
+        { k: '€2,140', l: 'Spend', d: '+€180 vs last' }
       ],
       chartLabel: 'Click-through rate', chartColor: 'text-[#ff9f0a]',
       sourceLabel: 'Meta Ads', sourceVal: '64%',
@@ -131,7 +134,8 @@ function DashboardMock() {
       metrics: [
         { k: '18.4K', l: 'Visitors', d: '+2.4K this week' },
         { k: '2m 14s', l: 'Avg Time', d: '+12s vs last' },
-        { k: '42%', l: 'Bounce Rate', d: '-4% vs last' }
+        { k: '42%', l: 'Bounce Rate', d: '-4% vs last' },
+        { k: '3.6', l: 'Pages/Session', d: '+0.4 vs last' }
       ],
       chartLabel: 'Daily Visitors', chartColor: 'text-[#0071e3]',
       sourceLabel: 'Organic', sourceVal: '48%',
@@ -142,7 +146,8 @@ function DashboardMock() {
       metrics: [
         { k: '€8,420', l: 'MRR', d: '+€420 this month' },
         { k: '124', l: 'Customers', d: '+12 new' },
-        { k: '1.2%', l: 'Churn', d: '-0.2% vs last' }
+        { k: '1.2%', l: 'Churn', d: '-0.2% vs last' },
+        { k: '€680', l: 'LTV', d: '+€40 vs last' }
       ],
       chartLabel: 'Monthly Revenue', chartColor: 'text-[#34c759]',
       sourceLabel: 'Stripe', sourceVal: '92%',
@@ -153,7 +158,8 @@ function DashboardMock() {
       metrics: [
         { k: '12.8K', l: 'Organic', d: '+18% vs last' },
         { k: '4.2K', l: 'Direct', d: '+5% vs last' },
-        { k: '3.4K', l: 'Referral', d: '+12% vs last' }
+        { k: '3.4K', l: 'Referral', d: '+12% vs last' },
+        { k: '2.1K', l: 'Social', d: '+22% vs last' }
       ],
       chartLabel: 'Traffic Volume', chartColor: 'text-[#ff375f]',
       sourceLabel: 'Direct', sourceVal: '32%',
@@ -164,7 +170,8 @@ function DashboardMock() {
       metrics: [
         { k: '3', l: 'Critical', d: 'Action required' },
         { k: '5', l: 'Warnings', d: 'Needs attention' },
-        { k: '12', l: 'Optimizations', d: 'Available' }
+        { k: '12', l: 'Optimizations', d: 'Available' },
+        { k: '28', l: 'Resolved', d: 'This month' }
       ],
       chartLabel: 'Health Score', chartColor: 'text-[#ffcc00]',
       sourceLabel: 'System', sourceVal: '98%',
@@ -226,7 +233,7 @@ function DashboardMock() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
                 {activeData.metrics.map((x, i) => (
                   <motion.div
                     key={`${activeTab}-${x.l}`}

@@ -6,6 +6,7 @@ import Software from './components/Software'
 import Automation from './components/Automation'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
+import ExitIntentModal from './components/ExitIntentModal'
 import { BackgroundGlow } from '@/components/ui/background-glow'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Contact />
         </main>
       </div>
+      <ExitIntentModal />
     </div>
   )
 }

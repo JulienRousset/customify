@@ -325,6 +325,19 @@ export const translations = {
       mailSubject: (name: string) => `New project from ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Hi Customy,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
+      exitModal: {
+        eyebrow: 'One last thing',
+        title: 'Before you go',
+        sub: 'Drop your email and we’ll send a free audit of one thing we can automate for you this week. No strings.',
+        emailPh: 'you@brand.com',
+        cta: 'Send it my way',
+        skip: 'No thanks',
+        sentTitle: 'Email on the way.',
+        sentBody: 'We opened a message in your mail app. Hit send and we reply within 24 hours.',
+        mailSubject: 'Audit request',
+        mailBody: (email: string) =>
+          `Hi Customy,\n\nI saw the site and I'd like the free audit you mentioned.\n\nReach me at ${email}.`
+      },
       footerLocation: 'All of Bali island',
       footerRemote: 'Remote worldwide',
       footerTagline: 'Improve your business with one click',
@@ -662,6 +675,19 @@ export const translations = {
       mailSubject: (name: string) => `Nouveau projet de ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Bonjour Customy,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,
+      exitModal: {
+        eyebrow: 'Un dernier truc',
+        title: 'Avant de partir',
+        sub: 'Laissez votre email — on vous envoie un audit gratuit d’une chose qu’on peut automatiser pour vous cette semaine. Sans engagement.',
+        emailPh: 'vous@marque.com',
+        cta: 'Envoyez-moi ça',
+        skip: 'Non merci',
+        sentTitle: 'Email prêt.',
+        sentBody: 'On a ouvert un message dans votre boîte mail. Cliquez envoyer, on répond sous 24 h.',
+        mailSubject: 'Demande d’audit',
+        mailBody: (email: string) =>
+          `Bonjour Customy,\n\nJ’ai vu le site et j’aimerais l’audit gratuit que vous proposez.\n\nVous pouvez me joindre à ${email}.`
+      },
       footerLocation: 'Toute l’île de Bali',
       footerRemote: 'À distance, partout',
       footerTagline: 'Améliorez votre business en un clic',
