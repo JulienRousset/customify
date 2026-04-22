@@ -226,7 +226,7 @@ export const translations = {
           stack: ['Dashboard', 'Instagram', 'Till sync']
         },
         {
-          name: 'TYT',
+          name: 'Dylan',
           kind: 'Personal brand, worldwide',
           result: '10×',
           metric: 'More content',
@@ -254,7 +254,7 @@ export const translations = {
         },
         {
           name: 'Skyrol',
-          kind: 'Brand, remote',
+          kind: 'Travel solution, remote',
           result: '+48%',
           metric: 'Conversion lift',
           quote: 'We stopped losing leads in the gaps between tools.',
@@ -278,15 +278,6 @@ export const translations = {
           quote: 'The inbox no longer runs our day.',
           desc: 'Supplier triage, RFQ automation, deadline tracking. Inbox to pipeline in one click.',
           stack: ['Pipeline', 'Email', 'Docs']
-        },
-        {
-          name: "Lil' Bites",
-          kind: 'Food brand, launch 2026',
-          result: '0→1',
-          metric: 'From zero to live',
-          quote: 'We showed up with an idea. We left with a running business.',
-          desc: 'Brand, packaging, site, ads, order flow. Ready to ship on day one.',
-          stack: ['Brand', 'Shopify', 'Ads']
         }
       ]
     },
@@ -576,7 +567,7 @@ export const translations = {
           stack: ['Dashboard', 'Instagram', 'Caisse']
         },
         {
-          name: 'TYT',
+          name: 'Dylan',
           kind: 'Marque perso, international',
           result: '10×',
           metric: 'Plus de contenu',
@@ -604,7 +595,7 @@ export const translations = {
         },
         {
           name: 'Skyrol',
-          kind: 'Marque, à distance',
+          kind: 'Solution voyage, à distance',
           result: '+48 %',
           metric: 'Conversions',
           quote: 'On ne perd plus de pistes dans les trous entre les outils.',
@@ -628,15 +619,6 @@ export const translations = {
           quote: 'La boîte mail ne dirige plus la journée.',
           desc: 'Tri fournisseurs, RFQ automatisés, suivi des deadlines. Mail vers pipeline en un clic.',
           stack: ['Pipeline', 'Email', 'Docs']
-        },
-        {
-          name: "Lil' Bites",
-          kind: 'Marque food, lancement 2026',
-          result: '0→1',
-          metric: 'De zéro à lancée',
-          quote: 'On est arrivés avec une idée. On est repartis avec une boîte qui tourne.',
-          desc: 'Marque, packaging, site, pubs, prise de commande. Prêt à expédier au jour 1.',
-          stack: ['Marque', 'Shopify', 'Pubs']
         }
       ]
     },
