@@ -65,13 +65,19 @@ export default function Contact() {
               </h2>
               <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
 
-              <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
-                <motion.span
-                  className="w-2 h-2 rounded-full bg-[#34c759]"
-                  animate={{ opacity: [1, 0.35, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <span className="text-[12.5px] font-medium text-fg2">{c.availabilityBody}</span>
+              <div className="mt-8 flex flex-wrap gap-2">
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
+                  <motion.span
+                    className="w-2 h-2 rounded-full bg-[#34c759]"
+                    animate={{ opacity: [1, 0.35, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                  <span className="text-[12.5px] font-medium text-fg2">{c.availabilityBody}</span>
+                </div>
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-fg text-bg px-4 py-2">
+                  <span className="w-2 h-2 rounded-full bg-[#ff9f0a]" aria-hidden />
+                  <span className="text-[12.5px] font-semibold tracking-tight">{c.freeAudit}</span>
+                </div>
               </div>
 
               <div className="mt-10">

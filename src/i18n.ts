@@ -291,11 +291,54 @@ export const translations = {
       ctaPrimary: 'Wire up my stack',
       ctaSecondary: 'What we build'
     },
+    process: {
+      eyebrow: 'How we work',
+      h2a: 'Three steps.',
+      h2b: 'No account managers.',
+      sub: 'You talk to the people building the thing — from the first call to the launch and after. No hand-offs, no layers, no decks.',
+      steps: [
+        {
+          title: 'Discovery call',
+          duration: '30 min · free',
+          desc: 'We get on a call, understand your operation, your bottlenecks, the tools you already use. You leave with a clear scope — not a pitch deck.'
+        },
+        {
+          title: 'Build sprint',
+          duration: '2 to 3 weeks',
+          desc: 'We design and ship your system end-to-end. You see progress daily on WhatsApp. We launch when it actually works, not when the sprint timer ends.'
+        },
+        {
+          title: 'Monthly care',
+          duration: 'Optional · cancel anytime',
+          desc: 'We stay on to evolve it with your business — new dashboards, new automations, fixes. Same two people. No ticket queues.'
+        }
+      ]
+    },
+    whoFor: {
+      eyebrow: 'Who we work with',
+      h2a: 'Owner-operators.',
+      h2b: 'Not pitch decks.',
+      sub: 'We stay small on purpose. That means we can only take a few projects at a time — and we say no to anything that doesn’t fit.',
+      fitTitle: 'You’re our fit if',
+      fit: [
+        'You own the business and actually use what we build every day',
+        'You’re spending your own money, not an investor’s pitch round',
+        'You’d rather ship something custom in 3 weeks than configure a SaaS for 3 months',
+        'You want the people who built it to still pick up the phone a year later'
+      ],
+      notTitle: 'Probably not a fit if',
+      not: [
+        'You’re looking for a 200-person agency with enterprise SLAs',
+        'You want to buy "AI" as a marketing label, not a working system',
+        'You need a full rebrand or a 60-page strategy deck — that’s a different agency'
+      ]
+    },
     contact: {
       eyebrow: 'Get in touch',
-      h2a: 'Let’s reimagine',
-      h2b: 'and grow your business',
-      sub: 'Tell us about your business. We reply within 24 hours with a plan made for you, plus a free look at one thing we can automate this week.',
+      h2a: 'Tell us where',
+      h2b: 'it’s stuck.',
+      sub: 'One sentence is enough. We reply within 24 hours with a free 5-minute audit of one thing we can automate this week — no strings, no deck.',
+      freeAudit: 'Free 24h audit · No call required',
       emailLabel: 'Email, best for briefs',
       waLabel: 'WhatsApp, quick questions',
       waAction: 'Message us',
@@ -634,11 +677,54 @@ export const translations = {
       ctaPrimary: 'Brancher mon stack',
       ctaSecondary: 'Ce qu’on fait'
     },
+    process: {
+      eyebrow: 'Notre façon de bosser',
+      h2a: 'Trois étapes.',
+      h2b: 'Zéro account manager.',
+      sub: 'Vous parlez aux gens qui construisent — du premier appel au lancement, et après. Pas de passage de témoin, pas d’étages, pas de decks.',
+      steps: [
+        {
+          title: 'Appel de découverte',
+          duration: '30 min · offert',
+          desc: 'On fait le point sur votre opération, vos goulots, les outils que vous utilisez déjà. Vous repartez avec un scope clair — pas un pitch deck.'
+        },
+        {
+          title: 'Sprint de build',
+          duration: '2 à 3 semaines',
+          desc: 'On conçoit et livre votre système de bout en bout. Vous voyez l’avancement chaque jour sur WhatsApp. On lance quand ça marche, pas quand le chrono sonne.'
+        },
+        {
+          title: 'Suivi mensuel',
+          duration: 'Optionnel · résiliable à tout moment',
+          desc: 'On reste pour faire évoluer le système avec votre business — nouveaux dashboards, nouvelles automatisations, correctifs. Mêmes deux personnes. Pas de file de tickets.'
+        }
+      ]
+    },
+    whoFor: {
+      eyebrow: 'Avec qui on bosse',
+      h2a: 'Des patrons d’entreprise.',
+      h2b: 'Pas des pitch decks.',
+      sub: 'On reste petits exprès. Ça veut dire qu’on prend peu de projets à la fois — et qu’on dit non à tout ce qui ne colle pas.',
+      fitTitle: 'On est fait pour vous si',
+      fit: [
+        'Vous êtes le patron et vous utilisez vraiment ce qu’on construit, chaque jour',
+        'Vous dépensez votre propre argent, pas une levée d’investisseurs',
+        'Vous préférez livrer du sur-mesure en 3 semaines que configurer un SaaS pendant 3 mois',
+        'Vous voulez que les gens qui l’ont construit décrochent encore un an plus tard'
+      ],
+      notTitle: 'Probablement pas fait pour vous si',
+      not: [
+        'Vous cherchez une agence de 200 personnes avec des SLA entreprise',
+        'Vous voulez acheter « de l’IA » comme label marketing, pas un système qui tourne',
+        'Il vous faut un rebrand complet ou un deck de stratégie sur 60 pages — c’est une autre agence'
+      ]
+    },
     contact: {
       eyebrow: 'Parlons-en',
-      h2a: 'Réinventons',
-      h2b: 'et faisons grandir votre activité',
-      sub: 'Racontez-nous votre activité. On répond sous 24 h avec un plan sur mesure et un audit gratuit d’un processus qu’on peut automatiser cette semaine.',
+      h2a: 'Dites-nous',
+      h2b: 'où ça coince.',
+      sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit de 5 minutes sur une chose qu’on peut automatiser cette semaine — sans engagement, sans deck.',
+      freeAudit: 'Audit offert sous 24 h · Sans appel',
       emailLabel: 'Email, idéal pour les briefs',
       waLabel: 'WhatsApp, pour une question rapide',
       waAction: 'Nous écrire',
