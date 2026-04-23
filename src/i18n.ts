@@ -15,10 +15,12 @@ export const translations = {
       cta: 'Get started'
     },
     hero: {
-      h1a: 'Your marketing,',
-      h1b: 'handled from start to finish',
-      sub: 'We build for influencers, restaurants, and anyone with a brand who wants to grow it or optimize logistics to save time and money. Websites, social, ads, CRM, funnels. Every setup is custom.',
-      ctaPrimary: 'Grow your business now!',
+      eyebrow: 'Custom AI studio · Bali & Paris',
+      h1a: 'Built for one brand.',
+      h1b: 'Yours.',
+      sub: 'No templates. No packaged plans. We design every system around how your business actually runs — and stay close enough to keep evolving it with you.',
+      ctaPrimary: 'Start a project',
+      engagement: 'Free first call · Build sprints from 2 weeks · Monthly care after launch',
       ctaSecondary: 'Grow your brand',
       mockTitle: 'Dashboard exemple built for a restaurant in Bali',
       mockCta: 'Book my own dashboard',
@@ -72,55 +74,55 @@ export const translations = {
     },
     services: {
       eyebrow: 'What we build',
-      h2a: 'Everything your brand needs,',
-      h2b: 'in one simple place',
-      sub: 'Mix and match. Every setup is tuned to your business, but nothing is built from scratch. Same reliable base, shaped to what you actually need.',
+      h2a: 'No two builds',
+      h2b: 'look the same.',
+      sub: 'Pick the pieces that match your business — site, dashboard, automation, content engine. Each one is shaped to your operation, not pulled off a shelf.',
       items: [
         {
           title: 'CRM & live dashboards',
           desc: 'Revenue, bookings, social reach. One screen that reads itself. No more hunting through spreadsheets.',
-          metric: '10×',
-          metricLabel: 'Faster to read',
+          metric: '',
+          metricLabel: 'Built for your ops',
           tag: 'Restaurant',
           tagColor: '#ff9f0a'
         },
         {
           title: 'Websites or Mobile App',
           desc: 'We build your website or mobile app, or take over what you already have. Wired to your tools, designed for one job: turn visits into clients.',
-          metric: '+32%',
-          metricLabel: 'Conversion lift',
+          metric: '',
+          metricLabel: 'From scratch or takeover',
           tag: 'Entrepreneur',
           tagColor: '#0071e3'
         },
         {
           title: 'Social & Automation, handled',
           desc: 'We build automation for any platform: WhatsApp, Telegram, Instagram, TikTok, Facebook, YouTube. Content calendar, writing, and automated replies.',
-          metric: '+38%',
-          metricLabel: 'More reach & saved time',
+          metric: '',
+          metricLabel: 'Always-on, multi-platform',
           tag: 'Influencer',
           tagColor: '#ff375f'
         },
         {
           title: 'Marketing strategy',
           desc: 'Digital and physical. A clear 90-day plan: what to run, where to spend, what to measure, when to pivot.',
-          metric: '90d',
-          metricLabel: 'Full roadmap',
+          metric: '',
+          metricLabel: '90-day roadmap',
           tag: 'Spa',
           tagColor: '#af52de'
         },
         {
           title: 'Ads, managed for you',
           desc: 'Meta, Google, TikTok. Creative, testing and weekly optimisation by our team. We keep what works, cut what doesn’t.',
-          metric: '+2.7×',
-          metricLabel: 'Return on spend',
+          metric: '',
+          metricLabel: 'Monthly retainer',
           tag: 'Restaurant',
           tagColor: '#ff9f0a'
         },
         {
           title: 'Sales funnels that sell',
           desc: 'From first click to booked client. Designed, wired, tested. A pipeline you can actually point to.',
-          metric: '×3',
-          metricLabel: 'Qualified leads',
+          metric: '',
+          metricLabel: 'End-to-end pipeline',
           tag: 'Entrepreneur',
           tagColor: '#0071e3'
         }
@@ -211,10 +213,10 @@ export const translations = {
       over: 'over'
     },
     clients: {
-      eyebrow: 'Some of our work',
+      eyebrow: 'Currently building with',
       h2a: 'Real brands,',
-      h2b: 'Real results',
-      sub: 'A short list of the setups live right now. Full list on request.',
+      h2b: 'real systems.',
+      sub: 'No two builds look alike. Each setup below was designed from scratch around how that team actually operates.',
       items: [
         {
           name: 'My Cocotte',
@@ -331,7 +333,7 @@ export const translations = {
       },
       footerLocation: 'All of Bali island',
       footerRemote: 'Remote worldwide',
-      footerTagline: 'Improve your business with one click',
+      footerTagline: 'One studio. One client at a time.',
       footerNav: {
         services: 'Services',
         software: 'Software',
@@ -356,10 +358,12 @@ export const translations = {
       cta: 'Commencer'
     },
     hero: {
-      h1a: 'Votre marketing,',
-      h1b: 'pris en charge de A à Z',
-      sub: 'Pensé pour les influenceurs, les restaurants, et tous ceux qui ont une marque et veulent soit la faire grossir, soit revoir leur logistique pour gagner un maximum de temps et d\'argent. Sites, réseaux, CRM, tunnels. Sur mesure.',
-      ctaPrimary: 'Développez votre business !',
+      eyebrow: 'Studio IA sur mesure · Bali & Paris',
+      h1a: 'Conçu pour une marque.',
+      h1b: 'La vôtre.',
+      sub: 'Pas de template. Pas de pack tout-fait. On dessine chaque système autour de la façon dont votre business tourne vraiment — et on reste assez proches pour le faire évoluer avec vous.',
+      ctaPrimary: 'Démarrer un projet',
+      engagement: 'Premier appel offert · Sprints dès 2 semaines · Suivi mensuel après livraison',
       ctaSecondary: 'Grow your brand',
       mockTitle: 'Exemple de dashboard conçu pour un restaurant à Bali',
       mockCta: 'Book my own dashboard',
@@ -413,55 +417,55 @@ export const translations = {
     },
     services: {
       eyebrow: 'Ce qu’on construit',
-      h2a: 'Tout ce qu’il faut à votre marque,',
-      h2b: 'au même endroit',
-      sub: 'Composez à la carte. Chaque installation est sur mesure, mais rien n’est inventé de zéro. Même base solide, forme adaptée à vos besoins réels.',
+      h2a: 'Aucun build',
+      h2b: 'ne se ressemble.',
+      sub: 'Choisissez les briques qui collent à votre business — site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, pas tirée d’une étagère.',
       items: [
         {
           title: 'CRM & tableaux de bord',
           desc: 'Chiffre d’affaires, réservations, portée sociale. Un seul écran qui se lit tout seul. Fini la chasse aux tableurs.',
-          metric: '10×',
-          metricLabel: 'Plus vite à lire',
+          metric: '',
+          metricLabel: 'Pensé pour votre opération',
           tag: 'Restaurant',
           tagColor: '#ff9f0a'
         },
         {
           title: 'Site web ou application mobile',
           desc: 'On conçoit votre site web ou votre app mobile, ou on reprend l’existant. Branché à vos outils, pensé pour transformer les visites en clients.',
-          metric: '+32 %',
-          metricLabel: 'Taux de conversion',
+          metric: '',
+          metricLabel: 'De zéro ou reprise',
           tag: 'Entrepreneur',
           tagColor: '#0071e3'
         },
         {
           title: 'Réseaux & Automatisations',
           desc: 'On construit de l\'automatisation pour n\'importe quelle plateforme : WhatsApp, Telegram, Instagram, TikTok, Facebook, YouTube. Planning, contenu et réponses 24/7.',
-          metric: '+38 %',
-          metricLabel: 'Portée & temps gagné',
+          metric: '',
+          metricLabel: '24/7, multi-plateforme',
           tag: 'Influenceur',
           tagColor: '#ff375f'
         },
         {
           title: 'Stratégie marketing',
           desc: 'Digital et physique. Un plan clair sur 90 jours : quoi lancer, où dépenser, quoi mesurer, quand ajuster.',
-          metric: '90 j',
-          metricLabel: 'Feuille de route',
+          metric: '',
+          metricLabel: 'Feuille de route 90 jours',
           tag: 'Spa',
           tagColor: '#af52de'
         },
         {
           title: 'Pubs, gérées pour vous',
           desc: 'Meta, Google, TikTok. Créa, tests et optimisation chaque semaine par notre équipe. On garde ce qui marche, on coupe le reste.',
-          metric: '+2,7×',
-          metricLabel: 'Retour par €',
+          metric: '',
+          metricLabel: 'Abonnement mensuel',
           tag: 'Restaurant',
           tagColor: '#ff9f0a'
         },
         {
           title: 'Tunnels qui vendent',
           desc: 'Du premier clic au client réservé. Conçu, branché, testé. Un vrai pipeline, pas une promesse.',
-          metric: '×3',
-          metricLabel: 'Leads qualifiés',
+          metric: '',
+          metricLabel: 'Pipeline de bout en bout',
           tag: 'Entrepreneur',
           tagColor: '#0071e3'
         }
@@ -552,10 +556,10 @@ export const translations = {
       over: 'par'
     },
     clients: {
-      eyebrow: 'Quelques projets',
-      h2a: 'Des marques réelles,',
-      h2b: 'Des résultats réels',
-      sub: 'Une courte liste des systèmes en route. Liste complète sur demande.',
+      eyebrow: 'On construit en ce moment avec',
+      h2a: 'De vraies marques,',
+      h2b: 'de vrais systèmes.',
+      sub: 'Aucun build ne ressemble à un autre. Chaque setup ci-dessous a été dessiné de zéro autour de la façon dont l’équipe travaille vraiment.',
       items: [
         {
           name: 'My Cocotte',
@@ -672,7 +676,7 @@ export const translations = {
       },
       footerLocation: 'Toute l’île de Bali',
       footerRemote: 'À distance, partout',
-      footerTagline: 'Améliorez votre business en un clic',
+      footerTagline: 'Un studio. Un client à la fois.',
       footerNav: {
         services: 'Services',
         software: 'Software',

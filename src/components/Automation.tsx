@@ -103,7 +103,7 @@ export default function Automation() {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_12px_28px_-8px_rgba(255,55,95,0.5)] px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center rounded-full bg-fg text-bg px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight transition-opacity hover:opacity-90"
               >
                 Book my own dashboard
               </a>

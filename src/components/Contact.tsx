@@ -1,7 +1,18 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Check, Instagram, Facebook } from 'lucide-react'
+import { ArrowRight, Check, Instagram, Facebook, Mail } from 'lucide-react'
 import { useLang } from '../lang'
+
+const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
+const WA_NUMBER_RAW = '6285785065652'
+
+function WhatsAppGlyph({ size = 22 }: { size?: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.002 2C6.486 2 2 6.486 2 12c0 2.15.679 4.144 1.833 5.78L2 22l4.318-1.833A9.953 9.953 0 0 0 12.002 22c5.514 0 10-4.486 10-10s-4.486-10-10-10z" />
+    </svg>
+  )
+}
 
 const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
 
@@ -16,6 +27,8 @@ const poweredBy = [
   { name: 'Claude', src: favicon('claude.ai') },
   { name: 'Gemini', src: favicon('gemini.google.com') },
   { name: 'Notion', src: favicon('notion.so') },
+  { name: 'Substack', src: favicon('substack.com') },
+  { name: 'Instantly', src: favicon('instantly.ai') },
   { name: 'Figma', src: favicon('figma.com') },
   { name: 'Photoshop', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg' },
   { name: 'After Effects', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-plain.svg' },
@@ -28,29 +41,38 @@ export default function Contact() {
   const { t } = useLang()
   const c = t.contact
   const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', business: '', message: '' })
+  const [email, setEmail] = useState('')
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault()
-    const body = encodeURIComponent(c.mailBody(form.name, form.business, form.message, form.email))
-    const subject = encodeURIComponent(c.mailSubject(form.business || form.name))
-    window.location.href = `mailto:hello@customy.agency?subject=${subject}&body=${body}`
+    const subject = encodeURIComponent(c.mailSubject(email))
+    const body = encodeURIComponent(
+      `Hi Customy,\n\nI'd like to start a conversation.\n\nReach me at ${email}.`
+    )
+    window.location.href = `mailto:customyagency@gmail.com?subject=${subject}&body=${body}`
     setSent(true)
   }
-
-  const input = 'w-full bg-transparent border-0 outline-none py-3 text-[15px] placeholder:text-sub/50'
 
   return (
     <>
       <section id="contact" className="relative py-24 md:py-32">
         <div className="container-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
-            <div className="lg:col-span-5 lg:-mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+            <div className="lg:col-span-5">
               <p className="eyebrow">Start a project</p>
               <h2 className="display-2 text-balance">
                 {c.h2a} <span className="text-sub">{c.h2b}</span>
               </h2>
               <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
+
+              <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
+                <motion.span
+                  className="w-2 h-2 rounded-full bg-[#34c759]"
+                  animate={{ opacity: [1, 0.35, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <span className="text-[12.5px] font-medium text-fg2">{c.availabilityBody}</span>
+              </div>
 
               <div className="mt-10">
                 <div className="eyebrow text-sub">Powered by</div>
@@ -106,63 +128,51 @@ export default function Contact() {
                   <p className="text-fg2 text-[15px] max-w-md mx-auto leading-[1.55] text-pretty">{c.sentBody}</p>
                 </motion.div>
               ) : (
-                <form onSubmit={submit} className="card p-7 md:p-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
-                    <label className="block border-b border-hair">
-                      <div className="text-[11px] font-medium text-sub uppercase tracking-wider">{c.form.name}</div>
-                      <input
-                        required
-                        placeholder={c.form.namePh}
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className={input}
-                      />
-                    </label>
-                    <label className="block border-b border-hair">
-                      <div className="text-[11px] font-medium text-sub uppercase tracking-wider">{c.form.email}</div>
-                      <input
-                        required
-                        type="email"
-                        placeholder={c.form.emailPh}
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className={input}
-                      />
-                    </label>
-                  </div>
+                <div className="flex flex-col gap-4">
+                  <form onSubmit={submit} className="card p-6 md:p-7 group focus-within:border-fg/30 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2">
+                        <Mail size={18} strokeWidth={1.7} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[10.5px] font-semibold text-sub uppercase tracking-[0.18em]">Email</div>
+                        <input
+                          required
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="you@brand.com"
+                          className="w-full bg-transparent border-0 outline-none text-[20px] md:text-[24px] font-display font-medium tracking-tight placeholder:text-sub/40 mt-1"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        aria-label={c.form.send}
+                        className="shrink-0 w-12 h-12 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity"
+                      >
+                        <ArrowRight size={18} />
+                      </button>
+                    </div>
+                  </form>
 
-                  <label className="block border-b border-hair mt-4">
-                    <div className="text-[11px] font-medium text-sub uppercase tracking-wider">{c.form.business}</div>
-                    <input
-                      placeholder={c.form.businessPh}
-                      value={form.business}
-                      onChange={(e) => setForm({ ...form, business: e.target.value })}
-                      className={input}
-                    />
-                  </label>
-
-                  <label className="block border-b border-hair mt-4">
-                    <div className="text-[11px] font-medium text-sub uppercase tracking-wider">{c.form.message}</div>
-                    <textarea
-                      required
-                      rows={4}
-                      placeholder={c.form.messagePh}
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className={`${input} resize-none leading-relaxed pt-3`}
-                    />
-                  </label>
-
-                  <div className="flex items-center justify-between mt-8 gap-4 flex-wrap">
-                    <span className="text-[12px] text-sub">{c.form.replyNote}</span>
-                    <button
-                      type="submit"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_4px_14px_-4px_rgba(255,55,95,0.4)] px-6 py-3 text-[14px] font-medium hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
-                    >
-                      {c.form.send} <ArrowRight size={14} />
-                    </button>
-                  </div>
-                </form>
+                  <a
+                    href={`https://wa.me/${WA_NUMBER_RAW}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card p-6 md:p-7 flex items-center gap-4 hover:border-fg/30 transition-colors"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-surface border border-hair flex items-center justify-center text-[#25D366]">
+                      <WhatsAppGlyph size={22} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[10.5px] font-semibold text-sub uppercase tracking-[0.18em]">WhatsApp</div>
+                      <div className="text-[20px] md:text-[24px] font-display font-medium tracking-tight mt-1">{WA_NUMBER_DISPLAY}</div>
+                    </div>
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-fg text-bg flex items-center justify-center group-hover:opacity-90 transition-opacity">
+                      <ArrowRight size={18} />
+                    </div>
+                  </a>
+                </div>
               )}
             </div>
           </div>
@@ -216,7 +226,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerLocation} · {c.footerRemote}</div>
-            <div>hello@customy.agency</div>
+            <div>customyagency@gmail.com</div>
           </div>
         </div>
       </footer>

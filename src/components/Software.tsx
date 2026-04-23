@@ -4,10 +4,10 @@ import { ArrowUpRight, BarChart3, Calendar, Database, LayoutDashboard } from 'lu
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const points = [
-  { icon: LayoutDashboard, color: 'text-[#ff9f0a]', title: 'One screen for everything', desc: 'Revenue, bookings, reach, reviews. The numbers you actually look at, in one place.' },
-  { icon: Database, color: 'text-[#0071e3]', title: 'Your data, finally yours', desc: 'No more spreadsheets emailed at midnight. Sync from the tools you already use.' },
-  { icon: Calendar, color: 'text-[#af52de]', title: 'Built around your workflow', desc: 'Tables, calendars, kanbans, forms. Whatever your team needs to move faster.' },
-  { icon: BarChart3, color: 'text-[#34c759]', title: 'Reports that write themselves', desc: 'Daily and weekly summaries land in your inbox. The story, not the numbers.' }
+  { icon: LayoutDashboard, color: 'text-[#ff9f0a]', title: 'One screen, their operation', desc: 'Revenue, bookings, reach, reviews. The four numbers the owner actually checks — pulled into a single view.' },
+  { icon: Database, color: 'text-[#0071e3]', title: 'Wired to their existing tools', desc: 'Sync from the till, the booking system, the DM inbox. No duplicated entry, no midnight spreadsheets.' },
+  { icon: Calendar, color: 'text-[#af52de]', title: 'Shaped to their workflow', desc: 'Tables, calendars, kanbans, forms. The layout is decided in a call, not picked from a template.' },
+  { icon: BarChart3, color: 'text-[#34c759]', title: 'Reports that land on their phone', desc: 'Daily and weekly summaries in WhatsApp or email. The story, not the numbers.' }
 ]
 
 export default function Software() {
@@ -32,13 +32,12 @@ export default function Software() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <motion.p variants={staggerItem} className="eyebrow">The software</motion.p>
+              <motion.p variants={staggerItem} className="eyebrow">Case study · My Cocotte</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                Tools, <span className="text-sub">made for the way you work</span>
+                One dashboard, <span className="text-sub">built around one restaurant.</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
-                Custom dashboards, internal tools, client portals. The boring software your business
-                needs to stop running on duct tape.
+                We designed this for a restaurant in Canggu. Every tab, every metric, every alert was decided with the owner — not pulled from a template. Yours would look different, because your business is.
               </motion.p>
             </motion.div>
 
@@ -185,7 +184,10 @@ function DashboardMock() {
     <div className="relative rounded-[24px] border border-hair bg-surface2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)]">
       <div className="flex items-center gap-2 px-5 py-3 border-b border-hair bg-surface/50">
         <LayoutDashboard size={14} className="text-sub" />
-        <span className="text-[11.5px] text-fg font-medium tracking-tight">my-cocotte.customy.agency</span>
+        <span className="text-[11.5px] text-fg font-medium tracking-tight flex-1">my-cocotte.customy.agency</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-sub px-2 py-0.5 rounded-full border border-hair bg-surface2/60">
+          Example
+        </span>
       </div>
 
       <div className="flex flex-col sm:flex-row min-h-[460px]">

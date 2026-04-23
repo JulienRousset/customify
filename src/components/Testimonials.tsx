@@ -92,15 +92,23 @@ export default function Testimonials() {
                   “{item.quote}”
                 </blockquote>
 
-                <figcaption className="mt-auto pt-7 border-t border-hair flex items-end justify-between gap-4">
+                <figcaption className="mt-auto pt-7 border-t border-hair flex flex-col gap-4">
                   <div>
                     <div className="font-display font-semibold text-[15px] tracking-tight">{item.name}</div>
                     <div className="text-[12px] text-sub mt-0.5">{item.kind}</div>
                   </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-[22px] tracking-tight">{item.result}</div>
-                    <div className="text-[10.5px] text-sub font-medium mt-0.5">{item.metric}</div>
-                  </div>
+                  {item.stack && item.stack.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="inline-flex items-center text-[10.5px] font-medium uppercase tracking-wider text-sub px-2 py-1 rounded-full border border-hair bg-surface/40"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </figcaption>
               </motion.figure>
             ))}

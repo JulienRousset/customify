@@ -62,7 +62,7 @@ export default function ExitIntentModal() {
     e.preventDefault()
     const subject = encodeURIComponent(m.mailSubject)
     const body = encodeURIComponent(m.mailBody(email))
-    window.location.href = `mailto:hello@customy.agency?subject=${subject}&body=${body}`
+    window.location.href = `mailto:customyagency@gmail.com?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -142,7 +142,7 @@ export default function ExitIntentModal() {
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#ff375f] to-[#ff9f0a] text-white shadow-[0_8px_20px_-6px_rgba(255,55,95,0.45)] px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 transition-opacity"
                   >
                     {m.cta} <ArrowRight size={14} />
                   </button>

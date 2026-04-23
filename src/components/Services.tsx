@@ -88,12 +88,13 @@ export default function Services() {
                   </p>
                 </div>
 
-                <div className="mt-auto pt-5 border-t border-hair/50 flex items-center justify-between">
+                <div className="mt-auto pt-5 border-t border-hair/50 flex items-center gap-2">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ backgroundColor: item.tagColor }}
+                  />
                   <div className="text-[11px] font-medium text-sub uppercase tracking-wider">
                     {item.metricLabel}
-                  </div>
-                  <div className="font-semibold text-[14px] text-fg">
-                    {item.metric}
                   </div>
                 </div>
               </motion.article>
