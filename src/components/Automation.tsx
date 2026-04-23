@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, Check, MessageCircle, Zap, Instagram, Send } from 'lucide-react'
+import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
+
+const featureIcons = [MessageCircle, Zap, Bot, Check]
+const featureColors = ['text-[#34c759]', 'text-[#ffcc00]', 'text-[#af52de]', 'text-[#ff375f]']
 
 function MessengerLogo({ size = 18, className = '' }: { size?: number; className?: string; strokeWidth?: number }) {
   return (
@@ -35,14 +39,9 @@ function WhatsAppLogo({ size = 18, className = '' }: { size?: number; className?
   )
 }
 
-const features = [
-  { icon: MessageCircle, color: 'text-[#34c759]', title: 'Replies, sent for you', desc: 'WhatsApp, Instagram DMs, email. Answered in your voice, day and night.' },
-  { icon: Zap, color: 'text-[#ffcc00]', title: 'Workflows that fire themselves', desc: 'New booking, new lead, new payment. Every event triggers the right action.' },
-  { icon: Bot, color: 'text-[#af52de]', title: 'AI tuned to your brand', desc: 'Trained on your menu, services, FAQs. It sounds like you, not like a chatbot.' },
-  { icon: Check, color: 'text-[#ff375f]', title: 'You stay in the loop', desc: 'Daily handover. What got handled, what needs a human, what to ship next.' }
-]
-
 export default function Automation() {
+  const { t } = useLang()
+  const a = t.automation
   return (
     <section id="automation" className="relative py-24 md:py-32">
       <div className="container-xl">
@@ -54,13 +53,12 @@ export default function Automation() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <motion.p variants={staggerItem} className="eyebrow">The automation</motion.p>
+              <motion.p variants={staggerItem} className="eyebrow">{a.eyebrow}</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                Let AI <span className="text-sub">do the busywork</span>
+                {a.h2a} <span className="text-sub">{a.h2b}</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
-                The conversations, the reminders, the follow-ups. Running 24/7 in your voice while
-                you focus on the parts only you can do.
+                {a.sub}
               </motion.p>
             </motion.div>
 
@@ -71,8 +69,9 @@ export default function Automation() {
               viewport={viewportOnce}
               className="space-y-7"
             >
-              {features.map((f) => {
-                const Icon = f.icon
+              {a.features.map((f, i) => {
+                const Icon = featureIcons[i] ?? MessageCircle
+                const color = featureColors[i] ?? 'text-fg'
                 return (
                   <motion.li
                     key={f.title}
@@ -84,7 +83,7 @@ export default function Automation() {
                       transition={{ type: 'spring', stiffness: 400, damping: 16 }}
                       className="mt-0.5 w-11 h-11 rounded-full bg-surface2 border border-hair flex items-center justify-center shrink-0"
                     >
-                      <Icon size={18} strokeWidth={1.7} className={f.color} />
+                      <Icon size={18} strokeWidth={1.7} className={color} />
                     </motion.span>
                     <div>
                       <div className="font-display font-semibold text-[18px] tracking-tight">{f.title}</div>
@@ -105,7 +104,7 @@ export default function Automation() {
                 href="#contact"
                 className="inline-flex items-center rounded-full bg-fg text-bg px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight transition-opacity hover:opacity-90"
               >
-                Book my own dashboard
+                {a.cta}
               </a>
             </motion.div>
           </div>
@@ -117,7 +116,7 @@ export default function Automation() {
             transition={{ duration: 0.9, ease: easeApple, delay: 0.1 }}
             className="lg:col-span-7 order-1 lg:order-2"
           >
-            <ChatMock />
+            <ChatMock tag={a.mockTag} />
           </motion.div>
         </div>
       </div>
@@ -125,7 +124,7 @@ export default function Automation() {
   )
 }
 
-function ChatMock() {
+function ChatMock({ tag }: { tag?: string }) {
   const chats = [
     {
       id: 'whatsapp',
@@ -212,6 +211,13 @@ function ChatMock() {
   return (
     <div className="relative w-full h-[600px] md:h-[880px] mt-10 md:mt-0 perspective-[1200px]">
       <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
+
+      {tag && (
+        <div className="absolute top-0 right-0 z-20 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-sub px-2.5 py-1 rounded-full border border-hair bg-surface2/80 backdrop-blur-sm">
+          <span className="w-1 h-1 rounded-full bg-sub/70" aria-hidden />
+          {tag}
+        </div>
+      )}
       
       {chats.map((chat) => {
         const Icon = chat.icon

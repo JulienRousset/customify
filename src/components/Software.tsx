@@ -4,7 +4,7 @@ import { ArrowUpRight, BarChart3, Calendar, Database, LayoutDashboard } from 'lu
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const points = [
-  { icon: LayoutDashboard, color: 'text-[#ff9f0a]', title: 'One screen, their operation', desc: 'Revenue, bookings, reach, reviews. The four numbers the owner actually checks — pulled into a single view.' },
+  { icon: LayoutDashboard, color: 'text-[#ff9f0a]', title: 'One screen, their operation', desc: 'Revenue, bookings, reach, reviews. The four numbers the owner actually checks, in a single view.' },
   { icon: Database, color: 'text-[#0071e3]', title: 'Wired to their existing tools', desc: 'Sync from the till, the booking system, the DM inbox. No duplicated entry, no midnight spreadsheets.' },
   { icon: Calendar, color: 'text-[#af52de]', title: 'Shaped to their workflow', desc: 'Tables, calendars, kanbans, forms. The layout is decided in a call, not picked from a template.' },
   { icon: BarChart3, color: 'text-[#34c759]', title: 'Reports that land on their phone', desc: 'Daily and weekly summaries in WhatsApp or email. The story, not the numbers.' }
@@ -37,7 +37,7 @@ export default function Software() {
                 One dashboard, <span className="text-sub">built around one restaurant.</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
-                We designed this for a restaurant in Canggu. Every tab, every metric, every alert was decided with the owner — not pulled from a template. Yours would look different, because your business is.
+                Every tab, every metric, every alert was decided with the owner. Nothing pulled from a template. Yours would look different, because your business is different.
               </motion.p>
             </motion.div>
 

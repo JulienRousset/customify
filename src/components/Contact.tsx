@@ -231,7 +231,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
-            <div>© {new Date().getFullYear()} Customy Studio · {c.footerLocation} · {c.footerRemote}</div>
+            <div>© {new Date().getFullYear()} Customy Studio · {c.footerRemote}</div>
             <div>customyagency@gmail.com</div>
           </div>
         </div>

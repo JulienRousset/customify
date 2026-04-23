@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
+import { useLang } from '../lang'
 import { staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 type Partner = { name: string; kind: string; logo?: string; logoScale?: number }
@@ -15,6 +16,7 @@ const partners: Partner[] = [
 ]
 
 export default function Marquee() {
+  const { t } = useLang()
   return (
     <section
       aria-label="Partners and clients"
@@ -31,7 +33,7 @@ export default function Marquee() {
           variants={staggerItem}
           className="text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-sub"
         >
-          Trusted by studios, restaurants and creators
+          {t.marquee.header}
         </motion.p>
       </motion.div>
 

@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       work: 'Work',
       services: 'Services',
-      software: 'Software',
+      software: 'Case study',
       automation: 'Automation',
       clients: 'Clients',
       numbers: 'Numbers',
@@ -14,15 +14,32 @@ export const translations = {
       contact: 'Contact',
       cta: 'Get started'
     },
+    marquee: {
+      header: 'Trusted by studios, restaurants and creators'
+    },
+    automation: {
+      eyebrow: 'Case study · Inka Spa Bali',
+      h2a: 'One WhatsApp assistant,',
+      h2b: 'three languages, zero missed bookings.',
+      sub: 'We built this for a wellness studio. It qualifies leads, answers FAQs, and blocks calendar slots in English, French and Indonesian, while the owner sleeps. Similar systems run on Telegram, Messenger and Instagram for other clients.',
+      mockTag: 'Example',
+      features: [
+        { title: 'Replies in their voice', desc: 'Trained on the menu, the services, the tone of past replies. It sounds like the owner, not a chatbot.' },
+        { title: 'Books calendar slots', desc: 'Checks availability, proposes a window, confirms the booking. The owner only steps in when the client asks for something unusual.' },
+        { title: 'Multi-language, 24/7', desc: 'EN, FR, ID in one flow. Auto-detects the guest language and responds in kind. Same assistant, same number.' },
+        { title: 'Daily handover', desc: 'Every morning, a summary of what got handled, what needs a human, what to ship next.' }
+      ],
+      cta: 'Start a project'
+    },
     hero: {
-      eyebrow: 'Custom AI studio · Bali & Paris',
+      eyebrow: 'Custom marketing & AI studio',
       h1a: 'Built for one brand.',
       h1b: 'Yours.',
-      sub: 'No templates. No packaged plans. We design every system around how your business actually runs — and stay close enough to keep evolving it with you.',
+      sub: 'No templates. No packaged plans. We design every system around how your business actually runs, and stay close enough to keep evolving it with you.',
       ctaPrimary: 'Start a project',
       engagement: 'Free first call · Build sprints from 2 weeks · Monthly care after launch',
       ctaSecondary: 'Grow your brand',
-      mockTitle: 'Dashboard exemple built for a restaurant in Bali',
+      mockTitle: 'Example dashboard built for a restaurant client',
       mockCta: 'Book my own dashboard',
       mockHeadingA: 'We build your own software to make your life',
       mockHeadingB: 'easier',
@@ -76,7 +93,7 @@ export const translations = {
       eyebrow: 'What we build',
       h2a: 'No two builds',
       h2b: 'look the same.',
-      sub: 'Pick the pieces that match your business — site, dashboard, automation, content engine. Each one is shaped to your operation, not pulled off a shelf.',
+      sub: 'Pick the pieces that match your business: site, dashboard, automation, content engine. Each one is shaped to your operation, not pulled off a shelf.',
       items: [
         {
           title: 'CRM & live dashboards',
@@ -111,8 +128,8 @@ export const translations = {
           tagColor: '#af52de'
         },
         {
-          title: 'Ads, managed for you',
-          desc: 'Meta, Google, TikTok. Creative, testing and weekly optimisation by our team. We keep what works, cut what doesn’t.',
+          title: 'Ads & SEO',
+          desc: 'Meta, Google and TikTok ads for paid acquisition. On-page, technical and content SEO for organic reach. Weekly optimisation by our team. We keep what works, cut what doesn’t.',
           metric: '',
           metricLabel: 'Monthly retainer',
           tag: 'Restaurant',
@@ -220,7 +237,7 @@ export const translations = {
       items: [
         {
           name: 'My Cocotte',
-          kind: 'Restaurant, Canggu',
+          kind: 'Restaurant',
           result: '+42%',
           metric: 'Monthly bookings',
           quote: 'The weekly report used to take half a day. Now it writes itself at 6 a.m.',
@@ -238,7 +255,7 @@ export const translations = {
         },
         {
           name: 'Inka Spa Bali',
-          kind: 'Wellness, Canggu',
+          kind: 'Wellness',
           result: '24/7',
           metric: 'Lead capture',
           quote: 'My phone rings less. My calendar fills more.',
@@ -247,7 +264,7 @@ export const translations = {
         },
         {
           name: 'Temple Spa Bali',
-          kind: 'Spa, Seminyak',
+          kind: 'Spa',
           result: '+38%',
           metric: 'Returning guests',
           quote: 'The follow-up happens without me. Guests come back.',
@@ -265,7 +282,7 @@ export const translations = {
         },
         {
           name: 'Natura Organics',
-          kind: 'Organic brand, Bali',
+          kind: 'Organic brand',
           result: '3×',
           metric: 'Reorder rate',
           quote: 'Our best customers come back on their own now.',
@@ -274,7 +291,7 @@ export const translations = {
         },
         {
           name: "In'Sens Sourcing",
-          kind: 'Sourcing, Paris',
+          kind: 'Sourcing',
           result: '12h',
           metric: 'Saved weekly',
           quote: 'The inbox no longer runs our day.',
@@ -295,22 +312,22 @@ export const translations = {
       eyebrow: 'How we work',
       h2a: 'Three steps.',
       h2b: 'No account managers.',
-      sub: 'You talk to the people building the thing — from the first call to the launch and after. No hand-offs, no layers, no decks.',
+      sub: 'You talk to the people building the thing, from the first call to the launch and after. No hand-offs, no layers, no decks.',
       steps: [
         {
           title: 'Discovery call',
           duration: '30 min · free',
-          desc: 'We get on a call, understand your operation, your bottlenecks, the tools you already use. You leave with a clear scope — not a pitch deck.'
+          desc: 'We get on a call, understand your operation, your bottlenecks, the tools you already use. You leave with a clear scope. Not a pitch deck.'
         },
         {
           title: 'Build sprint',
           duration: '2 to 3 weeks',
-          desc: 'We design and ship your system end-to-end. You see progress daily on WhatsApp. We launch when it actually works, not when the sprint timer ends.'
+          desc: 'We design and ship your system end-to-end. You see progress daily on WhatsApp. We launch when it actually works.'
         },
         {
           title: 'Monthly care',
           duration: 'Optional · cancel anytime',
-          desc: 'We stay on to evolve it with your business — new dashboards, new automations, fixes. Same two people. No ticket queues.'
+          desc: 'We stay on to evolve it with your business. New dashboards, new automations, fixes. Same two people. No ticket queues.'
         }
       ]
     },
@@ -318,7 +335,7 @@ export const translations = {
       eyebrow: 'Who we work with',
       h2a: 'Owner-operators.',
       h2b: 'Not pitch decks.',
-      sub: 'We stay small on purpose. That means we can only take a few projects at a time — and we say no to anything that doesn’t fit.',
+      sub: 'We stay small on purpose. We can only take a few projects at a time, and we say no to anything that doesn’t fit.',
       fitTitle: 'You’re our fit if',
       fit: [
         'You own the business and actually use what we build every day',
@@ -330,14 +347,14 @@ export const translations = {
       not: [
         'You’re looking for a 200-person agency with enterprise SLAs',
         'You want to buy "AI" as a marketing label, not a working system',
-        'You need a full rebrand or a 60-page strategy deck — that’s a different agency'
+        'You need a full rebrand or a 60-page strategy deck. That’s a different agency.'
       ]
     },
     contact: {
       eyebrow: 'Get in touch',
       h2a: 'Tell us where',
       h2b: 'it’s stuck.',
-      sub: 'One sentence is enough. We reply within 24 hours with a free 5-minute audit of one thing we can automate this week — no strings, no deck.',
+      sub: 'One sentence is enough. We reply within 24 hours with a free 5-minute audit of one thing we can automate this week. No strings, no deck.',
       freeAudit: 'Free 24h audit · No call required',
       emailLabel: 'Email, best for briefs',
       waLabel: 'WhatsApp, quick questions',
@@ -364,7 +381,7 @@ export const translations = {
       exitModal: {
         eyebrow: 'One last thing',
         title: 'Before you go',
-        sub: 'Drop your email and we’ll send a free audit of one thing we can automate for you this week. No strings.',
+        sub: 'Drop your email. Within 24 hours we’ll send a 5-minute audit of one thing we can automate for you. No call, no deck, no strings.',
         emailPh: 'you@brand.com',
         cta: 'Send it my way',
         skip: 'No thanks',
@@ -374,12 +391,12 @@ export const translations = {
         mailBody: (email: string) =>
           `Hi Customy,\n\nI saw the site and I'd like the free audit you mentioned.\n\nReach me at ${email}.`
       },
-      footerLocation: 'All of Bali island',
+      footerLocation: 'Remote',
       footerRemote: 'Remote worldwide',
       footerTagline: 'One studio. One client at a time.',
       footerNav: {
         services: 'Services',
-        software: 'Software',
+        software: 'Case study',
         automation: 'Automation',
         clients: 'Clients',
         contact: 'Contact'
@@ -391,7 +408,7 @@ export const translations = {
     nav: {
       work: 'Projets',
       services: 'Services',
-      software: 'Software',
+      software: 'Étude de cas',
       automation: 'Automation',
       clients: 'Clients',
       numbers: 'Chiffres',
@@ -400,15 +417,32 @@ export const translations = {
       contact: 'Contact',
       cta: 'Commencer'
     },
+    marquee: {
+      header: 'Choisis par des studios, restaurants et créateurs'
+    },
+    automation: {
+      eyebrow: 'Étude de cas · Inka Spa Bali',
+      h2a: 'Un assistant WhatsApp,',
+      h2b: 'trois langues, zéro réservation ratée.',
+      sub: 'Construit pour un studio bien-être. Il qualifie les pistes, répond aux FAQ et bloque les créneaux en anglais, français et indonésien, pendant que la propriétaire dort. Des systèmes similaires tournent sur Telegram, Messenger et Instagram pour d’autres clients.',
+      mockTag: 'Exemple',
+      features: [
+        { title: 'Répond dans leur voix', desc: 'Entraîné sur le menu, les services, le ton des réponses passées. Ça parle comme la proprio, pas comme un chatbot.' },
+        { title: 'Bloque les créneaux', desc: 'Vérifie les dispos, propose une fenêtre, confirme la réservation. La proprio n’intervient que si le client demande quelque chose d’inhabituel.' },
+        { title: 'Multi-langues, 24/7', desc: 'EN, FR, ID dans un seul flux. Détecte la langue du client et répond en conséquence. Même assistant, même numéro.' },
+        { title: 'Debrief quotidien', desc: 'Chaque matin, un résumé de ce qui a été traité, ce qui demande un humain, ce qu’il faut livrer ensuite.' }
+      ],
+      cta: 'Démarrer un projet'
+    },
     hero: {
-      eyebrow: 'Studio IA sur mesure · Bali & Paris',
+      eyebrow: 'Studio marketing & IA sur mesure',
       h1a: 'Conçu pour une marque.',
       h1b: 'La vôtre.',
-      sub: 'Pas de template. Pas de pack tout-fait. On dessine chaque système autour de la façon dont votre business tourne vraiment — et on reste assez proches pour le faire évoluer avec vous.',
+      sub: 'Pas de template. Pas de pack tout-fait. On dessine chaque système autour de la façon dont votre business tourne vraiment, et on reste assez proches pour le faire évoluer avec vous.',
       ctaPrimary: 'Démarrer un projet',
       engagement: 'Premier appel offert · Sprints dès 2 semaines · Suivi mensuel après livraison',
       ctaSecondary: 'Grow your brand',
-      mockTitle: 'Exemple de dashboard conçu pour un restaurant à Bali',
+      mockTitle: 'Exemple de dashboard conçu pour un restaurant client',
       mockCta: 'Book my own dashboard',
       mockHeadingA: 'On construit votre propre logiciel pour vous',
       mockHeadingB: 'simplifier la vie',
@@ -462,7 +496,7 @@ export const translations = {
       eyebrow: 'Ce qu’on construit',
       h2a: 'Aucun build',
       h2b: 'ne se ressemble.',
-      sub: 'Choisissez les briques qui collent à votre business — site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, pas tirée d’une étagère.',
+      sub: 'Choisissez les briques qui collent à votre business : site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, pas tirée d’une étagère.',
       items: [
         {
           title: 'CRM & tableaux de bord',
@@ -497,8 +531,8 @@ export const translations = {
           tagColor: '#af52de'
         },
         {
-          title: 'Pubs, gérées pour vous',
-          desc: 'Meta, Google, TikTok. Créa, tests et optimisation chaque semaine par notre équipe. On garde ce qui marche, on coupe le reste.',
+          title: 'Pubs & SEO',
+          desc: 'Meta, Google et TikTok pour l’acquisition payante. SEO on-page, technique et contenu pour la visibilité organique. Optimisation chaque semaine par notre équipe. On garde ce qui marche, on coupe le reste.',
           metric: '',
           metricLabel: 'Abonnement mensuel',
           tag: 'Restaurant',
@@ -606,7 +640,7 @@ export const translations = {
       items: [
         {
           name: 'My Cocotte',
-          kind: 'Restaurant, Canggu',
+          kind: 'Restaurant',
           result: '+42 %',
           metric: 'Réservations mensuelles',
           quote: 'Le rapport hebdo prenait une demi-journée. Maintenant il s’écrit tout seul à 6h.',
@@ -624,7 +658,7 @@ export const translations = {
         },
         {
           name: 'Inka Spa Bali',
-          kind: 'Bien-être, Canggu',
+          kind: 'Bien-être',
           result: '24/7',
           metric: 'Prise de contacts',
           quote: 'Mon téléphone sonne moins. Mon agenda se remplit plus.',
@@ -633,7 +667,7 @@ export const translations = {
         },
         {
           name: 'Temple Spa Bali',
-          kind: 'Spa, Seminyak',
+          kind: 'Spa',
           result: '+38 %',
           metric: 'Clients qui reviennent',
           quote: 'Le suivi se fait tout seul. Les clients reviennent.',
@@ -651,7 +685,7 @@ export const translations = {
         },
         {
           name: 'Natura Organics',
-          kind: 'Marque bio, Bali',
+          kind: 'Marque bio',
           result: '3×',
           metric: 'Taux de rachat',
           quote: 'Nos meilleurs clients reviennent tout seuls.',
@@ -660,7 +694,7 @@ export const translations = {
         },
         {
           name: "In'Sens Sourcing",
-          kind: 'Sourcing, Paris',
+          kind: 'Sourcing',
           result: '12h',
           metric: 'Économisées / semaine',
           quote: 'La boîte mail ne dirige plus la journée.',
@@ -681,22 +715,22 @@ export const translations = {
       eyebrow: 'Notre façon de bosser',
       h2a: 'Trois étapes.',
       h2b: 'Zéro account manager.',
-      sub: 'Vous parlez aux gens qui construisent — du premier appel au lancement, et après. Pas de passage de témoin, pas d’étages, pas de decks.',
+      sub: 'Vous parlez aux gens qui construisent, du premier appel au lancement et après. Pas de passage de témoin, pas d’étages, pas de decks.',
       steps: [
         {
           title: 'Appel de découverte',
           duration: '30 min · offert',
-          desc: 'On fait le point sur votre opération, vos goulots, les outils que vous utilisez déjà. Vous repartez avec un scope clair — pas un pitch deck.'
+          desc: 'On fait le point sur votre opération, vos goulots, les outils que vous utilisez déjà. Vous repartez avec un scope clair. Pas un pitch deck.'
         },
         {
           title: 'Sprint de build',
           duration: '2 à 3 semaines',
-          desc: 'On conçoit et livre votre système de bout en bout. Vous voyez l’avancement chaque jour sur WhatsApp. On lance quand ça marche, pas quand le chrono sonne.'
+          desc: 'On conçoit et livre votre système de bout en bout. Vous voyez l’avancement chaque jour sur WhatsApp. On lance quand ça marche.'
         },
         {
           title: 'Suivi mensuel',
           duration: 'Optionnel · résiliable à tout moment',
-          desc: 'On reste pour faire évoluer le système avec votre business — nouveaux dashboards, nouvelles automatisations, correctifs. Mêmes deux personnes. Pas de file de tickets.'
+          desc: 'On reste pour faire évoluer le système avec votre business. Nouveaux dashboards, nouvelles automatisations, correctifs. Mêmes deux personnes. Pas de file de tickets.'
         }
       ]
     },
@@ -704,7 +738,7 @@ export const translations = {
       eyebrow: 'Avec qui on bosse',
       h2a: 'Des patrons d’entreprise.',
       h2b: 'Pas des pitch decks.',
-      sub: 'On reste petits exprès. Ça veut dire qu’on prend peu de projets à la fois — et qu’on dit non à tout ce qui ne colle pas.',
+      sub: 'On reste petits exprès. On prend peu de projets à la fois, et on dit non à tout ce qui ne colle pas.',
       fitTitle: 'On est fait pour vous si',
       fit: [
         'Vous êtes le patron et vous utilisez vraiment ce qu’on construit, chaque jour',
@@ -716,14 +750,14 @@ export const translations = {
       not: [
         'Vous cherchez une agence de 200 personnes avec des SLA entreprise',
         'Vous voulez acheter « de l’IA » comme label marketing, pas un système qui tourne',
-        'Il vous faut un rebrand complet ou un deck de stratégie sur 60 pages — c’est une autre agence'
+        'Il vous faut un rebrand complet ou un deck de stratégie sur 60 pages. C’est une autre agence.'
       ]
     },
     contact: {
       eyebrow: 'Parlons-en',
       h2a: 'Dites-nous',
       h2b: 'où ça coince.',
-      sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit de 5 minutes sur une chose qu’on peut automatiser cette semaine — sans engagement, sans deck.',
+      sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit de 5 minutes sur une chose qu’on peut automatiser cette semaine. Sans engagement, sans deck.',
       freeAudit: 'Audit offert sous 24 h · Sans appel',
       emailLabel: 'Email, idéal pour les briefs',
       waLabel: 'WhatsApp, pour une question rapide',
@@ -750,7 +784,7 @@ export const translations = {
       exitModal: {
         eyebrow: 'Un dernier truc',
         title: 'Avant de partir',
-        sub: 'Laissez votre email — on vous envoie un audit gratuit d’une chose qu’on peut automatiser pour vous cette semaine. Sans engagement.',
+        sub: 'Laissez votre email. Sous 24 h, on vous envoie un audit de 5 minutes sur une chose qu’on peut automatiser pour vous. Pas d’appel, pas de deck, sans engagement.',
         emailPh: 'vous@marque.com',
         cta: 'Envoyez-moi ça',
         skip: 'Non merci',
@@ -760,12 +794,12 @@ export const translations = {
         mailBody: (email: string) =>
           `Bonjour Customy,\n\nJ’ai vu le site et j’aimerais l’audit gratuit que vous proposez.\n\nVous pouvez me joindre à ${email}.`
       },
-      footerLocation: 'Toute l’île de Bali',
+      footerLocation: 'À distance',
       footerRemote: 'À distance, partout',
       footerTagline: 'Un studio. Un client à la fois.',
       footerNav: {
         services: 'Services',
-        software: 'Software',
+        software: 'Étude de cas',
         automation: 'Automatisation',
         clients: 'Clients',
         contact: 'Contact'
