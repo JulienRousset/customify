@@ -150,8 +150,6 @@ export const translations = {
         {
           name: 'My Cocotte',
           kind: 'Restaurant',
-          result: '+42%',
-          metric: 'Monthly bookings',
           quote: 'The weekly report used to take half a day. Now it writes itself at 6 a.m.',
           desc: 'One clear dashboard plus an Instagram pipeline. Replaced four tools and two hours of daily admin.',
           stack: ['Dashboard', 'Instagram', 'Till sync']
@@ -159,8 +157,6 @@ export const translations = {
         {
           name: 'Dylan',
           kind: 'Personal brand, worldwide',
-          result: '10×',
-          metric: 'More content',
           quote: 'I brief it once a week. The content shows up, in my voice.',
           desc: 'AI content engine. Ideas, scripts, captions, scheduling. Fully tuned to the brand voice.',
           stack: ['AI assistant', 'Content calendar', 'Analytics']
@@ -168,8 +164,6 @@ export const translations = {
         {
           name: 'Inka Spa Bali',
           kind: 'Wellness',
-          result: '24/7',
-          metric: 'Lead capture',
           quote: 'My phone rings less. My calendar fills more.',
           desc: 'WhatsApp assistant that qualifies leads, answers in three languages, confirms bookings.',
           stack: ['WhatsApp', 'Calendar', 'CRM']
@@ -177,8 +171,6 @@ export const translations = {
         {
           name: 'Temple Spa Bali',
           kind: 'Spa',
-          result: '+38%',
-          metric: 'Returning guests',
           quote: 'The follow-up happens without me. Guests come back.',
           desc: 'Automated post-visit flow. Thank-you notes, review asks, memberships, rebooking prompts.',
           stack: ['Automation', 'Email', 'Reviews']
@@ -186,8 +178,6 @@ export const translations = {
         {
           name: 'Skyrol',
           kind: 'Travel solution, remote',
-          result: '+48%',
-          metric: 'Conversion lift',
           quote: 'We stopped losing leads in the gaps between tools.',
           desc: 'End-to-end funnel wiring. Tracking, nurture, checkout, reporting. Every step visible.',
           stack: ['Analytics', 'Email', 'Checkout']
@@ -195,8 +185,6 @@ export const translations = {
         {
           name: 'Natura Organics',
           kind: 'Organic brand',
-          result: '3×',
-          metric: 'Reorder rate',
           quote: 'Our best customers come back on their own now.',
           desc: 'Subscriptions, post-purchase flows, review loops. The retention machine, wired up.',
           stack: ['Subscriptions', 'Email', 'Reviews']
@@ -204,8 +192,6 @@ export const translations = {
         {
           name: "In'Sens Sourcing",
           kind: 'Sourcing',
-          result: '12h',
-          metric: 'Saved weekly',
           quote: 'The inbox no longer runs our day.',
           desc: 'Supplier triage, RFQ automation, deadline tracking. Inbox to pipeline in one click.',
           stack: ['Pipeline', 'Email', 'Docs']
@@ -304,7 +290,26 @@ export const translations = {
         automation: 'Automation',
         clients: 'Clients',
         contact: 'Contact'
-      }
+      },
+      legalNote: 'By contacting us you agree to our',
+      privacyLabel: 'Privacy',
+      termsLabel: 'Terms'
+    },
+    cookies: {
+      eyebrow: 'Cookie preferences',
+      body: 'We use a few tools to understand which content works and to improve the site. You decide what runs. Necessary tools always work.',
+      readMore: 'Read our privacy policy',
+      acceptAll: 'Accept all',
+      rejectAll: 'Reject all',
+      customize: 'Customize',
+      savePrefs: 'Save preferences',
+      close: 'Close',
+      necessaryLabel: 'Necessary',
+      necessaryDesc: 'Required for the site to work (theme preference, your consent choice).',
+      analyticsLabel: 'Analytics',
+      analyticsDesc: 'Anonymous page views, scroll depth, and heatmaps so we can improve the page (Google Analytics, Microsoft Clarity).',
+      marketingLabel: 'Marketing',
+      marketingDesc: 'Ad attribution if you arrived from a paid campaign (Meta Pixel, TikTok Pixel).'
     }
   },
 
@@ -457,8 +462,6 @@ export const translations = {
         {
           name: 'My Cocotte',
           kind: 'Restaurant',
-          result: '+42 %',
-          metric: 'Réservations mensuelles',
           quote: 'Le rapport hebdo prenait une demi-journée. Maintenant il s’écrit tout seul à 6h.',
           desc: 'Un dashboard clair et une chaîne Instagram. Remplace quatre outils et deux heures d’admin par jour.',
           stack: ['Dashboard', 'Instagram', 'Caisse']
@@ -466,8 +469,6 @@ export const translations = {
         {
           name: 'Dylan',
           kind: 'Marque perso, international',
-          result: '10×',
-          metric: 'Plus de contenu',
           quote: 'Je brief une fois par semaine. Le contenu sort, dans ma voix.',
           desc: 'Moteur de contenu IA. Idées, scripts, légendes, planning. Calé sur la voix de la marque.',
           stack: ['Assistant IA', 'Planning', 'Analytics']
@@ -475,8 +476,6 @@ export const translations = {
         {
           name: 'Inka Spa Bali',
           kind: 'Bien-être',
-          result: '24/7',
-          metric: 'Prise de contacts',
           quote: 'Mon téléphone sonne moins. Mon agenda se remplit plus.',
           desc: 'Assistant WhatsApp qui qualifie les pistes, répond en trois langues, confirme les RDV.',
           stack: ['WhatsApp', 'Agenda', 'CRM']
@@ -484,8 +483,6 @@ export const translations = {
         {
           name: 'Temple Spa Bali',
           kind: 'Spa',
-          result: '+38 %',
-          metric: 'Clients qui reviennent',
           quote: 'Le suivi se fait tout seul. Les clients reviennent.',
           desc: 'Parcours post-visite automatisé. Remerciements, demandes d’avis, abonnements, relances.',
           stack: ['Automatisation', 'Email', 'Avis']
@@ -493,8 +490,6 @@ export const translations = {
         {
           name: 'Skyrol',
           kind: 'Solution voyage, à distance',
-          result: '+48 %',
-          metric: 'Conversions',
           quote: 'On ne perd plus de pistes dans les trous entre les outils.',
           desc: 'Tunnel complet câblé. Tracking, nurturing, checkout, reporting. Chaque étape visible.',
           stack: ['Analytics', 'Email', 'Checkout']
@@ -502,8 +497,6 @@ export const translations = {
         {
           name: 'Natura Organics',
           kind: 'Marque bio',
-          result: '3×',
-          metric: 'Taux de rachat',
           quote: 'Nos meilleurs clients reviennent tout seuls.',
           desc: 'Abonnements, parcours post-achat, boucles d’avis. La machine à fidéliser, câblée.',
           stack: ['Abonnements', 'Email', 'Avis']
@@ -511,8 +504,6 @@ export const translations = {
         {
           name: "In'Sens Sourcing",
           kind: 'Sourcing',
-          result: '12h',
-          metric: 'Économisées / semaine',
           quote: 'La boîte mail ne dirige plus la journée.',
           desc: 'Tri fournisseurs, RFQ automatisés, suivi des deadlines. Mail vers pipeline en un clic.',
           stack: ['Pipeline', 'Email', 'Docs']
@@ -611,7 +602,26 @@ export const translations = {
         automation: 'Automatisation',
         clients: 'Clients',
         contact: 'Contact'
-      }
+      },
+      legalNote: 'En nous contactant, vous acceptez nos',
+      privacyLabel: 'Politique de confidentialité',
+      termsLabel: 'Conditions'
+    },
+    cookies: {
+      eyebrow: 'Préférences cookies',
+      body: 'On utilise quelques outils pour comprendre ce qui fonctionne et améliorer le site. C’est vous qui décidez ce qui s’active. Les outils nécessaires fonctionnent toujours.',
+      readMore: 'Lire notre politique de confidentialité',
+      acceptAll: 'Tout accepter',
+      rejectAll: 'Tout refuser',
+      customize: 'Personnaliser',
+      savePrefs: 'Enregistrer',
+      close: 'Fermer',
+      necessaryLabel: 'Nécessaires',
+      necessaryDesc: 'Indispensables au fonctionnement du site (thème, votre choix de consentement).',
+      analyticsLabel: 'Statistiques',
+      analyticsDesc: 'Vues de pages anonymes, profondeur de scroll et heatmaps pour améliorer la page (Google Analytics, Microsoft Clarity).',
+      marketingLabel: 'Marketing',
+      marketingDesc: 'Attribution publicitaire si vous arrivez depuis une campagne payante (Pixel Meta, Pixel TikTok).'
     }
   }
 } as const

@@ -133,6 +133,18 @@ export default function Contact() {
                       <ArrowRight size={15} />
                     </div>
                   </a>
+
+                  <p className="text-[11.5px] text-sub leading-[1.5] mt-1">
+                    {c.legalNote}{' '}
+                    <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                      {c.privacyLabel}
+                    </a>{' '}
+                    &amp;{' '}
+                    <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                      {c.termsLabel}
+                    </a>
+                    .
+                  </p>
                 </div>
               )}
             </div>
@@ -236,7 +248,11 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerRemote}</div>
-            <div>customyagency@gmail.com</div>
+            <div className="flex items-center gap-5">
+              <a href="/privacy.html" className="hover:text-fg transition-colors">Privacy</a>
+              <a href="/terms.html" className="hover:text-fg transition-colors">Terms</a>
+              <a href="mailto:customyagency@gmail.com" className="hover:text-fg transition-colors">customyagency@gmail.com</a>
+            </div>
           </div>
         </div>
       </footer>

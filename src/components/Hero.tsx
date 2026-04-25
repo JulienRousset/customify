@@ -7,6 +7,12 @@ import LogoViewer from './LogoViewer'
 
 const heroContainer = staggerParent(0.09, 0.1)
 
+// Prefetch the Contact chunk on hover/focus so the click feels instant.
+// Dynamic imports are cached, so this runs at most once.
+const prefetchContact = () => {
+  import('./Contact').catch(() => {})
+}
+
 export default function Hero() {
   const { t } = useLang()
   const h = t.hero
@@ -36,6 +42,8 @@ export default function Hero() {
             <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center gap-4">
               <motion.a
                 href="#contact"
+                onMouseEnter={prefetchContact}
+                onFocus={prefetchContact}
                 variants={buttonHover}
                 initial="rest"
                 whileHover="hover"
@@ -69,6 +77,17 @@ export default function Hero() {
             {/* Notifications overlay */}
             <div className="absolute inset-0 w-full h-full z-10 pointer-events-none mt-10 lg:mt-0">
               <HeroNotifications />
+            </div>
+          </motion.div>
+
+          {/* Mobile-only visual: smaller 3D logo, no notification overlays */}
+          <motion.div
+            variants={staggerItem}
+            className="flex lg:hidden relative justify-center w-full mt-4 h-[280px] sm:h-[340px] items-center"
+            aria-hidden
+          >
+            <div className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] opacity-90 pointer-events-none">
+              <LogoViewer />
             </div>
           </motion.div>
         </div>

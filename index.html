@@ -11,9 +11,17 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Search engine verification (no scripts, no cookies — fill these in once,
+         then verify ownership in Google Search Console / Bing Webmaster Tools). -->
+    <!-- <meta name="google-site-verification" content="PASTE_GOOGLE_TOKEN_HERE" /> -->
+    <!-- <meta name="msvalidate.01" content="PASTE_BING_TOKEN_HERE" /> -->
+
+    <!-- CSP: allows GA4, Microsoft Clarity, Meta Pixel, TikTok Pixel only when
+         the user accepts. Scripts only load via the consent flow. -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; font-src 'self' data: https://use.typekit.net https://p.typekit.net; img-src 'self' data: https:; connect-src 'self' https://use.typekit.net https://p.typekit.net; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://analytics.tiktok.com; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; font-src 'self' data: https://use.typekit.net https://p.typekit.net; img-src 'self' data: https: blob:; connect-src 'self' https://use.typekit.net https://p.typekit.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://www.facebook.com https://analytics.tiktok.com; frame-src https://www.facebook.com https://td.doubleclick.net; base-uri 'self'; form-action 'self';"
     />
 
     <title>Customy · Every business is unique, yours should be too.</title>

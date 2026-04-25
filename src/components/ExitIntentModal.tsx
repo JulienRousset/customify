@@ -155,6 +155,18 @@ export default function ExitIntentModal() {
                 >
                   {m.skip}
                 </button>
+
+                <p className="mt-5 text-[11px] text-sub leading-[1.5] max-w-xs mx-auto">
+                  {t.contact.legalNote}{' '}
+                  <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                    {t.contact.privacyLabel}
+                  </a>{' '}
+                  &amp;{' '}
+                  <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                    {t.contact.termsLabel}
+                  </a>
+                  .
+                </p>
               </>
             )}
           </motion.div>
