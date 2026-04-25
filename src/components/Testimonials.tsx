@@ -34,8 +34,24 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
-          <div className="flex items-center gap-2 order-2 md:order-1">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 md:mb-20">
+          <motion.div
+            variants={staggerParent(0.08, 0)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="max-w-3xl"
+          >
+            <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
+            <motion.h2 variants={staggerItem} className="display-2 text-balance">
+              {c.h2a} <span className="text-sub">{c.h2b}</span>
+            </motion.h2>
+            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+              {c.sub}
+            </motion.p>
+          </motion.div>
+
+          <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
               aria-label="Previous"
@@ -53,22 +69,6 @@ export default function Testimonials() {
               <ArrowRight size={16} strokeWidth={1.8} />
             </button>
           </div>
-
-          <motion.div
-            variants={staggerParent(0.08, 0)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            className="max-w-3xl md:ml-auto md:text-right order-1 md:order-2"
-          >
-            <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
-            <motion.h2 variants={staggerItem} className="display-2 text-balance">
-              {c.h2a} <span className="text-sub">{c.h2b}</span>
-            </motion.h2>
-            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl md:ml-auto text-pretty">
-              {c.sub}
-            </motion.p>
-          </motion.div>
         </div>
 
         <div className="relative -mx-6 md:-mx-8 fade-x">

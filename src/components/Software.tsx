@@ -15,17 +15,7 @@ export default function Software() {
     <section id="software" className="relative py-24 md:py-32">
       <div className="container-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            viewport={viewportOnce}
-            transition={{ duration: 0.9, ease: easeApple }}
-            className="lg:col-span-7 order-2 lg:order-1 lg:mt-12"
-          >
-            <DashboardMock />
-          </motion.div>
-
-          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-10">
+          <div className="lg:col-span-5 order-1 lg:order-1 flex flex-col gap-10">
             <motion.div
               variants={staggerParent(0.08, 0)}
               initial="hidden"
@@ -72,6 +62,16 @@ export default function Software() {
               })}
             </motion.ul>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={viewportOnce}
+            transition={{ duration: 0.9, ease: easeApple }}
+            className="lg:col-span-7 order-2 lg:order-2"
+          >
+            <DashboardMock />
+          </motion.div>
         </div>
       </div>
     </section>

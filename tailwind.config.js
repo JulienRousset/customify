@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
-        mono: ['"Geist Mono"', 'ui-monospace', 'Menlo', 'monospace']
+        sans: ['transducer-extended', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['transducer-extended', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['transducer-extended', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['transducer-extended', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       colors: {
         bg: 'rgb(var(--color-bg) / <alpha-value>)',

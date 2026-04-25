@@ -33,8 +33,8 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Custom marketing & AI studio',
-      h1a: 'Built for one brand.',
-      h1b: 'Yours.',
+      h1a: 'Every business is unique,',
+      h1b: 'yours should be too.',
       sub: 'No templates. No packaged plans. We design every system around how your business actually runs, and stay close enough to keep evolving it with you.',
       ctaPrimary: 'Start a project',
       engagement: 'Free first call · Build sprints from 2 weeks · Monthly care after launch',
@@ -393,7 +393,7 @@ export const translations = {
       },
       footerLocation: 'Remote',
       footerRemote: 'Remote worldwide',
-      footerTagline: 'One studio. One client at a time.',
+      footerTagline: 'Every business is unique, yours should be too.',
       footerNav: {
         services: 'Services',
         software: 'Case study',
@@ -436,8 +436,8 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Studio marketing & IA sur mesure',
-      h1a: 'Conçu pour une marque.',
-      h1b: 'La vôtre.',
+      h1a: 'Chaque business est unique,',
+      h1b: 'le vôtre devrait l’être aussi.',
       sub: 'Pas de template. Pas de pack tout-fait. On dessine chaque système autour de la façon dont votre business tourne vraiment, et on reste assez proches pour le faire évoluer avec vous.',
       ctaPrimary: 'Démarrer un projet',
       engagement: 'Premier appel offert · Sprints dès 2 semaines · Suivi mensuel après livraison',
@@ -796,7 +796,7 @@ export const translations = {
       },
       footerLocation: 'À distance',
       footerRemote: 'À distance, partout',
-      footerTagline: 'Un studio. Un client à la fois.',
+      footerTagline: 'Chaque business est unique, le vôtre devrait l’être aussi.',
       footerNav: {
         services: 'Services',
         software: 'Étude de cas',

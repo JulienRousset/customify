@@ -1,18 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Check, Instagram, Facebook, Mail } from 'lucide-react'
+import { ArrowRight, Check, Instagram, Mail } from 'lucide-react'
 import { useLang } from '../lang'
+import { XLogo, PinterestLogo, WhatsAppGlyph } from './icons'
 
 const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
 const WA_NUMBER_RAW = '6285785065652'
-
-function WhatsAppGlyph({ size = 22 }: { size?: number }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.002 2C6.486 2 2 6.486 2 12c0 2.15.679 4.144 1.833 5.78L2 22l4.318-1.833A9.953 9.953 0 0 0 12.002 22c5.514 0 10-4.486 10-10s-4.486-10-10-10z" />
-    </svg>
-  )
-}
 
 const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
 
@@ -57,8 +50,8 @@ export default function Contact() {
     <>
       <section id="contact" className="relative py-24 md:py-32">
         <div className="container-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+            <div className="lg:col-span-7">
               <p className="eyebrow">Start a project</p>
               <h2 className="display-2 text-balance">
                 {c.h2a} <span className="text-sub">{c.h2b}</span>
@@ -79,48 +72,9 @@ export default function Contact() {
                   <span className="text-[12.5px] font-semibold tracking-tight">{c.freeAudit}</span>
                 </div>
               </div>
-
-              <div className="mt-10">
-                <div className="eyebrow text-sub">Powered by</div>
-                <div
-                  className="mt-4 space-y-2.5 overflow-hidden"
-                  style={{
-                    maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)'
-                  }}
-                >
-                  {[
-                    { items: poweredBy.slice(0, 8), dir: 'left' as const, duration: 32 },
-                    { items: poweredBy.slice(8), dir: 'right' as const, duration: 36 }
-                  ].map((row, idx) => (
-                    <div key={idx} className="relative flex overflow-hidden">
-                      <motion.div
-                        className="flex gap-2.5 shrink-0 pr-2.5"
-                        animate={{ x: row.dir === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
-                        transition={{ duration: row.duration, repeat: Infinity, ease: 'linear' }}
-                      >
-                        {[...row.items, ...row.items, ...row.items, ...row.items].map((b, i) => (
-                          <div
-                            key={`${b.name}-${i}`}
-                            className="flex items-center gap-2 py-2.5 px-3.5 rounded-xl bg-surface2/60 border border-hair shrink-0"
-                          >
-                            <img
-                              src={b.src}
-                              alt={b.name}
-                              className="w-5 h-5 object-contain"
-                              loading="lazy"
-                            />
-                            <span className="text-[11.5px] text-sub font-medium whitespace-nowrap">{b.name}</span>
-                          </div>
-                        ))}
-                      </motion.div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-5">
               {sent ? (
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
@@ -134,29 +88,29 @@ export default function Contact() {
                   <p className="text-fg2 text-[15px] max-w-md mx-auto leading-[1.55] text-pretty">{c.sentBody}</p>
                 </motion.div>
               ) : (
-                <div className="flex flex-col gap-4">
-                  <form onSubmit={submit} className="card p-6 md:p-7 group focus-within:border-fg/30 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className="shrink-0 w-12 h-12 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2">
-                        <Mail size={18} strokeWidth={1.7} />
+                <div className="flex flex-col gap-3">
+                  <form onSubmit={submit} className="card p-4 md:p-5 group focus-within:border-fg/30 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2">
+                        <Mail size={15} strokeWidth={1.7} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-[10.5px] font-semibold text-sub uppercase tracking-[0.18em]">Email</div>
+                        <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">Email</div>
                         <input
                           required
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="you@brand.com"
-                          className="w-full bg-transparent border-0 outline-none text-[20px] md:text-[24px] font-display font-medium tracking-tight placeholder:text-sub/40 mt-1"
+                          className="w-full bg-transparent border-0 outline-none text-[15px] md:text-[16px] font-medium tracking-tight placeholder:text-sub/40 mt-0.5"
                         />
                       </div>
                       <button
                         type="submit"
                         aria-label={c.form.send}
-                        className="shrink-0 w-12 h-12 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity"
+                        className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity"
                       >
-                        <ArrowRight size={18} />
+                        <ArrowRight size={15} />
                       </button>
                     </div>
                   </form>
@@ -165,21 +119,61 @@ export default function Contact() {
                     href={`https://wa.me/${WA_NUMBER_RAW}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card p-6 md:p-7 flex items-center gap-4 hover:border-fg/30 transition-colors"
+                    className="card p-4 md:p-5 flex items-center gap-3 hover:border-fg/30 transition-colors group"
                   >
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-surface border border-hair flex items-center justify-center text-[#25D366]">
-                      <WhatsAppGlyph size={22} />
+                    <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-[#25D366]">
+                      <WhatsAppGlyph size={17} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10.5px] font-semibold text-sub uppercase tracking-[0.18em]">WhatsApp</div>
-                      <div className="text-[20px] md:text-[24px] font-display font-medium tracking-tight mt-1">{WA_NUMBER_DISPLAY}</div>
+                      <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">WhatsApp</div>
+                      <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">{WA_NUMBER_DISPLAY}</div>
                     </div>
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-fg text-bg flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                      <ArrowRight size={18} />
+                    <div className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center group-hover:opacity-90 transition-opacity">
+                      <ArrowRight size={15} />
                     </div>
                   </a>
                 </div>
               )}
+            </div>
+          </div>
+
+          {/* Powered-by ticker — full-width, bigger chips */}
+          <div className="mt-20 md:mt-24">
+            <div className="eyebrow text-sub mb-6">Powered by</div>
+            <div
+              className="space-y-3 overflow-hidden"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)'
+              }}
+            >
+              {[
+                { items: poweredBy.slice(0, 8), dir: 'left' as const, duration: 38 },
+                { items: poweredBy.slice(8), dir: 'right' as const, duration: 42 }
+              ].map((row, idx) => (
+                <div key={idx} className="relative flex overflow-hidden">
+                  <motion.div
+                    className="flex gap-3 shrink-0 pr-3"
+                    animate={{ x: row.dir === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
+                    transition={{ duration: row.duration, repeat: Infinity, ease: 'linear' }}
+                  >
+                    {[...row.items, ...row.items, ...row.items, ...row.items].map((b, i) => (
+                      <div
+                        key={`${b.name}-${i}`}
+                        className="flex items-center gap-3 py-3.5 px-5 rounded-2xl bg-surface2/60 border border-hair shrink-0"
+                      >
+                        <img
+                          src={b.src}
+                          alt={b.name}
+                          className="w-7 h-7 object-contain"
+                          loading="lazy"
+                        />
+                        <span className="text-[14px] text-fg font-medium whitespace-nowrap">{b.name}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -210,7 +204,7 @@ export default function Contact() {
               </nav>
               <div className="flex items-center gap-2">
                 <a
-                  href="https://instagram.com/"
+                  href="https://www.instagram.com/customyagency/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -219,13 +213,22 @@ export default function Contact() {
                   <Instagram size={16} strokeWidth={1.8} />
                 </a>
                 <a
-                  href="https://facebook.com/"
+                  href="https://x.com/Customyagency"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook"
+                  aria-label="X (Twitter)"
                   className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
                 >
-                  <Facebook size={16} strokeWidth={1.8} />
+                  <XLogo size={14} />
+                </a>
+                <a
+                  href="https://pin.it/2kEWWZ4wh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Pinterest"
+                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                >
+                  <PinterestLogo size={16} />
                 </a>
               </div>
             </div>

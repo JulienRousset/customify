@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Customy · Social kit</title>
+  <link rel="stylesheet" href="/social/shared.css" />
+  <style>
+    body {
+      display: block;
+      padding: 60px 40px 120px;
+      background: #FBFBFD;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero {
+      margin-bottom: 64px;
+    }
+    .hero .title {
+      font-size: 44px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .hero .sub {
+      font-size: 17px;
+      color: var(--sub);
+      margin-top: 12px;
+      max-width: 620px;
+      line-height: 1.55;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 52px 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--hair);
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 28px -12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    .card a {
+      color: var(--fg);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .card .asset-name { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+    .card .asset-dim { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--sub); }
+    .card .asset-use { font-size: 13px; color: var(--fg2); margin-top: 6px; line-height: 1.45; }
+
+    .bio-block {
+      border: 1px solid var(--hair);
+      background: #fff;
+      padding: 22px 26px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+    .bio-block .platform {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 10px;
+    }
+    .bio-block .bio {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--fg);
+      white-space: pre-wrap;
+    }
+    .bio-block .chars {
+      margin-top: 10px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px;
+      color: var(--sub);
+    }
+
+    .steps {
+      background: #1D1D1F;
+      color: #fff;
+      padding: 28px 32px;
+      border-radius: 16px;
+      margin-top: 24px;
+    }
+    .steps ol {
+      margin: 0;
+      padding-left: 22px;
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .steps ol li { margin-bottom: 6px; }
+    .steps code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 12.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1 class="title">Customy · social kit</h1>
+      <p class="sub">Seven ready-to-screenshot banners + profile assets + bio copy for each platform. Open any file, then capture a pixel-perfect PNG via DevTools.</p>
+    </div>
+
+    <h2>Assets</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="/social/avatar.html" target="_blank">
+          <span class="asset-name">Avatar · profile picture</span>
+          <span class="asset-dim">1024 × 1024</span>
+          <span class="asset-use">Works everywhere: Facebook, Instagram, X, LinkedIn, TikTok.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/facebook-cover.html" target="_blank">
+          <span class="asset-name">Facebook cover</span>
+          <span class="asset-dim">820 × 312</span>
+          <span class="asset-use">Safe zone 640 px centered. Mobile crops top and bottom.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/x-header.html" target="_blank">
+          <span class="asset-name">X / Twitter header</span>
+          <span class="asset-dim">1500 × 500</span>
+          <span class="asset-use">Avatar overlaps bottom-left. Key content centered.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/linkedin-personal.html" target="_blank">
+          <span class="asset-name">LinkedIn personal banner</span>
+          <span class="asset-dim">1584 × 396</span>
+          <span class="asset-use">Avatar overlaps lower-left. Left 360 px kept clear.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/linkedin-company.html" target="_blank">
+          <span class="asset-name">LinkedIn company banner</span>
+          <span class="asset-dim">1128 × 191</span>
+          <span class="asset-use">Narrow strip, one-liner format.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/instagram-story.html" target="_blank">
+          <span class="asset-name">Instagram story</span>
+          <span class="asset-dim">1080 × 1920</span>
+          <span class="asset-use">Launch card, pinned story cover, announcement.</span>
+        </a>
+      </div>
+      <div class="card">
+        <a href="/social/instagram-post.html" target="_blank">
+          <span class="asset-name">Instagram feed post</span>
+          <span class="asset-dim">1080 × 1350</span>
+          <span class="asset-use">Portrait. Best organic reach vs. square format.</span>
+        </a>
+      </div>
+    </div>
+
+    <h2>How to export a PNG</h2>
+    <div class="steps">
+      <ol>
+        <li>Open any asset above. Make sure the dev server is running on the same origin.</li>
+        <li>Right-click the banner → <strong>Inspect</strong> (opens DevTools).</li>
+        <li>In the Elements panel, right-click the <code>&lt;div class="canvas"&gt;</code> element.</li>
+        <li>Choose <strong>Capture node screenshot</strong>. PNG downloads at exact pixel dimensions.</li>
+        <li>Alternative: use a full-page screenshot extension if your browser doesn't support node capture.</li>
+      </ol>
+    </div>
+
+    <h2>Bio copy (ready to paste)</h2>
+
+    <div class="bio-block">
+      <div class="platform">Instagram · 150 chars max</div>
+      <div class="bio">Custom marketing &amp; AI studio.
+Built for one brand. Yours.
+No templates. No packaged plans.
+👇 Free 24h audit
+customy.agency</div>
+      <div class="chars">≈ 118 chars</div>
+    </div>
+
+    <div class="bio-block">
+      <div class="platform">X / Twitter · 160 chars max</div>
+      <div class="bio">Custom marketing &amp; AI studio. Built for one brand. Yours. Dashboards, automations, ads, SEO. 2 clients per quarter. customy.agency</div>
+      <div class="chars">≈ 138 chars</div>
+    </div>
+
+    <div class="bio-block">
+      <div class="platform">Facebook page · short description (155 chars) + long description</div>
+      <div class="bio"><strong>Short:</strong> Custom marketing &amp; AI studio. No templates. No packaged plans. We design every system around how your business actually runs.
+
+<strong>Long:</strong> Customy is a small, remote marketing &amp; AI studio. We work with owner-operators who want a system built around their business, not a SaaS to configure. Every dashboard, automation, site and campaign is shaped to how you actually run. Two people, from first call to ongoing care. Free 24h audit on request.</div>
+    </div>
+
+    <div class="bio-block">
+      <div class="platform">LinkedIn · tagline (220 chars) + about (2,000 chars)</div>
+      <div class="bio"><strong>Tagline:</strong> Custom marketing &amp; AI studio · Built for one brand. Yours.
+
+<strong>About:</strong> Customy is a remote marketing &amp; AI studio working with owner-operators who'd rather ship a custom system in three weeks than configure a SaaS for three months.
+
+We design every dashboard, automation, website and campaign around how a single business actually runs. No templates. No packaged plans. No account managers, no junior hand-offs. You talk to the two people building the thing, from the first call to the launch and after.
+
+We take two new clients per quarter. Build sprints run two to three weeks. Ongoing care is optional and month-to-month. Every first call is free.
+
+customy.agency · customyagency@gmail.com</div>
+    </div>
+
+    <div class="bio-block">
+      <div class="platform">TikTok · 80 chars max</div>
+      <div class="bio">Custom marketing &amp; AI studio.
+Built for one brand. Yours.
+customy.agency</div>
+      <div class="chars">≈ 72 chars</div>
+    </div>
+
+    <h2>Export checklist</h2>
+    <div class="steps">
+      <ol>
+        <li>Avatar → <code>avatar.png</code> (1024 × 1024) — upload everywhere.</li>
+        <li>Facebook cover → <code>facebook-cover.png</code> (820 × 312).</li>
+        <li>X header → <code>x-header.png</code> (1500 × 500).</li>
+        <li>LinkedIn personal → <code>linkedin-personal.png</code> (1584 × 396).</li>
+        <li>LinkedIn company → <code>linkedin-company.png</code> (1128 × 191).</li>
+        <li>Instagram story → <code>instagram-story.png</code> (1080 × 1920).</li>
+        <li>Instagram post → <code>instagram-post.png</code> (1080 × 1350).</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

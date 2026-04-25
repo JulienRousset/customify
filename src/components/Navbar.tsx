@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Instagram, Facebook } from 'lucide-react'
+import { Instagram } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
+import { XLogo, PinterestLogo } from './icons'
+
+const SOCIALS = {
+  instagram: 'https://www.instagram.com/customyagency/',
+  x: 'https://x.com/Customyagency',
+  pinterest: 'https://pin.it/2kEWWZ4wh'
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -22,6 +29,9 @@ export default function Navbar() {
     { label: t.nav.contact, href: '#contact' }
   ]
 
+  const iconClass =
+    'w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors'
+
   return (
     <nav
       aria-label="Primary"
@@ -40,24 +50,33 @@ export default function Navbar() {
             />
             Customy
           </a>
-          <div className="flex items-center gap-1.5 pl-2 md:pl-3 border-l border-hair">
+          <div className="flex items-center gap-1 pl-2 md:pl-3 border-l border-hair">
             <a
-              href="https://instagram.com/"
+              href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors"
+              className={iconClass}
             >
               <Instagram size={14} strokeWidth={1.8} />
             </a>
             <a
-              href="https://facebook.com/"
+              href={SOCIALS.x}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors"
+              aria-label="X (Twitter)"
+              className={iconClass}
             >
-              <Facebook size={14} strokeWidth={1.8} />
+              <XLogo size={12} />
+            </a>
+            <a
+              href={SOCIALS.pinterest}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pinterest"
+              className={iconClass}
+            >
+              <PinterestLogo size={14} />
             </a>
           </div>
         </div>

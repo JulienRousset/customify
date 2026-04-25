@@ -100,21 +100,21 @@
   }
 
   .display-1 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'transducer-extended', ui-sans-serif, system-ui, sans-serif;
     font-weight: 600;
     font-size: clamp(2.75rem, 7vw, 5.5rem);
     line-height: 1.05;
     letter-spacing: -0.035em;
   }
   .display-2 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'transducer-extended', ui-sans-serif, system-ui, sans-serif;
     font-weight: 600;
     font-size: clamp(2rem, 4.5vw, 3.5rem);
     line-height: 1.08;
     letter-spacing: -0.03em;
   }
   .display-3 {
-    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'transducer-extended', ui-sans-serif, system-ui, sans-serif;
     font-weight: 600;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     line-height: 1.15;

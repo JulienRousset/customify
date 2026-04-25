@@ -1,0 +1,125 @@
+/* Customy · social kit shared tokens */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #FBFBFD;
+  --surface: #F5F5F7;
+  --fg: #1D1D1F;
+  --fg2: #424245;
+  --sub: #6E6E73;
+  --ink: #191970;
+  --accent-blue: #0071e3;
+  --hair: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.011em;
+  font-feature-settings: 'ss01', 'cv11';
+  background: #e5e5e7; /* neutral gutter so the canvas stands out */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.canvas {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.canvas.dark {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sub);
+}
+
+.canvas.dark .eyebrow {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.wordmark img {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+}
+
+.canvas.dark .wordmark img {
+  filter: invert(1);
+}
+
+.display {
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.display .dim {
+  color: var(--sub);
+}
+
+.canvas.dark .display .dim {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.meta {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--sub);
+}
+
+.canvas.dark .meta {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+}
+
+.export-hint {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: #6E6E73;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 100;
+}

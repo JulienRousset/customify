@@ -45,8 +45,8 @@ export default function Automation() {
   return (
     <section id="automation" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-start">
-          <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-10 lg:pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
+          <div className="lg:col-span-5 order-2 lg:order-2 flex flex-col gap-10">
             <motion.div
               variants={staggerParent(0.08, 0)}
               initial="hidden"
@@ -114,7 +114,7 @@ export default function Automation() {
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={viewportOnce}
             transition={{ duration: 0.9, ease: easeApple, delay: 0.1 }}
-            className="lg:col-span-7 order-1 lg:order-2"
+            className="lg:col-span-7 order-1 lg:order-1"
           >
             <ChatMock tag={a.mockTag} />
           </motion.div>
