@@ -198,10 +198,12 @@ export default function Contact() {
             <div>
               <div className="font-display font-semibold text-[28px] md:text-[32px] tracking-tight flex items-center gap-3">
                 <img
-                  src="/customy_logo_tr.png"
+                  src="/customy_logo.webp"
                   alt=""
                   aria-hidden
-                  className="h-9 w-9 md:h-10 md:w-10 object-contain dark:invert"
+                  width={40}
+                  height={40}
+                  className="h-9 w-9 md:h-10 md:w-10 object-contain rounded-lg"
                 />
                 Customy
               </div>

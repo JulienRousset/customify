@@ -63,10 +63,12 @@ export default function Navbar() {
           <div className="flex items-center gap-3 md:gap-4">
             <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
               <img
-                src="/customy_logo_tr.png"
+                src="/customy_logo.webp"
                 alt=""
                 aria-hidden
-                className="h-6 w-6 md:h-7 md:w-7 object-contain dark:invert"
+                width={28}
+                height={28}
+                className="h-6 w-6 md:h-7 md:w-7 object-contain rounded-md"
               />
               Customy
             </a>
