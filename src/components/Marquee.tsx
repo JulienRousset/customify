@@ -6,13 +6,13 @@ import { staggerItem, staggerParent, viewportOnce } from './fx/motion'
 type Partner = { name: string; kind: string; logo?: string; logoScale?: number }
 
 const partners: Partner[] = [
-  { name: 'My Cocotte', kind: 'Restaurant', logo: '/partners/MYCOCOTTE.png' },
-  { name: 'Inka Spa Bali', kind: 'Wellness', logo: '/partners/INKA.png' },
-  { name: 'Skyrol', kind: 'Travel solution', logo: '/partners/SKYROL.png' },
-  { name: 'Temple Spa Bali', kind: 'Spa', logo: '/partners/TEMPLE.png' },
-  { name: 'Natura Organics', kind: 'Organic brand', logo: '/partners/NATURA.png' },
-  { name: "In'Sens Sourcing", kind: 'Sourcing', logo: '/partners/INSENS.png' },
-  { name: 'Dylan', kind: 'Personal brand', logo: '/partners/TYT.png', logoScale: 1.6 }
+  { name: 'My Cocotte', kind: 'Restaurant', logo: '/partners/MYCOCOTTE.webp' },
+  { name: 'Inka Spa Bali', kind: 'Wellness', logo: '/partners/INKA.webp' },
+  { name: 'Skyrol', kind: 'Travel solution', logo: '/partners/SKYROL.webp' },
+  { name: 'Temple Spa Bali', kind: 'Spa', logo: '/partners/TEMPLE.webp' },
+  { name: 'Natura Organics', kind: 'Organic brand', logo: '/partners/NATURA.webp' },
+  { name: "In'Sens Sourcing", kind: 'Sourcing', logo: '/partners/INSENS.webp' },
+  { name: 'Dylan', kind: 'Personal brand', logo: '/partners/TYT.webp', logoScale: 1.6 }
 ]
 
 export default function Marquee() {

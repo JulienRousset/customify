@@ -3,14 +3,10 @@ export type Lang = 'en' | 'fr'
 export const translations = {
   en: {
     nav: {
-      work: 'Work',
       services: 'Services',
       software: 'Case study',
       automation: 'Automation',
       clients: 'Clients',
-      numbers: 'Numbers',
-      demo: 'Demo',
-      tool: 'Tools',
       contact: 'Contact',
       cta: 'Get started'
     },
@@ -145,90 +141,6 @@ export const translations = {
         }
       ]
     },
-    featured: {
-      eyebrow: 'One of our tools',
-      h2a: 'We build automation for your business',
-      h2b: 'Let AI work for you',
-      sub: 'Our WhatsApp Broadcast sends the same message to your full client list in seconds. Add a first-name tag and it still reads like a personal note.',
-      bullets: [
-        'Scan a QR code, you’re in. No app to install.',
-        'Write once. Each client sees their first name, automatically.',
-        'See who got it, who read it, who replied, who booked.'
-      ],
-      cta: 'Ask for a demo',
-      consoleTitle: 'New broadcast',
-      fromBrand: 'My Cocotte',
-      sentAt: 'Sent today · 20:14',
-      to: 'To',
-      allClients: 'All clients',
-      contacts: (n: number) => `${n.toLocaleString('en-US')} contacts`,
-      more: (n: number) => `+${n} more`,
-      template: 'Message template',
-      templateText: 'Hi {firstname} 🌿 Friday special: lobster pasta, tonight only. Want us to hold a table? Reply YES.',
-      tokenLabel: 'first name',
-      delivery: 'Live delivery',
-      delivered: 'Delivered',
-      read: 'Read',
-      replied: 'Replies',
-      qrLabel: 'Scan to join the list',
-      qrHint: 'Put it on tables, the door, receipts.'
-    },
-    stats: {
-      eyebrow: 'The numbers',
-      h2a: 'Proof, not',
-      h2b: 'promises',
-      sub: 'Every number below comes from a real client paying us right now. No fake case studies. Want to see the live dashboard? Just ask.',
-      items: [
-        { k: '14', suffix: ' days', label: 'From first call to your system running' },
-        { k: '92', suffix: '%', label: 'Clients still with us after 6 months' },
-        { k: '1.4', suffix: 'M', label: 'Tasks done by our tools last quarter' },
-        { k: '37', suffix: '', label: 'Custom setups built for clients so far' }
-      ]
-    },
-    demo: {
-      eyebrow: 'Try it now',
-      h2a: 'Your spreadsheet,',
-      h2b: 'turned into a dashboard',
-      sub: 'Drop any .xlsx or .csv. We build a live dashboard right in your browser. Think of it as a taste of the Revenue section of your Customy platform, built from your own data.',
-      dropTitle: 'Drop your spreadsheet here.',
-      dropSub: 'Works with .xlsx, .xls, .csv, .ods. Everything runs in your browser.',
-      choose: 'Choose file',
-      tryDemo: 'Try demo data',
-      privacy: '100% private. Your file never leaves your browser.',
-      parsing: 'Reading…',
-      errorEmpty: 'This file looks empty. Try another one.',
-      errorParse: 'Couldn’t read this file. Make sure it’s a valid .xlsx or .csv.',
-      whatTitle: 'What you’ll see',
-      what: [
-        'Big numbers, worked out instantly.',
-        'Interactive bars, pies and trends.',
-        'Switch what to show in one click.',
-        'A small taste of your real setup.'
-      ],
-      privateTitle: 'Private by design',
-      privateBody: 'We read the file right in your browser. No server, no logs, no storage. Refresh the page and everything is gone.',
-      sheets: (n: number) => `${n} sheet${n > 1 ? 's' : ''}`,
-      rows: (n: number) => `${n} rows`,
-      cols: (n: number) => `${n} columns`,
-      newFile: 'New file'
-    },
-    dashboard: {
-      notEnough: 'Not enough numeric or text columns to build a dashboard from this sheet.',
-      total: 'Total',
-      average: 'Average',
-      records: 'Records',
-      peak: 'Peak',
-      metric: 'Metric',
-      group: 'Group',
-      split: 'Split',
-      top10: 'Top 10 · aggregated',
-      topPerformers: 'Top performers',
-      by: 'by',
-      share: 'Share of',
-      breakdown: 'Breakdown',
-      trajectory: 'Trajectory',
-      over: 'over'
-    },
     clients: {
       eyebrow: 'Currently building with',
       h2a: 'Real brands,',
@@ -299,14 +211,6 @@ export const translations = {
           stack: ['Pipeline', 'Email', 'Docs']
         }
       ]
-    },
-    integrations: {
-      eyebrow: 'Integrations',
-      h2a: 'Supercharge your',
-      h2b: 'workflow',
-      sub: 'Every tool you already use, wired together. Ads, CRM, site, messaging, payments. One clean pipeline that actually talks to itself.',
-      ctaPrimary: 'Wire up my stack',
-      ctaSecondary: 'What we build'
     },
     process: {
       eyebrow: 'How we work',
@@ -406,14 +310,10 @@ export const translations = {
 
   fr: {
     nav: {
-      work: 'Projets',
       services: 'Services',
       software: 'Étude de cas',
       automation: 'Automation',
       clients: 'Clients',
-      numbers: 'Chiffres',
-      demo: 'Démo',
-      tool: 'Outils',
       contact: 'Contact',
       cta: 'Commencer'
     },
@@ -548,90 +448,6 @@ export const translations = {
         }
       ]
     },
-    featured: {
-      eyebrow: 'Un de nos outils',
-      h2a: 'On construit des automatisations pour votre business',
-      h2b: 'Laissez l’IA travailler pour vous',
-      sub: 'Notre WhatsApp Broadcast envoie le même message à toute votre liste en quelques secondes. Ajoutez une balise prénom, ça reste un message perso.',
-      bullets: [
-        'Un QR code à scanner, c’est branché. Rien à installer.',
-        'Un seul texte. Chaque client voit son prénom, automatiquement.',
-        'On voit qui l’a reçu, lu, répondu, réservé.'
-      ],
-      cta: 'Demander une démo',
-      consoleTitle: 'Nouveau broadcast',
-      fromBrand: 'My Cocotte',
-      sentAt: 'Envoyé · 20h14',
-      to: 'À',
-      allClients: 'Tous les clients',
-      contacts: (n: number) => `${n.toLocaleString('fr-FR')} contacts`,
-      more: (n: number) => `+${n} autres`,
-      template: 'Modèle de message',
-      templateText: 'Salut {firstname} 🌿 Spécial vendredi : pâtes au homard, ce soir seulement. On te garde une table ? Réponds OUI.',
-      tokenLabel: 'prénom',
-      delivery: 'Livraison en direct',
-      delivered: 'Livrés',
-      read: 'Lus',
-      replied: 'Réponses',
-      qrLabel: 'Scannez pour rejoindre la liste',
-      qrHint: 'Collez-le sur les tables, la porte, les tickets.'
-    },
-    stats: {
-      eyebrow: 'Les chiffres',
-      h2a: 'Des preuves,',
-      h2b: 'pas des promesses',
-      sub: 'Chaque chiffre vient d’un vrai client qui nous paie en ce moment. Pas d’études de cas inventées. Vous voulez voir le tableau de bord en direct ? Demandez.',
-      items: [
-        { k: '14', suffix: ' jours', label: 'Du premier appel à votre système en route' },
-        { k: '92', suffix: ' %', label: 'Clients toujours là après 6 mois' },
-        { k: '1,4', suffix: ' M', label: 'Tâches faites par nos outils ce trimestre' },
-        { k: '37', suffix: '', label: 'Installations sur mesure livrées à ce jour' }
-      ]
-    },
-    demo: {
-      eyebrow: 'À essayer',
-      h2a: 'Votre tableur,',
-      h2b: 'transformé en dashboard',
-      sub: 'Déposez un .xlsx ou .csv. On construit un tableau de bord dans votre navigateur. C’est un aperçu de la section Chiffre d’affaires de votre plateforme Customy, à partir de vos propres données.',
-      dropTitle: 'Déposez votre fichier ici.',
-      dropSub: 'Accepte .xlsx, .xls, .csv, .ods. Tout se passe dans votre navigateur.',
-      choose: 'Choisir un fichier',
-      tryDemo: 'Essayer avec nos données',
-      privacy: '100 % privé. Votre fichier ne quitte jamais votre navigateur.',
-      parsing: 'Lecture…',
-      errorEmpty: 'Le fichier semble vide. Essayez-en un autre.',
-      errorParse: 'Impossible de lire ce fichier. Assurez-vous qu’il est en .xlsx ou .csv.',
-      whatTitle: 'Ce que vous verrez',
-      what: [
-        'Les grands chiffres, calculés sur le champ.',
-        'Des barres, camemberts et tendances cliquables.',
-        'Changez ce que vous regardez en un clic.',
-        'Un avant-goût de votre vrai tableau de bord.'
-      ],
-      privateTitle: 'Privé par défaut',
-      privateBody: 'On lit le fichier directement dans le navigateur. Pas de serveur, pas de journaux, pas de stockage. Rechargez, tout disparaît.',
-      sheets: (n: number) => `${n} feuille${n > 1 ? 's' : ''}`,
-      rows: (n: number) => `${n} lignes`,
-      cols: (n: number) => `${n} colonnes`,
-      newFile: 'Nouveau fichier'
-    },
-    dashboard: {
-      notEnough: 'Pas assez de colonnes chiffrées ou texte pour construire un tableau de bord depuis cette feuille.',
-      total: 'Total',
-      average: 'Moyenne',
-      records: 'Entrées',
-      peak: 'Max',
-      metric: 'Mesure',
-      group: 'Groupe',
-      split: 'Découpe',
-      top10: 'Top 10 · cumulé',
-      topPerformers: 'Les plus forts',
-      by: 'par',
-      share: 'Part de',
-      breakdown: 'Répartition',
-      trajectory: 'Trajectoire',
-      over: 'par'
-    },
     clients: {
       eyebrow: 'On construit en ce moment avec',
       h2a: 'De vraies marques,',
@@ -702,14 +518,6 @@ export const translations = {
           stack: ['Pipeline', 'Email', 'Docs']
         }
       ]
-    },
-    integrations: {
-      eyebrow: 'Intégrations',
-      h2a: 'Boostez votre',
-      h2b: 'workflow',
-      sub: 'Chaque outil que vous utilisez déjà, branché ensemble. Pubs, CRM, site, messagerie, paiements. Un seul pipeline qui se parle vraiment.',
-      ctaPrimary: 'Brancher mon stack',
-      ctaSecondary: 'Ce qu’on fait'
     },
     process: {
       eyebrow: 'Notre façon de bosser',
