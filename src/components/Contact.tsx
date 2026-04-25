@@ -30,6 +30,7 @@ const poweredBy = [
   { name: 'Skool', src: favicon('skool.com') }
 ]
 
+
 export default function Contact() {
   const { t } = useLang()
   const c = t.contact
@@ -137,7 +138,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Powered-by ticker — full-width, bigger chips */}
+          {/* Powered-by — full-width 2-row marquee, opposite directions */}
           <div className="mt-20 md:mt-24">
             <div className="eyebrow text-sub mb-6">Powered by</div>
             <div

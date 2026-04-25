@@ -4,7 +4,7 @@ import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const stepIcons = [PhoneCall, Hammer, Wrench]
-const stepColors = ['text-[#0071e3]', 'text-[#ff9f0a]', 'text-[#34c759]']
+const stepColors = ['text-fg/75', 'text-fg/75', 'text-fg/75']
 
 export default function HowWeWork() {
   const { t } = useLang()

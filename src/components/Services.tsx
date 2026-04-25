@@ -5,12 +5,12 @@ import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const visualStyles = [
-  { icon: LayoutDashboard, color: 'text-[#ff9f0a]' },
-  { icon: Globe, color: 'text-[#0071e3]' },
-  { icon: Megaphone, color: 'text-[#ff375f]' },
-  { icon: Sparkles, color: 'text-[#af52de]' },
-  { icon: LineChart, color: 'text-[#34c759]' },
-  { icon: Workflow, color: 'text-[#ffcc00]' },
+  { icon: LayoutDashboard, color: 'text-fg/75' },
+  { icon: Globe, color: 'text-fg/75' },
+  { icon: Megaphone, color: 'text-fg/75' },
+  { icon: Sparkles, color: 'text-fg/75' },
+  { icon: LineChart, color: 'text-fg/75' },
+  { icon: Workflow, color: 'text-fg/75' },
 ]
 
 export default function Services() {

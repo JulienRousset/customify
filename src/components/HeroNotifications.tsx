@@ -3,10 +3,10 @@ import { MessageCircle, TrendingUp, GitMerge, Megaphone } from 'lucide-react'
 import { useLang } from '../lang'
 
 const icons: Record<string, React.ReactNode> = {
-  whatsapp: <MessageCircle size={18} strokeWidth={1.7} className="text-[#34c759]" />,
-  trending: <TrendingUp size={18} strokeWidth={1.7} className="text-[#0071e3]" />,
-  funnel: <GitMerge size={18} strokeWidth={1.7} className="text-[#af52de]" />,
-  ads: <Megaphone size={18} strokeWidth={1.7} className="text-[#ff375f]" />
+  whatsapp: <MessageCircle size={18} strokeWidth={1.7} className="text-fg/75" />,
+  trending: <TrendingUp size={18} strokeWidth={1.7} className="text-fg/75" />,
+  funnel: <GitMerge size={18} strokeWidth={1.7} className="text-fg/75" />,
+  ads: <Megaphone size={18} strokeWidth={1.7} className="text-fg/75" />
 }
 
 // Maps each notification index to the matching Services item index
@@ -38,9 +38,6 @@ export default function HeroNotifications() {
 
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none">
-      {/* Ambient glow behind the notifications */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/10 to-[#ff9f0a]/10 blur-[60px] rounded-full pointer-events-none" />
-
       {notifications.map((notif, i) => {
         const target = targetService[i] ?? 0
         const float = floats[i]

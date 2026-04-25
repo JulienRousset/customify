@@ -5,7 +5,7 @@ import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const featureIcons = [MessageCircle, Zap, Bot, Check]
-const featureColors = ['text-[#34c759]', 'text-[#ffcc00]', 'text-[#af52de]', 'text-[#ff375f]']
+const featureColors = ['text-fg/75', 'text-fg/75', 'text-fg/75', 'text-fg/75']
 
 function MessengerLogo({ size = 18, className = '' }: { size?: number; className?: string; strokeWidth?: number }) {
   return (
@@ -153,8 +153,8 @@ function ChatMock({ tag }: { tag?: string }) {
       usBubble: 'bg-[#EEFFDE] text-gray-800 shadow-sm dark:bg-[#2B5278] dark:text-white dark:shadow-none',
       messages: [
         { who: 'them', msg: 'Send me pricing' },
-        { who: 'us', msg: 'Here’s our latest pricing 👇' },
-        { who: 'us', msg: '📄 Pricing_2026.pdf' }
+        { who: 'us', msg: 'Here’s our latest pricing.' },
+        { who: 'us', msg: 'Pricing_2026.pdf' }
       ]
     },
     {
@@ -168,7 +168,7 @@ function ChatMock({ tag }: { tag?: string }) {
       usBubble: 'bg-[#0084FF] text-white',
       messages: [
         { who: 'them', msg: 'Do you offer support?' },
-        { who: 'us', msg: '24/7 support included 💬' },
+        { who: 'us', msg: '24/7 support included.' },
         { who: 'us', msg: 'Want to speak to a human?' }
       ]
     },
@@ -185,7 +185,7 @@ function ChatMock({ tag }: { tag?: string }) {
         { who: 'them', msg: 'Hey, is this still available?' },
         { who: 'us', msg: 'Yes! Want me to reserve it?' },
         { who: 'them', msg: 'Yes please' },
-        { who: 'us', msg: 'Done ✅' }
+        { who: 'us', msg: 'Done.' }
       ]
     }
   ]
@@ -210,8 +210,6 @@ function ChatMock({ tag }: { tag?: string }) {
 
   return (
     <div className="relative w-full h-[600px] md:h-[880px] mt-10 md:mt-0 perspective-[1200px]">
-      <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-rose/10 blur-[80px] opacity-60 rounded-full pointer-events-none md:scale-110" />
-
       {tag && (
         <div className="absolute top-0 right-0 z-20 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-sub px-2.5 py-1 rounded-full border border-hair bg-surface2/80 backdrop-blur-sm">
           <span className="w-1 h-1 rounded-full bg-sub/70" aria-hidden />

@@ -35,8 +35,8 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Primary"
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-bg/80 backdrop-blur-xl border-b border-hair' : 'bg-transparent'
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+        scrolled ? 'bg-bg border-b border-hair' : 'bg-transparent'
       }`}
     >
       <div className="container-xl flex items-center justify-between h-14 md:h-16">
