@@ -53,7 +53,6 @@ export default function Automation() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <motion.p variants={staggerItem} className="eyebrow">{a.eyebrow}</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
                 {a.h2a} <span className="text-sub">{a.h2b}</span>
               </motion.h2>
@@ -116,7 +115,7 @@ export default function Automation() {
             transition={{ duration: 0.9, ease: easeApple, delay: 0.1 }}
             className="lg:col-span-7 order-1 lg:order-1"
           >
-            <ChatMock tag={a.mockTag} />
+            <ChatMock />
           </motion.div>
         </div>
       </div>

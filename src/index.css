@@ -146,6 +146,19 @@
 ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border: 3px solid rgb(var(--color-bg)); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
 
+/* Hide <model-viewer> until its custom element script has registered.
+   Prevents the dark default-state flash before the 3D logo paints. */
+model-viewer:not(:defined) { opacity: 0; }
+model-viewer {
+  background-color: transparent !important;
+  --poster-color: transparent;
+  --progress-bar-color: transparent;
+  --progress-bar-height: 0px;
+  --progress-mask: transparent;
+}
+model-viewer::part(default-progress-bar) { display: none !important; }
+model-viewer::part(default-progress-mask) { display: none !important; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

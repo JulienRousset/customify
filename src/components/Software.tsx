@@ -22,7 +22,6 @@ export default function Software() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <motion.p variants={staggerItem} className="eyebrow">Case study · My Cocotte</motion.p>
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
                 One dashboard, <span className="text-sub">built around one restaurant.</span>
               </motion.h2>
@@ -185,9 +184,6 @@ function DashboardMock() {
       <div className="flex items-center gap-2 px-5 py-3 border-b border-hair bg-surface/50">
         <LayoutDashboard size={14} className="text-sub" />
         <span className="text-[11.5px] text-fg font-medium tracking-tight flex-1">my-cocotte.customy.agency</span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-sub px-2 py-0.5 rounded-full border border-hair bg-surface2/60">
-          Example
-        </span>
       </div>
 
       <div className="flex flex-col sm:flex-row min-h-[460px]">
