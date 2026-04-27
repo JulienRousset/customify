@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Check, Instagram, Mail } from 'lucide-react'
 import { useLang } from '../lang'
-import { XLogo, PinterestLogo, WhatsAppGlyph } from './icons'
+import { XLogo, PinterestLogo, WhatsAppGlyph, FacebookLogo } from './icons'
 
 const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
 const WA_NUMBER_RAW = '6285785065652'
@@ -226,6 +226,15 @@ export default function Contact() {
                   className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
                 >
                   <Instagram size={16} strokeWidth={1.8} />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61562923021804"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                >
+                  <FacebookLogo size={16} />
                 </a>
                 <a
                   href="https://x.com/Customyagency"

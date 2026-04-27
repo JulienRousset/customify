@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Instagram, Menu, X } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
-import { XLogo, PinterestLogo } from './icons'
+import { XLogo, PinterestLogo, FacebookLogo } from './icons'
 
 const SOCIALS = {
   instagram: 'https://www.instagram.com/customyagency/',
+  facebook: 'https://www.facebook.com/profile.php?id=61562923021804',
   x: 'https://x.com/Customyagency',
   pinterest: 'https://pin.it/2kEWWZ4wh'
 }
@@ -75,6 +76,9 @@ export default function Navbar() {
             <div className="hidden sm:flex items-center gap-1 pl-2 md:pl-3 border-l border-hair">
               <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
                 <Instagram size={14} strokeWidth={1.8} />
+              </a>
+              <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
+                <FacebookLogo size={14} />
               </a>
               <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
                 <XLogo size={12} />
@@ -187,6 +191,9 @@ export default function Navbar() {
                   <div className="flex items-center gap-3">
                     <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
                       <Instagram size={14} strokeWidth={1.8} />
+                    </a>
+                    <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
+                      <FacebookLogo size={14} />
                     </a>
                     <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
                       <XLogo size={12} />
