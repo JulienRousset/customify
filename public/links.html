@@ -169,8 +169,83 @@
         background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       }
 
+      /* Prominent website CTA — inverted, can't miss it */
+      .website-cta {
+        margin-top: 28px;
+        width: 100%;
+        display: block;
+        text-decoration: none;
+        position: relative;
+        padding: 22px 24px;
+        background: var(--fg);
+        color: var(--bg);
+        border-radius: 18px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+      .website-cta:hover { transform: translateY(-1px); opacity: 0.95; }
+      .website-cta:active { transform: translateY(0); }
+      .website-cta .meta-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .website-cta .meta-label {
+        font-family: 'Geist Mono', monospace;
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--sub);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .website-cta .meta-label::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(255, 159, 10, 0.18);
+      }
+      .website-cta .arrow-big {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+      }
+      .website-cta:hover .arrow-big { transform: translate(3px, -3px); }
+      .website-cta .title {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+      .website-cta .desc {
+        margin-top: 6px;
+        font-size: 13.5px;
+        color: rgba(28, 26, 24, 0.65);
+        line-height: 1.45;
+      }
+      .website-cta .url {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(28, 26, 24, 0.15);
+        font-family: 'Geist Mono', monospace;
+        font-size: 12px;
+        color: rgba(28, 26, 24, 0.6);
+        letter-spacing: 0;
+      }
+
       .footer {
-        margin-top: 48px;
+        margin-top: 36px;
         padding-top: 24px;
         border-top: 1px solid var(--hair);
         width: 100%;
@@ -260,9 +335,23 @@
         </a>
       </div>
 
+      <a class="website-cta" href="/">
+        <div class="meta-row">
+          <span class="meta-label">Visit the website</span>
+          <span class="arrow-big" aria-hidden>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </div>
+        <div class="title">Discover what we build</div>
+        <div class="desc">Services, case studies, our process &amp; how to start a project.</div>
+        <div class="url">customy.agency →</div>
+      </a>
+
       <div class="footer">
-        <a href="/">← customy.agency</a>
-        <span>© <span id="year"></span></span>
+        <span>© <span id="year"></span> Customy Studio</span>
+        <a href="/privacy.html">Privacy</a>
       </div>
     </main>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

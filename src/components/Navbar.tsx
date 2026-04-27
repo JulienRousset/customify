@@ -153,14 +153,14 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden bg-bg pt-14"
+            className="fixed inset-0 z-40 md:hidden bg-bg pt-14 overflow-y-auto overscroll-contain"
           >
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, delay: 0.05 }}
-              className="container-xl py-10 flex flex-col h-full"
+              className="container-xl py-10 flex flex-col min-h-[calc(100dvh-3.5rem)]"
             >
               <ul className="flex flex-col">
                 {links.map((l, i) => (

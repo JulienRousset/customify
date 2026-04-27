@@ -55,8 +55,8 @@ export default function LogoViewer({
       disable-pan=""
       interaction-prompt="none"
       exposure="1.1"
-      shadow-intensity="0.6"
-      shadow-softness="1"
+      shadow-intensity="0"
+      shadow-softness="0"
       loading="eager"
       reveal="auto"
       className={className}
