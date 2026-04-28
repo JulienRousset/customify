@@ -6,7 +6,6 @@ import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion
 export default function WhoFor() {
   const { t } = useLang()
   const w = t.whoFor
-  const inline = t.inlineCta
 
   return (
     <section id="fit" className="relative py-24 md:py-32 border-t border-hair">
@@ -61,30 +60,20 @@ export default function WhoFor() {
             className="card p-7 md:p-9 flex flex-col gap-5 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)]"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-sub/10 flex items-center justify-center">
-                <X size={18} strokeWidth={2} className="text-sub" />
+              <div className="w-10 h-10 rounded-full bg-[#ff3b30]/10 flex items-center justify-center">
+                <X size={18} strokeWidth={2} className="text-[#ff3b30]" />
               </div>
               <div className="font-display font-semibold text-[18px] md:text-[20px] tracking-tight">{w.notTitle}</div>
             </div>
             <ul className="space-y-3">
               {w.not.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[14.5px] text-fg2 leading-[1.55] text-pretty">
-                  <span className="mt-2 w-1 h-1 rounded-full bg-sub/60 shrink-0" aria-hidden />
+                  <span className="mt-2 w-1 h-1 rounded-full bg-[#ff3b30] shrink-0" aria-hidden />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
-        </div>
-
-        <div className="mt-12 md:mt-14 flex justify-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
-          >
-            {inline.whoFor}
-            <span aria-hidden>→</span>
-          </a>
         </div>
       </div>
     </section>

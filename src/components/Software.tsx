@@ -25,7 +25,7 @@ export default function Software() {
               viewport={viewportOnce}
             >
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                How My Cocotte saved 2 hours a day <span className="text-sub">with one dashboard.</span>
+                How this restaurant saved 2 hours a day <span className="text-sub">with one dashboard.</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
                 Every tab, every metric, every alert was decided with the owner. Nothing pulled from a template. Yours would look different, because your business is different.
@@ -65,10 +65,10 @@ export default function Software() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-fg text-bg px-9 py-4 text-[17px] md:text-[18px] font-semibold tracking-tight transition-opacity hover:opacity-90 self-start"
             >
               {t.inlineCta.software}
-              <span aria-hidden>→</span>
+              <ArrowUpRight size={20} />
             </a>
           </div>
 

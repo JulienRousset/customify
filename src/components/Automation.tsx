@@ -135,10 +135,10 @@ function ChatMock({ tag }: { tag?: string }) {
       themBubble: 'bg-[#202C33] text-[#E9EDEF]',
       usBubble: 'bg-[#005C4B] text-[#E9EDEF]',
       messages: [
-        { who: 'them', msg: 'Hi, table for 4 tomorrow 8pm?' },
-        { who: 'us', msg: 'Yes. Inside or terrace?' },
-        { who: 'them', msg: 'Terrace please.' },
-        { who: 'us', msg: 'Booked. See you at 20:00.' }
+        { who: 'them', msg: 'Hi, any 90 min massage slot tomorrow?' },
+        { who: 'us', msg: 'Yes. Deep tissue or aromatherapy?' },
+        { who: 'them', msg: 'Aromatherapy please.' },
+        { who: 'us', msg: 'Booked. See you at 15:00.' }
       ]
     },
     {
@@ -151,9 +151,9 @@ function ChatMock({ tag }: { tag?: string }) {
       themBubble: 'bg-white text-gray-800 shadow-sm dark:bg-[#212D3B] dark:text-[#E9EDEF] dark:shadow-none',
       usBubble: 'bg-[#EEFFDE] text-gray-800 shadow-sm dark:bg-[#2B5278] dark:text-white dark:shadow-none',
       messages: [
-        { who: 'them', msg: 'Send me pricing' },
-        { who: 'us', msg: 'Here’s our latest pricing.' },
-        { who: 'us', msg: 'Pricing_2026.pdf' }
+        { who: 'them', msg: 'Send me your treatment menu' },
+        { who: 'us', msg: 'Here’s our latest menu.' },
+        { who: 'us', msg: 'Treatments_2026.pdf' }
       ]
     },
     {
@@ -166,9 +166,9 @@ function ChatMock({ tag }: { tag?: string }) {
       themBubble: 'bg-[#E4E6EB] text-black dark:bg-[#1F1F24] dark:text-[#E9EDEF]',
       usBubble: 'bg-[#0084FF] text-white',
       messages: [
-        { who: 'them', msg: 'Do you offer support?' },
-        { who: 'us', msg: '24/7 support included.' },
-        { who: 'us', msg: 'Want to speak to a human?' }
+        { who: 'them', msg: 'Do you offer couples sessions?' },
+        { who: 'us', msg: 'Yes, available daily.' },
+        { who: 'us', msg: 'Want me to check this week?' }
       ]
     },
     {
@@ -181,7 +181,7 @@ function ChatMock({ tag }: { tag?: string }) {
       themBubble: 'bg-gray-100 text-black border border-gray-100 dark:bg-[#1F1F24] dark:text-[#E9EDEF] dark:border-white/5',
       usBubble: 'bg-gradient-to-r from-[#833AB4] to-[#FD1D1D] text-white shadow-sm',
       messages: [
-        { who: 'them', msg: 'Hey, is this still available?' },
+        { who: 'them', msg: 'Is the Bali ritual still bookable this week?' },
         { who: 'us', msg: 'Yes! Want me to reserve it?' },
         { who: 'them', msg: 'Yes please' },
         { who: 'us', msg: 'Done.' }

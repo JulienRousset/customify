@@ -54,13 +54,6 @@ export default function Hero() {
                 <ArrowUpRight size={20} />
               </motion.a>
             </motion.div>
-
-            <motion.p
-              variants={staggerItem}
-              className="mt-5 text-[12.5px] md:text-[13px] font-medium text-sub tracking-tight"
-            >
-              {h.engagement}
-            </motion.p>
           </div>
 
           <motion.div

@@ -48,7 +48,7 @@ export default function Navbar() {
   ]
 
   const iconClass =
-    'w-7 h-7 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors'
+    'w-8 h-8 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors'
 
   const closeMobile = () => setMobileOpen(false)
 
@@ -60,31 +60,31 @@ export default function Navbar() {
           scrolled || mobileOpen ? 'bg-bg border-b border-hair' : 'bg-transparent'
         }`}
       >
-        <div className="container-xl flex items-center justify-between h-14 md:h-16">
+        <div className="container-xl flex items-center justify-between h-[3.85rem] md:h-[4.4rem]">
           <div className="flex items-center gap-3 md:gap-4">
-            <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[15px] tracking-tight">
+            <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[16.5px] tracking-tight">
               <img
                 src="/customy_logo.webp"
                 alt=""
                 aria-hidden
-                width={28}
-                height={28}
-                className="h-6 w-6 md:h-7 md:w-7 object-contain rounded-md"
+                width={32}
+                height={32}
+                className="h-7 w-7 md:h-8 md:w-8 object-contain rounded-md"
               />
               Customy
             </a>
             <div className="hidden sm:flex items-center gap-1 pl-2 md:pl-3 border-l border-hair">
               <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
-                <Instagram size={14} strokeWidth={1.8} />
+                <Instagram size={16} strokeWidth={1.8} />
               </a>
               <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
-                <FacebookLogo size={14} />
+                <FacebookLogo size={16} />
               </a>
               <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
-                <XLogo size={12} />
+                <XLogo size={14} />
               </a>
               <a href={SOCIALS.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className={iconClass}>
-                <PinterestLogo size={14} />
+                <PinterestLogo size={16} />
               </a>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-[13px] font-medium text-fg2 hover:text-fg transition-colors group"
+                className="relative text-[14.5px] font-medium text-fg2 hover:text-fg transition-colors group"
               >
                 {l.label}
                 <span className="absolute left-0 -bottom-1 h-px w-full bg-fg origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
@@ -103,7 +103,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <div role="group" aria-label="Language" className="flex items-center text-[12px] font-medium text-sub">
+            <div role="group" aria-label="Language" className="flex items-center text-[13.5px] font-medium text-sub">
               <button
                 type="button"
                 onClick={() => setLang('en')}
@@ -125,7 +125,7 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[13px] font-medium px-4 py-1.5 hover:opacity-90 transition-opacity duration-200 ease-out"
+              className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[14.5px] font-medium px-[1.1rem] py-[0.45rem] hover:opacity-90 transition-opacity duration-200 ease-out"
             >
               {t.nav.cta}
             </a>
@@ -136,9 +136,9 @@ export default function Navbar() {
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden w-9 h-9 rounded-full border border-hair flex items-center justify-center text-fg ml-1"
+              className="md:hidden w-10 h-10 rounded-full border border-hair flex items-center justify-center text-fg ml-1"
             >
-              {mobileOpen ? <X size={16} strokeWidth={1.8} /> : <Menu size={16} strokeWidth={1.8} />}
+              {mobileOpen ? <X size={18} strokeWidth={1.8} /> : <Menu size={18} strokeWidth={1.8} />}
             </button>
           </div>
         </div>
@@ -153,14 +153,14 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden bg-bg pt-14 overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-40 md:hidden bg-bg pt-[3.85rem] overflow-y-auto overscroll-contain"
           >
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, delay: 0.05 }}
-              className="container-xl py-10 flex flex-col min-h-[calc(100dvh-3.5rem)]"
+              className="container-xl py-10 flex flex-col min-h-[calc(100dvh-3.85rem)]"
             >
               <ul className="flex flex-col">
                 {links.map((l, i) => (
@@ -168,9 +168,9 @@ export default function Navbar() {
                     <a
                       href={l.href}
                       onClick={closeMobile}
-                      className="block py-5 border-b border-hair font-display font-semibold text-[26px] tracking-tight text-fg hover:text-sub transition-colors"
+                      className="block py-[1.4rem] border-b border-hair font-display font-semibold text-[28.5px] tracking-tight text-fg hover:text-sub transition-colors"
                     >
-                      <span className="num-mono text-[10.5px] uppercase tracking-[0.18em] text-sub mr-3 align-middle">
+                      <span className="num-mono text-[11.5px] uppercase tracking-[0.18em] text-sub mr-3 align-middle">
                         0{i + 1}
                       </span>
                       {l.label}
@@ -183,26 +183,26 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={closeMobile}
-                  className="inline-flex items-center justify-center rounded-full bg-fg text-bg text-[15px] font-medium px-6 py-3.5 hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center rounded-full bg-fg text-bg text-[16.5px] font-medium px-7 py-4 hover:opacity-90 transition-opacity"
                 >
                   {t.nav.cta}
                 </a>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
-                      <Instagram size={14} strokeWidth={1.8} />
+                      <Instagram size={16} strokeWidth={1.8} />
                     </a>
                     <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
-                      <FacebookLogo size={14} />
+                      <FacebookLogo size={16} />
                     </a>
                     <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
-                      <XLogo size={12} />
+                      <XLogo size={14} />
                     </a>
                     <a href={SOCIALS.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className={iconClass}>
-                      <PinterestLogo size={14} />
+                      <PinterestLogo size={16} />
                     </a>
                   </div>
-                  <span className="text-[12px] text-sub">customyagency@gmail.com</span>
+                  <span className="text-[13px] text-sub">customyagency@gmail.com</span>
                 </div>
               </div>
             </motion.div>

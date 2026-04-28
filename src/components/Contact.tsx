@@ -52,14 +52,14 @@ export default function Contact() {
       <section id="contact" className="relative py-24 md:py-32">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 lg:order-2 lg:text-right">
               <p className="eyebrow">Start a project</p>
               <h2 className="display-2 text-balance">
                 {c.h2a} <span className="text-sub">{c.h2b}</span>
               </h2>
-              <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
+              <p className="mt-5 body-lg max-w-lg text-pretty lg:ml-auto">{c.sub}</p>
 
-              <div className="mt-7 flex items-center gap-3 max-w-lg">
+              <div className="mt-7 flex items-center gap-3 max-w-lg lg:ml-auto lg:flex-row-reverse lg:text-right text-left">
                 <div
                   aria-hidden
                   className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center font-display font-semibold text-[13px] tracking-tight"
@@ -71,7 +71,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-8 flex flex-wrap gap-2 lg:justify-end">
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
                   <motion.span
                     className="w-2 h-2 rounded-full bg-[#34c759]"
@@ -87,7 +87,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 lg:order-1">
               {sent ? (
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}

@@ -126,11 +126,18 @@ export default function Testimonials() {
 
         <div className="mt-10 md:mt-12 flex justify-center">
           <a
-            href="#contact"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+            href="https://www.trustpilot.com/review/customy.agency"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[14px] font-medium text-fg hover:text-[#00B67A] transition-colors"
           >
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+              <path
+                fill="#00B67A"
+                d="M12 0l2.939 8.943H24l-7.468 5.524L19.467 23.41 12 17.886 4.534 23.41l2.935-8.943L0 8.943h9.062z"
+              />
+            </svg>
             {t.inlineCta.testimonials}
-            <span aria-hidden>→</span>
           </a>
         </div>
       </div>

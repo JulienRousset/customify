@@ -13,23 +13,23 @@ export const translations = {
     inlineCta: {
       services: 'Discuss your build',
       software: 'Want a setup like this',
-      testimonials: 'Talk to us about yours',
+      testimonials: 'See our reviews on Trustpilot',
       whoFor: 'On the fence? Email us. We’ll tell you honestly.'
     },
     marquee: {
       header: 'Trusted by studios, restaurants and creators'
     },
     automation: {
-      eyebrow: 'Case study · Inka Spa Bali',
-      h2a: 'How Inka Spa stopped',
+      eyebrow: 'Case study · A spa in Bali',
+      h2a: 'How this Spa stopped',
       h2b: 'losing leads at night.',
-      sub: 'We built this for a wellness studio. It qualifies leads, answers FAQs, and blocks calendar slots in English, French and Indonesian, while the owner sleeps. Similar systems run on Telegram, Messenger and Instagram for other clients.',
+      sub: 'We built this for a wellness studio. It qualifies leads, answers treatment questions, and blocks appointment slots in English, French and Indonesian, while the owner sleeps. Similar systems run on Telegram, Messenger and Instagram for other clients.',
       mockTag: 'Example',
       features: [
-        { title: 'Replies in their voice', desc: 'Trained on the menu, the services, the tone of past replies. It sounds like the owner, not a chatbot.' },
-        { title: 'Books calendar slots', desc: 'Checks availability, proposes a window, confirms the booking. The owner only steps in when the client asks for something unusual.' },
+        { title: 'Replies in their voice', desc: 'Trained on the treatment menu, the practitioners, the tone of past replies. It sounds like the spa owner, not a chatbot.' },
+        { title: 'Books appointment slots', desc: 'Checks therapist availability, proposes a window, confirms the booking. The owner only steps in when the guest asks for something unusual.' },
         { title: 'Multi-language, 24/7', desc: 'EN, FR, ID in one flow. Auto-detects the guest language and responds in kind. Same assistant, same number.' },
-        { title: 'Daily handover', desc: 'Every morning, a summary of what got handled, what needs a human, what to ship next.' }
+        { title: 'Daily handover', desc: 'Every morning, a summary of what got handled, which guests need a human follow-up, what to ship next.' }
       ],
       cta: 'Start a project'
     },
@@ -357,23 +357,23 @@ export const translations = {
     inlineCta: {
       services: 'Parlons de votre projet',
       software: 'Vous voulez un setup comme ça',
-      testimonials: 'Parlez-nous du vôtre',
+      testimonials: 'Voir nos avis sur Trustpilot',
       whoFor: 'Sur la balance ? Écrivez-nous, on vous dira honnêtement'
     },
     marquee: {
       header: 'Choisis par des studios, restaurants et créateurs'
     },
     automation: {
-      eyebrow: 'Étude de cas · Inka Spa Bali',
-      h2a: 'Comment Inka Spa a',
+      eyebrow: 'Étude de cas · Un spa à Bali',
+      h2a: 'Comment ce Spa a',
       h2b: 'arrêté de perdre des pistes la nuit.',
-      sub: 'Construit pour un studio bien-être. Il qualifie les pistes, répond aux FAQ et bloque les créneaux en anglais, français et indonésien, pendant que la propriétaire dort. Des systèmes similaires tournent sur Telegram, Messenger et Instagram pour d’autres clients.',
+      sub: 'Construit pour un studio bien-être. Il qualifie les pistes, répond aux questions sur les soins et bloque les rendez-vous en anglais, français et indonésien, pendant que la propriétaire dort. Des systèmes similaires tournent sur Telegram, Messenger et Instagram pour d’autres clients.',
       mockTag: 'Exemple',
       features: [
-        { title: 'Répond dans leur voix', desc: 'Entraîné sur le menu, les services, le ton des réponses passées. Ça parle comme la proprio, pas comme un chatbot.' },
-        { title: 'Bloque les créneaux', desc: 'Vérifie les dispos, propose une fenêtre, confirme la réservation. La proprio n’intervient que si le client demande quelque chose d’inhabituel.' },
+        { title: 'Répond dans leur voix', desc: 'Entraîné sur la carte des soins, les praticiens, le ton des réponses passées. Ça parle comme la propriétaire du spa, pas comme un chatbot.' },
+        { title: 'Bloque les rendez-vous', desc: 'Vérifie la disponibilité des thérapeutes, propose une fenêtre, confirme le rendez-vous. La proprio n’intervient que si le client demande quelque chose d’inhabituel.' },
         { title: 'Multi-langues, 24/7', desc: 'EN, FR, ID dans un seul flux. Détecte la langue du client et répond en conséquence. Même assistant, même numéro.' },
-        { title: 'Debrief quotidien', desc: 'Chaque matin, un résumé de ce qui a été traité, ce qui demande un humain, ce qu’il faut livrer ensuite.' }
+        { title: 'Debrief quotidien', desc: 'Chaque matin, un résumé de ce qui a été traité, quels clients demandent un suivi humain, ce qu’il faut livrer ensuite.' }
       ],
       cta: 'Démarrer un projet'
     },

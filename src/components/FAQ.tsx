@@ -7,17 +7,17 @@ export default function FAQ() {
   const f = t.faq
 
   return (
-    <section id="faq" className="relative py-16 md:py-20 border-t border-hair">
+    <section id="faq" className="relative py-24 md:py-32 border-t border-hair">
       <div className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mb-10 md:mb-14"
+          className="max-w-3xl mb-14 md:mb-20"
         >
-          <motion.p variants={staggerItem} className="eyebrow mb-2">{f.eyebrow}</motion.p>
-          <motion.h2 variants={staggerItem} className="display-3 text-balance">
+          <motion.p variants={staggerItem} className="eyebrow">{f.eyebrow}</motion.p>
+          <motion.h2 variants={staggerItem} className="display-2 text-balance">
             {f.h2a} <span className="text-sub">{f.h2b}</span>
           </motion.h2>
         </motion.div>
