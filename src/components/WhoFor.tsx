@@ -6,6 +6,7 @@ import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion
 export default function WhoFor() {
   const { t } = useLang()
   const w = t.whoFor
+  const inline = t.inlineCta
 
   return (
     <section id="fit" className="relative py-24 md:py-32 border-t border-hair">
@@ -74,6 +75,16 @@ export default function WhoFor() {
               ))}
             </ul>
           </motion.div>
+        </div>
+
+        <div className="mt-12 md:mt-14 flex justify-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+          >
+            {inline.whoFor}
+            <span aria-hidden>→</span>
+          </a>
         </div>
       </div>
     </section>

@@ -38,7 +38,7 @@ export default function Services() {
           viewport={viewportOnce}
           className="max-w-3xl mb-14 md:mb-20"
         >
-          <motion.p variants={staggerItem} className="eyebrow">What we build</motion.p>
+          <motion.p variants={staggerItem} className="eyebrow">{s.eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
             {s.h2a} <span className="text-sub">{s.h2b}</span>
           </motion.h2>
@@ -60,7 +60,7 @@ export default function Services() {
             const isHot = highlighted === i
             return (
               <motion.article
-                key={item.title}
+                key={i}
                 id={`service-${i}`}
                 variants={staggerItem}
                 whileHover={{ y: -2, scale: 1.01 }}
@@ -101,6 +101,16 @@ export default function Services() {
             )
           })}
         </motion.div>
+
+        <div className="mt-12 md:mt-14 flex justify-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+          >
+            {t.inlineCta.services}
+            <span aria-hidden>→</span>
+          </a>
+        </div>
       </div>
     </section>
   )

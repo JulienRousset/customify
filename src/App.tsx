@@ -14,6 +14,7 @@ const Software = lazy(() => import('./components/Software'))
 const Automation = lazy(() => import('./components/Automation'))
 const Testimonials = lazy(() => import('./components/Testimonials'))
 const WhoFor = lazy(() => import('./components/WhoFor'))
+const FAQ = lazy(() => import('./components/FAQ'))
 const Contact = lazy(() => import('./components/Contact'))
 const ExitIntentModal = lazy(() => import('./components/ExitIntentModal'))
 
@@ -47,6 +48,7 @@ export default function App() {
             <Automation />
             <Testimonials />
             <WhoFor />
+            <FAQ />
             <Contact />
           </Suspense>
         </main>

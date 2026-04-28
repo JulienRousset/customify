@@ -8,15 +8,21 @@ export const translations = {
       automation: 'Automation',
       clients: 'Clients',
       contact: 'Contact',
-      cta: 'Get started'
+      cta: 'See if we’re a fit'
+    },
+    inlineCta: {
+      services: 'Discuss your build',
+      software: 'Want a setup like this',
+      testimonials: 'Talk to us about yours',
+      whoFor: 'On the fence? Email us. We’ll tell you honestly.'
     },
     marquee: {
       header: 'Trusted by studios, restaurants and creators'
     },
     automation: {
       eyebrow: 'Case study · Inka Spa Bali',
-      h2a: 'One WhatsApp assistant,',
-      h2b: 'three languages, zero missed bookings.',
+      h2a: 'How Inka Spa stopped',
+      h2b: 'losing leads at night.',
       sub: 'We built this for a wellness studio. It qualifies leads, answers FAQs, and blocks calendar slots in English, French and Indonesian, while the owner sleeps. Similar systems run on Telegram, Messenger and Instagram for other clients.',
       mockTag: 'Example',
       features: [
@@ -240,8 +246,34 @@ export const translations = {
         'You need a full rebrand or a 60-page strategy deck. That’s a different agency.'
       ]
     },
+    faq: {
+      eyebrow: 'FAQ',
+      h2a: 'The four',
+      h2b: 'we always get.',
+      sub: 'No fluff answers. If yours isn’t here, just ask.',
+      askMore: 'Got another one? Ask us directly',
+      items: [
+        {
+          q: 'How long does it take?',
+          a: 'Discovery call to launch is typically 3 to 4 weeks for an initial build. Bigger scopes get split into phases so you see something working in week one.'
+        },
+        {
+          q: 'What does it cost?',
+          a: 'Scope-based. We quote a real number after the discovery call once we’ve understood what you actually need. Most first builds land in the low to mid four figures (€). Monthly care after launch is optional, month-to-month, cancel anytime.'
+        },
+        {
+          q: 'What if I’m not sure what I need?',
+          a: 'That’s literally what the discovery call is for. Bring the bottleneck ("the booking flow is messy", "I drown in DMs", "I have no idea what my dashboard should show") and we’ll bring the scope.'
+        },
+        {
+          q: 'What happens if I want to leave?',
+          a: 'You own everything we build. Code, dashboards, accounts, automations: all transferable. Monthly care is month-to-month, no lock-in. We hand it over cleanly if you decide to take it in-house.'
+        }
+      ]
+    },
     contact: {
       eyebrow: 'Get in touch',
+      founderNote: 'Hi, I’m Alex. I read every message personally and reply within 24 hours.',
       h2a: 'Tell us where',
       h2b: 'it’s stuck.',
       sub: 'One sentence is enough. We reply within 24 hours with a free 5-minute audit of one thing we can automate this week. No strings, no deck.',
@@ -320,15 +352,21 @@ export const translations = {
       automation: 'Automation',
       clients: 'Clients',
       contact: 'Contact',
-      cta: 'Commencer'
+      cta: 'Voir si on peut bosser ensemble'
+    },
+    inlineCta: {
+      services: 'Parlons de votre projet',
+      software: 'Vous voulez un setup comme ça',
+      testimonials: 'Parlez-nous du vôtre',
+      whoFor: 'Sur la balance ? Écrivez-nous, on vous dira honnêtement'
     },
     marquee: {
       header: 'Choisis par des studios, restaurants et créateurs'
     },
     automation: {
       eyebrow: 'Étude de cas · Inka Spa Bali',
-      h2a: 'Un assistant WhatsApp,',
-      h2b: 'trois langues, zéro réservation ratée.',
+      h2a: 'Comment Inka Spa a',
+      h2b: 'arrêté de perdre des pistes la nuit.',
       sub: 'Construit pour un studio bien-être. Il qualifie les pistes, répond aux FAQ et bloque les créneaux en anglais, français et indonésien, pendant que la propriétaire dort. Des systèmes similaires tournent sur Telegram, Messenger et Instagram pour d’autres clients.',
       mockTag: 'Exemple',
       features: [
@@ -552,8 +590,34 @@ export const translations = {
         'Il vous faut un rebrand complet ou un deck de stratégie sur 60 pages. C’est une autre agence.'
       ]
     },
+    faq: {
+      eyebrow: 'FAQ',
+      h2a: 'Les quatre',
+      h2b: 'qu’on entend toujours.',
+      sub: 'Réponses sans détour. Si la vôtre n’y est pas, demandez.',
+      askMore: 'Une autre question ? Écrivez-nous',
+      items: [
+        {
+          q: 'Combien de temps ça prend ?',
+          a: 'De l’appel découverte au lancement, comptez 3 à 4 semaines pour un premier build. Les scopes plus gros sont découpés en phases : vous voyez quelque chose tourner dès la première semaine.'
+        },
+        {
+          q: 'Combien ça coûte ?',
+          a: 'Tarif sur mesure. On chiffre après l’appel découverte, une fois qu’on a compris ce qu’il vous faut vraiment. La plupart des premiers builds tombent dans les bas/moyens quatre chiffres (€). Le suivi mensuel est optionnel, sans engagement, résiliable à tout moment.'
+        },
+        {
+          q: 'Et si je ne sais pas ce qu’il me faut ?',
+          a: 'C’est exactement à ça que sert l’appel découverte. Amenez le goulot (« la prise de RDV est le bordel », « je crève sous les DM », « je sais pas ce que devrait montrer mon dashboard »), on apporte le scope.'
+        },
+        {
+          q: 'Et si je veux partir ?',
+          a: 'Tout ce qu’on construit vous appartient. Code, dashboards, comptes, automatisations : tout est transférable. Le suivi mensuel est sans engagement. On vous remet tout proprement si vous décidez de tout reprendre en interne.'
+        }
+      ]
+    },
     contact: {
       eyebrow: 'Parlons-en',
+      founderNote: 'Salut, c’est Alex. Je lis chaque message moi-même et je réponds sous 24 h.',
       h2a: 'Dites-nous',
       h2b: 'où ça coince.',
       sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit de 5 minutes sur une chose qu’on peut automatiser cette semaine. Sans engagement, sans deck.',

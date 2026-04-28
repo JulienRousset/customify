@@ -123,6 +123,16 @@ export default function Testimonials() {
             />
           </div>
         </div>
+
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+          >
+            {t.inlineCta.testimonials}
+            <span aria-hidden>→</span>
+          </a>
+        </div>
       </div>
     </section>
   )

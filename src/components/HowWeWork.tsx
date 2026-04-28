@@ -41,7 +41,7 @@ export default function HowWeWork() {
             const color = stepColors[i] ?? 'text-fg'
             return (
               <motion.li
-                key={s.title}
+                key={i}
                 variants={staggerItem}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.3, ease: easeApple }}

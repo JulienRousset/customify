@@ -73,7 +73,7 @@ export default function Automation() {
                 const color = featureColors[i] ?? 'text-fg'
                 return (
                   <motion.li
-                    key={f.title}
+                    key={i}
                     variants={staggerItem}
                     className="flex items-start gap-4"
                   >

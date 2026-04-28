@@ -59,6 +59,18 @@ export default function Contact() {
               </h2>
               <p className="mt-5 body-lg max-w-lg text-pretty">{c.sub}</p>
 
+              <div className="mt-7 flex items-center gap-3 max-w-lg">
+                <div
+                  aria-hidden
+                  className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center font-display font-semibold text-[13px] tracking-tight"
+                >
+                  A
+                </div>
+                <p className="text-[13.5px] text-fg2 leading-[1.5] text-pretty">
+                  {c.founderNote}
+                </p>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-2">
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
                   <motion.span

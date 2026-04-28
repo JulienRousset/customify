@@ -6,7 +6,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <title>Terms · Customy</title>
+    <title>Terms of Service · Customy</title>
+    <meta name="description" content="Terms governing the use of customy.agency and the engagement of Customy Studio for marketing systems, AI assistants and dashboard software." />
     <link
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -18,18 +19,20 @@
         --sub: #756d63;
         --accent: #191970;
         --hair: rgba(28, 26, 24, 0.1);
+        --hair-soft: rgba(28, 26, 24, 0.06);
+        --surface: #ffffff;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
       body {
         font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
         background: var(--bg);
         color: var(--fg);
-        line-height: 1.6;
+        line-height: 1.65;
         font-size: 16px;
       }
-      a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+      a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
       a:hover { opacity: 0.7; }
-      .container { max-width: 720px; margin: 0 auto; padding: 80px 24px 120px; }
+      .container { max-width: 760px; margin: 0 auto; padding: 64px 24px 120px; }
       .back {
         display: inline-flex;
         align-items: center;
@@ -37,32 +40,96 @@
         font-size: 13px;
         color: var(--sub);
         text-decoration: none;
-        margin-bottom: 48px;
+        margin-bottom: 40px;
       }
       .back:hover { color: var(--fg); }
       h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4vw, 2.75rem);
         font-weight: 600;
         letter-spacing: -0.025em;
         line-height: 1.1;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
       }
       .meta {
-        font-size: 12px;
+        font-size: 11.5px;
         color: var(--sub);
         text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-bottom: 56px;
+        letter-spacing: 0.14em;
+        margin-bottom: 40px;
       }
-      h2 {
-        font-size: 20px;
+      .lede {
+        font-size: 17px;
+        color: rgba(28, 26, 24, 0.78);
+        line-height: 1.6;
+        padding: 20px 22px;
+        background: var(--surface);
+        border: 1px solid var(--hair);
+        border-radius: 14px;
+        margin-bottom: 48px;
+      }
+      .toc {
+        margin: 0 0 56px;
+        padding: 18px 22px;
+        background: var(--surface);
+        border: 1px solid var(--hair);
+        border-radius: 14px;
+        font-size: 13.5px;
+      }
+      .toc strong {
+        display: block;
+        font-size: 11px;
         font-weight: 600;
-        letter-spacing: -0.015em;
-        margin: 48px 0 14px;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 12px;
       }
-      p { margin-bottom: 16px; color: rgba(28, 26, 24, 0.85); }
-      ul { padding-left: 22px; margin-bottom: 16px; color: rgba(28, 26, 24, 0.85); }
+      .toc ol { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 28px; counter-reset: toc-counter; }
+      .toc li { margin-bottom: 6px; break-inside: avoid; counter-increment: toc-counter; }
+      .toc li::before { content: counter(toc-counter) "."; color: var(--sub); margin-right: 6px; font-variant-numeric: tabular-nums; }
+      .toc a { color: var(--fg); text-decoration: none; }
+      .toc a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+      @media (max-width: 600px) { .toc ol { columns: 1; } }
+      h2 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.018em;
+        margin: 56px 0 14px;
+        scroll-margin-top: 24px;
+        line-height: 1.3;
+      }
+      h3 {
+        font-size: 15.5px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin: 28px 0 10px;
+        line-height: 1.4;
+      }
+      p { margin-bottom: 14px; color: rgba(28, 26, 24, 0.85); }
+      ul, ol.bullets { padding-left: 22px; margin-bottom: 16px; color: rgba(28, 26, 24, 0.85); }
       li { margin-bottom: 6px; }
+      strong { font-weight: 600; color: var(--fg); }
+      em { color: var(--fg); font-style: normal; font-weight: 500; }
+      code {
+        font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+        font-size: 13px;
+        background: rgba(28, 26, 24, 0.05);
+        padding: 1px 6px;
+        border-radius: 4px;
+      }
+      dl { margin: 14px 0 18px; }
+      dt { font-weight: 600; color: var(--fg); margin-top: 14px; font-size: 14.5px; }
+      dd { margin-left: 0; color: rgba(28, 26, 24, 0.82); margin-top: 4px; padding-left: 14px; border-left: 2px solid var(--hair); }
+      .callout {
+        margin: 18px 0;
+        padding: 14px 18px;
+        background: rgba(25, 25, 112, 0.04);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 10px 10px 0;
+        font-size: 14.5px;
+        color: rgba(28, 26, 24, 0.85);
+      }
+      .callout strong { color: var(--accent); }
       .footer {
         margin-top: 80px;
         padding-top: 24px;
@@ -70,38 +137,223 @@
         font-size: 12px;
         color: var(--sub);
       }
+      .footer a { color: var(--sub); text-decoration: none; }
+      .footer a:hover { color: var(--fg); }
     </style>
   </head>
   <body>
     <div class="container">
       <a href="/" class="back">← Back to Customy</a>
 
-      <h1>Terms</h1>
-      <p class="meta">Effective 25 April 2026</p>
+      <h1>Terms of Service</h1>
+      <p class="meta">Effective 28 April 2026 · Version 2.0</p>
 
-      <h2>1. What this site is</h2>
-      <p>customy.agency is the marketing site of Customy Studio. Everything you see is informational. Nothing on this page is a binding offer, a guarantee of result, or a contractual commitment until we sign a project agreement together.</p>
+      <div class="lede">
+        These terms govern your use of <strong>customy.agency</strong> and any engagement with <strong>Customy Studio</strong>. By browsing the site you accept the website terms in sections 2 to 6 below. By signing a project agreement with us you also accept the engagement terms in sections 7 to 18. Read them carefully &mdash; if anything is unclear, ask before you commit.
+      </div>
 
-      <h2>2. Engagements</h2>
-      <p>Every engagement is bespoke and confirmed in a separate written scope. The free first call mentioned on the site comes with no obligation on either side. Build sprints, monthly care, and pricing are agreed per project.</p>
+      <nav class="toc" aria-label="On this page">
+        <strong>On this page</strong>
+        <ol>
+          <li><a href="#parties">Definitions &amp; parties</a></li>
+          <li><a href="#acceptance">Acceptance &amp; eligibility</a></li>
+          <li><a href="#site">What this website is (and isn&rsquo;t)</a></li>
+          <li><a href="#content">Examples, mocks &amp; testimonials</a></li>
+          <li><a href="#site-ip">Site intellectual property</a></li>
+          <li><a href="#acceptable-use">Acceptable use of the site</a></li>
+          <li><a href="#engagement">Engagements &amp; project agreements</a></li>
+          <li><a href="#deliverables">Deliverables &amp; ownership</a></li>
+          <li><a href="#third-party">Third-party services in deliverables</a></li>
+          <li><a href="#fees">Fees, invoicing &amp; refunds</a></li>
+          <li><a href="#client-obligations">Client obligations</a></li>
+          <li><a href="#confidentiality">Confidentiality</a></li>
+          <li><a href="#data-protection">Data protection</a></li>
+          <li><a href="#warranties">Warranties &amp; disclaimers</a></li>
+          <li><a href="#liability">Limitation of liability</a></li>
+          <li><a href="#indemnity">Indemnification</a></li>
+          <li><a href="#force-majeure">Force majeure</a></li>
+          <li><a href="#termination">Termination</a></li>
+          <li><a href="#consumer">Consumer rights (B2C only)</a></li>
+          <li><a href="#updates">Updates to these terms</a></li>
+          <li><a href="#misc">Miscellaneous</a></li>
+          <li><a href="#law">Governing law &amp; jurisdiction</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
 
-      <h2>3. Examples and case studies</h2>
-      <p>The dashboard mock and chat assistant on this site are illustrative, built for visualisation. The metrics shown inside them are example data — not real client numbers. Real client testimonials are quoted as given to us.</p>
+      <h2 id="parties">1. Definitions &amp; parties</h2>
+      <dl>
+        <dt>&ldquo;Customy&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;</dt>
+        <dd>Customy Studio, an independent marketing &amp; AI studio operated by Alex, contactable at <a href="mailto:customyagency@gmail.com">customyagency@gmail.com</a> and <a href="https://wa.me/6285785065652">+62 857-8506-5652</a>.</dd>
+        <dt>&ldquo;Site&rdquo;</dt>
+        <dd>The website published at <strong>customy.agency</strong> and all of its sub-pages.</dd>
+        <dt>&ldquo;You&rdquo;, &ldquo;Visitor&rdquo;</dt>
+        <dd>Anyone who accesses the Site.</dd>
+        <dt>&ldquo;Client&rdquo;</dt>
+        <dd>Any individual or legal entity that signs a Project Agreement with us.</dd>
+        <dt>&ldquo;Project Agreement&rdquo;</dt>
+        <dd>The separate written scope (proposal, statement of work, email confirmation, signed PDF) that defines deliverables, timeline, fees and any custom terms for a specific engagement. The Project Agreement always prevails over these general Terms in case of conflict.</dd>
+        <dt>&ldquo;Deliverables&rdquo;</dt>
+        <dd>The systems, dashboards, code, automations, content, designs and any other output we produce under a Project Agreement.</dd>
+      </dl>
 
-      <h2>4. Intellectual property</h2>
-      <p>The Customy name, logo, brand, and the design and code of this site are ours. Client work we ship is owned by the client unless otherwise agreed in writing. Open-source code we use stays under its respective licenses.</p>
+      <h2 id="acceptance">2. Acceptance &amp; eligibility</h2>
+      <p>By browsing the Site you accept these Terms in their version published at the moment of your visit. If you do not agree, please leave the Site.</p>
+      <p>You confirm you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into binding agreements. If you are using the Site on behalf of a company, you confirm you are authorised to bind that company.</p>
 
-      <h2>5. Confidentiality</h2>
-      <p>What you tell us about your business stays between us. We do not share confidential information with anyone outside the engagement without explicit consent.</p>
+      <h2 id="site">3. What this website is (and isn&rsquo;t)</h2>
+      <p>The Site is the marketing site of Customy Studio. Everything you see is informational. Nothing on the Site &mdash; including pricing hints, timelines, capacity statements, the &ldquo;free first call&rdquo; or the &ldquo;free 24h audit&rdquo; mentioned on the contact page &mdash; constitutes a binding offer, a guarantee of a result, or a contractual commitment until a Project Agreement is signed by both parties.</p>
+      <p>Availability statements (&ldquo;Taking 2 new clients this quarter&rdquo;, &ldquo;Start in 2 to 3 weeks&rdquo;) are indicative and may change without notice.</p>
 
-      <h2>6. Liability</h2>
-      <p>This site is provided &ldquo;as is&rdquo;. We don&rsquo;t guarantee uptime, particular outcomes, or that any third-party service it links to will be available. Our liability for delivered project work is governed by the project agreement we sign with you, not by these terms.</p>
+      <h2 id="content">4. Examples, mocks &amp; testimonials</h2>
+      <p>The dashboard mock shown in the &ldquo;Software&rdquo; section and the chat assistant shown in the &ldquo;Automation&rdquo; section are <strong>illustrative interfaces built for visualisation</strong>. The metrics, names, conversations and numbers displayed inside them are example data &mdash; not real client figures &mdash; and must not be relied on as evidence of past performance.</p>
+      <p>Real client testimonials are quoted as given to us by the named client. Partner and tool logos are shown to identify the third-party services and platforms our deliverables typically integrate with; their inclusion does not imply any endorsement, partnership or sponsorship by those third parties.</p>
 
-      <h2>7. Governing law</h2>
-      <p>These terms are governed by French law. Any dispute that cannot be settled informally goes to the courts of Paris.</p>
+      <h2 id="site-ip">5. Site intellectual property</h2>
+      <p>The Customy name, logo, brand, copy, design, code, illustrations and any other content of the Site are owned by Customy Studio or licensed to it. They are protected by copyright, trade-mark and other applicable intellectual-property laws.</p>
+      <p>You may view the Site, share links to it, and quote short, properly attributed extracts (e.g. &ldquo;according to Customy Studio&hellip;&rdquo;) for review, commentary or news purposes. Any other reproduction, modification, public communication, scraping or commercial use of the Site requires our prior written consent.</p>
+      <p>Open-source components used on the Site (React, Tailwind CSS, Framer Motion, lucide-react, etc.) remain governed by their respective licenses.</p>
 
-      <h2>8. Contact</h2>
-      <p>Questions? <a href="mailto:customyagency@gmail.com">customyagency@gmail.com</a> or WhatsApp <a href="https://wa.me/6285785065652">+62 857-8506-5652</a>.</p>
+      <h2 id="acceptable-use">6. Acceptable use of the site</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>attempt to gain unauthorised access to any part of the Site, its servers, or any connected system;</li>
+        <li>use the Site to transmit malware, spam, denial-of-service traffic or any unlawful content;</li>
+        <li>scrape the Site at scale, train AI models on it, or republish substantial portions of it without our prior written consent;</li>
+        <li>impersonate Customy or imply an affiliation, partnership or endorsement that does not exist;</li>
+        <li>circumvent or interfere with any technical protection measures (rate limits, CSP, bot mitigation, etc.).</li>
+      </ul>
+      <p>We reserve the right to block any IP address, refuse service, or take any other reasonable action to enforce this section.</p>
+
+      <h2 id="engagement">7. Engagements &amp; project agreements</h2>
+      <p>Every engagement is bespoke and confirmed in a separate Project Agreement. The free first call mentioned on the Site comes with no obligation on either side and creates no binding relationship.</p>
+      <p>A Project Agreement typically covers:</p>
+      <ul>
+        <li>scope of work and acceptance criteria;</li>
+        <li>milestones and timeline;</li>
+        <li>fees, payment schedule and invoicing terms;</li>
+        <li>responsibilities of each party;</li>
+        <li>any handling of credentials or sensitive data;</li>
+        <li>specific intellectual-property and licensing arrangements (where they differ from section 8 below);</li>
+        <li>monthly care arrangements after launch, if any.</li>
+      </ul>
+      <p>Build sprints typically run 2 to 4 weeks for an initial system; larger scopes are split into phases. Fees are usually scope-based and quoted as a fixed price per phase, with an optional month-to-month care plan after launch.</p>
+
+      <h2 id="deliverables">8. Deliverables &amp; ownership</h2>
+      <p>Unless the Project Agreement says otherwise:</p>
+      <ul>
+        <li>upon full payment of the relevant invoice, the Client owns all final, custom-built Deliverables (code, dashboards, automations, content, designs);</li>
+        <li>Customy retains ownership of any pre-existing tooling, internal frameworks, code snippets, design systems and methodologies that pre-date the engagement, and grants the Client a perpetual, worldwide, royalty-free license to use them as embedded in the Deliverables;</li>
+        <li>Customy may reference the engagement in its portfolio (Client name, public-facing logo, anonymised before/after metrics) unless the Client opts out in writing.</li>
+      </ul>
+      <p>If you decide to take the system in-house or move it to another provider, we hand over cleanly: source code, account ownership transfers, documentation. Monthly care is month-to-month and you can cancel at the end of any monthly cycle.</p>
+
+      <h2 id="third-party">9. Third-party services in deliverables</h2>
+      <p>Most Deliverables integrate with third-party platforms (Google Workspace, Notion, WhatsApp Business, Meta Ads, Stripe, OpenAI, Anthropic, Make, n8n, etc.). Those services are operated by their respective providers under their own terms and pricing. We do not control them, do not guarantee their continued availability, and we are not responsible for their outages, price changes, policy changes or deprecations.</p>
+      <p>You are responsible for the accounts you own on those platforms and for paying any usage fees they charge directly to you (e.g. AI model usage, ad spend, SaaS subscriptions). Where we set them up on your behalf, ownership transfers to you at hand-over.</p>
+
+      <h2 id="fees">10. Fees, invoicing &amp; refunds</h2>
+      <h3>10.1 Pricing</h3>
+      <p>Fees are quoted in euros (&euro;) in the Project Agreement, net of VAT where applicable. They are firm for the scope described; any additional scope is treated as a change request and quoted separately.</p>
+      <h3>10.2 Invoicing</h3>
+      <p>Unless otherwise agreed: 50% on signature of the Project Agreement, 50% on hand-over of the final Deliverables. Monthly care invoices are issued at the start of each cycle.</p>
+      <h3>10.3 Payment terms</h3>
+      <p>Invoices are payable within 30 days of issuance by bank transfer (SEPA), Wise, or any other method we agree on. Late payments accrue interest at three (3) times the French legal interest rate from the day after the due date, plus a fixed indemnity for recovery costs of forty (40) euros per invoice (Art. L.441-10 of the French Commercial Code).</p>
+      <h3>10.4 Refunds &amp; cancellation</h3>
+      <p>Once a build sprint has started, fees for completed work are non-refundable. If the Client cancels mid-sprint, we invoice for work effectively performed up to the cancellation date (pro rata) and hand over what has been built so far.</p>
+
+      <h2 id="client-obligations">11. Client obligations</h2>
+      <p>To deliver well, we need the Client to:</p>
+      <ul>
+        <li>provide the brief, files, credentials and feedback we need within reasonable timeframes (typically 2 business days);</li>
+        <li>nominate a single point of contact authorised to make decisions;</li>
+        <li>own the legal rights to anything they ask us to use (logos, photos, copy, customer data);</li>
+        <li>respect the platform terms of any third-party service used in the Deliverables;</li>
+        <li>not ask us to build or operate anything illegal, deceptive, in breach of consumer protection law, or contrary to the platform terms of any service involved.</li>
+      </ul>
+      <p>Significant delays caused by the Client (no feedback for more than 10 business days, no payment of milestone invoices) may shift the timeline and re-quote rates.</p>
+
+      <h2 id="confidentiality">12. Confidentiality</h2>
+      <p>What you tell us about your business stays between us. Both parties undertake to keep confidential any non-public information disclosed by the other in connection with the engagement (business data, customer lists, financials, strategy, source code, credentials), to use it only for the purpose of the engagement, and to protect it with the same level of care they apply to their own confidential information &mdash; in any event no less than reasonable care.</p>
+      <p>This obligation survives termination of the engagement for a period of 5 years and indefinitely for trade secrets within the meaning of EU Directive 2016/943.</p>
+      <p>Mutually agreed exceptions: information that (i) is or becomes publicly available without breach of this section, (ii) was lawfully known prior to disclosure, (iii) is independently developed without use of the confidential information, or (iv) must be disclosed by law or court order, in which case the receiving party gives reasonable advance notice where lawful.</p>
+
+      <h2 id="data-protection">13. Data protection</h2>
+      <p>How we handle personal data of Site visitors is described in our <a href="/privacy.html">Privacy Policy</a>.</p>
+      <p>Where we process personal data of Client end-users on behalf of the Client (for example end-user data flowing through a custom dashboard or AI assistant we build), we act as a data processor and the Client acts as data controller within the meaning of the GDPR. The Project Agreement (or a separate Data Processing Addendum executed alongside it) sets out the subject matter, duration, nature, purpose, types of personal data and categories of data subjects, in line with Article 28 GDPR. By default, we will:</p>
+      <ul>
+        <li>process personal data only on documented instructions from the Client;</li>
+        <li>ensure persons authorised to process it are bound by confidentiality;</li>
+        <li>implement appropriate technical and organisational measures (Art. 32 GDPR);</li>
+        <li>not engage further sub-processors without prior written authorisation;</li>
+        <li>assist the Client in responding to data-subject requests and security incidents;</li>
+        <li>delete or return all personal data at the end of the engagement at the Client&rsquo;s choice.</li>
+      </ul>
+
+      <h2 id="warranties">14. Warranties &amp; disclaimers</h2>
+      <p>We warrant that we will perform the services with reasonable skill and care, in line with the standards of the industry. We do not warrant any specific business outcome, ranking, conversion rate, follower count, revenue, or other commercial result &mdash; those depend on factors outside our control (your offer, your audience, market conditions, third-party platforms).</p>
+      <p>The Site itself is provided <strong>&ldquo;as is&rdquo; and &ldquo;as available&rdquo;</strong>. To the maximum extent permitted by law we disclaim all warranties not expressly stated in these Terms or in the Project Agreement, including any implied warranty of merchantability, fitness for a particular purpose or non-infringement.</p>
+
+      <h2 id="liability">15. Limitation of liability</h2>
+      <p>Nothing in these Terms limits or excludes any liability that cannot be limited or excluded under applicable law (including liability for death or personal injury caused by our negligence, fraud, or wilful misconduct).</p>
+      <p>Subject to the paragraph above, our total aggregate liability arising out of or in connection with these Terms or any Project Agreement, whether in contract, tort (including negligence), breach of statutory duty or otherwise, is capped at the total fees paid by the Client to Customy for the specific engagement in the twelve (12) months preceding the event giving rise to the claim.</p>
+      <p>In no event are we liable for: indirect, special, incidental, consequential or punitive damages; loss of profit, revenue, anticipated savings or business opportunity; loss or corruption of data not caused by our gross negligence; or any damage arising from third-party services we do not control (see section 9).</p>
+
+      <h2 id="indemnity">16. Indemnification</h2>
+      <p>The Client agrees to indemnify and hold Customy harmless from any third-party claim, loss, damage or expense (including reasonable legal fees) arising out of or related to: (i) content, data, instructions or materials the Client provides to Customy that infringe a third party&rsquo;s rights or violate any law; (ii) the Client&rsquo;s use of the Deliverables in breach of these Terms, the Project Agreement or applicable law; (iii) any breach by the Client of section 11 (Client obligations).</p>
+
+      <h2 id="force-majeure">17. Force majeure</h2>
+      <p>Neither party is liable for any failure or delay in performance caused by an event beyond its reasonable control, including but not limited to: natural disasters, pandemic measures, war, civil unrest, government action, internet or power outages, third-party platform failures, denial-of-service attacks. The affected party will give prompt notice and use reasonable efforts to resume performance.</p>
+
+      <h2 id="termination">18. Termination</h2>
+      <p>Either party may terminate a Project Agreement immediately by written notice if the other party: (i) materially breaches the agreement and fails to cure the breach within 30 days of written notice; (ii) becomes insolvent or subject to bankruptcy proceedings; (iii) ceases to do business.</p>
+      <p>Monthly care subscriptions can be terminated by either party at the end of any monthly cycle by written notice given at least 7 days before the next renewal date.</p>
+      <p>Sections that by their nature are intended to survive termination (in particular sections 5, 8, 12, 13, 14, 15, 16 and 22) will continue to apply.</p>
+
+      <h2 id="consumer">19. Consumer rights (B2C only)</h2>
+      <p>Customy primarily serves business clients. Where a Client qualifies as a consumer within the meaning of Article L.217-3 of the French Consumer Code, the following additional rules apply:</p>
+      <ul>
+        <li><strong>Right of withdrawal:</strong> for distance contracts, the consumer has 14 days to withdraw from the contract without giving any reason (Art. L.221-18 French Consumer Code). The right of withdrawal does not apply to services that have been fully performed before the end of the period if performance began with the consumer&rsquo;s prior express consent and acknowledgement that the right will be lost (Art. L.221-28).</li>
+        <li><strong>Legal warranties:</strong> the consumer benefits from the legal warranty of conformity (Art. L.217-3 et seq.) and from the warranty against latent defects (Art. 1641 et seq. French Civil Code), with no impact from these Terms.</li>
+        <li><strong>Mediation:</strong> in case of dispute the consumer may submit the matter to a consumer mediator at no cost; details available on request.</li>
+        <li><strong>ODR platform:</strong> the European Commission&rsquo;s online dispute resolution platform is available at <a href="https://ec.europa.eu/consumers/odr" rel="noopener" target="_blank">ec.europa.eu/consumers/odr</a>.</li>
+      </ul>
+
+      <h2 id="updates">20. Updates to these terms</h2>
+      <p>We may update these Terms from time to time. The version applicable to your visit is the one published on the Site at that moment, identified by the version number and effective date at the top of this page. The version applicable to a Project Agreement is the one in force at signature, unless the parties expressly agree otherwise in writing.</p>
+      <p>For substantive changes that affect ongoing engagements (e.g. changes to liability or payment terms), we will notify affected Clients by email at least 30 days before the change takes effect.</p>
+
+      <h2 id="misc">21. Miscellaneous</h2>
+      <dl>
+        <dt>Severability</dt>
+        <dd>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions remain in full force and effect; the invalid provision is replaced by a valid one that comes closest to the original intent.</dd>
+        <dt>No waiver</dt>
+        <dd>The failure of either party to enforce any right under these Terms is not a waiver of that right.</dd>
+        <dt>Assignment</dt>
+        <dd>The Client may not assign or transfer these Terms or any Project Agreement without our prior written consent. We may assign them to a successor entity in case of merger, acquisition or sale of substantially all assets.</dd>
+        <dt>Entire agreement</dt>
+        <dd>These Terms together with the applicable Project Agreement and the Privacy Policy constitute the entire agreement between the parties on the subject matter and supersede any prior or contemporaneous understanding, representation or agreement.</dd>
+        <dt>Notices</dt>
+        <dd>All formal notices must be sent by email to <a href="mailto:customyagency@gmail.com">customyagency@gmail.com</a> for Customy and to the email address on record for the Client. A notice is deemed received on the next business day after sending.</dd>
+        <dt>Language</dt>
+        <dd>These Terms are published in English. A French translation is available on request; in case of discrepancy, the English version prevails for the website terms (sections 1&ndash;6 and 19&ndash;23) and the language designated in the Project Agreement prevails for the engagement terms.</dd>
+      </dl>
+
+      <h2 id="law">22. Governing law &amp; jurisdiction</h2>
+      <p>These Terms and any Project Agreement are governed by <strong>French law</strong>, without regard to its conflict-of-laws rules.</p>
+      <p>Any dispute that cannot be settled informally between the parties will be submitted to the <strong>exclusive jurisdiction of the competent courts of Paris, France</strong>, except where mandatory consumer-protection rules grant the consumer a different forum (in which case those rules apply).</p>
+      <p>Before going to court, the parties undertake to attempt a good-faith resolution by exchanging written notices and meeting (in person or remotely) within 30 days of the first formal notice of dispute.</p>
+
+      <div class="callout">
+        <strong>Plain-language summary:</strong> the Site is informational and nothing on it binds us until we sign a Project Agreement. Once we do, you own the work after final payment, we keep our internal tooling, both sides keep things confidential, our liability is capped at what you paid us in the past year for that engagement, French law applies and Paris courts have jurisdiction. Care subscriptions are month-to-month. None of this overrides what we explicitly agree in your Project Agreement.
+      </div>
+
+      <h2 id="contact">23. Contact</h2>
+      <p>Questions about these Terms or about a possible engagement:</p>
+      <ul>
+        <li>Email: <a href="mailto:customyagency@gmail.com">customyagency@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/6285785065652">+62 857-8506-5652</a></li>
+      </ul>
 
       <div class="footer">
         © <span id="year"></span> Customy Studio · <a href="/privacy.html">Privacy</a> · <a href="/">Home</a>

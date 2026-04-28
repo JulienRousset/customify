@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, BarChart3, Calendar, Database, LayoutDashboard } from 'lucide-react'
+import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 const points = [
@@ -11,6 +12,7 @@ const points = [
 ]
 
 export default function Software() {
+  const { t } = useLang()
   return (
     <section id="software" className="relative py-24 md:py-32">
       <div className="container-xl">
@@ -23,7 +25,7 @@ export default function Software() {
               viewport={viewportOnce}
             >
               <motion.h2 variants={staggerItem} className="display-2 text-balance">
-                One dashboard, <span className="text-sub">built around one restaurant.</span>
+                How My Cocotte saved 2 hours a day <span className="text-sub">with one dashboard.</span>
               </motion.h2>
               <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
                 Every tab, every metric, every alert was decided with the owner. Nothing pulled from a template. Yours would look different, because your business is different.
@@ -60,6 +62,14 @@ export default function Software() {
                 )
               })}
             </motion.ul>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+            >
+              {t.inlineCta.software}
+              <span aria-hidden>→</span>
+            </a>
           </div>
 
           <motion.div
