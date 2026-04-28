@@ -30,6 +30,10 @@
     <meta name="keywords" content="bespoke marketing agency, custom AI studio, personalised marketing, WhatsApp automation, Instagram growth, CRM, dashboards, remote studio" />
     <meta name="author" content="Customy Studio" />
     <link rel="canonical" href="https://customy.agency/" />
+    <link rel="alternate" hreflang="en" href="https://customy.agency/" />
+    <link rel="alternate" hreflang="x-default" href="https://customy.agency/" />
+    <!-- Add when /fr ships:
+    <link rel="alternate" hreflang="fr" href="https://customy.agency/fr/" /> -->
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Customy" />
@@ -56,22 +60,99 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Customy",
-        "alternateName": "Studio Customy",
-        "url": "https://customy.agency",
-        "logo": "https://customy.agency/customy_logo_512.png",
-        "image": "https://customy.agency/og.jpg",
-        "description": "Every business is unique, yours should be too. Bespoke marketing & AI studio designing custom dashboards, Instagram growth and WhatsApp automation.",
-        "slogan": "Every business is unique, yours should be too.",
-        "priceRange": "$$$",
-        "areaServed": "Worldwide",
-        "email": "customyagency@gmail.com",
-        "sameAs": [
-          "https://www.instagram.com/customyagency/",
-          "https://www.facebook.com/profile.php?id=61562923021804",
-          "https://x.com/Customyagency",
-          "https://pin.it/2kEWWZ4wh"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://customy.agency/#organization",
+            "name": "Customy",
+            "alternateName": "Customy Studio",
+            "url": "https://customy.agency/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://customy.agency/customy_logo_512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://customy.agency/og.jpg",
+            "email": "customyagency@gmail.com",
+            "founder": {
+              "@type": "Person",
+              "name": "Alex"
+            },
+            "areaServed": "Worldwide",
+            "knowsAbout": [
+              "Custom marketing systems",
+              "AI assistants",
+              "WhatsApp automation",
+              "Instagram growth",
+              "CRM dashboards",
+              "Bespoke web design"
+            ],
+            "sameAs": [
+              "https://www.instagram.com/customyagency/",
+              "https://www.facebook.com/profile.php?id=61562923021804",
+              "https://x.com/Customyagency",
+              "https://pin.it/2kEWWZ4wh"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://customy.agency/#service",
+            "name": "Customy",
+            "url": "https://customy.agency/",
+            "image": "https://customy.agency/og.jpg",
+            "description": "Bespoke marketing & AI studio designing custom dashboards, Instagram growth and WhatsApp automation around how your business actually runs.",
+            "slogan": "Every business is unique, yours should be too.",
+            "priceRange": "$$$",
+            "areaServed": "Worldwide",
+            "parentOrganization": { "@id": "https://customy.agency/#organization" }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://customy.agency/#website",
+            "url": "https://customy.agency/",
+            "name": "Customy",
+            "publisher": { "@id": "https://customy.agency/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://customy.agency/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long does it take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Discovery call to launch is typically 3 to 4 weeks for an initial build. Bigger scopes get split into phases so you see something working in week one."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does it cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Scope-based. We quote a real number after the discovery call once we’ve understood what you actually need. Most first builds land in the low to mid four figures (€). Monthly care after launch is optional, month-to-month, cancel anytime."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if I’m not sure what I need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "That’s literally what the discovery call is for. Bring the bottleneck (\"the booking flow is messy\", \"I drown in DMs\", \"I have no idea what my dashboard should show\") and we’ll bring the scope."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if I want to leave?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You own everything we build. Code, dashboards, accounts, automations: all transferable. Monthly care is month-to-month, no lock-in. We hand it over cleanly if you decide to take it in-house."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
