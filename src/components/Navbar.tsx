@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Instagram, Menu, X } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
-import { XLogo, PinterestLogo, FacebookLogo, TikTokLogo, YouTubeLogo } from './icons'
+import { XLogo, PinterestLogo, FacebookLogo, TikTokLogo, YouTubeLogo, LinkedInLogo } from './icons'
 
 const SOCIALS = {
   instagram: 'https://www.instagram.com/customyagency/',
   facebook: 'https://www.facebook.com/profile.php?id=61562923021804',
   x: 'https://x.com/Customyagency',
+  linkedin: 'https://www.linkedin.com/company/customyagency',
   pinterest: 'https://pin.it/2kEWWZ4wh',
   tiktok: 'https://www.tiktok.com/@customyagency',
   youtube: 'https://www.youtube.com/@customyagency'
@@ -84,6 +85,9 @@ export default function Navbar() {
               </a>
               <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
                 <XLogo size={14} />
+              </a>
+              <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={iconClass}>
+                <LinkedInLogo size={16} />
               </a>
               <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className={iconClass}>
                 <TikTokLogo size={16} />
@@ -205,6 +209,9 @@ export default function Navbar() {
                     </a>
                     <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
                       <XLogo size={14} />
+                    </a>
+                    <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={iconClass}>
+                      <LinkedInLogo size={16} />
                     </a>
                     <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className={iconClass}>
                       <TikTokLogo size={16} />
