@@ -37,7 +37,7 @@
 
 export const ANALYTICS = {
   // --- Analytics category (heatmaps, page views, sessions) ---
-  GA4_MEASUREMENT_ID: 'G-XXXXXXXXXX',
+  GA4_MEASUREMENT_ID: 'G-ZCVC6YN9EH',
   CLARITY_PROJECT_ID: 'XXXXXXXXXX',
 
   // --- Marketing category (paid-ads attribution pixels) ---
