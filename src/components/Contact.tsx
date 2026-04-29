@@ -299,6 +299,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerRemote}</div>
             <div className="flex items-center gap-5">
+              <a href="/review.html" className="hover:text-fg transition-colors">Leave a review</a>
               <a href="/privacy.html" className="hover:text-fg transition-colors">Privacy</a>
               <a href="/terms.html" className="hover:text-fg transition-colors">Terms</a>
               <a href="mailto:customyagency@gmail.com" className="hover:text-fg transition-colors">customyagency@gmail.com</a>

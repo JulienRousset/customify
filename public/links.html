@@ -43,6 +43,8 @@
         --pinterest: #E60023;
         --trustpilot: #00B67A;
         --linkedin: #0A66C2;
+        --sms: #007AFF;
+        --google: #4285F4;
       }
       * {
         box-sizing: border-box;
@@ -261,6 +263,8 @@
       .link.youtube:hover .icon { color: var(--youtube); background: rgba(255, 0, 0, 0.14); }
       .link.pinterest:hover .icon { color: var(--pinterest); background: rgba(230, 0, 35, 0.14); }
       .link.trustpilot:hover .icon { color: var(--trustpilot); background: rgba(0, 182, 122, 0.14); }
+      .link.sms:hover .icon { color: var(--sms); background: rgba(0, 122, 255, 0.14); }
+      .link.google:hover .icon { color: var(--google); background: rgba(66, 133, 244, 0.14); }
 
       /* Website — primary CTA, gold accent at rest */
       .link.website {
@@ -395,6 +399,25 @@
           </svg>
         </a>
 
+        <a class="link sms" href="sms:+6285785065652">
+          <span class="icon" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </span>
+          <span class="label">
+            <span class="name">SMS</span>
+            <span class="handle">+62 857-8506-5652</span>
+          </span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7" /><path d="M7 7h10v10" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="section-label">Review us</div>
+
+      <div class="links">
         <a class="link trustpilot" href="https://www.trustpilot.com/review/customy.agency" target="_blank" rel="noopener noreferrer">
           <span class="icon" aria-hidden>
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -403,7 +426,24 @@
           </span>
           <span class="label">
             <span class="name">Trustpilot</span>
-            <span class="handle">Read our reviews</span>
+            <span class="handle">Read or leave a review</span>
+          </span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7" /><path d="M7 7h10v10" />
+          </svg>
+        </a>
+
+        <a class="link google" href="https://share.google/6Clo0VVFAPJg8hKTB" target="_blank" rel="noopener noreferrer">
+          <span class="icon" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9.5 12 4l9 5.5" />
+              <path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9" />
+              <path d="M9 21v-7h6v7" />
+            </svg>
+          </span>
+          <span class="label">
+            <span class="name">Google Business</span>
+            <span class="handle">Find us on Google</span>
           </span>
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 17 17 7" /><path d="M7 7h10v10" />
