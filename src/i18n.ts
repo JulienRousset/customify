@@ -37,7 +37,7 @@ export const translations = {
       eyebrow: 'Custom marketing & AI studio',
       h1a: 'Every business is unique,',
       h1b: 'yours should be too.',
-      sub: 'No templates. No packaged plans. We design every system around how your business actually runs, and stay close enough to keep evolving it with you.',
+      sub: 'Tailor-made marketing strategies and AI-powered software, designed around how your business actually runs. We stay close enough to keep evolving them with you.',
       ctaPrimary: 'Start a project',
       engagement: 'Free first call · Build sprints from 2 weeks · Monthly care after launch',
       ctaSecondary: 'Grow your brand',
@@ -95,7 +95,7 @@ export const translations = {
       eyebrow: 'What we build',
       h2a: 'No two builds',
       h2b: 'look the same.',
-      sub: 'Pick the pieces that match your business: site, dashboard, automation, content engine. Each one is shaped to your operation, not pulled off a shelf.',
+      sub: 'Pick the pieces that match your business: site, dashboard, automation, content engine. Each one is built around your operation, your goals, your real needs.',
       items: [
         {
           title: 'CRM & live dashboards',
@@ -381,7 +381,7 @@ export const translations = {
       eyebrow: 'Studio marketing & IA sur mesure',
       h1a: 'Chaque business est unique,',
       h1b: 'le vôtre devrait l’être aussi.',
-      sub: 'Pas de template. Pas de pack tout-fait. On dessine chaque système autour de la façon dont votre business tourne vraiment, et on reste assez proches pour le faire évoluer avec vous.',
+      sub: 'Stratégies marketing et outils IA sur mesure, conçus autour de la façon dont votre business tourne vraiment. On reste assez proches pour les faire évoluer avec vous.',
       ctaPrimary: 'Démarrer un projet',
       engagement: 'Premier appel offert · Sprints dès 2 semaines · Suivi mensuel après livraison',
       ctaSecondary: 'Grow your brand',
@@ -439,7 +439,7 @@ export const translations = {
       eyebrow: 'Ce qu’on construit',
       h2a: 'Aucun build',
       h2b: 'ne se ressemble.',
-      sub: 'Choisissez les briques qui collent à votre business : site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, pas tirée d’une étagère.',
+      sub: 'Choisissez les briques qui collent à votre business : site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, vos objectifs, vos besoins réels.',
       items: [
         {
           title: 'CRM & tableaux de bord',
