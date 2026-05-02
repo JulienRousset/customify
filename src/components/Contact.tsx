@@ -231,7 +231,7 @@ export default function Contact() {
               </nav>
               <div className="flex items-center gap-2">
                 <a
-                  href="https://www.instagram.com/customyagency/"
+                  href="https://www.instagram.com/customy.agency/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"

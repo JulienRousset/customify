@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle'
 import { XLogo, PinterestLogo, FacebookLogo, TikTokLogo, YouTubeLogo, LinkedInLogo } from './icons'
 
 const SOCIALS = {
-  instagram: 'https://www.instagram.com/customyagency/',
+  instagram: 'https://www.instagram.com/customy.agency/',
   facebook: 'https://www.facebook.com/profile.php?id=61562923021804',
   x: 'https://x.com/Customyagency',
   linkedin: 'https://www.linkedin.com/company/customyagency',
