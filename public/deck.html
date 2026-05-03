@@ -891,6 +891,170 @@
       @media (prefers-reduced-motion: reduce) {
         .slide, .slide .reveal, .bars span { transition: none !important; animation: none !important; }
       }
+
+      /* ============================================================
+         RESPONSIVE — tablet + mobile
+         ============================================================ */
+
+      /* Tablet: tighten case study split, reduce shot sizes */
+      @media (max-width: 1024px) {
+        .compare-shots { max-width: 460px; }
+        .proof-grid { gap: 18px; }
+        .case { gap: 3vh; }
+      }
+
+      /* Mobile: top-align (allow scroll), stack everything, smaller chrome */
+      @media (max-width: 768px) {
+        .slide {
+          padding: 7vh 5vw 8vh;
+          gap: 24px;
+          justify-content: flex-start;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .slide.cover { justify-content: center; }
+
+        /* Chrome — smaller, hugs corners */
+        .chrome-top {
+          top: 12px; left: 14px;
+          font-size: 9.5px; letter-spacing: 0.14em;
+          gap: 8px;
+        }
+        .chrome-top img { width: 18px; height: 18px; }
+        .chrome-top span { display: none; } /* keep just the logo on tiny screens */
+        .chrome-bottom {
+          bottom: 12px; right: 14px;
+          gap: 8px;
+        }
+        .chrome-bottom button { width: 32px; height: 32px; }
+        .counter { min-width: 50px; font-size: 9.5px; }
+
+        /* Reveal stagger less aggressive on mobile */
+        .slide.active .reveal { animation-duration: 0.45s; }
+
+        /* Cover */
+        .cover .logo-wrap { width: 92px; height: 92px; margin-bottom: 14px; }
+        .cover .logo { width: 84px; height: 84px; }
+        .cover .wordmark { font-size: 32px; margin-bottom: 6px; }
+        .cover .tagline { font-size: 26px; line-height: 1.15; }
+        .cover .meta {
+          margin-top: 22px;
+          font-size: 9.5px;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+        }
+
+        /* Slide-head: tighter */
+        .slide-head { gap: 12px; }
+        .lede { font-size: 14px; line-height: 1.5; }
+
+        /* Pain rows */
+        .pain-list { max-width: 100%; }
+        .pain-row { padding: 14px 16px; gap: 12px; border-radius: 14px; }
+        .pain-row .glyph { width: 36px; height: 36px; border-radius: 10px; }
+        .pain-row .text { font-size: 13.5px; }
+
+        /* Pillars */
+        .pillar { padding: 20px; border-radius: 18px; }
+        .pillar .num { font-size: 10px; margin-bottom: 10px; }
+        .pillar h3 { font-size: 20px; margin-bottom: 8px; }
+        .pillar p { font-size: 13.5px; }
+        .pillar ul { margin-top: 14px; }
+        .pillar li { font-size: 13px; }
+
+        /* Service grid: 1-col on phones */
+        .service-grid { grid-template-columns: 1fr; gap: 12px; }
+        .service-card { padding: 16px; border-radius: 16px; }
+        .service-card .icon { width: 34px; height: 34px; margin-bottom: 10px; }
+        .service-card h4 { font-size: 15px; }
+        .service-card p { font-size: 13px; }
+
+        /* Case study: stack mockup below text */
+        .case { grid-template-columns: 1fr; gap: 24px; }
+        .case .body { font-size: 13.5px; max-width: 100%; }
+        .case-tag { font-size: 10px; padding: 5px 11px; }
+
+        /* Metric row: 3 cols still works for short numbers, but tighter */
+        .metric-row { gap: 8px; margin-top: 18px; }
+        .metric { padding: 12px 14px; border-radius: 14px; }
+        .metric .num { font-size: 22px; }
+        .metric .label { font-size: 11px; margin-top: 6px; }
+
+        /* Browser dashboard: full width, simplified */
+        .mockup-browser { max-width: 100%; font-size: 11px; border-radius: 12px; }
+        .browser-bar { padding: 8px 10px; }
+        .browser-bar .url { font-size: 9.5px; padding: 3px 8px; }
+        .browser-body { grid-template-columns: 80px 1fr; min-height: 280px; }
+        .browser-side { padding: 10px 6px; }
+        .side-item { font-size: 9.5px; padding: 6px 8px; }
+        .side-item svg { width: 11px; height: 11px; }
+        .browser-main { padding: 12px; gap: 10px; }
+        .browser-head h5 { font-size: 14px; }
+        .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+        .kpi { padding: 8px 10px; border-radius: 8px; }
+        .kpi .v { font-size: 14px; }
+        .kpi .l { font-size: 8.5px; }
+        .bars { height: 44px; }
+
+        /* Phone mockup */
+        .mockup-phone { width: 200px; border-radius: 32px; }
+        .phone-notch { width: 70px; height: 18px; top: 12px; }
+        .ig-stat .n { font-size: 13px; }
+
+        /* Compare shots (real Insta) — stack side-by-side but smaller */
+        .compare-shots {
+          grid-template-columns: 1fr 1fr;
+          max-width: 320px;
+          gap: 8px;
+        }
+        .shot { border-radius: 16px; }
+        .shot-label { font-size: 8px; padding: 4px 8px; top: 8px; }
+
+        /* Proof grid: stack vertically */
+        .proof-grid { grid-template-columns: 1fr; gap: 14px; max-width: 100%; }
+        .proof-item .frame { border-radius: 12px; }
+        .proof-item .caption { font-size: 10px; }
+
+        /* Process: stack 3 steps */
+        .process { gap: 12px; }
+        .step { padding: 20px; border-radius: 18px; }
+        .step .step-num { font-size: 36px; }
+        .step h4 { font-size: 18px; margin-top: 12px; }
+        .step .duration { font-size: 10px; }
+        .step p { font-size: 13.5px; margin-top: 10px; }
+
+        /* Why-us quads */
+        .quads { grid-template-columns: 1fr; gap: 12px; }
+        .quad { padding: 18px; border-radius: 16px; gap: 8px; }
+        .quad .icon { width: 38px; height: 38px; }
+        .quad h4 { font-size: 17px; }
+        .quad p { font-size: 13px; }
+
+        /* Pricing */
+        .pricing { gap: 12px; }
+        .price { padding: 22px; border-radius: 18px; }
+        .price .amount { font-size: 24px; }
+
+        /* Channels */
+        .channels { gap: 12px; }
+        .channel { padding: 18px; border-radius: 16px; }
+        .channel .value { font-size: 14px; }
+
+        /* Closer */
+        .closer { font-size: 9.5px; }
+      }
+
+      /* Very small phones: even more compression */
+      @media (max-width: 420px) {
+        .display { font-size: 26px !important; }
+        .cover .wordmark { font-size: 28px; }
+        .cover .tagline { font-size: 22px; }
+        .compare-shots { max-width: 260px; }
+        .browser-side { display: none; }
+        .browser-body { grid-template-columns: 1fr; }
+        .metric-row { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -1425,11 +1589,19 @@
         else if (e.key === 'End') { show(total - 1); }
       });
 
-      let touchStartX = 0;
-      window.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      // Swipe — only fire if gesture is mostly horizontal,
+      // so vertical scroll inside a slide still works on mobile.
+      let touchStartX = 0, touchStartY = 0;
+      window.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
       window.addEventListener('touchend', (e) => {
         const dx = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(dx) > 60) show(current + (dx < 0 ? 1 : -1));
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          show(current + (dx < 0 ? 1 : -1));
+        }
       }, { passive: true });
 
       const initial = parseInt((location.hash || '#1').slice(1), 10);
