@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Instagram, Menu, X } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
+import { FacebookLogo, LinkedInLogo } from './icons'
+
+const SOCIALS = {
+  instagram: 'https://www.instagram.com/customy.agency/',
+  facebook: 'https://www.facebook.com/profile.php?id=61562923021804',
+  linkedin: 'https://www.linkedin.com/company/customyagency'
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -160,13 +167,44 @@ export default function Navbar() {
                 >
                   {t.nav.cta}
                 </a>
-                <a
-                  href="mailto:customyagency@gmail.com"
-                  onClick={closeMobile}
-                  className="text-[13px] text-sub hover:text-fg transition-colors break-all"
-                >
-                  customyagency@gmail.com
-                </a>
+                <div className="flex items-center justify-between gap-4">
+                  <a
+                    href="mailto:customyagency@gmail.com"
+                    onClick={closeMobile}
+                    className="text-[13px] text-sub hover:text-fg transition-colors break-all min-w-0"
+                  >
+                    customyagency@gmail.com
+                  </a>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <a
+                      href={SOCIALS.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                    >
+                      <Instagram size={16} strokeWidth={1.8} />
+                    </a>
+                    <a
+                      href={SOCIALS.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                    >
+                      <FacebookLogo size={16} />
+                    </a>
+                    <a
+                      href={SOCIALS.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
+                    >
+                      <LinkedInLogo size={16} />
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
