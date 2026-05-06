@@ -18,6 +18,7 @@ import {
   KpiGrid,
   PipelineList
 } from '../../components/vertical/Mockups'
+import ScrollReveal from '../../components/vertical/ScrollReveal'
 
 const PROBLEMS = [
   'Posting inconsistently. Life gets in the way.',
@@ -90,8 +91,8 @@ Main challenge:`}
 
       {/* Featured proof: Dylan with real before/after */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="eyebrow">Real client work</p>
             <h2 className="display-2 text-balance mt-3">From posting in the dark to a real growth system.</h2>
           </div>
@@ -101,69 +102,73 @@ Main challenge:`}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5 }}
-            className="mt-12 md:mt-14 grid lg:grid-cols-12 gap-8 md:gap-10 items-start"
+            className="mt-12 md:mt-14 max-w-3xl mx-auto text-center"
           >
-            <div className="lg:col-span-5">
-              <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-sub bg-surface2/60 border border-hair rounded-full px-3 py-1">
-                Case study · Lifestyle creator
-              </span>
-              <h3 className="font-display font-semibold text-[28px] md:text-[34px] tracking-tight mt-5 leading-[1.1]">
-                Dylan
-              </h3>
-              <p className="text-fg2 mt-4 leading-[1.6] text-pretty">
-                Dylan came to us with a small Instagram audience that had stopped growing. We rebuilt the content system around three repeating formats, batched a month of filming in two days, and added a DM auto-reply that converts saves into newsletter signups. Growth restarted within the first week, and kept compounding.
-              </p>
-              <ul className="mt-6 space-y-2.5 text-[14px] text-fg2">
-                <li className="flex items-start gap-2.5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
-                  <span>Content system: 3 recurring formats, scripted, batched monthly</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
-                  <span>DM auto-reply funnel converting comments into newsletter signups</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
-                  <span>Weekly performance digest covering what worked and what to repeat</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
-                  <span>Sponsorship CRM with pitch templates ready to send</span>
-                </li>
-              </ul>
-            </div>
+            <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-sub bg-surface2/60 border border-hair rounded-full px-3 py-1">
+              Case study · Lifestyle creator
+            </span>
+            <h3 className="font-display font-semibold text-[28px] md:text-[34px] tracking-tight mt-5 leading-[1.1]">
+              Dylan
+            </h3>
+            <p className="text-fg2 mt-4 leading-[1.6] text-pretty max-w-2xl mx-auto">
+              Dylan came to us with a small Instagram audience that had stopped growing. We rebuilt the content system around three repeating formats, batched a month of filming in two days, and added a DM auto-reply that converts saves into newsletter signups. Growth restarted within the first week, and kept compounding.
+            </p>
+            <ul className="mt-6 space-y-2.5 text-[14px] text-fg2 max-w-xl mx-auto text-left">
+              <li className="flex items-start gap-2.5">
+                <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
+                <span>Content system: 3 recurring formats, scripted, batched monthly</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
+                <span>DM auto-reply funnel converting comments into newsletter signups</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
+                <span>Weekly performance digest covering what worked and what to repeat</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
+                <span>Sponsorship CRM with pitch templates ready to send</span>
+              </li>
+            </ul>
+          </motion.div>
 
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 gap-3 md:gap-4">
-                <div className="space-y-2">
-                  <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
-                    <img
-                      src="/examples/insta_before.png"
-                      alt="Dylan's Instagram profile before working with Customy"
-                      className="block w-full h-auto"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.16em] font-semibold text-center px-2 py-1 rounded-full bg-[#ff3b30]/10 text-[#ff3b30]">
-                    Before
-                  </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+            className="mt-12 md:mt-14 max-w-3xl mx-auto"
+          >
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div className="space-y-2">
+                <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
+                  <img
+                    src="/examples/insta_before.png"
+                    alt="Dylan's Instagram profile before working with Customy"
+                    className="block w-full h-auto"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="space-y-2">
-                  <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
-                    <img
-                      src="/examples/insta_after.png"
-                      alt="Dylan's Instagram profile after working with Customy"
-                      className="block w-full h-auto"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.16em] font-semibold text-center px-2 py-1 rounded-full bg-[#34c759]/10 text-[#34c759]">
-                    After
-                  </div>
+                <div className="text-[10px] uppercase tracking-[0.16em] font-semibold text-center px-2 py-1 rounded-full bg-[#ff3b30]/10 text-[#ff3b30]">
+                  Before
                 </div>
               </div>
-              <p className="mt-4 text-[11.5px] text-sub text-center">Real client screenshots. Numbers visible in the images.</p>
+              <div className="space-y-2">
+                <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
+                  <img
+                    src="/examples/insta_after.png"
+                    alt="Dylan's Instagram profile after working with Customy"
+                    className="block w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.16em] font-semibold text-center px-2 py-1 rounded-full bg-[#34c759]/10 text-[#34c759]">
+                  After
+                </div>
+              </div>
             </div>
+            <p className="mt-4 text-[11.5px] text-sub text-center">Real client screenshots. Numbers visible in the images.</p>
           </motion.div>
 
           {/* Weekly digest screenshot */}
@@ -172,32 +177,37 @@ Main challenge:`}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5 }}
-            className="mt-16 md:mt-20 grid lg:grid-cols-12 gap-8 md:gap-10 items-center"
+            className="mt-16 md:mt-20 max-w-3xl mx-auto text-center"
           >
-            <div className="lg:col-span-7 lg:order-2">
-              <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-sub bg-surface2/60 border border-hair rounded-full px-3 py-1">
-                Weekly performance digest
-              </span>
-              <h3 className="font-display font-semibold text-[26px] md:text-[30px] tracking-tight mt-5 leading-[1.1]">
-                Every Monday, the week in one page.
-              </h3>
-              <p className="text-fg2 mt-4 leading-[1.6] text-pretty">
-                Top posts, growth, audience snapshot, what to double down on next week. Delivered automatically. No more end-of-week guessing about what's working.
-              </p>
-            </div>
-            <div className="lg:col-span-5 lg:order-1">
-              <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
-                <img
-                  src="/examples/week1.JPG"
-                  alt="Weekly performance summary report we built for a creator client"
-                  className="block w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-3 text-[11.5px] text-sub text-center">Real client report. Week 1 summary.</div>
-            </div>
+            <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-sub bg-surface2/60 border border-hair rounded-full px-3 py-1">
+              Weekly performance digest
+            </span>
+            <h3 className="font-display font-semibold text-[26px] md:text-[30px] tracking-tight mt-5 leading-[1.1]">
+              Every Monday, the week in one page.
+            </h3>
+            <p className="text-fg2 mt-4 leading-[1.6] text-pretty max-w-2xl mx-auto">
+              Top posts, growth, audience snapshot, what to double down on next week. Delivered automatically. No more end-of-week guessing about what's working.
+            </p>
           </motion.div>
-        </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+            className="mt-10 max-w-md mx-auto"
+          >
+            <div className="rounded-2xl overflow-hidden border border-hair shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]">
+              <img
+                src="/examples/week1.JPG"
+                alt="Weekly performance summary report we built for a creator client"
+                className="block w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div className="mt-3 text-[11.5px] text-sub text-center">Real client report. Week 1 summary.</div>
+          </motion.div>
+        </ScrollReveal>
       </section>
 
       <SolutionsGrid
@@ -210,11 +220,11 @@ Main challenge:`}
 
       {/* Sponsorship CRM mockup */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-12">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="eyebrow">Sponsorship pipeline</p>
             <h2 className="display-2 text-balance mt-3">Your brand deals, no longer in your head.</h2>
-            <p className="mt-5 body-lg text-pretty max-w-2xl">
+            <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
               Every brand inquiry, negotiation, and signed deal, tracked. Templates for first reply. Auto-reminders so deals don't ghost.
             </p>
           </div>
@@ -248,16 +258,16 @@ Main challenge:`}
               />
             </div>
           </BrowserMockup>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* DM auto-reply mockup */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-12">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="eyebrow">DM automation in your tone</p>
             <h2 className="display-2 text-balance mt-3">No more "drop the link" 600 times a day.</h2>
-            <p className="mt-5 body-lg text-pretty max-w-2xl">
+            <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
               Trigger keywords like <em>guide</em>, <em>course</em>, or <em>collab</em>. Auto-replies fire instantly, in your voice, with the right link. You only see the messages that actually need you.
             </p>
           </div>
@@ -280,13 +290,13 @@ Main challenge:`}
               ]}
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <VerticalCTA
         title="Build the engine. Keep the audience."
         sub="Short call. Tell us what you post, where you monetize, and where the wheel grinds. We'll tell you what we'd wire in first."
-        ctaPrimary="Book a call"
+        ctaPrimary="Book an audit"
         whatsappMessage={`Hello Customy,
 
 I'm a creator looking to scale my content and monetization systems.

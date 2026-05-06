@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import type { LucideIcon } from 'lucide-react'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from '../fx/motion'
+import ScrollReveal from './ScrollReveal'
 
 export interface Solution {
   title: string
@@ -20,13 +21,13 @@ interface SolutionsGridProps {
 export default function SolutionsGrid({ eyebrow = 'What we build', title, titleAccent, sub, solutions }: SolutionsGridProps) {
   return (
     <section className="relative py-24 md:py-32 border-t border-hair">
-      <div className="container-xl">
+      <ScrollReveal intensity="medium" className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl mb-14 md:mb-20"
+          className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">{eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
@@ -34,7 +35,7 @@ export default function SolutionsGrid({ eyebrow = 'What we build', title, titleA
             {titleAccent && <> <span className="text-sub">{titleAccent}</span></>}
           </motion.h2>
           {sub && (
-            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl mx-auto text-pretty">
               {sub}
             </motion.p>
           )}
@@ -47,7 +48,7 @@ export default function SolutionsGrid({ eyebrow = 'What we build', title, titleA
           viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {solutions.map((s, i) => {
+          {solutions.map((s) => {
             const Icon = s.icon
             return (
               <motion.article
@@ -77,12 +78,11 @@ export default function SolutionsGrid({ eyebrow = 'What we build', title, titleA
                 <p className="text-[14px] text-fg2 leading-relaxed text-pretty">
                   {s.body}
                 </p>
-                {i === 0 && null /* preserve key shape */}
               </motion.article>
             )
           })}
         </motion.div>
-      </div>
+      </ScrollReveal>
     </section>
   )
 }

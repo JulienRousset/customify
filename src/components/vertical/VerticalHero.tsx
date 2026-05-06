@@ -1,10 +1,13 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { staggerItem, staggerParent } from '../fx/motion'
 import { openCalendly, preloadCalendly } from '../../lib/calendly'
 import { waLink } from '../../lib/whatsapp'
 import { WhatsAppGlyph } from '../icons'
+import VerticalTabs from './VerticalTabs'
+import VerticalSideRail from './VerticalSideRail'
 
 interface VerticalHeroProps {
   eyebrow: string
@@ -25,15 +28,29 @@ export default function VerticalHero({
   whatsappMessage,
   industry
 }: VerticalHeroProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start']
+  })
+
+  // Subtle parallax: the hero content drifts up and softens as the user
+  // scrolls past, creating a clean handoff into the next section.
+  const y = useTransform(scrollYProgress, [0, 1], [0, -120])
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.96])
+
   return (
-    <section className="relative pt-28 md:pt-36 pb-16 md:pb-24">
-      <div className="container-xl">
+    <>
+      <VerticalSideRail />
+      <section ref={ref} className="relative pt-28 md:pt-36 pb-16 md:pb-24">
+        <motion.div style={{ y, opacity, scale }} className="container-xl">
         <motion.nav
           aria-label="Breadcrumb"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-2 text-[12.5px] text-sub mb-10"
+          className="flex items-center justify-center gap-2 text-[12.5px] text-sub mb-6"
         >
           <Link to="/" className="hover:text-fg transition-colors">Home</Link>
           <span aria-hidden className="opacity-40">/</span>
@@ -43,20 +60,29 @@ export default function VerticalHero({
         </motion.nav>
 
         <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <VerticalTabs />
+        </motion.div>
+
+        <motion.div
           variants={staggerParent(0.09, 0.05)}
           initial="hidden"
           animate="visible"
+          className="text-center"
         >
           <motion.p variants={staggerItem} className="eyebrow">{eyebrow}</motion.p>
-          <motion.h1 variants={staggerItem} className="display-1 text-balance max-w-5xl">
+          <motion.h1 variants={staggerItem} className="display-1 text-balance max-w-5xl mx-auto">
             {title}
             {titleAccent && <> <span className="text-sub">{titleAccent}</span></>}
           </motion.h1>
-          <motion.p variants={staggerItem} className="mt-6 body-lg max-w-2xl text-pretty">
+          <motion.p variants={staggerItem} className="mt-6 body-lg max-w-2xl mx-auto text-pretty">
             {sub}
           </motion.p>
 
-          <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center gap-3">
+          <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => openCalendly()}
@@ -78,7 +104,8 @@ export default function VerticalHero({
             </a>
           </motion.div>
         </motion.div>
-      </div>
-    </section>
+        </motion.div>
+      </section>
+    </>
   )
 }

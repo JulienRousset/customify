@@ -16,6 +16,7 @@ import SolutionsGrid, { type Solution } from '../../components/vertical/Solution
 import VerticalCTA from '../../components/vertical/VerticalCTA'
 import VerticalFooter from '../../components/vertical/VerticalFooter'
 import { staggerItem, staggerParent, viewportOnce, easeApple } from '../../components/fx/motion'
+import ScrollReveal from '../../components/vertical/ScrollReveal'
 
 const PROBLEMS = [
   'You post on Facebook, then post the same thing on Instagram, by hand.',
@@ -162,19 +163,19 @@ Where it hurts most:`}
 
       {/* Featured client: My Cocotte */}
       <section className="relative py-24 md:py-32 border-t border-hair">
-        <div className="container-xl">
+        <ScrollReveal intensity="medium" className="container-xl">
           <motion.div
             variants={staggerParent(0.08, 0)}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="max-w-3xl mb-14 md:mb-20"
+            className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
           >
             <motion.p variants={staggerItem} className="eyebrow">My Cocotte · case study</motion.p>
             <motion.h2 variants={staggerItem} className="display-2 text-balance">
               A French place in Bali. <span className="text-sub">Running on its own software.</span>
             </motion.h2>
-            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-2xl text-pretty">
+            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-2xl mx-auto text-pretty">
               The owner was juggling Facebook, Instagram, WhatsApp groups and a paper loyalty card. Losing time everywhere. We rebuilt the whole back-of-house as a single tool. Live, in production, every day.
             </motion.p>
           </motion.div>
@@ -264,18 +265,18 @@ Where it hurts most:`}
               </div>
             </motion.div>
           </motion.div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Three pillars */}
       <section className="relative py-24 md:py-32 border-t border-hair">
-        <div className="container-xl">
+        <ScrollReveal intensity="medium" className="container-xl">
           <motion.div
             variants={staggerParent(0.08, 0)}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="max-w-3xl mb-14 md:mb-20"
+            className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
           >
             <motion.p variants={staggerItem} className="eyebrow">The platform, in three pillars</motion.p>
             <motion.h2 variants={staggerItem} className="display-2 text-balance">
@@ -333,7 +334,7 @@ Where it hurts most:`}
               )
             })}
           </motion.div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Full module catalog */}
@@ -348,7 +349,7 @@ Where it hurts most:`}
       <VerticalCTA
         title="Want one of these for your place?"
         sub="Quick call. We look at how you handle social, customers and loyalty today, and what we'd build first."
-        ctaPrimary="Book a call"
+        ctaPrimary="Book an audit"
         whatsappMessage={`Hello Customy,
 
 I run a restaurant and I'd like a custom backoffice like the one you built for My Cocotte.

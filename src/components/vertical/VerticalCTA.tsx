@@ -4,6 +4,7 @@ import { staggerItem, staggerParent, viewportOnce } from '../fx/motion'
 import { openCalendly, preloadCalendly } from '../../lib/calendly'
 import { waLink, WA_NUMBER_DISPLAY } from '../../lib/whatsapp'
 import { WhatsAppGlyph } from '../icons'
+import ScrollReveal from './ScrollReveal'
 
 interface VerticalCTAProps {
   eyebrow?: string
@@ -12,6 +13,7 @@ interface VerticalCTAProps {
   sub?: string
   ctaPrimary: string
   whatsappMessage: string
+  centered?: boolean
 }
 
 export default function VerticalCTA({
@@ -20,17 +22,18 @@ export default function VerticalCTA({
   titleAccent,
   sub,
   ctaPrimary,
-  whatsappMessage
+  whatsappMessage,
+  centered = true
 }: VerticalCTAProps) {
   return (
     <section className="relative py-24 md:py-32 border-t border-hair">
-      <div className="container-xl">
+      <ScrollReveal intensity="medium" className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl"
+          className={centered ? 'max-w-3xl mx-auto text-center' : 'max-w-3xl'}
         >
           <motion.p variants={staggerItem} className="eyebrow">{eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
@@ -38,12 +41,12 @@ export default function VerticalCTA({
             {titleAccent && <> <span className="text-sub">{titleAccent}</span></>}
           </motion.h2>
           {sub && (
-            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+            <motion.p variants={staggerItem} className={`mt-5 body-lg max-w-xl text-pretty ${centered ? 'mx-auto' : ''}`}>
               {sub}
             </motion.p>
           )}
 
-          <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center gap-3">
+          <motion.div variants={staggerItem} className={`mt-9 flex flex-wrap items-center gap-3 ${centered ? 'justify-center' : ''}`}>
             <button
               type="button"
               onClick={() => openCalendly()}
@@ -66,7 +69,7 @@ export default function VerticalCTA({
             </a>
           </motion.div>
         </motion.div>
-      </div>
+      </ScrollReveal>
     </section>
   )
 }

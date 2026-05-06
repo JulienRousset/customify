@@ -17,6 +17,7 @@ import {
   KpiGrid,
   PipelineList
 } from '../../components/vertical/Mockups'
+import ScrollReveal from '../../components/vertical/ScrollReveal'
 
 const PROBLEMS = [
   'Quote requests come by phone, WhatsApp, Facebook. They slip through.',
@@ -97,11 +98,11 @@ Current systems:`}
 
       {/* WhatsApp lead capture mockup */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-12">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="eyebrow">Lead capture, on autopilot</p>
             <h2 className="display-2 text-balance mt-3">A new lead at 9pm? Already in the system.</h2>
-            <p className="mt-5 body-lg text-pretty max-w-2xl">
+            <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
               The WhatsApp auto-reply gathers what you need: name, address, job, photos. Then it drops the lead in your CRM. You see it the moment you open your phone tomorrow.
             </p>
           </div>
@@ -149,13 +150,13 @@ Current systems:`}
               </div>
             </BrowserMockup>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Process / how it works */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-14">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="eyebrow">From DM to done</p>
             <h2 className="display-2 text-balance mt-3">One job, end to end.</h2>
           </div>
@@ -185,13 +186,13 @@ Current systems:`}
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <VerticalCTA
         title="Get the system. Keep the trade."
         sub="Short call. Tell us how leads come in today and how many you think you've lost. We'll tell you what we'd fix first."
-        ctaPrimary="Book a call"
+        ctaPrimary="Book an audit"
         whatsappMessage={`Hello Customy,
 
 I run a local service business and I'd like to improve my lead management and operations.

@@ -17,6 +17,7 @@ import {
   KpiGrid,
   PipelineList
 } from '../../components/vertical/Mockups'
+import ScrollReveal from '../../components/vertical/ScrollReveal'
 
 const PROBLEMS = [
   'Guest WhatsApp messages scattered across staff phones',
@@ -97,11 +98,11 @@ Current systems:`}
 
       {/* Unified inbox mockup */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-12">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="eyebrow">Unified guest inbox</p>
             <h2 className="display-2 text-balance mt-3">Every guest, every channel, one screen.</h2>
-            <p className="mt-5 body-lg text-pretty max-w-2xl">
+            <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
               Messages flow in from Booking, Airbnb, WhatsApp and email. Front desk replies once. The system routes back to the right channel automatically.
             </p>
           </div>
@@ -167,16 +168,16 @@ Current systems:`}
               </div>
             </div>
           </BrowserMockup>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Pre-arrival flow */}
       <section className="relative py-20 md:py-28 border-t border-hair">
-        <div className="container-xl">
-          <div className="max-w-3xl mb-12">
+        <ScrollReveal intensity="medium" className="container-xl">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="eyebrow">Pre-arrival, on autopilot</p>
             <h2 className="display-2 text-balance mt-3">By the time they land, they know everything.</h2>
-            <p className="mt-5 body-lg text-pretty max-w-2xl">
+            <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
               Each message goes out automatically. Tone is yours. Photos, maps and key codes pre-attached.
             </p>
           </div>
@@ -228,13 +229,13 @@ Current systems:`}
               </BrowserMockup>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <VerticalCTA
         title="Want one for your hotel?"
         sub="Quick call. Tell us how guests reach you today and where staff is bottlenecked. We'll tell you what we'd unify first."
-        ctaPrimary="Book a call"
+        ctaPrimary="Book an audit"
         whatsappMessage={`Hello Customy,
 
 I run a hospitality business and I'd like to learn more about your automation and communication systems.
