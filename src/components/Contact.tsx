@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Check, Instagram, Mail } from 'lucide-react'
 import { useLang } from '../lang'
-import { XLogo, PinterestLogo, WhatsAppGlyph, FacebookLogo, TikTokLogo, YouTubeLogo, LinkedInLogo } from './icons'
+import { WhatsAppGlyph, FacebookLogo, LinkedInLogo } from './icons'
 
 const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
 const WA_NUMBER_RAW = '6285785065652'
@@ -294,15 +294,6 @@ export default function Contact() {
                   <FacebookLogo size={16} />
                 </a>
                 <a
-                  href="https://x.com/Customyagency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
-                >
-                  <XLogo size={14} />
-                </a>
-                <a
                   href="https://www.linkedin.com/company/customyagency"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -310,33 +301,6 @@ export default function Contact() {
                   className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
                 >
                   <LinkedInLogo size={16} />
-                </a>
-                <a
-                  href="https://www.tiktok.com/@customyagency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
-                >
-                  <TikTokLogo size={16} />
-                </a>
-                <a
-                  href="https://www.youtube.com/@customyagency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
-                >
-                  <YouTubeLogo size={16} />
-                </a>
-                <a
-                  href="https://pin.it/2kEWWZ4wh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Pinterest"
-                  className="w-9 h-9 rounded-full border border-hair flex items-center justify-center text-sub hover:text-fg hover:border-fg/30 transition-colors"
-                >
-                  <PinterestLogo size={16} />
                 </a>
               </div>
             </div>

@@ -1,19 +1,8 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Instagram, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
-import { XLogo, PinterestLogo, FacebookLogo, TikTokLogo, YouTubeLogo, LinkedInLogo } from './icons'
-
-const SOCIALS = {
-  instagram: 'https://www.instagram.com/customy.agency/',
-  facebook: 'https://www.facebook.com/profile.php?id=61562923021804',
-  x: 'https://x.com/Customyagency',
-  linkedin: 'https://www.linkedin.com/company/customyagency',
-  pinterest: 'https://pin.it/2kEWWZ4wh',
-  tiktok: 'https://www.tiktok.com/@customyagency',
-  youtube: 'https://www.youtube.com/@customyagency'
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -50,9 +39,6 @@ export default function Navbar() {
     { label: t.nav.contact, href: '#contact' }
   ]
 
-  const iconClass =
-    'w-8 h-8 rounded-full flex items-center justify-center text-sub hover:text-fg hover:bg-surface2 transition-colors'
-
   const closeMobile = () => setMobileOpen(false)
 
   return (
@@ -64,49 +50,24 @@ export default function Navbar() {
         }`}
       >
         <div className="container-xl flex items-center justify-between h-[3.85rem] md:h-[4.4rem]">
-          <div className="flex items-center gap-3 md:gap-4">
-            <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[16.5px] tracking-tight">
-              <img
-                src="/customy_logo.webp"
-                alt=""
-                aria-hidden
-                width={32}
-                height={32}
-                className="h-7 w-7 md:h-8 md:w-8 object-contain rounded-md"
-              />
-              Customy
-            </a>
-            <div className="hidden sm:flex items-center gap-1 pl-2 md:pl-3 border-l border-hair">
-              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
-                <Instagram size={16} strokeWidth={1.8} />
-              </a>
-              <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
-                <FacebookLogo size={16} />
-              </a>
-              <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
-                <XLogo size={14} />
-              </a>
-              <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={iconClass}>
-                <LinkedInLogo size={16} />
-              </a>
-              <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className={iconClass}>
-                <TikTokLogo size={16} />
-              </a>
-              <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={iconClass}>
-                <YouTubeLogo size={16} />
-              </a>
-              <a href={SOCIALS.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className={iconClass}>
-                <PinterestLogo size={16} />
-              </a>
-            </div>
-          </div>
+          <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[16.5px] tracking-tight">
+            <img
+              src="/customy_logo.webp"
+              alt=""
+              aria-hidden
+              width={32}
+              height={32}
+              className="h-7 w-7 md:h-8 md:w-8 object-contain rounded-md"
+            />
+            Customy
+          </a>
 
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-6 lg:gap-7">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-[14.5px] font-medium text-fg2 hover:text-fg transition-colors group"
+                className="relative text-[14.5px] font-medium text-fg2 hover:text-fg transition-colors group whitespace-nowrap"
               >
                 {l.label}
                 <span className="absolute left-0 -bottom-1 h-px w-full bg-fg origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
@@ -137,7 +98,7 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[14.5px] font-medium px-[1.1rem] py-[0.45rem] hover:opacity-90 transition-opacity duration-200 ease-out"
+              className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[14.5px] font-medium px-[1.1rem] py-[0.45rem] hover:opacity-90 transition-opacity duration-200 ease-out whitespace-nowrap"
             >
               {t.nav.cta}
             </a>
@@ -148,9 +109,9 @@ export default function Navbar() {
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden w-10 h-10 rounded-full border border-hair flex items-center justify-center text-fg ml-1"
+              className="md:hidden w-9 h-9 rounded-full border border-hair flex items-center justify-center text-fg"
             >
-              {mobileOpen ? <X size={18} strokeWidth={1.8} /> : <Menu size={18} strokeWidth={1.8} />}
+              {mobileOpen ? <X size={17} strokeWidth={1.8} /> : <Menu size={17} strokeWidth={1.8} />}
             </button>
           </div>
         </div>
@@ -191,7 +152,7 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <div className="mt-auto pt-10 flex flex-col gap-6">
+              <div className="mt-auto pt-10 flex flex-col gap-5">
                 <a
                   href="#contact"
                   onClick={closeMobile}
@@ -199,32 +160,13 @@ export default function Navbar() {
                 >
                   {t.nav.cta}
                 </a>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={iconClass}>
-                      <Instagram size={16} strokeWidth={1.8} />
-                    </a>
-                    <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={iconClass}>
-                      <FacebookLogo size={16} />
-                    </a>
-                    <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={iconClass}>
-                      <XLogo size={14} />
-                    </a>
-                    <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={iconClass}>
-                      <LinkedInLogo size={16} />
-                    </a>
-                    <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className={iconClass}>
-                      <TikTokLogo size={16} />
-                    </a>
-                    <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={iconClass}>
-                      <YouTubeLogo size={16} />
-                    </a>
-                    <a href={SOCIALS.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className={iconClass}>
-                      <PinterestLogo size={16} />
-                    </a>
-                  </div>
-                  <span className="text-[13px] text-sub">customyagency@gmail.com</span>
-                </div>
+                <a
+                  href="mailto:customyagency@gmail.com"
+                  onClick={closeMobile}
+                  className="text-[13px] text-sub hover:text-fg transition-colors break-all"
+                >
+                  customyagency@gmail.com
+                </a>
               </div>
             </motion.div>
           </motion.div>
