@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Instagram, Menu, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
 import { FacebookLogo, LinkedInLogo } from './icons'
@@ -40,11 +41,11 @@ export default function Navbar() {
   }, [mobileOpen])
 
   const links = [
-    { label: t.nav.services, href: '#services' },
-    { label: t.nav.software, href: '#software' },
-    { label: t.nav.automation, href: '#automation' },
-    { label: t.nav.clients, href: '#testimonials' },
-    { label: t.nav.contact, href: '#contact' }
+    { label: t.nav.services, to: '/#services' },
+    { label: t.nav.software, to: '/#software' },
+    { label: t.nav.automation, to: '/#automation' },
+    { label: t.nav.clients, to: '/#testimonials' },
+    { label: t.nav.contact, to: '/#contact' }
   ]
 
   const closeMobile = () => setMobileOpen(false)
@@ -58,7 +59,7 @@ export default function Navbar() {
         }`}
       >
         <div className="container-xl flex items-center justify-between h-[3.85rem] md:h-[4.4rem]">
-          <a href="#home" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[16.5px] tracking-tight">
+          <Link to="/" onClick={closeMobile} className="flex items-center gap-2 font-display font-semibold text-[16.5px] tracking-tight">
             <img
               src="/customy_logo.webp"
               alt=""
@@ -68,18 +69,18 @@ export default function Navbar() {
               className="h-7 w-7 md:h-8 md:w-8 object-contain rounded-md"
             />
             Customy
-          </a>
+          </Link>
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-7">
+          <div className="hidden md:flex items-center gap-5 lg:gap-7">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <Link
+                key={l.to}
+                to={l.to}
                 className="relative text-[14.5px] font-medium text-fg2 hover:text-fg transition-colors group whitespace-nowrap"
               >
                 {l.label}
                 <span className="absolute left-0 -bottom-1 h-px w-full bg-fg origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -148,9 +149,9 @@ export default function Navbar() {
             >
               <ul className="flex flex-col">
                 {links.map((l, i) => (
-                  <li key={l.href}>
-                    <a
-                      href={l.href}
+                  <li key={l.to}>
+                    <Link
+                      to={l.to}
                       onClick={closeMobile}
                       className="block py-[1.4rem] border-b border-hair font-display font-semibold text-[28.5px] tracking-tight text-fg hover:text-sub transition-colors"
                     >
@@ -158,7 +159,7 @@ export default function Navbar() {
                         0{i + 1}
                       </span>
                       {l.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

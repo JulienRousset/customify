@@ -1,63 +1,75 @@
-import { lazy, Suspense, useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Marquee from './components/Marquee'
-import Services from './components/Services'
-import CookieBanner from './components/CookieBanner'
-import { BackgroundGlow } from '@/components/ui/background-glow'
-import { useConsent } from './analytics/consent'
-import { loadAnalytics, loadMarketing } from './analytics/loader'
+import { lazy, Suspense } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
 
-// Below-the-fold sections — split into their own chunks, fetched after first paint.
-const HowWeWork = lazy(() => import('./components/HowWeWork'))
-const Software = lazy(() => import('./components/Software'))
-const Automation = lazy(() => import('./components/Automation'))
-const Testimonials = lazy(() => import('./components/Testimonials'))
-const WhoFor = lazy(() => import('./components/WhoFor'))
-const FAQ = lazy(() => import('./components/FAQ'))
-const Contact = lazy(() => import('./components/Contact'))
-const ExitIntentModal = lazy(() => import('./components/ExitIntentModal'))
+const WhatWeBuild = lazy(() => import('./pages/WhatWeBuild'))
+const Restaurants = lazy(() => import('./pages/whatwebuild/Restaurants'))
+const SpaWellness = lazy(() => import('./pages/whatwebuild/SpaWellness'))
+const Hotels = lazy(() => import('./pages/whatwebuild/Hotels'))
+const Creators = lazy(() => import('./pages/whatwebuild/Creators'))
+const TradesServices = lazy(() => import('./pages/whatwebuild/TradesServices'))
 
-// Reserves vertical space while a lazy chunk is fetching so the page doesn't jump.
-function SectionSkeleton() {
+function PageSkeleton() {
   return <div aria-hidden className="min-h-[80vh] w-full" />
-}
-
-function AnalyticsBootstrap() {
-  const consent = useConsent()
-  useEffect(() => {
-    if (consent.analytics) loadAnalytics()
-    if (consent.marketing) loadMarketing()
-  }, [consent.analytics, consent.marketing])
-  return null
 }
 
 export default function App() {
   return (
-    <div className="relative min-h-screen text-fg antialiased isolate">
-      <BackgroundGlow />
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Hero />
-          <Marquee />
-          <Services />
-          <Suspense fallback={<SectionSkeleton />}>
-            <HowWeWork />
-            <Software />
-            <Automation />
-            <Testimonials />
-            <WhoFor />
-            <FAQ />
-            <Contact />
-          </Suspense>
-        </main>
-      </div>
-      <Suspense fallback={null}>
-        <ExitIntentModal />
-      </Suspense>
-      <CookieBanner />
-      <AnalyticsBootstrap />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/whatwebuild"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <WhatWeBuild />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/whatwebuild/restaurants"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Restaurants />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/whatwebuild/spa-wellness"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <SpaWellness />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/whatwebuild/hotels"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Hotels />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/whatwebuild/creators"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Creators />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/whatwebuild/trades-services"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <TradesServices />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }

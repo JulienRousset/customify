@@ -304,12 +304,12 @@ export const translations = {
       book: {
         label: 'Book a call',
         title: '30-min intro call',
-        sub: 'Pick a slot. We look at your project, scope, and what you actually need — free, no pitch.'
+        sub: 'Pick a slot. We look at your project, scope, and what you actually need. Free, no pitch.'
       },
       exitModal: {
         eyebrow: 'One last thing',
         title: 'Before you go',
-        sub: 'Book a free 30-min call. No pitch, no deck — just a quick look at what you’d actually want to fix.',
+        sub: 'Book a free 30-min call. No pitch, no deck. Just a quick look at what you’d actually want to fix.',
         emailPh: 'you@brand.com',
         cta: 'Book a 30-min call',
         skip: 'No thanks',
@@ -654,12 +654,12 @@ export const translations = {
       book: {
         label: 'Réserver un appel',
         title: 'Appel découverte · 30 min',
-        sub: 'Choisissez un créneau. On regarde votre projet, le périmètre, et ce dont vous avez vraiment besoin — gratuit, sans pitch.'
+        sub: 'Choisissez un créneau. On regarde votre projet, le périmètre, et ce dont vous avez vraiment besoin. Gratuit, sans pitch.'
       },
       exitModal: {
         eyebrow: 'Un dernier truc',
         title: 'Avant de partir',
-        sub: 'Réservez un appel gratuit de 30 min. Pas de pitch, pas de deck — juste un regard rapide sur ce que vous voudriez vraiment régler.',
+        sub: 'Réservez un appel gratuit de 30 min. Pas de pitch, pas de deck. Juste un regard rapide sur ce que vous voudriez vraiment régler.',
         emailPh: 'vous@marque.com',
         cta: 'Réserver un appel de 30 min',
         skip: 'Non merci',

@@ -67,8 +67,8 @@ async function sendAutoResponder(env: Env, to: string, lang: string): Promise<vo
   const fr = lang === 'fr'
 
   const subject = fr
-    ? 'Bien reçu — un membre de l’équipe Customy revient vers vous'
-    : 'Got it — a Customy team member will be in touch'
+    ? 'Bien reçu. Un membre de l’équipe Customy revient vers vous.'
+    : 'Got it. A Customy team member will be in touch.'
 
   const text = fr
     ? [
@@ -76,11 +76,11 @@ async function sendAutoResponder(env: Env, to: string, lang: string): Promise<vo
         '',
         'Un membre de notre équipe vous répondra sous 24 heures, souvent le jour même.',
         '',
-        'Pendant ce temps, n’hésitez pas à répondre directement à cet email avec plus de contexte sur votre projet — site, audience, ce que vous voulez débloquer. Plus on en sait, plus la première réponse sera utile.',
+        'Pendant ce temps, n’hésitez pas à répondre directement à cet email avec plus de contexte sur votre projet : site, audience, ce que vous voulez débloquer. Plus on en sait, plus la première réponse sera utile.',
         '',
         'Pour quelque chose d’urgent, WhatsApp est le canal le plus rapide : https://wa.me/6285785065652',
         '',
-        '— L’équipe Customy',
+        'L’équipe Customy',
         'customy.agency'
       ].join('\n')
     : [
@@ -88,11 +88,11 @@ async function sendAutoResponder(env: Env, to: string, lang: string): Promise<vo
         '',
         'A member of our team will reply within 24 hours, often the same day.',
         '',
-        'In the meantime, feel free to reply to this email with more context about your project — site, audience, what you want to unlock. The more we know, the more useful our first reply will be.',
+        'In the meantime, feel free to reply to this email with more context about your project: site, audience, what you want to unlock. The more we know, the more useful our first reply will be.',
         '',
         'For anything urgent, WhatsApp is the fastest channel: https://wa.me/6285785065652',
         '',
-        '— The Customy team',
+        'The Customy team',
         'customy.agency'
       ].join('\n')
 
@@ -101,18 +101,18 @@ async function sendAutoResponder(env: Env, to: string, lang: string): Promise<vo
       <div style="font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.6; color: #1c1a18; max-width: 560px;">
         <h2 style="margin: 0 0 16px; font-weight: 600; letter-spacing: -0.02em; font-size: 22px;">Bien reçu.</h2>
         <p style="margin: 0 0 14px;">Un membre de notre équipe vous répondra sous 24 heures, souvent le jour même.</p>
-        <p style="margin: 0 0 14px;">N’hésitez pas à répondre directement à cet email avec plus de contexte sur votre projet — site, audience, ce que vous voulez débloquer. Plus on en sait, plus la première réponse sera utile.</p>
+        <p style="margin: 0 0 14px;">N’hésitez pas à répondre directement à cet email avec plus de contexte sur votre projet : site, audience, ce que vous voulez débloquer. Plus on en sait, plus la première réponse sera utile.</p>
         <p style="margin: 0 0 24px;">Pour quelque chose d’urgent, WhatsApp est le canal le plus rapide : <a href="https://wa.me/6285785065652" style="color: #1c1a18;">+62 857-8506-5652</a>.</p>
-        <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">— L’équipe Customy<br/><a href="https://customy.agency" style="color: #756d63;">customy.agency</a></p>
+        <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">L’équipe Customy<br/><a href="https://customy.agency" style="color: #756d63;">customy.agency</a></p>
       </div>
     `
     : `
       <div style="font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.6; color: #1c1a18; max-width: 560px;">
         <h2 style="margin: 0 0 16px; font-weight: 600; letter-spacing: -0.02em; font-size: 22px;">Got it.</h2>
         <p style="margin: 0 0 14px;">A member of our team will reply within 24 hours, often the same day.</p>
-        <p style="margin: 0 0 14px;">In the meantime, feel free to reply to this email with more context about your project — site, audience, what you want to unlock. The more we know, the more useful our first reply will be.</p>
+        <p style="margin: 0 0 14px;">In the meantime, feel free to reply to this email with more context about your project: site, audience, what you want to unlock. The more we know, the more useful our first reply will be.</p>
         <p style="margin: 0 0 24px;">For anything urgent, WhatsApp is the fastest channel: <a href="https://wa.me/6285785065652" style="color: #1c1a18;">+62 857-8506-5652</a>.</p>
-        <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">— The Customy team<br/><a href="https://customy.agency" style="color: #756d63;">customy.agency</a></p>
+        <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">The Customy team<br/><a href="https://customy.agency" style="color: #756d63;">customy.agency</a></p>
       </div>
     `
 
@@ -215,7 +215,7 @@ async function handleContact(
     `Referer: ${refer}`,
     `IP:      ${ip}`,
     '',
-    'Reply directly to this email — Reply-To is set to the visitor.'
+    'Reply directly to this email. Reply-To is set to the visitor.'
   ].join('\n')
 
   const html = `
@@ -226,7 +226,7 @@ async function handleContact(
       <p style="margin: 0 0 12px;"><strong>Lang:</strong> ${lang}</p>
       <p style="margin: 0 0 12px;"><strong>Country:</strong> ${safeCountry}</p>
       <p style="margin: 0 0 12px;"><strong>Referer:</strong> ${safeRefer}</p>
-      <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">Reply directly to this email — Reply-To is set to the visitor.</p>
+      <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">Reply directly to this email. Reply-To is set to the visitor.</p>
     </div>
   `
 
