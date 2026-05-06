@@ -32,7 +32,7 @@ const poweredBy = [
 
 
 export default function Contact() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const c = t.contact
   const [email, setEmail] = useState('')
   const [website, setWebsite] = useState('') // honeypot — must stay empty
@@ -48,10 +48,10 @@ export default function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website, source: 'contact-form' })
+        body: JSON.stringify({ email, website, source: 'contact-form', lang })
       })
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
+        const data = (await res.json().catch(() => ({}))) as { error?: string }
         setErrorMsg(data.error || c.errorBody)
         setStatus('error')
         return

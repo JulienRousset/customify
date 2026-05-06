@@ -7,7 +7,7 @@ const MOBILE_TRIGGER_MS = 45_000
 const DESKTOP_ARM_DELAY_MS = 6_000
 
 export default function ExitIntentModal() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const m = t.contact.exitModal
 
   const [open, setOpen] = useState(false)
@@ -70,10 +70,10 @@ export default function ExitIntentModal() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website, source: 'exit-intent' })
+        body: JSON.stringify({ email, website, source: 'exit-intent', lang })
       })
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
+        const data = (await res.json().catch(() => ({}))) as { error?: string }
         setErrorMsg(data.error || t.contact.errorBody)
         setStatus('error')
         return
