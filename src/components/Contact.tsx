@@ -34,18 +34,36 @@ const poweredBy = [
 export default function Contact() {
   const { t } = useLang()
   const c = t.contact
-  const [sent, setSent] = useState(false)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('') // honeypot — must stay empty
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(c.mailSubject(email))
-    const body = encodeURIComponent(
-      `Hi Customy,\n\nI'd like to start a conversation.\n\nReach me at ${email}.`
-    )
-    window.location.href = `mailto:customyagency@gmail.com?subject=${subject}&body=${body}`
-    setSent(true)
+    if (status === 'sending') return
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, website, source: 'contact-form' })
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setErrorMsg(data.error || c.errorBody)
+        setStatus('error')
+        return
+      }
+      setStatus('sent')
+    } catch {
+      setErrorMsg(c.errorBody)
+      setStatus('error')
+    }
   }
+
+  const sent = status === 'sent'
 
   return (
     <>
@@ -112,21 +130,48 @@ export default function Contact() {
                         <input
                           required
                           type="email"
+                          autoComplete="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="you@brand.com"
-                          className="w-full bg-transparent border-0 outline-none text-[15px] md:text-[16px] font-medium tracking-tight placeholder:text-sub/40 mt-0.5"
+                          disabled={status === 'sending'}
+                          className="w-full bg-transparent border-0 outline-none text-[15px] md:text-[16px] font-medium tracking-tight placeholder:text-sub/40 mt-0.5 disabled:opacity-60"
                         />
                       </div>
+                      {/* Honeypot — visually hidden, off-screen, marked aria-hidden so AT skips it. Bots fill it. */}
+                      <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                        className="absolute -left-[10000px] w-0 h-0 opacity-0 pointer-events-none"
+                      />
                       <button
                         type="submit"
+                        disabled={status === 'sending'}
                         aria-label={c.form.send}
-                        className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity"
+                        className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-default"
                       >
-                        <ArrowRight size={15} />
+                        {status === 'sending' ? (
+                          <span className="w-3.5 h-3.5 rounded-full border-2 border-bg/30 border-t-bg animate-spin" aria-hidden />
+                        ) : (
+                          <ArrowRight size={15} />
+                        )}
                       </button>
                     </div>
                   </form>
+
+                  {status === 'error' && (
+                    <div className="card p-3 md:p-4 flex items-start gap-3 border-[#ff3b30]/40 bg-[#ff3b30]/5">
+                      <div className="shrink-0 w-7 h-7 rounded-full bg-[#ff3b30]/15 text-[#ff3b30] flex items-center justify-center mt-0.5">
+                        <span className="text-[14px] font-semibold leading-none">!</span>
+                      </div>
+                      <p className="text-[13.5px] text-fg2 leading-[1.5]">{errorMsg}</p>
+                    </div>
+                  )}
 
                   <a
                     href={`https://wa.me/${WA_NUMBER_RAW}`}

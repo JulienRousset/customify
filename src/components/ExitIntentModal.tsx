@@ -11,8 +11,11 @@ export default function ExitIntentModal() {
   const m = t.contact.exitModal
 
   const [open, setOpen] = useState(false)
-  const [sent, setSent] = useState(false)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('') // honeypot
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+  const sent = status === 'sent'
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -58,12 +61,28 @@ export default function ExitIntentModal() {
     }
   }, [open])
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(m.mailSubject)
-    const body = encodeURIComponent(m.mailBody(email))
-    window.location.href = `mailto:customyagency@gmail.com?subject=${subject}&body=${body}`
-    setSent(true)
+    if (status === 'sending') return
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, website, source: 'exit-intent' })
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setErrorMsg(data.error || t.contact.errorBody)
+        setStatus('error')
+        return
+      }
+      setStatus('sent')
+    } catch {
+      setErrorMsg(t.contact.errorBody)
+      setStatus('error')
+    }
   }
 
   const close = () => setOpen(false)
@@ -134,18 +153,43 @@ export default function ExitIntentModal() {
                   <input
                     required
                     type="email"
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={m.emailPh}
-                    className="w-full rounded-full border border-hair bg-surface2/60 px-5 py-3.5 text-[15px] text-center placeholder:text-sub/60 outline-none focus:border-fg/30 focus:bg-surface2 transition-colors"
+                    disabled={status === 'sending'}
+                    className="w-full rounded-full border border-hair bg-surface2/60 px-5 py-3.5 text-[15px] text-center placeholder:text-sub/60 outline-none focus:border-fg/30 focus:bg-surface2 transition-colors disabled:opacity-60"
                     autoFocus
+                  />
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    className="absolute -left-[10000px] w-0 h-0 opacity-0 pointer-events-none"
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 transition-opacity"
+                    disabled={status === 'sending'}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-default"
                   >
-                    {m.cta} <ArrowRight size={14} />
+                    {status === 'sending' ? (
+                      <>
+                        <span className="w-3.5 h-3.5 rounded-full border-2 border-bg/30 border-t-bg animate-spin" aria-hidden />
+                        {m.cta}
+                      </>
+                    ) : (
+                      <>
+                        {m.cta} <ArrowRight size={14} />
+                      </>
+                    )}
                   </button>
+                  {status === 'error' && (
+                    <p className="text-[12.5px] text-[#ff3b30] leading-[1.5] text-center">{errorMsg}</p>
+                  )}
                 </form>
 
                 <button

@@ -295,8 +295,9 @@ export const translations = {
         send: 'Send',
         replyNote: 'We reply within 24 hours.'
       },
-      sentTitle: 'Message ready.',
-      sentBody: 'We opened an email in your mail app. Hit send and we reply within 24 hours.',
+      sentTitle: 'Got it.',
+      sentBody: 'Your email is in. We reply within 24 hours, often the same day.',
+      errorBody: 'Something went wrong on our side. Try WhatsApp instead, or send us an email directly at customyagency@gmail.com.',
       mailSubject: (name: string) => `New project from ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Hi Customy,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
@@ -639,8 +640,9 @@ export const translations = {
         send: 'Envoyer',
         replyNote: 'Réponse sous 24 heures.'
       },
-      sentTitle: 'Message prêt.',
-      sentBody: 'On a ouvert un email dans votre boîte. Cliquez envoyer, on répond sous 24 h.',
+      sentTitle: 'C’est noté.',
+      sentBody: 'Email reçu. On répond sous 24 h, souvent le jour même.',
+      errorBody: 'Un truc a foiré chez nous. Essayez WhatsApp, ou écrivez-nous directement à customyagency@gmail.com.',
       mailSubject: (name: string) => `Nouveau projet de ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Bonjour Customy,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,

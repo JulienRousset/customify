@@ -1,0 +1,15 @@
+// Cloudflare Workers config — see https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "customify",
+  "main": "src/worker.ts",
+  "compatibility_date": "2024-12-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
