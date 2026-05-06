@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Check, Instagram, Mail } from 'lucide-react'
+import { ArrowRight, CalendarClock, Instagram } from 'lucide-react'
 import { useLang } from '../lang'
 import { WhatsAppGlyph, FacebookLogo, LinkedInLogo } from './icons'
+import { openCalendly, preloadCalendly } from '../lib/calendly'
 
 const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
 const WA_NUMBER_RAW = '6285785065652'
@@ -32,38 +32,8 @@ const poweredBy = [
 
 
 export default function Contact() {
-  const { t, lang } = useLang()
+  const { t } = useLang()
   const c = t.contact
-  const [email, setEmail] = useState('')
-  const [website, setWebsite] = useState('') // honeypot — must stay empty
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
-
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (status === 'sending') return
-    setStatus('sending')
-    setErrorMsg('')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website, source: 'contact-form', lang })
-      })
-      if (!res.ok) {
-        const data = (await res.json().catch(() => ({}))) as { error?: string }
-        setErrorMsg(data.error || c.errorBody)
-        setStatus('error')
-        return
-      }
-      setStatus('sent')
-    } catch {
-      setErrorMsg(c.errorBody)
-      setStatus('error')
-    }
-  }
-
-  const sent = status === 'sent'
 
   return (
     <>
@@ -106,104 +76,61 @@ export default function Contact() {
             </div>
 
             <div className="lg:col-span-5 lg:order-1">
-              {sent ? (
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="card p-10 md:p-14 text-center"
+              <div className="flex flex-col gap-3">
+                <motion.button
+                  type="button"
+                  onClick={() => openCalendly()}
+                  onPointerEnter={() => preloadCalendly()}
+                  onFocus={() => preloadCalendly()}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.4 }}
+                  className="card p-5 md:p-6 flex items-center gap-4 hover:border-fg/30 transition-colors group text-left w-full"
                 >
-                  <div className="w-12 h-12 mx-auto rounded-full bg-fg text-bg flex items-center justify-center mb-6">
-                    <Check size={20} />
+                  <div className="shrink-0 w-11 h-11 rounded-full bg-fg text-bg flex items-center justify-center">
+                    <CalendarClock size={18} strokeWidth={1.7} />
                   </div>
-                  <h3 className="font-display font-semibold text-[24px] md:text-[28px] tracking-tight mb-3">{c.sentTitle}</h3>
-                  <p className="text-fg2 text-[15px] max-w-md mx-auto leading-[1.55] text-pretty">{c.sentBody}</p>
-                </motion.div>
-              ) : (
-                <div className="flex flex-col gap-3">
-                  <form onSubmit={submit} className="card p-4 md:p-5 group focus-within:border-fg/30 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2">
-                        <Mail size={15} strokeWidth={1.7} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">Email</div>
-                        <input
-                          required
-                          type="email"
-                          autoComplete="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="you@brand.com"
-                          disabled={status === 'sending'}
-                          className="w-full bg-transparent border-0 outline-none text-[15px] md:text-[16px] font-medium tracking-tight placeholder:text-sub/40 mt-0.5 disabled:opacity-60"
-                        />
-                      </div>
-                      {/* Honeypot — visually hidden, off-screen, marked aria-hidden so AT skips it. Bots fill it. */}
-                      <input
-                        type="text"
-                        name="website"
-                        tabIndex={-1}
-                        autoComplete="off"
-                        aria-hidden="true"
-                        value={website}
-                        onChange={(e) => setWebsite(e.target.value)}
-                        className="absolute -left-[10000px] w-0 h-0 opacity-0 pointer-events-none"
-                      />
-                      <button
-                        type="submit"
-                        disabled={status === 'sending'}
-                        aria-label={c.form.send}
-                        className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-default"
-                      >
-                        {status === 'sending' ? (
-                          <span className="w-3.5 h-3.5 rounded-full border-2 border-bg/30 border-t-bg animate-spin" aria-hidden />
-                        ) : (
-                          <ArrowRight size={15} />
-                        )}
-                      </button>
-                    </div>
-                  </form>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">{c.book.label}</div>
+                    <div className="text-[15.5px] md:text-[16.5px] font-medium tracking-tight mt-0.5">{c.book.title}</div>
+                    <div className="text-[12.5px] text-fg2 mt-1 leading-[1.45] text-pretty">{c.book.sub}</div>
+                  </div>
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center group-hover:opacity-90 transition-opacity">
+                    <ArrowRight size={15} />
+                  </div>
+                </motion.button>
 
-                  {status === 'error' && (
-                    <div className="card p-3 md:p-4 flex items-start gap-3 border-[#ff3b30]/40 bg-[#ff3b30]/5">
-                      <div className="shrink-0 w-7 h-7 rounded-full bg-[#ff3b30]/15 text-[#ff3b30] flex items-center justify-center mt-0.5">
-                        <span className="text-[14px] font-semibold leading-none">!</span>
-                      </div>
-                      <p className="text-[13.5px] text-fg2 leading-[1.5]">{errorMsg}</p>
-                    </div>
-                  )}
+                <a
+                  href={`https://wa.me/${WA_NUMBER_RAW}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card p-4 md:p-5 flex items-center gap-3 hover:border-fg/30 transition-colors group"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-[#25D366]">
+                    <WhatsAppGlyph size={17} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">{c.waLabel}</div>
+                    <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">{WA_NUMBER_DISPLAY}</div>
+                  </div>
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2 group-hover:text-fg group-hover:border-fg/30 transition-colors">
+                    <ArrowRight size={14} />
+                  </div>
+                </a>
 
-                  <a
-                    href={`https://wa.me/${WA_NUMBER_RAW}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card p-4 md:p-5 flex items-center gap-3 hover:border-fg/30 transition-colors group"
-                  >
-                    <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-[#25D366]">
-                      <WhatsAppGlyph size={17} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">WhatsApp</div>
-                      <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">{WA_NUMBER_DISPLAY}</div>
-                    </div>
-                    <div className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                      <ArrowRight size={15} />
-                    </div>
+                <p className="text-[11.5px] text-sub leading-[1.5] mt-1">
+                  {c.legalNote}{' '}
+                  <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                    {c.privacyLabel}
+                  </a>{' '}
+                  &amp;{' '}
+                  <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                    {c.termsLabel}
                   </a>
-
-                  <p className="text-[11.5px] text-sub leading-[1.5] mt-1">
-                    {c.legalNote}{' '}
-                    <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
-                      {c.privacyLabel}
-                    </a>{' '}
-                    &amp;{' '}
-                    <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
-                      {c.termsLabel}
-                    </a>
-                    .
-                  </p>
-                </div>
-              )}
+                  .
+                </p>
+              </div>
             </div>
           </div>
 

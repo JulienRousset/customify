@@ -4,6 +4,7 @@ import { Instagram, Menu, X } from 'lucide-react'
 import { useLang } from '../lang'
 import ThemeToggle from './ThemeToggle'
 import { FacebookLogo, LinkedInLogo } from './icons'
+import { openCalendly, preloadCalendly } from '../lib/calendly'
 
 const SOCIALS = {
   instagram: 'https://www.instagram.com/customy.agency/',
@@ -103,12 +104,15 @@ export default function Navbar() {
               </button>
             </div>
             <ThemeToggle />
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => openCalendly()}
+              onPointerEnter={preloadCalendly}
+              onFocus={preloadCalendly}
               className="hidden sm:inline-flex items-center rounded-full bg-fg text-bg text-[14.5px] font-medium px-[1.1rem] py-[0.45rem] hover:opacity-90 transition-opacity duration-200 ease-out whitespace-nowrap"
             >
               {t.nav.cta}
-            </a>
+            </button>
 
             {/* Mobile menu trigger */}
             <button
@@ -160,13 +164,17 @@ export default function Navbar() {
               </ul>
 
               <div className="mt-auto pt-10 flex flex-col gap-5">
-                <a
-                  href="#contact"
-                  onClick={closeMobile}
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeMobile()
+                    openCalendly()
+                  }}
+                  onPointerEnter={preloadCalendly}
                   className="inline-flex items-center justify-center rounded-full bg-fg text-bg text-[16.5px] font-medium px-7 py-4 hover:opacity-90 transition-opacity"
                 >
                   {t.nav.cta}
-                </a>
+                </button>
                 <div className="flex items-center justify-between gap-4">
                   <a
                     href="mailto:customyagency@gmail.com"

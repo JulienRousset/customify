@@ -4,13 +4,15 @@ import { useLang } from '../lang'
 import { buttonHover, staggerItem, staggerParent } from './fx/motion'
 import HeroNotifications from './HeroNotifications'
 import LogoViewer from './LogoViewer'
+import { openCalendly, preloadCalendly } from '../lib/calendly'
 
 const heroContainer = staggerParent(0.09, 0.1)
 
-// Prefetch the Contact chunk on hover/focus so the click feels instant.
-// Dynamic imports are cached, so this runs at most once.
-const prefetchContact = () => {
+// Warm both: the Contact chunk (in case the visitor scrolls past) and the
+// Calendly script (so the popup opens instantly when clicked).
+const warmCta = () => {
   import('./Contact').catch(() => {})
+  preloadCalendly()
 }
 
 export default function Hero() {
@@ -40,10 +42,11 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center gap-4">
-              <motion.a
-                href="#contact"
-                onMouseEnter={prefetchContact}
-                onFocus={prefetchContact}
+              <motion.button
+                type="button"
+                onClick={() => openCalendly()}
+                onMouseEnter={warmCta}
+                onFocus={warmCta}
                 variants={buttonHover}
                 initial="rest"
                 whileHover="hover"
@@ -52,7 +55,7 @@ export default function Hero() {
               >
                 {h.ctaPrimary}
                 <ArrowUpRight size={20} />
-              </motion.a>
+              </motion.button>
             </motion.div>
           </div>
 

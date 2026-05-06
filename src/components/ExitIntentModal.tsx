@@ -1,21 +1,17 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Check, X } from 'lucide-react'
+import { ArrowRight, X } from 'lucide-react'
 import { useLang } from '../lang'
+import { openCalendly, preloadCalendly } from '../lib/calendly'
 
 const MOBILE_TRIGGER_MS = 45_000
 const DESKTOP_ARM_DELAY_MS = 6_000
 
 export default function ExitIntentModal() {
-  const { t, lang } = useLang()
+  const { t } = useLang()
   const m = t.contact.exitModal
 
   const [open, setOpen] = useState(false)
-  const [email, setEmail] = useState('')
-  const [website, setWebsite] = useState('') // honeypot
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
-  const sent = status === 'sent'
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -61,31 +57,12 @@ export default function ExitIntentModal() {
     }
   }, [open])
 
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (status === 'sending') return
-    setStatus('sending')
-    setErrorMsg('')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website, source: 'exit-intent', lang })
-      })
-      if (!res.ok) {
-        const data = (await res.json().catch(() => ({}))) as { error?: string }
-        setErrorMsg(data.error || t.contact.errorBody)
-        setStatus('error')
-        return
-      }
-      setStatus('sent')
-    } catch {
-      setErrorMsg(t.contact.errorBody)
-      setStatus('error')
-    }
-  }
-
   const close = () => setOpen(false)
+
+  const book = () => {
+    setOpen(false)
+    openCalendly()
+  }
 
   return (
     <AnimatePresence>
@@ -124,95 +101,48 @@ export default function ExitIntentModal() {
               <X size={15} strokeWidth={1.8} />
             </button>
 
-            {sent ? (
-              <>
-                <div className="w-12 h-12 mx-auto rounded-full bg-fg text-bg flex items-center justify-center mb-6">
-                  <Check size={20} />
-                </div>
-                <h3 id="exit-modal-title" className="font-display font-semibold text-[24px] md:text-[28px] tracking-tight mb-3">
-                  {m.sentTitle}
-                </h3>
-                <p className="text-fg2 text-[15px] max-w-sm mx-auto leading-[1.55] text-pretty">
-                  {m.sentBody}
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="eyebrow">{m.eyebrow}</p>
-                <h3
-                  id="exit-modal-title"
-                  className="font-display font-semibold text-[28px] md:text-[36px] tracking-tight leading-[1.05] mt-2 text-balance"
-                >
-                  {m.title}
-                </h3>
-                <p className="mt-4 text-fg2 text-[14.5px] md:text-[15px] max-w-sm mx-auto leading-[1.55] text-pretty">
-                  {m.sub}
-                </p>
+            <p className="eyebrow">{m.eyebrow}</p>
+            <h3
+              id="exit-modal-title"
+              className="font-display font-semibold text-[28px] md:text-[36px] tracking-tight leading-[1.05] mt-2 text-balance"
+            >
+              {m.title}
+            </h3>
+            <p className="mt-4 text-fg2 text-[14.5px] md:text-[15px] max-w-sm mx-auto leading-[1.55] text-pretty">
+              {m.sub}
+            </p>
 
-                <form onSubmit={submit} className="mt-7 flex flex-col gap-3">
-                  <input
-                    required
-                    type="email"
-                    autoComplete="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder={m.emailPh}
-                    disabled={status === 'sending'}
-                    className="w-full rounded-full border border-hair bg-surface2/60 px-5 py-3.5 text-[15px] text-center placeholder:text-sub/60 outline-none focus:border-fg/30 focus:bg-surface2 transition-colors disabled:opacity-60"
-                    autoFocus
-                  />
-                  <input
-                    type="text"
-                    name="website"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    aria-hidden="true"
-                    value={website}
-                    onChange={(e) => setWebsite(e.target.value)}
-                    className="absolute -left-[10000px] w-0 h-0 opacity-0 pointer-events-none"
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-default"
-                  >
-                    {status === 'sending' ? (
-                      <>
-                        <span className="w-3.5 h-3.5 rounded-full border-2 border-bg/30 border-t-bg animate-spin" aria-hidden />
-                        {m.cta}
-                      </>
-                    ) : (
-                      <>
-                        {m.cta} <ArrowRight size={14} />
-                      </>
-                    )}
-                  </button>
-                  {status === 'error' && (
-                    <p className="text-[12.5px] text-[#ff3b30] leading-[1.5] text-center">{errorMsg}</p>
-                  )}
-                </form>
+            <div className="mt-7 flex flex-col gap-3">
+              <button
+                type="button"
+                onClick={book}
+                onPointerEnter={preloadCalendly}
+                onFocus={preloadCalendly}
+                autoFocus
+                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-fg text-bg px-6 py-3.5 text-[14.5px] font-medium hover:opacity-90 transition-opacity"
+              >
+                {m.cta} <ArrowRight size={14} />
+              </button>
+              <button
+                type="button"
+                onClick={close}
+                className="text-[12.5px] text-sub hover:text-fg transition-colors"
+              >
+                {m.skip}
+              </button>
+            </div>
 
-                <button
-                  type="button"
-                  onClick={close}
-                  className="mt-4 text-[12.5px] text-sub hover:text-fg transition-colors"
-                >
-                  {m.skip}
-                </button>
-
-                <p className="mt-5 text-[11px] text-sub leading-[1.5] max-w-xs mx-auto">
-                  {t.contact.legalNote}{' '}
-                  <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
-                    {t.contact.privacyLabel}
-                  </a>{' '}
-                  &amp;{' '}
-                  <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
-                    {t.contact.termsLabel}
-                  </a>
-                  .
-                </p>
-              </>
-            )}
+            <p className="mt-5 text-[11px] text-sub leading-[1.5] max-w-xs mx-auto">
+              {t.contact.legalNote}{' '}
+              <a href="/privacy.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                {t.contact.privacyLabel}
+              </a>{' '}
+              &amp;{' '}
+              <a href="/terms.html" className="underline underline-offset-2 hover:text-fg transition-colors">
+                {t.contact.termsLabel}
+              </a>
+              .
+            </p>
           </motion.div>
         </motion.div>
       )}

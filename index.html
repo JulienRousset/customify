@@ -20,10 +20,11 @@
     <meta name="p:domain_verify" content="ead3307f66479e0bc0b02b3794359a58" />
 
     <!-- CSP: allows GA4, Microsoft Clarity, Meta Pixel, TikTok Pixel only when
-         the user accepts. Scripts only load via the consent flow. -->
+         the user accepts. Scripts only load via the consent flow.
+         Calendly origins are allowed so the booking popup can load. -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://analytics.tiktok.com; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; font-src 'self' data: https://use.typekit.net https://p.typekit.net; img-src 'self' data: https: blob:; connect-src 'self' https://use.typekit.net https://p.typekit.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://www.facebook.com https://analytics.tiktok.com; frame-src https://www.facebook.com https://td.doubleclick.net; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://analytics.tiktok.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; font-src 'self' data: https://assets.calendly.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://www.facebook.com https://analytics.tiktok.com https://calendly.com https://*.calendly.com; frame-src https://www.facebook.com https://td.doubleclick.net https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self';"
     />
 
     <title>Customy · Every business is unique, yours should be too.</title>
@@ -53,10 +54,14 @@
     <meta name="twitter:description" content="Boost your business with tailor-made marketing strategies and AI-powered software. Custom dashboards, automation and CRM tools, built around how you actually run." />
     <meta name="twitter:image" content="https://customy.agency/og.png" />
 
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-    <!-- TODO: replace YOUR_KIT_ID with your Adobe Fonts kit ID. -->
-    <!-- The kit must include "Transducer Extended" published as the family. -->
-    <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" />
+    <!-- Adobe Fonts (Typekit) is not configured. Headings reference
+         "transducer-extended" but the system-font fallback is what renders.
+         To enable: create a kit at fonts.adobe.com that includes Transducer
+         Extended, then add:
+           <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+           <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" />
+         and re-add use.typekit.net + p.typekit.net to the CSP style-src,
+         font-src, and connect-src directives. -->
 
     <script type="application/ld+json">
       {

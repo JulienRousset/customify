@@ -301,12 +301,17 @@ export const translations = {
       mailSubject: (name: string) => `New project from ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Hi Customy,\n\nI'm ${name} from ${biz || 'an independent brand'}.\n\n${message}\n\nReach me at ${email}.`,
+      book: {
+        label: 'Book a call',
+        title: '30-min intro call',
+        sub: 'Pick a slot. We look at your project, scope, and what you actually need — free, no pitch.'
+      },
       exitModal: {
         eyebrow: 'One last thing',
         title: 'Before you go',
-        sub: 'Drop your email. Within 24 hours we’ll send a 5-minute audit of one thing we can automate for you. No call, no deck, no strings.',
+        sub: 'Book a free 30-min call. No pitch, no deck — just a quick look at what you’d actually want to fix.',
         emailPh: 'you@brand.com',
-        cta: 'Send it my way',
+        cta: 'Book a 30-min call',
         skip: 'No thanks',
         sentTitle: 'Email on the way.',
         sentBody: 'We opened a message in your mail app. Hit send and we reply within 24 hours.',
@@ -646,12 +651,17 @@ export const translations = {
       mailSubject: (name: string) => `Nouveau projet de ${name}`,
       mailBody: (name: string, biz: string, message: string, email: string) =>
         `Bonjour Customy,\n\nJe suis ${name} de ${biz || 'une marque indépendante'}.\n\n${message}\n\nVous pouvez me joindre à ${email}.`,
+      book: {
+        label: 'Réserver un appel',
+        title: 'Appel découverte · 30 min',
+        sub: 'Choisissez un créneau. On regarde votre projet, le périmètre, et ce dont vous avez vraiment besoin — gratuit, sans pitch.'
+      },
       exitModal: {
         eyebrow: 'Un dernier truc',
         title: 'Avant de partir',
-        sub: 'Laissez votre email. Sous 24 h, on vous envoie un audit de 5 minutes sur une chose qu’on peut automatiser pour vous. Pas d’appel, pas de deck, sans engagement.',
+        sub: 'Réservez un appel gratuit de 30 min. Pas de pitch, pas de deck — juste un regard rapide sur ce que vous voudriez vraiment régler.',
         emailPh: 'vous@marque.com',
-        cta: 'Envoyez-moi ça',
+        cta: 'Réserver un appel de 30 min',
         skip: 'Non merci',
         sentTitle: 'Email prêt.',
         sentBody: 'On a ouvert un message dans votre boîte mail. Cliquez envoyer, on répond sous 24 h.',
