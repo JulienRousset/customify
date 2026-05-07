@@ -45,7 +45,6 @@ export default function Navbar() {
   const links = [
     { label: t.nav.services, to: '/#services' },
     { label: whatWeBuildLabel, to: '/whatwebuild' },
-    { label: t.nav.automation, to: '/#automation' },
     { label: t.nav.clients, to: '/#testimonials' },
     { label: t.nav.contact, to: '/#contact' }
   ]

@@ -15,13 +15,13 @@ export default function WhoFor() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl ml-auto md:text-right mb-14 md:mb-20"
+          className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">{w.eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
             {w.h2a} <span className="text-sub">{w.h2b}</span>
           </motion.h2>
-          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl md:ml-auto text-pretty">
+          <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl mx-auto text-pretty">
             {w.sub}
           </motion.p>
         </motion.div>

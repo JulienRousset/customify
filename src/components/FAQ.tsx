@@ -14,7 +14,7 @@ export default function FAQ() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="max-w-3xl mb-14 md:mb-20"
+          className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">{f.eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">

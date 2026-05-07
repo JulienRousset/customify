@@ -4,8 +4,7 @@ import Marquee from '../components/Marquee'
 import Services from '../components/Services'
 
 const HowWeWork = lazy(() => import('../components/HowWeWork'))
-const Software = lazy(() => import('../components/Software'))
-const Automation = lazy(() => import('../components/Automation'))
+const WhatWeBuildCTA = lazy(() => import('../components/WhatWeBuildCTA'))
 const Testimonials = lazy(() => import('../components/Testimonials'))
 const WhoFor = lazy(() => import('../components/WhoFor'))
 const FAQ = lazy(() => import('../components/FAQ'))
@@ -23,8 +22,7 @@ export default function Home() {
       <Services />
       <Suspense fallback={<SectionSkeleton />}>
         <HowWeWork />
-        <Software />
-        <Automation />
+        <WhatWeBuildCTA />
         <Testimonials />
         <WhoFor />
         <FAQ />

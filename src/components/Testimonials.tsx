@@ -34,24 +34,24 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="relative py-24 md:py-32">
       <div className="container-xl">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 md:mb-20">
+        <div className="flex flex-col items-center gap-8 mb-14 md:mb-20">
           <motion.div
             variants={staggerParent(0.08, 0)}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="max-w-3xl"
+            className="max-w-3xl mx-auto text-center"
           >
             <motion.p variants={staggerItem} className="eyebrow">Testimonials</motion.p>
             <motion.h2 variants={staggerItem} className="display-2 text-balance">
               {c.h2a} <span className="text-sub">{c.h2b}</span>
             </motion.h2>
-            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl text-pretty">
+            <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl mx-auto text-pretty">
               {c.sub}
             </motion.p>
           </motion.div>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2">
             <button
               type="button"
               aria-label="Previous"

@@ -34,7 +34,7 @@ export const translations = {
       cta: 'Start a project'
     },
     hero: {
-      eyebrow: 'Custom marketing & AI studio',
+      eyebrow: 'Custom marketing & AI solution',
       h1a: 'Every business is unique,',
       h1b: 'yours should be too.',
       sub: 'Tailor-made marketing strategies and AI-powered software, designed around how your business actually runs. We stay close enough to keep evolving them with you.',
@@ -92,7 +92,7 @@ export const translations = {
       ]
     },
     services: {
-      eyebrow: 'What we build',
+      eyebrow: 'Services',
       h2a: 'No two builds',
       h2b: 'look the same.',
       sub: 'Pick the pieces that match your business: site, dashboard, automation, content engine. Each one is built around your operation, your goals, your real needs.',
@@ -384,7 +384,7 @@ export const translations = {
       cta: 'Démarrer un projet'
     },
     hero: {
-      eyebrow: 'Studio marketing & IA sur mesure',
+      eyebrow: 'Solution marketing & IA sur mesure',
       h1a: 'Chaque business est unique,',
       h1b: 'le vôtre devrait l’être aussi.',
       sub: 'Stratégies marketing et outils IA sur mesure, conçus autour de la façon dont votre business tourne vraiment. On reste assez proches pour les faire évoluer avec vous.',
@@ -442,7 +442,7 @@ export const translations = {
       ]
     },
     services: {
-      eyebrow: 'Ce qu’on construit',
+      eyebrow: 'Services',
       h2a: 'Aucun build',
       h2b: 'ne se ressemble.',
       sub: 'Choisissez les briques qui collent à votre business : site, dashboard, automatisations, moteur de contenu. Chacune est dessinée pour votre opération, vos objectifs, vos besoins réels.',
