@@ -40,9 +40,11 @@ export default function Navbar() {
     }
   }, [mobileOpen])
 
+  const whatWeBuildLabel = lang === 'fr' ? 'Ce qu’on construit' : 'What we build'
+
   const links = [
     { label: t.nav.services, to: '/#services' },
-    { label: t.nav.software, to: '/#software' },
+    { label: whatWeBuildLabel, to: '/whatwebuild' },
     { label: t.nav.automation, to: '/#automation' },
     { label: t.nav.clients, to: '/#testimonials' },
     { label: t.nav.contact, to: '/#contact' }
