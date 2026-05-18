@@ -25,8 +25,8 @@ export default function VerticalFooter() {
               <Link to="/whatwebuild/restaurants" className="hover:text-fg transition-colors">Restaurants</Link>
               <Link to="/whatwebuild/spa-wellness" className="hover:text-fg transition-colors">Spa</Link>
               <Link to="/whatwebuild/hotels" className="hover:text-fg transition-colors">Hotels</Link>
-              <Link to="/whatwebuild/creators" className="hover:text-fg transition-colors">Creators</Link>
-              <Link to="/whatwebuild/trades-services" className="hover:text-fg transition-colors">Trades</Link>
+              <Link to="/whatwebuild/entrepreneurs" className="hover:text-fg transition-colors">Entrepreneurs</Link>
+              <Link to="/whatwebuild/agency-services" className="hover:text-fg transition-colors">Agency</Link>
             </nav>
             <div className="flex items-center gap-2">
               <a

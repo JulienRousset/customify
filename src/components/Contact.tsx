@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CalendarClock, Instagram } from 'lucide-react'
+import { ArrowRight, CalendarClock, Instagram, Star } from 'lucide-react'
 import { useLang } from '../lang'
 import { WhatsAppGlyph, FacebookLogo, LinkedInLogo } from './icons'
 import { openCalendly, preloadCalendly } from '../lib/calendly'
@@ -46,33 +46,6 @@ export default function Contact() {
                 {c.h2a} <span className="text-sub">{c.h2b}</span>
               </h2>
               <p className="mt-5 body-lg max-w-lg text-pretty lg:ml-auto">{c.sub}</p>
-
-              <div className="mt-7 flex items-center gap-3 max-w-lg lg:ml-auto lg:flex-row-reverse lg:text-right text-left">
-                <div
-                  aria-hidden
-                  className="shrink-0 w-9 h-9 rounded-full bg-fg text-bg flex items-center justify-center font-display font-semibold text-[13px] tracking-tight"
-                >
-                  A
-                </div>
-                <p className="text-[13.5px] text-fg2 leading-[1.5] text-pretty">
-                  {c.founderNote}
-                </p>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-2 lg:justify-end">
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface2/60 px-4 py-2">
-                  <motion.span
-                    className="w-2 h-2 rounded-full bg-[#34c759]"
-                    animate={{ opacity: [1, 0.35, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                  />
-                  <span className="text-[12.5px] font-medium text-fg2">{c.availabilityBody}</span>
-                </div>
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-hair bg-fg text-bg px-4 py-2">
-                  <span className="w-2 h-2 rounded-full bg-[#ff9f0a]" aria-hidden />
-                  <span className="text-[12.5px] font-semibold tracking-tight">{c.freeAudit}</span>
-                </div>
-              </div>
             </div>
 
             <div className="lg:col-span-5 lg:order-1">
@@ -113,6 +86,24 @@ export default function Contact() {
                   <div className="flex-1 min-w-0">
                     <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">{c.waLabel}</div>
                     <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">{WA_NUMBER_DISPLAY}</div>
+                  </div>
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2 group-hover:text-fg group-hover:border-fg/30 transition-colors">
+                    <ArrowRight size={14} />
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.trustpilot.com/review/customy.agency"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card p-4 md:p-5 flex items-center gap-3 hover:border-fg/30 transition-colors group"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-[#00B67A]">
+                    <Star size={16} strokeWidth={2} fill="currentColor" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">Trustpilot</div>
+                    <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">See our reviews</div>
                   </div>
                   <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2 group-hover:text-fg group-hover:border-fg/30 transition-colors">
                     <ArrowRight size={14} />

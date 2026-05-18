@@ -1,21 +1,58 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Camera, ChefHat, Hammer, Hotel, Sparkles, type LucideIcon } from 'lucide-react'
-import { staggerItem, staggerParent, viewportOnce } from './fx/motion'
+import { ArrowUpRight, Briefcase, ChefHat, Hotel, Sparkles, Users, type LucideIcon } from 'lucide-react'
+import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 interface Vertical {
   slug: string
   name: string
   icon: LucideIcon
   accent: string
+  preview: string
+  isLive: boolean
 }
 
 const VERTICALS: Vertical[] = [
-  { slug: 'restaurants', name: 'Restaurants', icon: ChefHat, accent: '#ff7a59' },
-  { slug: 'spa-wellness', name: 'Spa & Wellness', icon: Sparkles, accent: '#34c759' },
-  { slug: 'hotels', name: 'Hotels', icon: Hotel, accent: '#0a84ff' },
-  { slug: 'creators', name: 'Creators', icon: Camera, accent: '#bf5af2' },
-  { slug: 'trades-services', name: 'Trades & Services', icon: Hammer, accent: '#ff9f0a' }
+  {
+    slug: 'restaurants',
+    name: 'Restaurants',
+    icon: ChefHat,
+    accent: '#ff7a59',
+    preview: 'Social, WhatsApp, loyalty, customer database. One backoffice.',
+    isLive: true
+  },
+  {
+    slug: 'spa-wellness',
+    name: 'Spa & Wellness',
+    icon: Sparkles,
+    accent: '#34c759',
+    preview: 'Booking, reminders, loyalty, gift cards. Fewer no-shows.',
+    isLive: true
+  },
+  {
+    slug: 'hotels',
+    name: 'Hotels',
+    icon: Hotel,
+    accent: '#0a84ff',
+    preview: 'Unified inbox, OTAs, pre-arrival flow, reviews.',
+    isLive: false
+  },
+  {
+    slug: 'entrepreneurs',
+    name: 'Entrepreneurs',
+    icon: Users,
+    accent: '#bf5af2',
+    preview: 'Personal brand engine, DMs, sales pipeline, monetization.',
+    isLive: true
+  },
+  {
+    slug: 'agency-services',
+    name: 'Agency & Services',
+    icon: Briefcase,
+    accent: '#ff9f0a',
+    preview: 'Lead funnel, client CRM, proposals, retainer ops.',
+    isLive: false
+  }
 ]
 
 export default function WhatWeBuildCTA() {
@@ -31,19 +68,20 @@ export default function WhatWeBuildCTA() {
         >
           <motion.p variants={staggerItem} className="eyebrow">What we build</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            Five industries. <span className="text-sub">Five custom systems.</span>
+            Any industry, <span className="text-sub">any custom system.</span>
           </motion.h2>
           <motion.p variants={staggerItem} className="mt-5 body-lg max-w-xl mx-auto text-pretty">
-            Each industry has its own playbook. Real client work, mockups of what you'd get, and the exact tools we'd wire in for you.
+            Each industry runs differently, so each gets its own software. Tap the one that fits to see the modules, real client work, and what we'd build for you.
           </motion.p>
         </motion.div>
 
+        {/* Big preview cards — full width */}
         <motion.div
-          variants={staggerParent(0.05, 0.15)}
+          variants={staggerParent(0.06, 0.15)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-2"
+          className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5"
         >
           {VERTICALS.map((v) => {
             const Icon = v.icon
@@ -51,33 +89,50 @@ export default function WhatWeBuildCTA() {
               <motion.div key={v.slug} variants={staggerItem}>
                 <Link
                   to={`/whatwebuild/${v.slug}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-hair bg-surface2/60 px-4 py-2 text-[13px] font-medium tracking-tight text-fg2 hover:text-fg hover:border-fg/30 hover:bg-surface2 transition-colors"
+                  className="card relative flex flex-col p-7 md:p-8 group hover:border-fg/30 transition-all duration-300 h-full overflow-hidden hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.18)] hover:-translate-y-1"
                 >
-                  <Icon size={14} strokeWidth={1.8} style={{ color: v.accent }} />
-                  {v.name}
+                  {/* Accent glow on hover */}
+                  <div
+                    aria-hidden
+                    className="absolute -top-20 -right-20 w-44 h-44 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"
+                    style={{ background: v.accent }}
+                  />
+
+                  <div className="relative flex items-start justify-between mb-6">
+                    <motion.div
+                      whileHover={{ scale: 1.06, rotate: -3 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 14 }}
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-[0_16px_36px_-12px_rgba(0,0,0,0.45)]"
+                      style={{ background: v.accent }}
+                    >
+                      <Icon size={22} strokeWidth={1.7} />
+                    </motion.div>
+                    {v.isLive && (
+                      <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#34c759]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#34c759]" />
+                        Live
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="font-display font-semibold text-[20px] md:text-[22px] tracking-tight mb-2 leading-[1.15]">
+                    {v.name}
+                  </h3>
+                  <p className="text-[13.5px] md:text-[14px] text-fg2 leading-[1.55] text-pretty">
+                    {v.preview}
+                  </p>
+
+                  <div className="mt-auto pt-6 inline-flex items-center gap-1.5 text-[12.5px] font-semibold tracking-tight text-fg group-hover:gap-2.5 transition-all">
+                    See the playbook
+                    <ArrowUpRight
+                      size={14}
+                      className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+                    />
+                  </div>
                 </Link>
               </motion.div>
             )
           })}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 md:mt-14 flex justify-center"
-        >
-          <Link
-            to="/whatwebuild"
-            className="group inline-flex items-center gap-3 rounded-full bg-fg text-bg px-9 py-5 text-[16px] md:text-[18px] font-semibold tracking-tight transition-opacity hover:opacity-90"
-          >
-            See what we build
-            <ArrowUpRight
-              size={20}
-              className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
-            />
-          </Link>
         </motion.div>
       </div>
     </section>

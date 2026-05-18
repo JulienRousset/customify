@@ -4,11 +4,12 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 
 const WhatWeBuild = lazy(() => import('./pages/WhatWeBuild'))
+const FAQPage = lazy(() => import('./pages/FAQ'))
 const Restaurants = lazy(() => import('./pages/whatwebuild/Restaurants'))
 const SpaWellness = lazy(() => import('./pages/whatwebuild/SpaWellness'))
 const Hotels = lazy(() => import('./pages/whatwebuild/Hotels'))
-const Creators = lazy(() => import('./pages/whatwebuild/Creators'))
-const TradesServices = lazy(() => import('./pages/whatwebuild/TradesServices'))
+const Entrepreneurs = lazy(() => import('./pages/whatwebuild/Entrepreneurs'))
+const AgencyServices = lazy(() => import('./pages/whatwebuild/AgencyServices'))
 
 function PageSkeleton() {
   return <div aria-hidden className="min-h-[80vh] w-full" />
@@ -25,6 +26,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageSkeleton />}>
                 <WhatWeBuild />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/faq"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <FAQPage />
               </Suspense>
             }
           />
@@ -53,18 +62,18 @@ export default function App() {
             }
           />
           <Route
-            path="/whatwebuild/creators"
+            path="/whatwebuild/entrepreneurs"
             element={
               <Suspense fallback={<PageSkeleton />}>
-                <Creators />
+                <Entrepreneurs />
               </Suspense>
             }
           />
           <Route
-            path="/whatwebuild/trades-services"
+            path="/whatwebuild/agency-services"
             element={
               <Suspense fallback={<PageSkeleton />}>
-                <TradesServices />
+                <AgencyServices />
               </Suspense>
             }
           />

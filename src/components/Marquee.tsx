@@ -20,29 +20,29 @@ export default function Marquee() {
   return (
     <section
       aria-label="Partners and clients"
-      className="relative py-14 md:py-20 border-y border-hair bg-surface/40"
+      className="relative py-8 md:py-10 border-y border-hair bg-surface/40"
     >
       <motion.div
         variants={staggerParent(0.08, 0)}
         initial="hidden"
         whileInView="visible"
         viewport={viewportOnce}
-        className="container-xl mb-8 md:mb-10"
+        className="container-xl mb-5 md:mb-6"
       >
         <motion.p
           variants={staggerItem}
-          className="text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-sub"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-sub"
         >
           {t.marquee.header}
         </motion.p>
       </motion.div>
 
       <div className="relative fade-x">
-        <InfiniteSlider gap={72} duration={42} className="py-2">
+        <InfiniteSlider gap={56} duration={42} className="py-1">
           {partners.map((p) => (
             <div
               key={`mq-${p.name}`}
-              className="flex items-center gap-3 px-2 whitespace-nowrap"
+              className="flex items-center gap-2.5 px-2 whitespace-nowrap"
             >
               {p.logo && (
                 <img
@@ -51,13 +51,13 @@ export default function Marquee() {
                   aria-hidden
                   loading="lazy"
                   style={p.logoScale ? { transform: `scale(${p.logoScale})`, transformOrigin: 'center' } : undefined}
-                  className="h-9 md:h-11 w-auto object-contain brightness-0 opacity-75 dark:invert dark:opacity-85 shrink-0"
+                  className="h-6 md:h-7 w-auto object-contain brightness-0 opacity-75 dark:invert dark:opacity-85 shrink-0"
                 />
               )}
-              <span className="font-display font-semibold text-[20px] md:text-[26px] tracking-tight text-fg/85">
+              <span className="font-display font-semibold text-[15px] md:text-[17px] tracking-tight text-fg/85">
                 {p.name}
               </span>
-              <span className="text-[10.5px] font-medium uppercase tracking-wider text-sub">
+              <span className="text-[10px] font-medium uppercase tracking-wider text-sub">
                 {p.kind}
               </span>
             </div>

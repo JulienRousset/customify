@@ -6,9 +6,12 @@ export const translations = {
       services: 'Services',
       software: 'Case study',
       automation: 'Automation',
+      process: 'Process',
       clients: 'Clients',
+      fit: 'Good fit',
+      faq: 'FAQ',
       contact: 'Contact',
-      cta: 'See if we’re a fit'
+      cta: 'Let’s talk'
     },
     inlineCta: {
       services: 'Discuss your build',
@@ -31,14 +34,14 @@ export const translations = {
         { title: 'Multi-language, 24/7', desc: 'EN, FR, ID in one flow. Auto-detects the guest language and responds in kind. Same assistant, same number.' },
         { title: 'Daily handover', desc: 'Every morning, a summary of what got handled, which guests need a human follow-up, what to ship next.' }
       ],
-      cta: 'Start a project'
+      cta: 'Grow your business'
     },
     hero: {
       eyebrow: 'Custom marketing & AI solution',
       h1a: 'Every business is unique,',
       h1b: 'yours should be too.',
       sub: 'Tailor-made marketing strategies and AI-powered software, designed around how your business actually runs. We stay close enough to keep evolving them with you.',
-      ctaPrimary: 'Start a project',
+      ctaPrimary: 'Grow your business',
       engagement: 'Free first call · Build sprints from 2 weeks · Monthly care after launch',
       ctaSecondary: 'Grow your brand',
       mockTitle: 'Example dashboard built for a restaurant client',
@@ -356,9 +359,12 @@ export const translations = {
       services: 'Services',
       software: 'Étude de cas',
       automation: 'Automation',
+      process: 'Méthode',
       clients: 'Clients',
+      fit: 'Pour qui',
+      faq: 'FAQ',
       contact: 'Contact',
-      cta: 'Voir si on peut bosser ensemble'
+      cta: 'Discutons'
     },
     inlineCta: {
       services: 'Parlons de votre projet',

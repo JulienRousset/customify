@@ -21,13 +21,13 @@ import {
 import ScrollReveal from '../../components/vertical/ScrollReveal'
 
 const PROBLEMS = [
-  'Posting inconsistently. Life gets in the way.',
-  'Slow content production, no system, every video is from scratch',
-  'DMs from brands lost in the noise of fan messages',
-  'No central place tracking sponsorship deals',
+  'Posting inconsistently. Real work always takes priority.',
+  'Content made from scratch every time. No system, no momentum.',
+  'Inquiries and leads buried under fan messages and noise.',
+  'No central place tracking deals, calls, or pipeline value.',
   'Monetization mostly random. No funnel, no products, no list.',
-  'Audience growing but no idea who they actually are',
-  'Burnout: everything depends on you showing up every day'
+  'Audience growing but no idea who they actually are.',
+  'Everything depends on you showing up every day. Burnout incoming.'
 ]
 
 const SOLUTIONS: Solution[] = [
@@ -38,12 +38,12 @@ const SOLUTIONS: Solution[] = [
   },
   {
     title: 'DM automation',
-    body: 'Auto-replies for FAQ, link drops on keyword triggers, brand-deal DMs flagged and routed to your real inbox.',
+    body: 'Auto-replies for FAQ, link drops on keyword triggers, high-intent DMs flagged and routed to your real inbox.',
     icon: MessageSquare
   },
   {
-    title: 'Sponsorship pipeline',
-    body: 'A CRM for brand deals: pitched, negotiating, signed, invoiced. Templates for first-touch and follow-ups.',
+    title: 'Deal pipeline',
+    body: 'A CRM for inquiries, calls and signed contracts: cold, qualified, negotiating, won. Templates for first reply, auto-reminders for follow-ups.',
     icon: Briefcase
   },
   {
@@ -58,34 +58,34 @@ const SOLUTIONS: Solution[] = [
   },
   {
     title: 'AI assistant',
-    body: 'A trained-on-your-voice assistant that drafts captions, hooks, and replies in your tone. You approve, it posts.',
+    body: 'A trained-on-your-voice assistant that drafts captions, hooks, and replies in your tone. You approve, it ships.',
     icon: Bot
   }
 ]
 
-export default function Creators() {
+export default function Entrepreneurs() {
   return (
     <>
       <VerticalHero
-        industry="Creators & Influencers"
-        eyebrow="Creators & personal brands"
-        title="Run a media business,"
-        titleAccent="not a hamster wheel."
-        sub="Content templates that batch in a day. DMs that auto-reply with the right link. Brand deals tracked instead of lost in your inbox. The infrastructure behind creators who stop doing everything themselves."
+        industry="Entrepreneurs"
+        eyebrow="Solo founders & personal brands"
+        title="Run your business,"
+        titleAccent="not your inbox."
+        sub="Content systems that batch a week in a day. DMs that auto-route to your real inbox. Deals tracked instead of lost in memory. The infrastructure behind entrepreneurs who stop doing everything themselves."
         ctaPrimary="Build mine"
         whatsappMessage={`Hello Customy,
 
-I'm a creator looking to scale my content and monetization systems.
+I'm a solo founder / personal brand looking to scale my systems.
 
-Platform:
+What I do:
 Audience size:
-Main challenge:`}
+Where I'm stuck:`}
       />
 
       <ProblemsList
         eyebrow="The grind"
         title="Seven traps"
-        titleAccent="that burn out creators."
+        titleAccent="that burn out solo founders."
         problems={PROBLEMS}
       />
 
@@ -105,7 +105,7 @@ Main challenge:`}
             className="mt-12 md:mt-14 max-w-3xl mx-auto text-center"
           >
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-sub bg-surface2/60 border border-hair rounded-full px-3 py-1">
-              Case study · Lifestyle creator
+              Case study · Personal brand entrepreneur
             </span>
             <h3 className="font-display font-semibold text-[28px] md:text-[34px] tracking-tight mt-5 leading-[1.1]">
               Dylan
@@ -128,7 +128,7 @@ Main challenge:`}
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-fg mt-2" />
-                <span>Sponsorship CRM with pitch templates ready to send</span>
+                <span>Deal pipeline with templates ready to send to every inbound brand</span>
               </li>
             </ul>
           </motion.div>
@@ -171,7 +171,6 @@ Main challenge:`}
             <p className="mt-4 text-[11.5px] text-sub text-center">Real client screenshots. Numbers visible in the images.</p>
           </motion.div>
 
-          {/* Weekly digest screenshot */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -212,24 +211,24 @@ Main challenge:`}
 
       <SolutionsGrid
         eyebrow="What we build"
-        title="The creator stack,"
+        title="The solo-founder stack,"
         titleAccent="end to end."
-        sub="From content engine to monetization. Layer it in as the audience justifies the next piece."
+        sub="From content engine to monetization. Layer it in as the business justifies the next piece."
         solutions={SOLUTIONS}
       />
 
-      {/* Sponsorship CRM mockup */}
+      {/* Deal pipeline mockup */}
       <section className="relative py-20 md:py-28 border-t border-hair">
         <ScrollReveal intensity="medium" className="container-xl">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="eyebrow">Sponsorship pipeline</p>
-            <h2 className="display-2 text-balance mt-3">Your brand deals, no longer in your head.</h2>
+            <p className="eyebrow">Deal pipeline</p>
+            <h2 className="display-2 text-balance mt-3">Every inbound, no longer in your head.</h2>
             <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
-              Every brand inquiry, negotiation, and signed deal, tracked. Templates for first reply. Auto-reminders so deals don't ghost.
+              Every brand inquiry, sales call and signed contract, tracked. Templates for first reply. Auto-reminders so deals don't ghost.
             </p>
           </div>
 
-          <BrowserMockup url="dashboard.customy.agency/creator" className="max-w-5xl mx-auto">
+          <BrowserMockup url="dashboard.customy.agency/founder" className="max-w-5xl mx-auto">
             <KpiGrid
               tiles={[
                 { label: 'Followers · 30d', value: '+4.2K', delta: '+38% vs. prev', positive: true },
@@ -240,9 +239,9 @@ Main challenge:`}
             />
             <div className="mt-5 grid md:grid-cols-2 gap-4">
               <PipelineList
-                title="Brand deals · pipeline"
+                title="Deals · pipeline"
                 rows={[
-                  { label: 'Vivobarefoot · IG reel', meta: '$1.2K · contract sent', status: 'Closing', statusColor: 'green' },
+                  { label: 'Vivobarefoot · sponsored reel', meta: '$1.2K · contract sent', status: 'Closing', statusColor: 'green' },
                   { label: 'Plantsie · 3-post deal', meta: '$2.8K · negotiating', status: 'Hot', statusColor: 'orange' },
                   { label: 'Cabaïa · UGC bundle', meta: '$650 · awaiting brief', status: 'Soft', statusColor: 'blue' },
                   { label: 'Soylent · cold pitch', meta: 'No reply 7d · auto follow-up queued', status: 'Auto', statusColor: 'gray' }
@@ -253,7 +252,7 @@ Main challenge:`}
                 rows={[
                   { label: 'Keyword "guide"', meta: '127 triggers → 84 signups', status: '66% conv', statusColor: 'green' },
                   { label: 'Keyword "course"', meta: '54 triggers → 19 calls booked', status: '35% conv', statusColor: 'green' },
-                  { label: 'Brand inquiry filter', meta: '8 deals routed to inbox', status: 'Auto', statusColor: 'blue' }
+                  { label: 'Inbound deal filter', meta: '8 leads routed to inbox', status: 'Auto', statusColor: 'blue' }
                 ]}
               />
             </div>
@@ -268,7 +267,7 @@ Main challenge:`}
             <p className="eyebrow">DM automation in your tone</p>
             <h2 className="display-2 text-balance mt-3">No more "drop the link" 600 times a day.</h2>
             <p className="mt-5 body-lg text-pretty max-w-2xl mx-auto">
-              Trigger keywords like <em>guide</em>, <em>course</em>, or <em>collab</em>. Auto-replies fire instantly, in your voice, with the right link. You only see the messages that actually need you.
+              Trigger keywords like <em>guide</em>, <em>course</em>, or <em>work with you</em>. Auto-replies fire instantly, in your voice, with the right link. You only see the messages that actually need you.
             </p>
           </div>
 
@@ -277,15 +276,15 @@ Main challenge:`}
               contactName="Your DMs"
               contactRole="auto-reply on"
               messages={[
-                { from: 'them', text: 'hey, where\'s the guide you mentioned in the latest reel?' },
+                { from: 'them', text: 'hey, where\'s the guide you mentioned in the latest post?' },
                 {
                   from: 'bot',
-                  text: 'Got you 👇\n\nFree guide here: dylan.com/guide\n\nIf you want the full course (with the templates I use), reply COURSE.'
+                  text: 'Got you 👇\n\nFree guide here: yoursite.com/guide\n\nIf you want the full course (with the templates we use), reply COURSE.'
                 },
                 { from: 'them', text: 'COURSE pls 🙏' },
                 {
                   from: 'bot',
-                  text: 'Course link: dylan.com/course\n\nUse code REEL10 for 10% off (24h only).\n\nYou\'re also added to the Monday newsletter. Opt out anytime.'
+                  text: 'Course link: yoursite.com/course\n\nUse code POST10 for 10% off (24h only).\n\nYou\'re also added to the Monday newsletter. Opt out anytime.'
                 }
               ]}
             />
@@ -294,16 +293,16 @@ Main challenge:`}
       </section>
 
       <VerticalCTA
-        title="Build the engine. Keep the audience."
-        sub="Short call. Tell us what you post, where you monetize, and where the wheel grinds. We'll tell you what we'd wire in first."
+        title="Build the engine. Keep the freedom."
+        sub="Short call. Tell us what you sell, where you market, and where the wheel grinds. We'll tell you what we'd wire in first."
         ctaPrimary="Book an audit"
         whatsappMessage={`Hello Customy,
 
-I'm a creator looking to scale my content and monetization systems.
+I'm a solo founder / personal brand looking to scale my systems.
 
-Platform:
+What I do:
 Audience size:
-Main challenge:`}
+Where I'm stuck:`}
       />
 
       <VerticalFooter />

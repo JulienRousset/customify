@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, useSpring, useInView, type MotionValue } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Camera, ChefHat, Hammer, Hotel, Sparkles, ArrowDown, type LucideIcon } from 'lucide-react'
+import { ArrowUpRight, Briefcase, ChefHat, Hotel, Sparkles, Users, ArrowDown, type LucideIcon } from 'lucide-react'
 import VerticalCTA from '../components/vertical/VerticalCTA'
 import VerticalFooter from '../components/vertical/VerticalFooter'
 import { easeApple } from '../components/fx/motion'
@@ -41,19 +41,19 @@ const VERTICALS: Vertical[] = [
     accent: '#0a84ff'
   },
   {
-    slug: 'creators',
-    name: 'Creators & Influencers',
-    icon: Camera,
-    one: 'Content systems, DM automation, sponsorship pipelines, monetization.',
-    systems: ['Content engine', 'DM automation', 'Sponsorship CRM', 'Funnels'],
+    slug: 'entrepreneurs',
+    name: 'Entrepreneurs',
+    icon: Users,
+    one: 'Personal brand engine, DM automation, deal pipeline, monetization.',
+    systems: ['Content engine', 'DM automation', 'Deal pipeline', 'Funnels'],
     accent: '#bf5af2'
   },
   {
-    slug: 'trades-services',
-    name: 'Trades & Services',
-    icon: Hammer,
-    one: 'Quote requests, lead routing, follow-ups, customer database.',
-    systems: ['Quote funnel', 'Lead CRM', 'WhatsApp automation', 'Reviews'],
+    slug: 'agency-services',
+    name: 'Agency & Services',
+    icon: Briefcase,
+    one: 'Inbound funnel, client CRM, discovery, retainer ops.',
+    systems: ['Inbound funnel', 'Client CRM', 'Discovery booking', 'Reviews'],
     accent: '#ff9f0a'
   }
 ]

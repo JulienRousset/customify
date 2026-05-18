@@ -1,13 +1,9 @@
 import { lazy, Suspense } from 'react'
 import Hero from '../components/Hero'
 import Marquee from '../components/Marquee'
-import Services from '../components/Services'
+import WhatWeBuildCTA from '../components/WhatWeBuildCTA'
 
-const HowWeWork = lazy(() => import('../components/HowWeWork'))
-const WhatWeBuildCTA = lazy(() => import('../components/WhatWeBuildCTA'))
-const Testimonials = lazy(() => import('../components/Testimonials'))
-const WhoFor = lazy(() => import('../components/WhoFor'))
-const FAQ = lazy(() => import('../components/FAQ'))
+const Services = lazy(() => import('../components/Services'))
 const Contact = lazy(() => import('../components/Contact'))
 
 function SectionSkeleton() {
@@ -19,13 +15,9 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
-      <Services />
+      <WhatWeBuildCTA />
       <Suspense fallback={<SectionSkeleton />}>
-        <HowWeWork />
-        <WhatWeBuildCTA />
-        <Testimonials />
-        <WhoFor />
-        <FAQ />
+        <Services />
         <Contact />
       </Suspense>
     </>

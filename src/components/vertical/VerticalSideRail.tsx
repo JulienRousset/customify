@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Camera, ChefHat, Hammer, Hotel, Sparkles, type LucideIcon } from 'lucide-react'
+import { Briefcase, ChefHat, Hotel, Sparkles, Users, type LucideIcon } from 'lucide-react'
 
 interface RailItem {
   slug: string
@@ -14,8 +14,8 @@ const ITEMS: RailItem[] = [
   { slug: 'restaurants', name: 'Restaurants', short: 'Restaurants', icon: ChefHat, accent: '#ff7a59' },
   { slug: 'spa-wellness', name: 'Spa & Wellness', short: 'Spa', icon: Sparkles, accent: '#34c759' },
   { slug: 'hotels', name: 'Hotels', short: 'Hotels', icon: Hotel, accent: '#0a84ff' },
-  { slug: 'creators', name: 'Creators & Influencers', short: 'Creators', icon: Camera, accent: '#bf5af2' },
-  { slug: 'trades-services', name: 'Trades & Services', short: 'Trades', icon: Hammer, accent: '#ff9f0a' }
+  { slug: 'entrepreneurs', name: 'Entrepreneurs', short: 'Entrepreneurs', icon: Users, accent: '#bf5af2' },
+  { slug: 'agency-services', name: 'Agency & Services', short: 'Agency', icon: Briefcase, accent: '#ff9f0a' }
 ]
 
 // Sticky right-side industry switcher. Shows all five verticals; the one

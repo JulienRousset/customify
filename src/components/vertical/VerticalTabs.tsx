@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Camera, ChefHat, Hammer, Hotel, Sparkles, type LucideIcon } from 'lucide-react'
+import { Briefcase, ChefHat, Hotel, Sparkles, Users, type LucideIcon } from 'lucide-react'
 
 interface Tab {
   slug: string
@@ -11,8 +11,8 @@ const TABS: Tab[] = [
   { slug: 'restaurants', name: 'Restaurants', icon: ChefHat },
   { slug: 'spa-wellness', name: 'Spa & Wellness', icon: Sparkles },
   { slug: 'hotels', name: 'Hotels', icon: Hotel },
-  { slug: 'creators', name: 'Creators', icon: Camera },
-  { slug: 'trades-services', name: 'Trades & Services', icon: Hammer }
+  { slug: 'entrepreneurs', name: 'Entrepreneurs', icon: Users },
+  { slug: 'agency-services', name: 'Agency & Services', icon: Briefcase }
 ]
 
 // Industry switcher. Lives at the top of every vertical page so the visitor

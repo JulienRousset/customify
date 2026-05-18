@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
@@ -42,14 +43,14 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="pt-6 mt-1">
-          <a
-            href="#contact"
+        <div className="pt-6 mt-1 flex justify-center">
+          <Link
+            to="/#contact"
             className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-fg hover:text-accent transition-colors"
           >
             {f.askMore}
             <span aria-hidden>→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
