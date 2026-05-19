@@ -20,7 +20,7 @@ export const translations = {
       whoFor: 'On the fence? Email us. We’ll tell you honestly.'
     },
     marquee: {
-      header: 'Trusted by studios, restaurants and creators'
+      header: 'Trusted by physical and online businesses'
     },
     automation: {
       eyebrow: 'Case study · A spa in Bali',
@@ -373,7 +373,7 @@ export const translations = {
       whoFor: 'Sur la balance ? Écrivez-nous, on vous dira honnêtement'
     },
     marquee: {
-      header: 'Choisis par des studios, restaurants et créateurs'
+      header: 'Choisis par des business physiques et en ligne'
     },
     automation: {
       eyebrow: 'Étude de cas · Un spa à Bali',

@@ -8,7 +8,7 @@ export default function FAQ() {
   const f = t.faq
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 border-t border-hair">
+    <section id="faq" className="relative py-[4.8rem] md:py-[6.4rem] border-t border-hair">
       <div className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}

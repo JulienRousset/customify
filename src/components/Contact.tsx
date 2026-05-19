@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="relative py-24 md:py-32">
+      <section id="contact" className="relative py-[4.8rem] md:py-[6.4rem]">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
             <div className="lg:col-span-7 lg:order-2 lg:text-right">

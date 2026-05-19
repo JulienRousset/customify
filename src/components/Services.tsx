@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { LayoutDashboard, Globe, Megaphone, Sparkles, LineChart, Workflow } from 'lucide-react'
+import { ArrowUpRight, LayoutDashboard, Globe, Megaphone, Sparkles, LineChart, Workflow } from 'lucide-react'
 import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
+import { openCalendly, preloadCalendly } from '../lib/calendly'
 
 const visualStyles = [
   { icon: LayoutDashboard, color: 'text-fg/75' },
@@ -29,7 +30,7 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" className="relative py-24 md:py-32">
+    <section id="services" className="relative py-[4.8rem] md:py-[6.4rem]">
       <div className="container-xl">
         <motion.div
           variants={staggerParent(0.08, 0)}
@@ -102,15 +103,47 @@ export default function Services() {
           })}
         </motion.div>
 
-        <div className="mt-12 md:mt-14 flex justify-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-fg hover:text-accent transition-colors"
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.5, ease: easeApple }}
+          className="mt-16 md:mt-20 max-w-3xl mx-auto text-center"
+        >
+          {/* Three-up commitments */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            {[
+              { label: '50+ clients onboard' },
+              { label: 'Shipped in days, not months' },
+              { label: 'First month managed, on us' }
+            ].map((c) => (
+              <div
+                key={c.label}
+                className="rounded-full border border-hair bg-surface2/60 px-4 py-2.5 text-[12.5px] font-medium text-fg2"
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+
+          <p className="text-[14px] md:text-[14.5px] text-fg2 leading-[1.6] text-pretty">
+            Already shipping for spas, restaurants, agencies, boutiques, bars, villa managers, influencers, SaaS founders, online businesses and artisans.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => openCalendly()}
+            onMouseEnter={preloadCalendly}
+            onFocus={preloadCalendly}
+            className="mt-8 group inline-flex items-center gap-2 rounded-full bg-fg text-bg px-7 py-3.5 text-[15px] md:text-[16px] font-semibold tracking-tight hover:opacity-90 transition-opacity"
           >
-            {t.inlineCta.services}
-            <span aria-hidden>→</span>
-          </a>
-        </div>
+            Ask for an example
+            <ArrowUpRight
+              size={18}
+              className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+            />
+          </button>
+        </motion.div>
       </div>
     </section>
   )

@@ -43,7 +43,7 @@ export default function Navbar() {
   const whatWeBuildLabel = lang === 'fr' ? 'Ce qu’on construit' : 'What we build'
 
   const links = [
-    { label: whatWeBuildLabel, to: '/whatwebuild' },
+    { label: whatWeBuildLabel, to: '/#software' },
     { label: t.nav.services, to: '/#services' },
     { label: t.nav.faq, to: '/faq' },
     { label: t.nav.contact, to: '/#contact' }
