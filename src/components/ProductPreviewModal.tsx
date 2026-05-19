@@ -8,6 +8,8 @@ export interface ProductPreview {
   description: string
   image?: string
   imageAlt?: string
+  /** Optional extra screenshots shown stacked below the primary image. */
+  gallery?: string[]
 }
 
 interface ProductPreviewModalProps {
@@ -73,65 +75,89 @@ export default function ProductPreviewModal({ product, onClose }: ProductPreview
               <X size={15} strokeWidth={1.8} />
             </button>
 
-            {/* Preview area: image now, video later */}
-            <div className="relative aspect-[16/9] bg-surface2 overflow-hidden border-b border-hair">
-              {product.image ? (
-                <img
-                  src={product.image}
-                  alt={product.imageAlt ?? product.name}
-                  className="block w-full h-full object-cover object-top"
-                />
-              ) : (
-                <div
-                  aria-hidden
-                  className="w-full h-full"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle, rgb(var(--color-sub) / 0.18) 1px, transparent 1px)',
-                    backgroundSize: '14px 14px'
-                  }}
-                />
+            {/* Scrollable body: primary preview, then content, then optional gallery */}
+            <div className="overflow-y-auto">
+              {/* Primary preview area */}
+              <div className="relative aspect-[16/9] bg-surface2 overflow-hidden border-b border-hair">
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.imageAlt ?? product.name}
+                    className="block w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="w-full h-full"
+                    style={{
+                      backgroundImage:
+                        'radial-gradient(circle, rgb(var(--color-sub) / 0.18) 1px, transparent 1px)',
+                      backgroundSize: '14px 14px'
+                    }}
+                  />
+                )}
+                <div className="absolute inset-0 flex items-end justify-start p-5 pointer-events-none">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg/85 backdrop-blur text-[11px] font-semibold text-fg2 border border-hair shadow-sm">
+                    <PlayCircle size={13} strokeWidth={1.8} />
+                    Live walkthrough coming soon
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <h3
+                  id="product-modal-title"
+                  className="font-display font-semibold text-[24px] md:text-[28px] tracking-tight leading-[1.1]"
+                >
+                  {product.name}
+                </h3>
+                <p className="mt-3 text-[14px] md:text-[15px] text-fg2 leading-[1.6] text-pretty">
+                  {product.description}
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={book}
+                    onMouseEnter={preloadCalendly}
+                    onFocus={preloadCalendly}
+                    className="inline-flex items-center gap-2 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-semibold tracking-tight hover:opacity-90 transition-opacity"
+                  >
+                    Book an audit
+                    <ArrowUpRight size={16} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    className="text-[13px] font-medium text-sub hover:text-fg transition-colors px-2"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+
+              {/* Optional gallery — additional screenshots stacked below */}
+              {product.gallery && product.gallery.length > 0 && (
+                <div className="px-6 md:px-8 pb-8 space-y-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sub pt-4 border-t border-hair">
+                    More views
+                  </div>
+                  {product.gallery.map((src, i) => (
+                    <div
+                      key={`${src}-${i}`}
+                      className="rounded-xl overflow-hidden border border-hair bg-surface2"
+                    >
+                      <img
+                        src={src}
+                        alt={`${product.name} screenshot ${i + 2}`}
+                        loading="lazy"
+                        className="block w-full h-auto"
+                      />
+                    </div>
+                  ))}
+                </div>
               )}
-              {/* "Video coming soon" overlay */}
-              <div className="absolute inset-0 flex items-end justify-start p-5 pointer-events-none">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg/85 backdrop-blur text-[11px] font-semibold text-fg2 border border-hair shadow-sm">
-                  <PlayCircle size={13} strokeWidth={1.8} />
-                  Live walkthrough coming soon
-                </span>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 md:p-8 overflow-y-auto">
-              <h3
-                id="product-modal-title"
-                className="font-display font-semibold text-[24px] md:text-[28px] tracking-tight leading-[1.1]"
-              >
-                {product.name}
-              </h3>
-              <p className="mt-3 text-[14px] md:text-[15px] text-fg2 leading-[1.6] text-pretty">
-                {product.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={book}
-                  onMouseEnter={preloadCalendly}
-                  onFocus={preloadCalendly}
-                  className="inline-flex items-center gap-2 rounded-full bg-fg text-bg px-6 py-3 text-[14.5px] font-semibold tracking-tight hover:opacity-90 transition-opacity"
-                >
-                  Book an audit
-                  <ArrowUpRight size={16} />
-                </button>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="text-[13px] font-medium text-sub hover:text-fg transition-colors px-2"
-                >
-                  Close
-                </button>
-              </div>
             </div>
           </motion.div>
         </motion.div>

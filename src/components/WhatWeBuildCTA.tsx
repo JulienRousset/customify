@@ -11,6 +11,7 @@ interface Solution {
   description: string
   image?: string
   imageAlt?: string
+  gallery?: string[]
 }
 
 const SOLUTIONS: Solution[] = [
@@ -19,31 +20,54 @@ const SOLUTIONS: Solution[] = [
     name: 'All-in-one dashboard',
     description: 'One screen for revenue, bookings, social and WhatsApp. The whole operation, refreshed live. Built and shipped for My Cocotte.',
     image: '/restaurant/mycocotte/5.png',
-    imageAlt: 'All-in-one dashboard tracking the full operation'
+    imageAlt: 'All-in-one dashboard tracking the full operation',
+    gallery: [
+      '/restaurant/mycocotte/3.png',
+      '/restaurant/mycocotte/4.png',
+      '/restaurant/mycocotte/2.png',
+      '/restaurant/mycocotte/7.png',
+      '/restaurant/mycocotte/6.png'
+    ]
   },
   {
     slug: 'crm',
-    name: 'CRM',
-    description: 'Customer profiles, deals, follow-ups, history. The spreadsheet retired. Built as a mobile app so it travels with the team.',
-    image: '/examples/dashboard_tracking.JPG',
-    imageAlt: 'Modern CRM built to replace spreadsheets'
+    name: 'AI CRM',
+    description: 'Drop any Excel file. AI turns it into a clean, live dashboard with real insights and actions you can take. Customers, deals, revenue, all in one place. Also runs as a mobile app.',
+    image: '/examples/example_dashboard_crm.png',
+    imageAlt: 'AI CRM that turns Excel files into a live dashboard',
+    gallery: [
+      '/examples/example_dashboard_crm2.png'
+    ]
   },
   {
     slug: 'website-funnel',
     name: 'Website & funnel',
-    description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.'
+    description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
+    image: '/examples/example_website.png',
+    imageAlt: 'Custom website built to convert visitors into clients'
   },
   {
     slug: 'social-growth',
     name: 'Social media growth',
     description: 'Content engine, posting cadence, community management. Real audience, real signals, weekly growth. Live proof on Dylan\'s account.',
-    image: '/examples/insta_after.png',
-    imageAlt: 'Social media growth tracked over time'
+    image: '/examples/tracking_social_dashboard.JPG',
+    imageAlt: 'Social media growth tracked across platforms',
+    gallery: [
+      '/examples/social_recap.JPG',
+      '/examples/insta_after.png',
+      '/examples/insta_before.png'
+    ]
   },
   {
-    slug: 'whatsapp',
-    name: 'WhatsApp automation',
-    description: 'Lead capture, auto-replies, newsletter campaigns. Turn DMs into a real sales channel. Runs 24/7, replies in your tone.'
+    slug: 'lead-engine',
+    name: 'AI lead engine',
+    description: 'Find local leads by industry, score them, then let AI auto-reply to DMs across Instagram, WhatsApp and Telegram. From cold prospect to booked call, on autopilot.',
+    image: '/examples/example_setter_ai.png',
+    imageAlt: 'AI setter handling DM conversations end-to-end',
+    gallery: [
+      '/examples/example_scan_leads.png',
+      '/examples/example_scan_leads2.png'
+    ]
   }
 ]
 
