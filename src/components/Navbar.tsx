@@ -41,10 +41,11 @@ export default function Navbar() {
   }, [mobileOpen])
 
   const whatWeBuildLabel = lang === 'fr' ? 'Ce qu’on construit' : 'What we build'
+  const whoForLabel = lang === 'fr' ? 'Pour qui' : 'Who for'
 
   const links = [
     { label: whatWeBuildLabel, to: '/#software' },
-    { label: t.nav.services, to: '/#services' },
+    { label: whoForLabel, to: '/#services' },
     { label: t.nav.faq, to: '/faq' },
     { label: t.nav.contact, to: '/#contact' }
   ]

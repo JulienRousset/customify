@@ -9,6 +9,7 @@ interface Solution {
   slug: string
   name: string
   description: string
+  price: string
   image?: string
   imageAlt?: string
   gallery?: string[]
@@ -17,10 +18,11 @@ interface Solution {
 const SOLUTIONS: Solution[] = [
   {
     slug: 'dashboard',
-    name: 'All-in-one dashboard',
-    description: 'One screen for revenue, bookings, social and WhatsApp. The whole operation, refreshed live. Built and shipped for My Cocotte.',
+    name: 'Marketing Dashboard',
+    description: 'One screen for revenue, bookings, social and message automation.',
+    price: 'from $200 / month',
     image: '/restaurant/mycocotte/5.png',
-    imageAlt: 'All-in-one dashboard tracking the full operation',
+    imageAlt: 'Marketing dashboard tracking the full operation',
     gallery: [
       '/restaurant/mycocotte/3.png',
       '/restaurant/mycocotte/4.png',
@@ -33,6 +35,7 @@ const SOLUTIONS: Solution[] = [
     slug: 'crm',
     name: 'AI CRM',
     description: 'Drop any Excel file. AI turns it into a clean, live dashboard with real insights and actions you can take. Customers, deals, revenue, all in one place. Also runs as a mobile app.',
+    price: '$1,499 – $3,999',
     image: '/examples/example_dashboard_crm.png',
     imageAlt: 'AI CRM that turns Excel files into a live dashboard',
     gallery: [
@@ -41,15 +44,17 @@ const SOLUTIONS: Solution[] = [
   },
   {
     slug: 'website-funnel',
-    name: 'Website & funnel',
+    name: 'Website & Funnel',
     description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
+    price: '$399 – $1,999',
     image: '/examples/example_website.png',
     imageAlt: 'Custom website built to convert visitors into clients'
   },
   {
     slug: 'social-growth',
     name: 'Social media growth',
-    description: 'Content engine, posting cadence, community management. Real audience, real signals, weekly growth. Live proof on Dylan\'s account.',
+    description: 'Social media growth, managed end-to-end: content, strategy, engagement, audience building and brand expansion.',
+    price: '$1,499 – $2,999 / month',
     image: '/examples/tracking_social_dashboard.JPG',
     imageAlt: 'Social media growth tracked across platforms',
     gallery: [
@@ -60,10 +65,11 @@ const SOLUTIONS: Solution[] = [
   },
   {
     slug: 'lead-engine',
-    name: 'AI lead engine',
+    name: 'AI Chat',
     description: 'Find local leads by industry, score them, then let AI auto-reply to DMs across Instagram, WhatsApp and Telegram. From cold prospect to booked call, on autopilot.',
+    price: 'from $1,000',
     image: '/examples/example_setter_ai.png',
-    imageAlt: 'AI setter handling DM conversations end-to-end',
+    imageAlt: 'AI chat handling DM conversations end-to-end',
     gallery: [
       '/examples/example_scan_leads.png',
       '/examples/example_scan_leads2.png'
@@ -138,12 +144,17 @@ export default function WhatWeBuildCTA() {
                     <p className="mt-2.5 text-[13.5px] md:text-[14px] text-fg2 leading-[1.55] text-pretty">
                       {s.description}
                     </p>
-                    <div className="mt-auto pt-6 inline-flex items-center gap-1.5 text-[12.5px] font-semibold tracking-tight text-fg group-hover:gap-2.5 transition-all">
-                      See it in action
-                      <ArrowUpRight
-                        size={14}
-                        className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
-                      />
+                    <div className="mt-auto pt-6 flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold tracking-tight text-fg group-hover:gap-2.5 transition-all">
+                        See it in action
+                        <ArrowUpRight
+                          size={14}
+                          className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+                        />
+                      </span>
+                      <span className="text-[11.5px] text-sub font-medium whitespace-nowrap">
+                        {s.price}
+                      </span>
                     </div>
                   </div>
                 </button>
@@ -183,10 +194,10 @@ export default function WhatWeBuildCTA() {
 
                 <div className="p-6 md:p-7 flex flex-col flex-1">
                   <h3 className="font-display font-semibold text-[20px] md:text-[22px] tracking-tight leading-[1.15]">
-                    Ask for your solution
+                    Ask For Your Solution
                   </h3>
                   <p className="mt-2.5 text-[13.5px] md:text-[14px] text-fg2 leading-[1.55] text-pretty">
-                    Your business runs nothing like these. So we build the software around the way you actually operate.
+                    Your business needs something different. So we build the solution around the way you actually operate.
                   </p>
                   <div className="mt-auto pt-6 inline-flex items-center gap-1.5 text-[12.5px] font-semibold tracking-tight text-fg group-hover:gap-2.5 transition-all">
                     Book an audit

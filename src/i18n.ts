@@ -11,7 +11,7 @@ export const translations = {
       fit: 'Good fit',
       faq: 'FAQ',
       contact: 'Contact',
-      cta: 'Let’s talk'
+      cta: 'Book an Audit'
     },
     inlineCta: {
       services: 'Discuss your build',
@@ -277,9 +277,9 @@ export const translations = {
     contact: {
       eyebrow: 'Get in touch',
       founderNote: 'Hi, I’m Alex. I read every message personally and reply within 24 hours.',
-      h2a: 'Tell us where',
-      h2b: 'it’s stuck.',
-      sub: 'One sentence is enough. We reply within 24 hours with a free 5-minute audit of one thing we can automate this week. No strings, no deck.',
+      h2a: 'Ready to',
+      h2b: 'optimize?',
+      sub: 'One sentence is enough. We reply within 24 hours with a free audit. From single features to a full AI ecosystem, we deliver.',
       freeAudit: 'Free 24h audit · No call required',
       emailLabel: 'Email, best for briefs',
       waLabel: 'WhatsApp, quick questions',
@@ -364,7 +364,7 @@ export const translations = {
       fit: 'Pour qui',
       faq: 'FAQ',
       contact: 'Contact',
-      cta: 'Discutons'
+      cta: 'Réserver un audit'
     },
     inlineCta: {
       services: 'Parlons de votre projet',
@@ -630,9 +630,9 @@ export const translations = {
     contact: {
       eyebrow: 'Parlons-en',
       founderNote: 'Salut, c’est Alex. Je lis chaque message moi-même et je réponds sous 24 h.',
-      h2a: 'Dites-nous',
-      h2b: 'où ça coince.',
-      sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit de 5 minutes sur une chose qu’on peut automatiser cette semaine. Sans engagement, sans deck.',
+      h2a: 'Prêt à',
+      h2b: 'optimiser ?',
+      sub: 'Une phrase suffit. On répond sous 24 h avec un audit gratuit. Du simple feature à l’écosystème AI complet, on livre.',
       freeAudit: 'Audit offert sous 24 h · Sans appel',
       emailLabel: 'Email, idéal pour les briefs',
       waLabel: 'WhatsApp, pour une question rapide',
