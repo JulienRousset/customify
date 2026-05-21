@@ -4,64 +4,55 @@ import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion
 interface FloatingLabel {
   label: string
   color: string
-  rotate: number
-  /** Desktop position — pushed to the outer edges so the title block breathes. */
+  /** Vertical positions stay within ~0-20% of the SECTION's top or bottom strip
+   *  (the strips live inside the 12rem padding around the centered title). */
   position: { top?: string; bottom?: string; left?: string; right?: string }
-  /** Float animation parameters */
-  float: { dur: number; dy: number; dx: number; delay: number }
+  float: { dur: number; dy: number; delay: number }
 }
 
-/* Constellation positions: labels span the full width and stay well clear of
-   the centered title block. Horizontals from 3% to 80%, verticals at the very
-   top + very bottom of the section. */
 const LABELS: FloatingLabel[] = [
-  // Top arc — pushed up + spread across the width
-  { label: 'Spa',              color: '#34c759', rotate: -3, position: { top: '4%',  left: '5%'  }, float: { dur: 7.2, dy: -8,  dx: 4,  delay: 0   } },
-  { label: 'Restaurant',       color: '#ff7a59', rotate: 2,  position: { top: '2%',  left: '26%' }, float: { dur: 8.0, dy: -10, dx: -5, delay: 0.3 } },
-  { label: 'Boutique',         color: '#ff375f', rotate: -2, position: { top: '8%',  left: '54%' }, float: { dur: 6.6, dy: -7,  dx: 3,  delay: 0.6 } },
-  { label: 'Bar',              color: '#ff3b30', rotate: 3,  position: { top: '4%',  right: '6%' }, float: { dur: 7.6, dy: -9,  dx: -4, delay: 0.2 } },
+  // Top strip — all labels live above the title block, in the top 22% of the section
+  { label: 'Spa',              color: '#34c759', position: { top: '6%',  left: '6%'  }, float: { dur: 5.6, dy: 8,  delay: 0   } },
+  { label: 'Restaurant',       color: '#ff7a59', position: { top: '15%', left: '22%' }, float: { dur: 7.2, dy: 10, delay: 0.7 } },
+  { label: 'Boutique',         color: '#ff375f', position: { top: '4%',  left: '42%' }, float: { dur: 6.0, dy: 7,  delay: 1.3 } },
+  { label: 'Bar',              color: '#ff3b30', position: { top: '13%', left: '58%' }, float: { dur: 8.0, dy: 9,  delay: 0.3 } },
+  { label: 'Influencer',       color: '#bf5af2', position: { top: '6%',  right: '6%' }, float: { dur: 6.5, dy: 8,  delay: 1.0 } },
 
-  // Mid sides — pulled to the very edges
-  { label: 'Influencer',       color: '#bf5af2', rotate: -2, position: { top: '44%', left: '2%'  }, float: { dur: 9.0, dy: -11, dx: 5,  delay: 0.5 } },
-  { label: 'Villa management', color: '#0a84ff', rotate: 3,  position: { top: '42%', right: '2%' }, float: { dur: 8.4, dy: -10, dx: -4, delay: 0.7 } },
-
-  // Bottom arc — pushed down + spread
-  { label: 'Artisan',          color: '#ff9f0a', rotate: -2, position: { bottom: '6%', left: '5%'  }, float: { dur: 7.4, dy: -9,  dx: 4,  delay: 0.4 } },
-  { label: 'Online business',  color: '#00B67A', rotate: 1,  position: { bottom: '2%', left: '24%' }, float: { dur: 8.8, dy: -10, dx: -5, delay: 0.1 } },
-  { label: 'SaaS',             color: '#25D366', rotate: -1, position: { bottom: '8%', left: '50%' }, float: { dur: 6.4, dy: -7,  dx: 3,  delay: 0.8 } },
-  { label: 'Entrepreneur',     color: '#0071e3', rotate: 2,  position: { bottom: '4%', right: '24%'}, float: { dur: 7.8, dy: -9,  dx: -4, delay: 0.5 } },
-  { label: 'Agency',           color: '#af52de', rotate: -3, position: { bottom: '8%', right: '5%' }, float: { dur: 9.2, dy: -11, dx: 5,  delay: 0.9 } }
+  // Bottom strip — all labels live below the CTA, in the bottom 22% of the section
+  { label: 'Villa management', color: '#0a84ff', position: { bottom: '13%', left: '4%'  }, float: { dur: 7.4, dy: 9,  delay: 0.4 } },
+  { label: 'Artisan',          color: '#ff9f0a', position: { bottom: '4%',  left: '22%' }, float: { dur: 5.8, dy: 7,  delay: 1.1 } },
+  { label: 'Online business',  color: '#00B67A', position: { bottom: '15%', left: '42%' }, float: { dur: 6.8, dy: 8,  delay: 0.2 } },
+  { label: 'SaaS',             color: '#25D366', position: { bottom: '4%',  left: '58%' }, float: { dur: 7.0, dy: 9,  delay: 0.9 } },
+  { label: 'Entrepreneur',     color: '#0071e3', position: { bottom: '15%', right: '22%'}, float: { dur: 6.2, dy: 7,  delay: 1.5 } },
+  { label: 'Agency',           color: '#af52de', position: { bottom: '4%',  right: '4%' }, float: { dur: 8.2, dy: 10, delay: 0.5 } }
 ]
 
-function FloatingPill({ label, color, rotate, position, float, index }: FloatingLabel & { index: number }) {
+function FloatingPill({ label, color, position, float, index }: FloatingLabel & { index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
+      initial={{ opacity: 0, scale: 0.85 }}
       animate={{
         opacity: 1,
         scale: 1,
-        y: [0, float.dy, 0],
-        x: [0, float.dx, 0, -float.dx, 0]
+        y: [0, -float.dy, 0]
       }}
       transition={{
         opacity: { duration: 0.7, delay: 0.3 + index * 0.05, ease: easeApple },
         scale: { duration: 0.7, delay: 0.3 + index * 0.05, ease: easeApple },
-        y: { duration: float.dur, repeat: Infinity, ease: 'easeInOut', delay: float.delay },
-        x: { duration: float.dur * 1.4, repeat: Infinity, ease: 'easeInOut', delay: float.delay }
+        y: { duration: float.dur, repeat: Infinity, ease: 'easeInOut', delay: float.delay }
       }}
       whileHover={{
-        scale: 1.08,
+        scale: 1.06,
         y: 0,
-        x: 0,
         transition: { type: 'spring', stiffness: 320, damping: 18 }
       }}
       style={{
         ...position,
-        transform: `rotate(${rotate}deg)`,
-        background: `linear-gradient(135deg, ${color}28, ${color}0d)`,
-        borderColor: `${color}44`,
-        boxShadow: `0 0 28px ${color}33, 0 8px 22px rgba(0,0,0,0.06)`,
-        color
+        background: `linear-gradient(135deg, ${color}24, ${color}0a)`,
+        borderColor: `${color}3d`,
+        color,
+        boxShadow: `0 0 48px ${color}28, 0 0 20px ${color}22, 0 8px 24px rgba(0,0,0,0.06)`,
+        willChange: 'transform'
       }}
       className="absolute inline-flex items-center rounded-full border backdrop-blur-xl px-5 py-2.5 text-[14.5px] md:text-[15.5px] font-semibold tracking-tight cursor-default select-none whitespace-nowrap"
     >
@@ -76,31 +67,32 @@ export default function Services() {
       id="services"
       className="relative overflow-hidden py-[8rem] md:py-[10rem] lg:py-[12rem]"
     >
-      {/* Subtle ambient halos to give the glass backdrop-blur something to work with */}
+      {/* Ambient halos */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute top-[15%] left-[20%] w-[600px] h-[600px] rounded-full blur-[140px] opacity-30 dark:opacity-50"
+          className="absolute top-[18%] left-[18%] w-[600px] h-[600px] rounded-full blur-[140px] opacity-30 dark:opacity-50"
           style={{ background: 'radial-gradient(circle, rgba(191,90,242,0.18), transparent 70%)' }}
         />
         <div
-          className="absolute bottom-[10%] right-[15%] w-[600px] h-[600px] rounded-full blur-[140px] opacity-30 dark:opacity-50"
+          className="absolute bottom-[12%] right-[15%] w-[600px] h-[600px] rounded-full blur-[140px] opacity-30 dark:opacity-50"
           style={{ background: 'radial-gradient(circle, rgba(10,132,255,0.18), transparent 70%)' }}
         />
       </div>
 
-      <div className="relative container-xl">
-        {/* Constellation of floating labels (desktop) — full width, well clear of the title */}
-        <div aria-hidden className="hidden lg:block absolute inset-0 pointer-events-none">
-          <div className="relative w-full h-full pointer-events-none">
-            {LABELS.map((l, i) => (
-              <div key={l.label} className="pointer-events-auto">
-                <FloatingPill {...l} index={i} />
-              </div>
-            ))}
+      {/* Floating labels — anchored to the SECTION (not the title container) so
+          top/bottom percentages map to the full section height including padding.
+          Labels stay within the top 18% and bottom 18% strips, never inside the
+          middle 64% where the title block lives. */}
+      <div aria-hidden className="hidden lg:block absolute inset-0 pointer-events-none">
+        {LABELS.map((l, i) => (
+          <div key={l.label} className="pointer-events-auto">
+            <FloatingPill {...l} index={i} />
           </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Centered content — sits above the constellation */}
+      {/* Centered content — vertically in the middle 64% strip, untouchable */}
+      <div className="relative container-xl">
         <motion.div
           variants={staggerParent(0.1, 0)}
           initial="hidden"
@@ -131,10 +123,10 @@ export default function Services() {
               key={l.label}
               className="inline-flex items-center rounded-full border backdrop-blur-xl text-[13px] font-semibold tracking-tight px-4 py-2"
               style={{
-                background: `linear-gradient(135deg, ${l.color}28, ${l.color}0d)`,
-                borderColor: `${l.color}44`,
+                background: `linear-gradient(135deg, ${l.color}24, ${l.color}0a)`,
+                borderColor: `${l.color}3d`,
                 color: l.color,
-                boxShadow: `0 0 20px ${l.color}28`
+                boxShadow: `0 0 24px ${l.color}24`
               }}
             >
               {l.label}
