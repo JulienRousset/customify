@@ -40,11 +40,13 @@ const SOLUTIONS: Solution[] = [
     name: 'AI CRM',
     description: 'Drop any Excel file. AI turns it into a clean, live dashboard with real insights and actions you can take. Customers, deals, revenue, all in one place. Also runs as a mobile app.',
     price: '$1,499 – $3,999',
-    image: '/examples/example_dashboard_crm.png',
+    image: '/examples/example_dashboard_crm1.png',
     imageAlt: 'AI CRM that turns Excel files into a live dashboard',
     video: '/videos/preview_trailer_crm.MOV',
     gallery: [
-      '/examples/example_dashboard_crm2.png'
+      '/examples/example_dashboard_crm1.png',
+      '/examples/example_dashboard_crm2.png',
+      '/examples/example_dashboard_crm3.png'
     ]
   },
   {
@@ -52,9 +54,14 @@ const SOLUTIONS: Solution[] = [
     name: 'Website & Funnel',
     description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
     price: '$399 – $1,999',
-    image: '/examples/example_website.png',
+    image: '/examples/example_website1.png',
     imageAlt: 'Custom website built to convert visitors into clients',
-    video: '/videos/preview_trailer_website.mov'
+    video: '/videos/preview_trailer_website.mov',
+    gallery: [
+      '/examples/example_website1.png',
+      '/examples/example_website2.png',
+      '/examples/example_website3.png'
+    ]
   },
   {
     slug: 'social-growth',
