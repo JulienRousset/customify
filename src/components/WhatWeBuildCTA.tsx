@@ -12,6 +12,10 @@ interface Solution {
   price: string
   image?: string
   imageAlt?: string
+  /** Walkthrough video played in the modal. Drop the file in /public/videos/.
+   *  .mp4 or .webm recommended for cross-browser; .mov works in Chrome / Safari
+   *  but not always in Firefox. */
+  video?: string
   gallery?: string[]
 }
 
@@ -38,6 +42,7 @@ const SOLUTIONS: Solution[] = [
     price: '$1,499 – $3,999',
     image: '/examples/example_dashboard_crm.png',
     imageAlt: 'AI CRM that turns Excel files into a live dashboard',
+    video: '/videos/preview_trailer_crm.MOV',
     gallery: [
       '/examples/example_dashboard_crm2.png'
     ]
@@ -48,7 +53,8 @@ const SOLUTIONS: Solution[] = [
     description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
     price: '$399 – $1,999',
     image: '/examples/example_website.png',
-    imageAlt: 'Custom website built to convert visitors into clients'
+    imageAlt: 'Custom website built to convert visitors into clients',
+    video: '/videos/preview_trailer_website.mov'
   },
   {
     slug: 'social-growth',
@@ -70,9 +76,12 @@ const SOLUTIONS: Solution[] = [
     price: 'from $1,000',
     image: '/examples/example_setter_ai.png',
     imageAlt: 'AI chat handling DM conversations end-to-end',
+    video: '/videos/preview_trailer_aibot.mov',
     gallery: [
-      '/examples/example_scan_leads.png',
-      '/examples/example_scan_leads2.png'
+      '/examples/example_setter_ai.png',
+      '/examples/example_setter_ai_inbox.png',
+      '/examples/example_setter_ai_contacts.png',
+      '/examples/example_setter_ai_connections.png'
     ]
   }
 ]

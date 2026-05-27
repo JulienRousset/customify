@@ -21,10 +21,12 @@
 
     <!-- CSP: allows GA4, Microsoft Clarity, Meta Pixel, TikTok Pixel only when
          the user accepts. Scripts only load via the consent flow.
-         Calendly origins are allowed so the booking popup can load. -->
+         Calendly origins are allowed so the booking popup can load.
+         'wasm-unsafe-eval' + worker-src blob: are required by @google/model-viewer
+         (3D hero logo) which uses WebAssembly + Web Workers to decode textures. -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://analytics.tiktok.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; font-src 'self' data: https://assets.calendly.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://www.facebook.com https://analytics.tiktok.com https://calendly.com https://*.calendly.com; frame-src https://www.facebook.com https://td.doubleclick.net https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: https://www.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://analytics.tiktok.com https://assets.calendly.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://assets.calendly.com; font-src 'self' data: https://assets.calendly.com; img-src 'self' data: https: blob:; connect-src 'self' blob: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://www.facebook.com https://analytics.tiktok.com https://calendly.com https://*.calendly.com; frame-src https://www.facebook.com https://td.doubleclick.net https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self';"
     />
 
     <title>Customy · Every business is unique, yours should be too.</title>
