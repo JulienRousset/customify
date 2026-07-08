@@ -22,6 +22,11 @@ interface ContactPayload {
   email?: string
   source?: string
   lang?: string
+  // Optional visitor name (contact form) and a free-form summary (e.g. the
+  // package a visitor composed on the /offer page). Both are optional so
+  // existing callers keep working unchanged.
+  name?: string
+  summary?: string
   // Honeypot — humans never fill this; bots will. We silently 200 if filled.
   website?: string
 }
@@ -199,21 +204,27 @@ async function handleContact(
   const lang = body.lang === 'fr' ? 'fr' : 'en'
   const country = request.headers.get('cf-ipcountry') ?? 'unknown'
   const refer = request.headers.get('referer') ?? 'direct'
+  const name = (body.name ?? '').trim().slice(0, 120)
+  const summary = (body.summary ?? '').trim().slice(0, 6000)
 
   const safeEmail = escapeHtml(email)
   const safeSource = escapeHtml(source)
   const safeRefer = escapeHtml(refer)
   const safeCountry = escapeHtml(country)
+  const safeName = escapeHtml(name)
+  const safeSummary = escapeHtml(summary)
 
   const text = [
     'New lead from customy.agency',
     '',
+    ...(name ? [`Name:    ${name}`] : []),
     `Email:   ${email}`,
     `Source:  ${source}`,
     `Lang:    ${lang}`,
     `Country: ${country}`,
     `Referer: ${refer}`,
     `IP:      ${ip}`,
+    ...(summary ? ['', '--- Package / message ---', summary] : []),
     '',
     'Reply directly to this email. Reply-To is set to the visitor.'
   ].join('\n')
@@ -221,11 +232,13 @@ async function handleContact(
   const html = `
     <div style="font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; color: #1c1a18;">
       <h2 style="margin: 0 0 16px; font-weight: 600; letter-spacing: -0.02em;">New lead from customy.agency</h2>
+      ${safeName ? `<p style="margin: 0 0 12px;"><strong>Name:</strong> ${safeName}</p>` : ''}
       <p style="margin: 0 0 12px;"><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
       <p style="margin: 0 0 12px;"><strong>Source:</strong> ${safeSource}</p>
       <p style="margin: 0 0 12px;"><strong>Lang:</strong> ${lang}</p>
       <p style="margin: 0 0 12px;"><strong>Country:</strong> ${safeCountry}</p>
       <p style="margin: 0 0 12px;"><strong>Referer:</strong> ${safeRefer}</p>
+      ${safeSummary ? `<div style="margin: 16px 0; padding: 14px 16px; background: #f5f4f2; border-radius: 10px;"><div style="font-weight: 600; margin-bottom: 8px;">Package / message</div><pre style="margin: 0; font-family: ui-monospace, monospace; font-size: 13px; white-space: pre-wrap; line-height: 1.5;">${safeSummary}</pre></div>` : ''}
       <p style="margin: 24px 0 0; color: #756d63; font-size: 13px;">Reply directly to this email. Reply-To is set to the visitor.</p>
     </div>
   `

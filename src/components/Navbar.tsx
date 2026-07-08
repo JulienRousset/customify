@@ -42,10 +42,12 @@ export default function Navbar() {
 
   const whatWeBuildLabel = lang === 'fr' ? 'Ce qu’on construit' : 'What we build'
   const whoForLabel = lang === 'fr' ? 'Pour qui' : 'For who'
+  const pricingLabel = lang === 'fr' ? 'Offres' : 'Pricing'
 
   const links = [
     { label: whatWeBuildLabel, to: '/#software' },
     { label: whoForLabel, to: '/#services' },
+    { label: pricingLabel, to: '/offer' },
     { label: t.nav.faq, to: '/faq' },
     { label: t.nav.contact, to: '/#contact' }
   ]
@@ -140,7 +142,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden bg-bg pt-[3.85rem] overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-[45] md:hidden bg-bg pt-[3.85rem] overflow-y-auto overscroll-contain"
           >
             <motion.div
               initial={{ opacity: 0, y: -8 }}

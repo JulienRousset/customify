@@ -21,6 +21,7 @@ export default function VerticalFooter() {
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-fg2">
               <Link to="/" className="hover:text-fg transition-colors">Home</Link>
+              <Link to="/offer" className="hover:text-fg transition-colors">Pricing</Link>
               <Link to="/whatwebuild" className="hover:text-fg transition-colors">What we build</Link>
               <Link to="/whatwebuild/restaurants" className="hover:text-fg transition-colors">Restaurants</Link>
               <Link to="/whatwebuild/spa-wellness" className="hover:text-fg transition-colors">Spa</Link>

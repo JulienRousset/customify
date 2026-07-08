@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 
 const FAQPage = lazy(() => import('./pages/FAQ'))
+const OfferPage = lazy(() => import('./pages/Offer'))
 
 function PageSkeleton() {
   return <div aria-hidden className="min-h-[80vh] w-full" />
@@ -20,6 +21,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageSkeleton />}>
                 <FAQPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/offer"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <OfferPage />
               </Suspense>
             }
           />
