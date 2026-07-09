@@ -186,7 +186,7 @@ export const ADDONS: AddOn[] = [
   {
     id: 'yestau',
     icon: UtensilsCrossed,
-    name: { en: 'Yestau — Restaurant dashboard', fr: 'Yestau — Dashboard restaurant' },
+    name: { en: 'Yestau · Restaurant dashboard', fr: 'Yestau · Dashboard restaurant' },
     desc: { en: 'Acquisition, retention and message tracking for restaurants.', fr: 'Acquisition, rétention, contenu et suivi des messages pour les restaurants.' },
     price: 890
   },

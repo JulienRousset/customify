@@ -20,7 +20,68 @@ export const translations = {
       whoFor: 'On the fence? Email us. We’ll tell you honestly.'
     },
     marquee: {
-      header: 'Trusted by physical and online businesses'
+      header: 'Trusted by physical and online businesses',
+      kinds: {
+        Restaurant: 'Restaurant',
+        Wellness: 'Wellness',
+        'Travel solution': 'Travel solution',
+        Spa: 'Spa',
+        'Organic brand': 'Organic brand',
+        Sourcing: 'Sourcing',
+        'Personal brand': 'Personal brand'
+      }
+    },
+    whatWeBuild: {
+      eyebrow: 'What we build',
+      h2a: 'Solutions in production.',
+      h2b: 'Your business gets its own.',
+      sub: 'Custom tools already running for clients. Built around how their businesses actually operate. Yours could be next.',
+      seeItInAction: 'See it in action',
+      askTitle: 'Ask For Your Solution',
+      askDesc: 'Your business needs something different. So we build the solution around the way you actually operate.',
+      askCta: 'Book an audit',
+      solutions: {
+        dashboard: {
+          name: 'Marketing Dashboard',
+          description: 'One screen for revenue, bookings, social and message automation.',
+          price: 'from $200 / month'
+        },
+        crm: {
+          name: 'AI CRM',
+          description: 'Drop any Excel file. AI turns it into a clean, live dashboard with real insights and actions you can take. Customers, deals, revenue, all in one place. Also runs as a mobile app.',
+          price: '$1,499 – $3,999'
+        },
+        'website-funnel': {
+          name: 'Website & Funnel',
+          description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
+          price: '$399 – $1,999'
+        },
+        'social-growth': {
+          name: 'Social media growth',
+          description: 'Social media growth, managed end-to-end: content, strategy, engagement, audience building and brand expansion.',
+          price: '$1,499 – $2,999 / month'
+        },
+        'lead-engine': {
+          name: 'AI Chat',
+          description: 'Find local leads by industry, score them, then let AI auto-reply to DMs across Instagram, WhatsApp and Telegram. From cold prospect to booked call, on autopilot.',
+          price: 'from $1,000'
+        }
+      }
+    },
+    whoWeWork: {
+      eyebrow: 'Who we work with',
+      h2a: 'Every solution is unique,',
+      h2b: 'built around your business.',
+      sub: 'Our solutions are 100% customized and adapted to any business. We ship in days, around your needs.',
+      clientsPrefix: '50+ clients',
+      clientsSuffix: 'already onboard'
+    },
+    footerLinks: {
+      home: 'Home',
+      pricing: 'Pricing',
+      faq: 'FAQ',
+      contact: 'Contact',
+      leaveReview: 'Leave a review'
     },
     automation: {
       eyebrow: 'Case study · A spa in Bali',
@@ -284,6 +345,8 @@ export const translations = {
       emailLabel: 'Email, best for briefs',
       waLabel: 'WhatsApp, quick questions',
       waAction: 'Message us',
+      poweredBy: 'Powered by',
+      seeReviews: 'See our reviews',
       availability: 'Availability',
       availabilityBody: 'Taking 2 new clients this quarter. Start in 2 to 3 weeks.',
       form: {
@@ -345,6 +408,7 @@ export const translations = {
       customize: 'Customize',
       savePrefs: 'Save preferences',
       close: 'Close',
+      manage: 'Cookie preferences',
       necessaryLabel: 'Necessary',
       necessaryDesc: 'Required for the site to work (theme preference, your consent choice).',
       analyticsLabel: 'Analytics',
@@ -373,7 +437,68 @@ export const translations = {
       whoFor: 'Sur la balance ? Écrivez-nous, on vous dira honnêtement'
     },
     marquee: {
-      header: 'Choisis par des business physiques et en ligne'
+      header: 'Choisis par des business physiques et en ligne',
+      kinds: {
+        Restaurant: 'Restaurant',
+        Wellness: 'Bien-être',
+        'Travel solution': 'Solution voyage',
+        Spa: 'Spa',
+        'Organic brand': 'Marque bio',
+        Sourcing: 'Sourcing',
+        'Personal brand': 'Marque perso'
+      }
+    },
+    whatWeBuild: {
+      eyebrow: 'Ce qu’on construit',
+      h2a: 'Des solutions en production.',
+      h2b: 'La vôtre aura la sienne.',
+      sub: 'Des outils sur mesure déjà en service chez nos clients. Conçus autour de leur façon de travailler. Le vôtre pourrait être le prochain.',
+      seeItInAction: 'Voir en action',
+      askTitle: 'Demandez votre solution',
+      askDesc: 'Votre business a besoin d’autre chose. Alors on construit la solution autour de votre façon de travailler.',
+      askCta: 'Réserver un audit',
+      solutions: {
+        dashboard: {
+          name: 'Dashboard marketing',
+          description: 'Un seul écran pour le chiffre d’affaires, les réservations, le social et l’automatisation des messages.',
+          price: 'à partir de 200 $ / mois'
+        },
+        crm: {
+          name: 'CRM IA',
+          description: 'Déposez n’importe quel fichier Excel. L’IA le transforme en dashboard clair et vivant, avec de vrais insights et des actions à mener. Clients, deals, revenus, au même endroit. Fonctionne aussi en app mobile.',
+          price: '1 499 – 3 999 $'
+        },
+        'website-funnel': {
+          name: 'Site web & tunnel',
+          description: 'Site sur mesure ou tunnel de conversion complet. Du premier clic au rendez-vous réservé, conçu pour convertir. Construit avec vos outils, votre ton, votre stack.',
+          price: '399 – 1 999 $'
+        },
+        'social-growth': {
+          name: 'Croissance réseaux sociaux',
+          description: 'Croissance des réseaux gérée de bout en bout : contenu, stratégie, engagement, communauté et expansion de marque.',
+          price: '1 499 – 2 999 $ / mois'
+        },
+        'lead-engine': {
+          name: 'Chat IA',
+          description: 'Trouvez des leads locaux par secteur, scorez-les, puis laissez l’IA répondre aux DM sur Instagram, WhatsApp et Telegram. Du prospect froid au rendez-vous réservé, en pilote automatique.',
+          price: 'à partir de 1 000 $'
+        }
+      }
+    },
+    whoWeWork: {
+      eyebrow: 'Avec qui on travaille',
+      h2a: 'Chaque solution est unique,',
+      h2b: 'pensée pour votre business.',
+      sub: 'Nos solutions sont 100 % personnalisées et adaptées à tout business. On livre en quelques jours, autour de vos besoins.',
+      clientsPrefix: '50+ clients',
+      clientsSuffix: 'déjà à bord'
+    },
+    footerLinks: {
+      home: 'Accueil',
+      pricing: 'Offres',
+      faq: 'FAQ',
+      contact: 'Contact',
+      leaveReview: 'Laisser un avis'
     },
     automation: {
       eyebrow: 'Étude de cas · Un spa à Bali',
@@ -637,6 +762,8 @@ export const translations = {
       emailLabel: 'Email, idéal pour les briefs',
       waLabel: 'WhatsApp, pour une question rapide',
       waAction: 'Nous écrire',
+      poweredBy: 'Propulsé par',
+      seeReviews: 'Voir nos avis',
       availability: 'Disponibilité',
       availabilityBody: 'On prend 2 nouveaux clients ce trimestre. Démarrage sous 2 à 3 semaines.',
       form: {
@@ -698,6 +825,7 @@ export const translations = {
       customize: 'Personnaliser',
       savePrefs: 'Enregistrer',
       close: 'Fermer',
+      manage: 'Préférences cookies',
       necessaryLabel: 'Nécessaires',
       necessaryDesc: 'Indispensables au fonctionnement du site (thème, votre choix de consentement).',
       analyticsLabel: 'Statistiques',

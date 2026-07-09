@@ -124,6 +124,7 @@
   .body-lg { @apply text-[18px] md:text-[20px] leading-[1.5] text-fg2; }
   .body-md { @apply text-[16px] leading-[1.55] text-fg2; }
   .label-xs { @apply text-[12px] font-medium text-sub; }
+  .num-mono { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
 
   .card {
     @apply bg-surface2 rounded-[22px] border border-hair transition-all duration-300 ease-out;

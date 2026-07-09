@@ -19,9 +19,9 @@ const detect = (): Lang => {
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en')
-
-  useEffect(() => { setLangState(detect()) }, [])
+  // Initialize from storage/navigator immediately (lazy init) so the first
+  // paint is already in the right language — no EN→FR flash for FR visitors.
+  const [lang, setLangState] = useState<Lang>(detect)
 
   useEffect(() => {
     try { localStorage.setItem('lang', lang) } catch { /* ignore */ }

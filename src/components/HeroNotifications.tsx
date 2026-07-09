@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { MessageCircle, TrendingUp, GitMerge, Megaphone } from 'lucide-react'
 import { useLang } from '../lang'
 
@@ -9,16 +9,10 @@ const icons: Record<string, React.ReactNode> = {
   ads: <Megaphone size={18} strokeWidth={1.7} className="text-fg/75" />
 }
 
-// Maps each notification index to the matching Services item index
-// 0 WhatsApp Push     -> 2 Social & Automation
-// 1 More Clients      -> 3 Marketing strategy
-// 2 Custom Ad Funnels -> 5 Sales funnels
-// 3 Optimized Ads     -> 4 Ads, managed
-const targetService = [2, 3, 5, 4]
-
 export default function HeroNotifications() {
   const { t } = useLang()
   const notifications = t.hero.notifications
+  const reduce = useReducedMotion()
 
   // Four true corners, pulled out so they don't overlap the 3D logo
   const positions = [
@@ -39,28 +33,27 @@ export default function HeroNotifications() {
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none">
       {notifications.map((notif, i) => {
-        const target = targetService[i] ?? 0
         const float = floats[i]
-        const onClick = () => {
-          window.dispatchEvent(new CustomEvent('highlight-service', { detail: target }))
-        }
         return (
           <motion.a
             key={i}
-            href={`#service-${target}`}
-            onClick={onClick}
+            href="#services"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{
               opacity: 1,
               scale: 1,
-              y: float.y,
-              x: float.x
+              y: reduce ? 0 : float.y,
+              x: reduce ? 0 : float.x
             }}
             transition={{
               opacity: { duration: 0.6, delay: 0.2 + i * 0.15, ease: 'easeOut' },
               scale: { duration: 0.6, delay: 0.2 + i * 0.15, type: 'spring', stiffness: 200, damping: 20 },
-              y: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 },
-              x: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 }
+              ...(reduce
+                ? {}
+                : {
+                    y: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 },
+                    x: { duration: float.duration, repeat: Infinity, ease: 'easeInOut', delay: 0.2 + i * 0.15 }
+                  })
             }}
             whileHover={{ scale: 1.04 }}
             className={`

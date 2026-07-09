@@ -73,6 +73,17 @@ export function isPending(): boolean {
   return read().decidedAt === null
 }
 
+/** Re-open the cookie banner so users can review/withdraw consent at any time
+ *  (GDPR Art. 7(3) — withdrawing must be as easy as giving). The CookieBanner
+ *  listens for this event. Wired to a "Cookie preferences" link in the footer. */
+export function openConsentSettings() {
+  try {
+    window.dispatchEvent(new CustomEvent('customy:consent-reopen'))
+  } catch {
+    /* ignore */
+  }
+}
+
 /** React hook — re-renders on consent change. */
 export function useConsent(): Consent {
   const [consent, setConsentState] = useState<Consent>(() => read())

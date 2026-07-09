@@ -18,9 +18,9 @@ export default function FAQ() {
           className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
         >
           <motion.p variants={staggerItem} className="eyebrow">{f.eyebrow}</motion.p>
-          <motion.h2 variants={staggerItem} className="display-2 text-balance">
+          <motion.h1 variants={staggerItem} className="display-2 text-balance">
             {f.h2a} <span className="text-sub">{f.h2b}</span>
-          </motion.h2>
+          </motion.h1>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-0 border-t border-hair">

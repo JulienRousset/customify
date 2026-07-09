@@ -39,7 +39,9 @@ export function loadGA4() {
   window.gtag('js', new Date())
   window.gtag('config', id, {
     anonymize_ip: true,
-    send_page_view: true
+    // SPA route changes are tracked explicitly via trackPageView(), so the
+    // automatic initial pageview is disabled to avoid double-counting '/'.
+    send_page_view: false
   })
 }
 
@@ -133,11 +135,11 @@ export function loadMarketing() {
   loadTikTokPixel()
 }
 
-/** Helper to expose a typed PageView event for SPA route changes (no router yet,
- *  but available if the site grows beyond a single page). */
+/** Fire a GA4 page_view for a client-side route change. Called from the Layout
+ *  on every React Router navigation (and for the first page, since the
+ *  automatic pageview is disabled in loadGA4). No-op until GA4 has loaded. */
 export function trackPageView(path: string = window.location.pathname) {
   if (window.gtag && isConfigured(ANALYTICS.GA4_MEASUREMENT_ID)) {
     window.gtag('event', 'page_view', { page_path: path })
   }
-  if (window.fbq) window.fbq('track', 'PageView')
 }

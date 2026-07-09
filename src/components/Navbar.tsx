@@ -75,7 +75,7 @@ export default function Navbar() {
             Customy
           </Link>
 
-          <div className="hidden md:flex items-center gap-5 lg:gap-7">
+          <div className="hidden lg:flex items-center gap-5 lg:gap-7">
             {links.map((l) => (
               <Link
                 key={l.to}
@@ -125,7 +125,7 @@ export default function Navbar() {
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden w-9 h-9 rounded-full border border-hair flex items-center justify-center text-fg"
+              className="lg:hidden w-9 h-9 rounded-full border border-hair flex items-center justify-center text-fg"
             >
               {mobileOpen ? <X size={17} strokeWidth={1.8} /> : <Menu size={17} strokeWidth={1.8} />}
             </button>
@@ -142,7 +142,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[45] md:hidden bg-bg pt-[3.85rem] overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-[45] lg:hidden bg-bg pt-[3.85rem] overflow-y-auto overscroll-contain"
           >
             <motion.div
               initial={{ opacity: 0, y: -8 }}

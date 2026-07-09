@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight, Maximize2, PlayCircle, X } from 'lucide-react'
 import { openCalendly, preloadCalendly } from '../lib/calendly'
+import { useFocusTrap } from '../lib/useFocusTrap'
 
 export interface ProductPreview {
   name: string
@@ -26,6 +27,8 @@ interface ProductPreviewModalProps {
 export default function ProductPreviewModal({ product, onClose }: ProductPreviewModalProps) {
   // Lightbox state — when set, shows a fullscreen zoom of a gallery image.
   const [zoomed, setZoomed] = useState<string | null>(null)
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useFocusTrap(dialogRef, !!product)
 
   // Reset zoom when the underlying product changes / modal closes.
   useEffect(() => {
@@ -63,6 +66,7 @@ export default function ProductPreviewModal({ product, onClose }: ProductPreview
       <AnimatePresence>
         {product && (
           <motion.div
+            ref={dialogRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

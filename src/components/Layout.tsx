@@ -4,16 +4,22 @@ import Navbar from './Navbar'
 import CookieBanner from './CookieBanner'
 import { BackgroundGlow } from '@/components/ui/background-glow'
 import { useConsent } from '../analytics/consent'
-import { loadAnalytics, loadMarketing } from '../analytics/loader'
+import { loadAnalytics, loadMarketing, trackPageView } from '../analytics/loader'
 
 const ExitIntentModal = lazy(() => import('./ExitIntentModal'))
 
 function AnalyticsBootstrap() {
   const consent = useConsent()
+  const { pathname } = useLocation()
   useEffect(() => {
     if (consent.analytics) loadAnalytics()
     if (consent.marketing) loadMarketing()
   }, [consent.analytics, consent.marketing])
+  // GA4 has send_page_view disabled, so fire a pageview per route (and for the
+  // first page once analytics consent is granted).
+  useEffect(() => {
+    if (consent.analytics) trackPageView(pathname)
+  }, [pathname, consent.analytics])
   return null
 }
 
@@ -49,7 +55,7 @@ export default function Layout() {
       <BackgroundGlow />
       <div className="relative z-10">
         <Navbar />
-        <main>
+        <main id="main" tabIndex={-1} className="focus:outline-none">
           <Outlet />
         </main>
       </div>

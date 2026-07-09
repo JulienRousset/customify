@@ -94,7 +94,7 @@ const COPY: Record<Lang, CopyBlock> = {
     eyebrow: 'Construisez votre formule',
     title: 'Composez la solution',
     titleAccent: 'adaptée à votre entreprise.',
-    sub: 'Activez les modules dont vous avez besoin, ou choisissez tout d’un coup. Les prix se mettent à jour en direct — vous voyez exactement ce que vous payez et ce que vous économisez.',
+    sub: 'Activez les modules dont vous avez besoin, ou choisissez tout d’un coup. Les prix se mettent à jour en direct. Vous voyez exactement ce que vous payez et ce que vous économisez.',
     presetsLabel: 'Départs rapides',
     selectAll: 'Tout sélectionner',
     reset: 'Réinitialiser',
@@ -123,7 +123,7 @@ const COPY: Record<Lang, CopyBlock> = {
     emailPh: 'vous@marque.com',
     leadSend: 'Envoyer',
     leadSending: 'Envoi…',
-    leadSent: 'C’est envoyé — on revient vers vous sous 24 h.',
+    leadSent: 'C’est envoyé, on revient vers vous sous 24 h.',
     leadError: 'Échec de l’envoi. Essayez WhatsApp.',
     recap: 'Récapitulatif',
     waIntro: 'Bonjour Customy 👋 Voici la formule que j’ai composée sur votre page Offres :',
@@ -132,7 +132,7 @@ const COPY: Record<Lang, CopyBlock> = {
     waTotal: 'Total Customy',
     waMarket: 'Valeur marché',
     waSave: 'Économie vs marché',
-    waComplete: `Je suis intéressé(e) par le Système Complet (${formatEUR(COMPLETE.price, 'fr')}${perMonth('fr')} — tout inclus).`,
+    waComplete: `Je suis intéressé(e) par le Système Complet (${formatEUR(COMPLETE.price, 'fr')}${perMonth('fr')}, tout inclus).`,
     waOutro: 'Pouvez-vous me faire un devis ?',
     mobileTotal: 'Total'
   },
@@ -140,7 +140,7 @@ const COPY: Record<Lang, CopyBlock> = {
     eyebrow: 'Build your package',
     title: 'Compose the solution',
     titleAccent: 'that fits your business.',
-    sub: 'Toggle the modules you need, or pick everything at once. Prices update live — you see exactly what you pay and what you save.',
+    sub: 'Toggle the modules you need, or pick everything at once. Prices update live. You see exactly what you pay and what you save.',
     presetsLabel: 'Quick starts',
     selectAll: 'Select all',
     reset: 'Reset',
@@ -169,7 +169,7 @@ const COPY: Record<Lang, CopyBlock> = {
     emailPh: 'you@brand.com',
     leadSend: 'Send',
     leadSending: 'Sending…',
-    leadSent: 'Sent — we’ll get back to you within 24h.',
+    leadSent: 'Sent, we’ll get back to you within 24h.',
     leadError: 'Could not send. Try WhatsApp.',
     recap: 'Summary',
     waIntro: 'Hi Customy 👋 Here’s the package I put together on your Offers page:',
@@ -178,7 +178,7 @@ const COPY: Record<Lang, CopyBlock> = {
     waTotal: 'Customy total',
     waMarket: 'Market value',
     waSave: 'Saving vs market',
-    waComplete: `I’m interested in the Complete System (${formatEUR(COMPLETE.price, 'en')}${perMonth('en')} — all included).`,
+    waComplete: `I’m interested in the Complete System (${formatEUR(COMPLETE.price, 'en')}${perMonth('en')}, all included).`,
     waOutro: 'Could you send me a quote?',
     mobileTotal: 'Total'
   }
@@ -202,7 +202,7 @@ function buildRecap(
   const cores = coreIds.map(moduleById).filter(Boolean) as Module[]
   if (cores.length) {
     lines.push(c.waModules)
-    cores.forEach((m) => lines.push(`• ${tr(m.name, lang)} — ${formatEUR(m.price, lang)}${perMonth(lang)}`))
+    cores.forEach((m) => lines.push(`• ${tr(m.name, lang)} · ${formatEUR(m.price, lang)}${perMonth(lang)}`))
   }
 
   const addons = addonIds.map(addonById).filter(Boolean) as AddOn[]
@@ -210,7 +210,7 @@ function buildRecap(
     lines.push('', c.waAddons)
     addons.forEach((a) =>
       lines.push(
-        `• ${tr(a.name, lang)} — ${a.price === null ? c.onQuote : `${a.from ? c.from + ' ' : ''}${formatEUR(a.price, lang)}${perMonth(lang)}`}`
+        `• ${tr(a.name, lang)} · ${a.price === null ? c.onQuote : `${a.from ? c.from + ' ' : ''}${formatEUR(a.price, lang)}${perMonth(lang)}`}`
       )
     )
   }
@@ -438,7 +438,7 @@ export default function PackageBuilder() {
           <motion.p variants={staggerItem} className="mt-5 body-md max-w-xl text-pretty">{c.sub}</motion.p>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           {/* LEFT — builder controls */}
           <div className="lg:col-span-8">
             {/* Presets + bulk actions */}
@@ -638,10 +638,7 @@ export default function PackageBuilder() {
                           const a = addonById(id)!
                           return (
                             <div key={id} className="flex items-center justify-between gap-3 text-[12.5px]">
-                              <span className="text-fg2 truncate">
-                                {tr(a.name, lang)}
-                                <span className="text-sub"> · +</span>
-                              </span>
+                              <span className="text-fg2 truncate">{tr(a.name, lang)}</span>
                               <span className="tabular-nums text-fg font-medium shrink-0">
                                 {a.price === null ? c.onQuote : money(a.price)}
                               </span>
@@ -789,11 +786,7 @@ export default function PackageBuilder() {
           <div className="min-w-0">
             <div className="text-[10.5px] text-sub uppercase tracking-[0.14em]">{c.mobileTotal}</div>
             <div className="font-display font-semibold text-[19px] tracking-tight tabular-nums leading-none">
-              {activePrice > 0 ? (
-                <>{money(activePrice)}<span className="text-[12px] text-sub font-medium">{pm}</span></>
-              ) : (
-                <span className="text-sub">—</span>
-              )}
+              {money(activePrice)}<span className="text-[12px] text-sub font-medium">{pm}</span>
             </div>
           </div>
           <button

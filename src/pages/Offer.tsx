@@ -1,10 +1,10 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowDown, CalendarClock } from 'lucide-react'
 import { useLang } from '../lang'
 import { WhatsAppGlyph } from '../components/icons'
 import { openCalendly, preloadCalendly } from '../lib/calendly'
 import { waLink } from '../lib/whatsapp'
+import { useRouteHead } from '../lib/head'
 import { staggerItem, staggerParent, viewportOnce } from '../components/fx/motion'
 import PackageBuilder from '../components/offer/PackageBuilder'
 import CompleteSystem from '../components/offer/CompleteSystem'
@@ -34,12 +34,12 @@ const COPY: Record<Lang, {
   waHello: string
 }> = {
   fr: {
-    metaTitle: 'Nos offres · Customy — Choisissez la solution adaptée à votre entreprise',
+    metaTitle: 'Nos offres · Customy · Choisissez la solution adaptée à votre entreprise',
     metaDesc: `Composez votre formule Customy module par module ou choisissez le Complete Business System à ${formatEUR(COMPLETE.price, 'fr')}${perMonth('fr')}. Prix en direct, économies claires, devis en un clic.`,
     eyebrow: 'Nos offres',
     title: 'Choisissez la solution',
     titleAccent: 'adaptée à votre entreprise.',
-    sub: 'Toutes nos solutions peuvent être déployées individuellement ou réunies dans un écosystème complet. Composez la vôtre ci-dessous — les prix se calculent en temps réel.',
+    sub: 'Toutes nos solutions peuvent être déployées individuellement ou réunies dans un écosystème complet. Composez la vôtre ci-dessous, les prix se calculent en temps réel.',
     ctaBuild: 'Composer ma formule',
     ctaComplete: 'Voir le système complet',
     statModules: 'modules à la carte',
@@ -50,18 +50,18 @@ const COPY: Record<Lang, {
     pillarsLabel: 'Une plateforme unique pour votre croissance',
     finalTitle: 'Prêt à construire',
     finalAccent: 'votre écosystème ?',
-    finalSub: 'Envoyez-nous votre formule ou réservez un appel. On revient vers vous sous 24 h avec un devis clair — sans engagement.',
+    finalSub: 'Envoyez-nous votre formule ou réservez un appel. On revient vers vous sous 24 h avec un devis clair, sans engagement.',
     finalWa: 'Écrire sur WhatsApp',
     finalCall: 'Réserver un appel',
     waHello: 'Bonjour Customy 👋 J’aimerais discuter des offres Customy.'
   },
   en: {
-    metaTitle: 'Our offers · Customy — Choose the solution that fits your business',
+    metaTitle: 'Our offers · Customy · Choose the solution that fits your business',
     metaDesc: `Build your Customy package module by module, or pick the Complete Business System at ${formatEUR(COMPLETE.price, 'en')}${perMonth('en')}. Live pricing, clear savings, one-click quote.`,
     eyebrow: 'Our offers',
     title: 'Choose the solution',
     titleAccent: 'that fits your business.',
-    sub: 'Every solution can be deployed on its own or combined into one complete ecosystem. Build yours below — prices update in real time.',
+    sub: 'Every solution can be deployed on its own or combined into one complete ecosystem. Build yours below, prices update in real time.',
     ctaBuild: 'Build my package',
     ctaComplete: 'See the complete system',
     statModules: 'à-la-carte modules',
@@ -72,7 +72,7 @@ const COPY: Record<Lang, {
     pillarsLabel: 'One platform for your growth',
     finalTitle: 'Ready to build',
     finalAccent: 'your ecosystem?',
-    finalSub: 'Send us your package or book a call. We get back to you within 24h with a clear quote — no commitment.',
+    finalSub: 'Send us your package or book a call. We get back to you within 24h with a clear quote, no commitment.',
     finalWa: 'Message on WhatsApp',
     finalCall: 'Book a call',
     waHello: 'Hi Customy 👋 I’d like to talk about the Customy offers.'
@@ -248,19 +248,7 @@ function FinalCTA() {
 
 export default function OfferPage() {
   const { lang } = useLang()
-
-  useEffect(() => {
-    const c = COPY[lang]
-    const prevTitle = document.title
-    document.title = c.metaTitle
-    const metaDesc = document.querySelector('meta[name="description"]')
-    const prevDesc = metaDesc?.getAttribute('content') ?? null
-    metaDesc?.setAttribute('content', c.metaDesc)
-    return () => {
-      document.title = prevTitle
-      if (prevDesc !== null) metaDesc?.setAttribute('content', prevDesc)
-    }
-  }, [lang])
+  useRouteHead({ title: COPY[lang].metaTitle, description: COPY[lang].metaDesc, path: '/offer' })
 
   return (
     <>

@@ -3,6 +3,7 @@ import { Check, Star, ArrowRight } from 'lucide-react'
 import { useLang } from '../../lang'
 import { openCalendly, preloadCalendly } from '../../lib/calendly'
 import { staggerItem, staggerParent, viewportOnce } from '../fx/motion'
+import { favicon } from '../../lib/utils'
 import {
   COMPLETE,
   COMPLETE_FEATURES,
@@ -14,8 +15,6 @@ import {
   tr,
   type Lang
 } from './offerData'
-
-const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
 
 const COPY: Record<Lang, {
   eyebrow: string

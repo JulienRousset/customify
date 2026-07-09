@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import { useLang } from '../lang'
 import { openCalendly, preloadCalendly } from '../lib/calendly'
+import { useFocusTrap } from '../lib/useFocusTrap'
 
 const MOBILE_TRIGGER_MS = 45_000
 const DESKTOP_ARM_DELAY_MS = 6_000
@@ -12,6 +13,8 @@ export default function ExitIntentModal() {
   const m = t.contact.exitModal
 
   const [open, setOpen] = useState(false)
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useFocusTrap(dialogRef, open)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -68,6 +71,7 @@ export default function ExitIntentModal() {
     <AnimatePresence>
       {open && (
         <motion.div
+          ref={dialogRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

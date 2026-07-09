@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Instagram } from 'lucide-react'
 import { FacebookLogo, LinkedInLogo } from '../icons'
+import { openConsentSettings } from '../../analytics/consent'
+import { useLang } from '../../lang'
 
 export default function VerticalFooter() {
+  const { t } = useLang()
   return (
     <footer className="relative border-t border-hair">
       <div className="container-xl py-12 md:py-14">
@@ -20,14 +23,10 @@ export default function VerticalFooter() {
           </Link>
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-fg2">
-              <Link to="/" className="hover:text-fg transition-colors">Home</Link>
-              <Link to="/offer" className="hover:text-fg transition-colors">Pricing</Link>
-              <Link to="/whatwebuild" className="hover:text-fg transition-colors">What we build</Link>
-              <Link to="/whatwebuild/restaurants" className="hover:text-fg transition-colors">Restaurants</Link>
-              <Link to="/whatwebuild/spa-wellness" className="hover:text-fg transition-colors">Spa</Link>
-              <Link to="/whatwebuild/hotels" className="hover:text-fg transition-colors">Hotels</Link>
-              <Link to="/whatwebuild/entrepreneurs" className="hover:text-fg transition-colors">Entrepreneurs</Link>
-              <Link to="/whatwebuild/agency-services" className="hover:text-fg transition-colors">Agency</Link>
+              <Link to="/" className="hover:text-fg transition-colors">{t.footerLinks.home}</Link>
+              <Link to="/offer" className="hover:text-fg transition-colors">{t.footerLinks.pricing}</Link>
+              <Link to="/faq" className="hover:text-fg transition-colors">{t.footerLinks.faq}</Link>
+              <Link to="/#contact" className="hover:text-fg transition-colors">{t.footerLinks.contact}</Link>
             </nav>
             <div className="flex items-center gap-2">
               <a
@@ -61,11 +60,14 @@ export default function VerticalFooter() {
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
-          <div>© {new Date().getFullYear()} Customy Studio · Remote worldwide</div>
-          <div className="flex items-center gap-5">
-            <a href="/review.html" className="hover:text-fg transition-colors">Leave a review</a>
-            <a href="/privacy.html" className="hover:text-fg transition-colors">Privacy</a>
-            <a href="/terms.html" className="hover:text-fg transition-colors">Terms</a>
+          <div>© {new Date().getFullYear()} Customy Studio · {t.contact.footerRemote}</div>
+          <div className="flex flex-wrap items-center gap-5">
+            <a href="/review.html" className="hover:text-fg transition-colors">{t.footerLinks.leaveReview}</a>
+            <button type="button" onClick={openConsentSettings} className="hover:text-fg transition-colors">
+              {t.cookies.manage}
+            </button>
+            <a href="/privacy.html" className="hover:text-fg transition-colors">{t.contact.privacyLabel}</a>
+            <a href="/terms.html" className="hover:text-fg transition-colors">{t.contact.termsLabel}</a>
             <a href="mailto:customyagency@gmail.com" className="hover:text-fg transition-colors">customyagency@gmail.com</a>
           </div>
         </div>

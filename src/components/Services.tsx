@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import { useLang } from '../lang'
 import { easeApple, staggerItem, staggerParent, viewportOnce } from './fx/motion'
 
 interface FloatingLabel {
@@ -28,18 +29,19 @@ const LABELS: FloatingLabel[] = [
 ]
 
 function FloatingPill({ label, color, position, float, index }: FloatingLabel & { index: number }) {
+  const reduce = useReducedMotion()
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{
         opacity: 1,
         scale: 1,
-        y: [0, -float.dy, 0]
+        y: reduce ? 0 : [0, -float.dy, 0]
       }}
       transition={{
         opacity: { duration: 0.7, delay: 0.3 + index * 0.05, ease: easeApple },
         scale: { duration: 0.7, delay: 0.3 + index * 0.05, ease: easeApple },
-        y: { duration: float.dur, repeat: Infinity, ease: 'easeInOut', delay: float.delay }
+        ...(reduce ? {} : { y: { duration: float.dur, repeat: Infinity, ease: 'easeInOut', delay: float.delay } })
       }}
       whileHover={{
         scale: 1.06,
@@ -62,6 +64,8 @@ function FloatingPill({ label, color, position, float, index }: FloatingLabel & 
 }
 
 export default function Services() {
+  const { t } = useLang()
+  const w = t.whoWeWork
   return (
     <section
       id="services"
@@ -100,19 +104,19 @@ export default function Services() {
           viewport={viewportOnce}
           className="relative z-10 max-w-3xl mx-auto text-center"
         >
-          <motion.p variants={staggerItem} className="eyebrow">Who we work with</motion.p>
+          <motion.p variants={staggerItem} className="eyebrow">{w.eyebrow}</motion.p>
           <motion.h2 variants={staggerItem} className="display-2 text-balance">
-            Every solution is unique, <span className="text-sub">built around your business.</span>
+            {w.h2a} <span className="text-sub">{w.h2b}</span>
           </motion.h2>
           <motion.p variants={staggerItem} className="mt-5 body-lg max-w-2xl mx-auto text-pretty">
-            Our solutions are 100% customized and adapted to any business. We ship in days, around your needs.
+            {w.sub}
           </motion.p>
 
           <motion.p
             variants={staggerItem}
             className="mt-7 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-sub"
           >
-            <span className="text-fg">50+ clients</span> already onboard
+            <span className="text-fg">{w.clientsPrefix}</span> {w.clientsSuffix}
           </motion.p>
         </motion.div>
 

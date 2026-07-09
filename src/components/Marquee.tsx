@@ -58,7 +58,7 @@ export default function Marquee() {
                 {p.name}
               </span>
               <span className="text-[10px] font-medium uppercase tracking-wider text-sub">
-                {p.kind}
+                {(t.marquee.kinds as Record<string, string>)[p.kind] ?? p.kind}
               </span>
             </div>
           ))}

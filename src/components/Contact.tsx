@@ -1,13 +1,11 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, CalendarClock, Instagram, Star } from 'lucide-react'
 import { useLang } from '../lang'
 import { WhatsAppGlyph, FacebookLogo, LinkedInLogo } from './icons'
 import { openCalendly, preloadCalendly } from '../lib/calendly'
-
-const WA_NUMBER_DISPLAY = '+62 857-8506-5652'
-const WA_NUMBER_RAW = '6285785065652'
-
-const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+import { openConsentSettings } from '../analytics/consent'
+import { WA_NUMBER_RAW, WA_NUMBER_DISPLAY } from '../lib/whatsapp'
+import { favicon } from '../lib/utils'
 
 const poweredBy = [
   { name: 'Instagram', src: favicon('instagram.com') },
@@ -34,6 +32,7 @@ const poweredBy = [
 export default function Contact() {
   const { t } = useLang()
   const c = t.contact
+  const reduceMotion = useReducedMotion()
 
   return (
     <>
@@ -41,7 +40,7 @@ export default function Contact() {
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
             <div className="lg:col-span-7 lg:order-2 lg:text-right">
-              <p className="eyebrow">Start a project</p>
+              <p className="eyebrow">{c.eyebrow}</p>
               <h2 className="display-2 text-balance">
                 {c.h2a} <span className="text-sub">{c.h2b}</span>
               </h2>
@@ -103,7 +102,7 @@ export default function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-[10px] font-semibold text-sub uppercase tracking-[0.16em]">Trustpilot</div>
-                    <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">See our reviews</div>
+                    <div className="text-[15px] md:text-[16px] font-medium tracking-tight mt-0.5">{c.seeReviews}</div>
                   </div>
                   <div className="shrink-0 w-9 h-9 rounded-full bg-surface border border-hair flex items-center justify-center text-fg2 group-hover:text-fg group-hover:border-fg/30 transition-colors">
                     <ArrowRight size={14} />
@@ -127,8 +126,9 @@ export default function Contact() {
 
           {/* Powered-by — full-width 2-row marquee, opposite directions */}
           <div className="mt-20 md:mt-24">
-            <div className="eyebrow text-sub mb-6">Powered by</div>
+            <div className="eyebrow text-sub mb-6">{c.poweredBy}</div>
             <div
+              aria-hidden
               className="space-y-3 overflow-hidden"
               style={{
                 maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
@@ -142,8 +142,8 @@ export default function Contact() {
                 <div key={idx} className="relative flex overflow-hidden">
                   <motion.div
                     className="flex gap-3 shrink-0 pr-3"
-                    animate={{ x: row.dir === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
-                    transition={{ duration: row.duration, repeat: Infinity, ease: 'linear' }}
+                    animate={reduceMotion ? { x: 0 } : { x: row.dir === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
+                    transition={reduceMotion ? { duration: 0 } : { duration: row.duration, repeat: Infinity, ease: 'linear' }}
                   >
                     {[...row.items, ...row.items, ...row.items, ...row.items].map((b, i) => (
                       <div
@@ -188,8 +188,6 @@ export default function Contact() {
               <nav aria-label="Footer" className="flex flex-wrap gap-6 text-[13.5px] text-fg2">
                 <a href="#services" className="hover:text-fg transition-colors">{c.footerNav.services}</a>
                 <a href="#software" className="hover:text-fg transition-colors">{c.footerNav.software}</a>
-                <a href="#automation" className="hover:text-fg transition-colors">{c.footerNav.automation}</a>
-                <a href="#testimonials" className="hover:text-fg transition-colors">{c.footerNav.clients}</a>
                 <a href="#contact" className="hover:text-fg transition-colors">{c.footerNav.contact}</a>
               </nav>
               <div className="flex items-center gap-2">
@@ -225,10 +223,13 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 mt-6 text-[12px] text-sub">
             <div>© {new Date().getFullYear()} Customy Studio · {c.footerRemote}</div>
-            <div className="flex items-center gap-5">
-              <a href="/review.html" className="hover:text-fg transition-colors">Leave a review</a>
-              <a href="/privacy.html" className="hover:text-fg transition-colors">Privacy</a>
-              <a href="/terms.html" className="hover:text-fg transition-colors">Terms</a>
+            <div className="flex flex-wrap items-center gap-5">
+              <a href="/review.html" className="hover:text-fg transition-colors">{t.footerLinks.leaveReview}</a>
+              <button type="button" onClick={openConsentSettings} className="hover:text-fg transition-colors">
+                {t.cookies.manage}
+              </button>
+              <a href="/privacy.html" className="hover:text-fg transition-colors">{c.privacyLabel}</a>
+              <a href="/terms.html" className="hover:text-fg transition-colors">{c.termsLabel}</a>
               <a href="mailto:customyagency@gmail.com" className="hover:text-fg transition-colors">customyagency@gmail.com</a>
             </div>
           </div>

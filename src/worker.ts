@@ -46,7 +46,39 @@ const json = (data: unknown, status = 200): Response =>
     headers: { 'Content-Type': 'application/json' }
   })
 
+// Baseline security headers on every response. The index.html CSP <meta> covers
+// HTML documents; these cover what a meta tag can't (framing, sniffing, HSTS,
+// and the /api/contact JSON responses).
+function secure(res: Response): Response {
+  const r = new Response(res.body, res)
+  r.headers.set('X-Content-Type-Options', 'nosniff')
+  r.headers.set('X-Frame-Options', 'DENY')
+  r.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  r.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+  r.headers.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=()')
+  return r
+}
+
 const isValidEmail = (s: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)
+
+// Slack renders newlines and treats &, <, > as control chars. Neutralize
+// attacker-controlled fields (referer, email, source) before interpolation.
+const slackSafe = (s: string): string =>
+  s
+    .replace(/[\r\n\t]+/g, ' ')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .slice(0, 300)
+
+// IPv4: drop the last octet; IPv6: keep only the routing prefix. Matches the
+// "IP truncation" safeguard stated in the privacy policy. The full IP is still
+// used in-memory for rate limiting but never stored or emailed.
+const maskIp = (ip: string): string => {
+  if (ip.includes('.')) return ip.replace(/\.\d+$/, '.x')
+  if (ip.includes(':')) return ip.split(':').slice(0, 4).join(':') + '::'
+  return ip
+}
 
 const escapeHtml = (s: string): string =>
   s.replace(/[&<>"']/g, (c) =>
@@ -159,7 +191,7 @@ async function pingSlack(
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        text: `New Customy lead · ${email}\nSource: ${source} · Country: ${country} · Referer: ${refer}`
+        text: `New Customy lead · ${slackSafe(email)}\nSource: ${slackSafe(source)} · Country: ${slackSafe(country)} · Referer: ${slackSafe(refer)}`
       })
     })
   } catch (err) {
@@ -189,7 +221,9 @@ async function handleContact(
   }
 
   const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
-  if (ip !== 'unknown' && isRateLimited(ip)) {
+  // Rate-limit every request, including those with no client IP (they share the
+  // 'unknown' bucket), so a missing header can't be used to bypass the throttle.
+  if (isRateLimited(ip)) {
     return json({ error: 'Too many requests. Please try again in a moment.' }, 429)
   }
 
@@ -223,8 +257,8 @@ async function handleContact(
     `Lang:    ${lang}`,
     `Country: ${country}`,
     `Referer: ${refer}`,
-    `IP:      ${ip}`,
-    ...(summary ? ['', '--- Package / message ---', summary] : []),
+    `IP:      ${maskIp(ip)}`,
+    ...(summary ? ['', 'Package / message:', summary] : []),
     '',
     'Reply directly to this email. Reply-To is set to the visitor.'
   ].join('\n')
@@ -283,10 +317,10 @@ export default {
     const url = new URL(request.url)
 
     if (url.pathname === '/api/contact') {
-      if (request.method === 'POST') return handleContact(request, env, ctx)
-      return json({ error: 'Method not allowed.' }, 405)
+      if (request.method === 'POST') return secure(await handleContact(request, env, ctx))
+      return secure(json({ error: 'Method not allowed.' }, 405))
     }
 
-    return env.ASSETS.fetch(request)
+    return secure(await env.ASSETS.fetch(request))
   }
 }

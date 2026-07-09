@@ -5,6 +5,7 @@ import Home from './pages/Home'
 
 const FAQPage = lazy(() => import('./pages/FAQ'))
 const OfferPage = lazy(() => import('./pages/Offer'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function PageSkeleton() {
   return <div aria-hidden className="min-h-[80vh] w-full" />
@@ -29,6 +30,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageSkeleton />}>
                 <OfferPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <NotFound />
               </Suspense>
             }
           />

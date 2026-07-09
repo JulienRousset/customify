@@ -19,6 +19,17 @@ export default function CookieBanner() {
     return () => window.clearTimeout(timer)
   }, [])
 
+  // Allow re-opening the banner at any time (e.g. from the footer "Cookie
+  // preferences" link) so users can review or withdraw their choice.
+  useEffect(() => {
+    const onReopen = () => {
+      setShow(true)
+      setCustomize(true)
+    }
+    window.addEventListener('customy:consent-reopen', onReopen)
+    return () => window.removeEventListener('customy:consent-reopen', onReopen)
+  }, [])
+
   useEffect(() => {
     // Sync local toggle state with current consent when opening Customize
     if (customize) {
