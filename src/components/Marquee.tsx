@@ -11,8 +11,7 @@ const partners: Partner[] = [
   { name: 'Skyrol', kind: 'Travel solution', logo: '/partners/SKYROL.webp' },
   { name: 'Temple Spa Bali', kind: 'Spa', logo: '/partners/TEMPLE.webp' },
   { name: 'Natura Organics', kind: 'Organic brand', logo: '/partners/NATURA.webp' },
-  { name: "In'Sens Sourcing", kind: 'Sourcing', logo: '/partners/INSENS.webp' },
-  { name: 'Dylan', kind: 'Personal brand', logo: '/partners/TYT.webp', logoScale: 1.6 }
+  { name: "In'Sens Sourcing", kind: 'Sourcing', logo: '/partners/INSENS.webp' }
 ]
 
 export default function Marquee() {

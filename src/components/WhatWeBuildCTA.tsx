@@ -53,16 +53,6 @@ const SOLUTIONS: Solution[] = [
     ]
   },
   {
-    slug: 'social-growth',
-    image: '/examples/tracking_social_dashboard.JPG',
-    imageAlt: 'Social media growth tracked across platforms',
-    gallery: [
-      '/examples/social_recap.JPG',
-      '/examples/insta_after.png',
-      '/examples/insta_before.png'
-    ]
-  },
-  {
     slug: 'lead-engine',
     image: '/examples/example_setter_ai.png',
     imageAlt: 'AI chat handling DM conversations end-to-end',

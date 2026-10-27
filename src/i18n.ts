@@ -56,11 +56,6 @@ export const translations = {
           description: 'Custom site or full conversion funnel. From first click to booked call, designed to convert. Built with your tools, your tone, your stack.',
           price: '$399 – $1,999'
         },
-        'social-growth': {
-          name: 'Social media growth',
-          description: 'Social media growth, managed end-to-end: content, strategy, engagement, audience building and brand expansion.',
-          price: '$1,499 – $2,999 / month'
-        },
         'lead-engine': {
           name: 'AI Chat',
           description: 'Find local leads by industry, score them, then let AI auto-reply to DMs across Instagram, WhatsApp and Telegram. From cold prospect to booked call, on autopilot.',
@@ -223,13 +218,6 @@ export const translations = {
           quote: 'The weekly report used to take half a day. Now it writes itself at 6 a.m.',
           desc: 'One clear dashboard plus an Instagram pipeline. Replaced four tools and two hours of daily admin.',
           stack: ['Dashboard', 'Instagram', 'Till sync']
-        },
-        {
-          name: 'Dylan',
-          kind: 'Personal brand, worldwide',
-          quote: 'I brief it once a week. The content shows up, in my voice.',
-          desc: 'AI content engine. Ideas, scripts, captions, scheduling. Fully tuned to the brand voice.',
-          stack: ['AI assistant', 'Content calendar', 'Analytics']
         },
         {
           name: 'Inka Spa Bali',
@@ -473,11 +461,6 @@ export const translations = {
           description: 'Site sur mesure ou tunnel de conversion complet. Du premier clic au rendez-vous réservé, conçu pour convertir. Construit avec vos outils, votre ton, votre stack.',
           price: '399 – 1 999 $'
         },
-        'social-growth': {
-          name: 'Croissance réseaux sociaux',
-          description: 'Croissance des réseaux gérée de bout en bout : contenu, stratégie, engagement, communauté et expansion de marque.',
-          price: '1 499 – 2 999 $ / mois'
-        },
         'lead-engine': {
           name: 'Chat IA',
           description: 'Trouvez des leads locaux par secteur, scorez-les, puis laissez l’IA répondre aux DM sur Instagram, WhatsApp et Telegram. Du prospect froid au rendez-vous réservé, en pilote automatique.',
@@ -640,13 +623,6 @@ export const translations = {
           quote: 'Le rapport hebdo prenait une demi-journée. Maintenant il s’écrit tout seul à 6h.',
           desc: 'Un dashboard clair et une chaîne Instagram. Remplace quatre outils et deux heures d’admin par jour.',
           stack: ['Dashboard', 'Instagram', 'Caisse']
-        },
-        {
-          name: 'Dylan',
-          kind: 'Marque perso, international',
-          quote: 'Je brief une fois par semaine. Le contenu sort, dans ma voix.',
-          desc: 'Moteur de contenu IA. Idées, scripts, légendes, planning. Calé sur la voix de la marque.',
-          stack: ['Assistant IA', 'Planning', 'Analytics']
         },
         {
           name: 'Inka Spa Bali',
